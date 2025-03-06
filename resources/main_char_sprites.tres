@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dagtd40gw1ynx"]
+
+[ext_resource type="Texture2D" uid="uid://domuau8dcph1w" path="res://scenes/player/sprite-sheet-joe-ebaristo.png" id="1_aniqh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7uy3"]
+atlas = ExtResource("1_aniqh")
+region = Rect2(48, 240, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grseu"]
+atlas = ExtResource("1_aniqh")
+region = Rect2(48, 216, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0i3s"]
+atlas = ExtResource("1_aniqh")
+region = Rect2(48, 264, 16, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7uy3")
+}],
+"loop": true,
+"name": &"player_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grseu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0i3s")
+}],
+"loop": true,
+"name": &"player_walk",
+"speed": 5.0
+}]
