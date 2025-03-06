@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://50qcp4ylw414"
-path="res://.godot/imported/basic_enemy.png-bcb3ae4d01d42218b1191142bc5bacbb.ctex"
+uid="uid://c0utga7eav8s4"
+path="res://.godot/imported/alien_spider.png-2930978e1f89067451a5dfc822382a16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/basic_enemy/basic_enemy.png"
-dest_files=["res://.godot/imported/basic_enemy.png-bcb3ae4d01d42218b1191142bc5bacbb.ctex"]
+source_file="res://scenes/game_object/basic_enemy/alien_spider.png"
+dest_files=["res://.godot/imported/alien_spider.png-2930978e1f89067451a5dfc822382a16.ctex"]
 
 [params]
 

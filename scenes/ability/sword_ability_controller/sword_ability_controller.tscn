@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://hhx6iyx5cxh"]
 
-[ext_resource type="Script" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.gd" id="1_b50ks"]
+[ext_resource type="Script" uid="uid://ch2pmb14s2yt2" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.gd" id="1_b50ks"]
 [ext_resource type="PackedScene" uid="uid://bpo35to13tjbx" path="res://scenes/ability/sword_ability/sword_ability.tscn" id="2_sulbp"]
 
 [node name="SwordAbilityController" type="Node"]

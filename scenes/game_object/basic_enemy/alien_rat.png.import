@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0f33oqp872yq"
-path="res://.godot/imported/player.png-d340f81abf0a3162ec6e69b8e169a012.ctex"
+uid="uid://q7kvkx04s6xo"
+path="res://.godot/imported/alien_rat.png-61aa7efc89c4b5c64dba8a6c8212dca3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/player/player.png"
-dest_files=["res://.godot/imported/player.png-d340f81abf0a3162ec6e69b8e169a012.ctex"]
+source_file="res://scenes/game_object/basic_enemy/alien_rat.png"
+dest_files=["res://.godot/imported/alien_rat.png-61aa7efc89c4b5c64dba8a6c8212dca3.ctex"]
 
 [params]
 

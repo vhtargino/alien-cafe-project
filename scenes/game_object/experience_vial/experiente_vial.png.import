@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q7kvkx04s6xo"
-path="res://.godot/imported/alien_rat.png-b1fc7e66922997958b81cf337fc382e3.ctex"
+uid="uid://dfq2s5u7p65he"
+path="res://.godot/imported/experiente_vial.png-35340aab6caba23289c1ffdd18ceaad9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/basic_enemy/alien_rat.png"
-dest_files=["res://.godot/imported/alien_rat.png-b1fc7e66922997958b81cf337fc382e3.ctex"]
+source_file="res://scenes/game_object/experience_vial/experiente_vial.png"
+dest_files=["res://.godot/imported/experiente_vial.png-35340aab6caba23289c1ffdd18ceaad9.ctex"]
 
 [params]
 
