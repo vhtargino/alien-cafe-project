@@ -5,7 +5,7 @@ var character_speed = 80
 #var horizontal_queue = []
 #var vertical_queue = []
 
-#@onready var sprite = $AnimatedSprite2D
+@onready var sprite = %PlayerSprite
 
 func _process(_delta: float) -> void:
 	var movement_vector = get_movement_vector()
@@ -18,14 +18,14 @@ func get_movement_vector():
 	var y_movement = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	
 	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right") or Input.is_action_pressed("move_up") or Input.is_action_pressed("move_down"):
-		%PlayerSprite.play("player_walk")
+		sprite.play("player_walk")
 	else:
-		%PlayerSprite.play("player_idle")
+		sprite.play("player_idle")
 		
 	if Input.is_action_pressed("move_left"):
-		%PlayerSprite.flip_h = true
+		sprite.flip_h = true
 	if Input.is_action_pressed("move_right"):
-		%PlayerSprite.flip_h = false
+		sprite.flip_h = false
 	
 	return Vector2(x_movement, y_movement)
 
