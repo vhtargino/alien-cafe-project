@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2cxbvdjdb13f"]
+[gd_scene load_steps=9 format=3 uid="uid://c2cxbvdjdb13f"]
 
 [ext_resource type="Script" uid="uid://cmln5yerbagin" path="res://scenes/game_object/basic_enemy/basic_enemy.gd" id="1_4fs2a"]
 [ext_resource type="Texture2D" uid="uid://q7kvkx04s6xo" path="res://scenes/game_object/basic_enemy/alien_rat.png" id="2_8bf31"]
 [ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component.tscn" id="2_isd1k"]
 [ext_resource type="PackedScene" uid="uid://dc3ubxkagms0a" path="res://scenes/component/vial_drop_component.tscn" id="3_pcrk2"]
+[ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component.tscn" id="4_bq7hi"]
 [ext_resource type="PackedScene" uid="uid://d5l8117qmu3d" path="res://scenes/component/hurtbox_component.tscn" id="4_elloc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bq7hi"]
@@ -23,12 +24,17 @@ script = ExtResource("1_4fs2a")
 [node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_pcrk2")]
 health_component = NodePath("../HealthComponent")
 
+[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("4_bq7hi")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Sprite2D")
+
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_elloc")]
 unique_name_in_owner = true
 collision_mask = 8
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+visible = false
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_bq7hi")
 
@@ -38,5 +44,6 @@ texture = ExtResource("2_8bf31")
 offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_rmgeo")
