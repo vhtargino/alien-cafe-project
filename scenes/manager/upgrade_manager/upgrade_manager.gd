@@ -45,7 +45,7 @@ func on_upgrade_selected(upgrade: AbilityUpgrade):
 	apply_upgrade(upgrade)
 
 
-func on_level_up(current_level: int):
+func on_level_up(_current_level: int):
 	
 	
 	var upgrade_screen_instance = upgrade_screen_scene.instantiate()

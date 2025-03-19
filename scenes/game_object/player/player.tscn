@@ -27,7 +27,6 @@ radius = 5.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
-collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_chboc")
 
@@ -63,10 +62,12 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea2D"]
 shape = SubResource("CircleShape2D_s3670")
 
-[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="Visuals"]
 unique_name_in_owner = true
 sprite_frames = ExtResource("2_vs77x")
-animation = &"player_death"
+animation = &"player_idle"
 offset = Vector2(0, -10)
 
 [node name="CollisionArea2D" type="Area2D" parent="."]

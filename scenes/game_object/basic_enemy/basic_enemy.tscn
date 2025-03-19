@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2cxbvdjdb13f"]
+[gd_scene load_steps=13 format=3 uid="uid://c2cxbvdjdb13f"]
 
 [ext_resource type="Script" uid="uid://cmln5yerbagin" path="res://scenes/game_object/basic_enemy/basic_enemy.gd" id="1_4fs2a"]
 [ext_resource type="Texture2D" uid="uid://q7kvkx04s6xo" path="res://scenes/game_object/basic_enemy/alien_rat.png" id="2_8bf31"]
@@ -6,6 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://dc3ubxkagms0a" path="res://scenes/component/vial_drop_component.tscn" id="3_pcrk2"]
 [ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component.tscn" id="4_bq7hi"]
 [ext_resource type="PackedScene" uid="uid://d5l8117qmu3d" path="res://scenes/component/hurtbox_component.tscn" id="4_elloc"]
+[ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://scenes/component/hit_flash_component.gdshader" id="5_jkye5"]
+[ext_resource type="PackedScene" uid="uid://bg05buf3ev5eg" path="res://scenes/component/velocity_component.tscn" id="6_t4oqy"]
+[ext_resource type="PackedScene" uid="uid://ff8i0llbatvj" path="res://scenes/component/death_component.tscn" id="6_v58qd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v58qd"]
+resource_local_to_scene = true
+shader = ExtResource("5_jkye5")
+shader_parameter/lerp_percent = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bq7hi"]
 radius = 12.0
@@ -15,9 +23,11 @@ radius = 5.0
 
 [node name="BasicEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 12
-collision_mask = 6
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_4fs2a")
+
+[node name="VelocityComponent" parent="." instance=ExtResource("6_t4oqy")]
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_isd1k")]
 
@@ -26,24 +36,26 @@ health_component = NodePath("../HealthComponent")
 
 [node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("4_bq7hi")]
 health_component = NodePath("../HealthComponent")
-sprite = NodePath("../Sprite2D")
+sprite = NodePath("../Visuals/Sprite2D")
+hit_flash_material = SubResource("ShaderMaterial_v58qd")
+
+[node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("6_v58qd")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Visuals/Sprite2D")
 
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_elloc")]
-unique_name_in_owner = true
-collision_mask = 8
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
-visible = false
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_bq7hi")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-unique_name_in_owner = true
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
 texture = ExtResource("2_8bf31")
 offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_rmgeo")
