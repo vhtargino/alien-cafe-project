@@ -1,9 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://duy34q0exwehe"]
+[gd_scene load_steps=13 format=3 uid="uid://duy34q0exwehe"]
 
 [ext_resource type="Script" uid="uid://dxlfrc1brodwd" path="res://scenes/game_object/player/player.gd" id="1_chboc"]
 [ext_resource type="PackedScene" uid="uid://hhx6iyx5cxh" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_h7tiq"]
-[ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component.tscn" id="2_ss5pk"]
+[ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component/health_component.tscn" id="2_ss5pk"]
 [ext_resource type="SpriteFrames" uid="uid://dagtd40gw1ynx" path="res://resources/main_char_sprites.tres" id="2_vs77x"]
+[ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="3_rix40"]
+[ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="4_rix40"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dy4tu"]
+resource_local_to_scene = true
+shader = ExtResource("4_rix40")
+shader_parameter/lerp_percent = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss5pk"]
 bg_color = Color(0.247059, 0.14902, 0.192157, 1)
@@ -31,6 +38,11 @@ motion_mode = 1
 script = ExtResource("1_chboc")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_ss5pk")]
+
+[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "animated_sprite") instance=ExtResource("3_rix40")]
+health_component = NodePath("../HealthComponent")
+animated_sprite = NodePath("../Visuals/PlayerSprite")
+hit_flash_material = SubResource("ShaderMaterial_dy4tu")
 
 [node name="Abilities" type="Node" parent="."]
 
@@ -68,6 +80,7 @@ shape = SubResource("CircleShape2D_s3670")
 unique_name_in_owner = true
 sprite_frames = ExtResource("2_vs77x")
 animation = &"player_idle"
+frame_progress = 0.319406
 offset = Vector2(0, -10)
 
 [node name="CollisionArea2D" type="Area2D" parent="."]

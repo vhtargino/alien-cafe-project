@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://duy34q0exwehe" path="res://scenes/game_object/player/player.tscn" id="1_epw2h"]
 [ext_resource type="TileSet" uid="uid://cjus4s76be4k4" path="res://resources/tileset.tres" id="1_ofl7a"]
 [ext_resource type="PackedScene" uid="uid://om3dwg1ecqln" path="res://scenes/manager/arena_time_manager/arena_time_manager.tscn" id="2_6q06x"]
-[ext_resource type="PackedScene" uid="uid://da6rj72jqwqbt" path="res://scenes/ui/end_screen.tscn" id="2_a8run"]
-[ext_resource type="PackedScene" uid="uid://1kuoy5l1c0be" path="res://scenes/ui/experience_bar.tscn" id="2_hujxm"]
+[ext_resource type="PackedScene" uid="uid://da6rj72jqwqbt" path="res://scenes/ui/end_screen/end_screen.tscn" id="2_a8run"]
+[ext_resource type="PackedScene" uid="uid://1kuoy5l1c0be" path="res://scenes/ui/experience_bar/experience_bar.tscn" id="2_hujxm"]
 [ext_resource type="PackedScene" uid="uid://dtlqrknqemekh" path="res://scenes/manager/experience_manager/experience_manager.tscn" id="4_hujxm"]
-[ext_resource type="PackedScene" uid="uid://cgo6p22slx0sn" path="res://scenes/ui/arena_time_ui.tscn" id="4_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://cgo6p22slx0sn" path="res://scenes/ui/arena_time_ui/arena_time_ui.tscn" id="4_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://cegr05gx1wvyo" path="res://scenes/manager/upgrade_manager/upgrade_manager.tscn" id="6_yyfjg"]
 
 [node name="Main" type="Node2D"]

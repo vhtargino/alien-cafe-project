@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cgo6p22slx0sn"]
 
-[ext_resource type="Script" uid="uid://sqchc7haln2s" path="res://scenes/ui/arena_time_ui.gd" id="1_oa7xr"]
+[ext_resource type="Script" uid="uid://sqchc7haln2s" path="res://scenes/ui/arena_time_ui/arena_time_ui.gd" id="1_oa7xr"]
 
 [node name="ArenaTimeUI" type="CanvasLayer"]
 script = ExtResource("1_oa7xr")

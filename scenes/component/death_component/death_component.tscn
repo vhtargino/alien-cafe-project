@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ff8i0llbatvj"]
 
-[ext_resource type="Script" uid="uid://byayy7ah8137k" path="res://scenes/component/death_component.gd" id="1_iwr6c"]
+[ext_resource type="Script" uid="uid://byayy7ah8137k" path="res://scenes/component/death_component/death_component.gd" id="1_iwr6c"]
 
 [sub_resource type="Animation" id="Animation_sn7fp"]
 length = 0.001

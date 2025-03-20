@@ -4,7 +4,7 @@ class_name HurtboxComponent
 @export var health_component: Node
 #@export var floating_text_scene: PackedScene
 
-var floating_text_scene = preload("res://scenes/ui/floating_text.tscn")
+var floating_text_scene = preload("res://scenes/ui/floating_text/floating_text.tscn")
 
 
 func _ready():

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://om3dwg1ecqln"]
 
 [ext_resource type="Script" uid="uid://bbfutfs4fsllj" path="res://scenes/manager/arena_time_manager/arena_time_manager.gd" id="1_h76kk"]
-[ext_resource type="PackedScene" uid="uid://da6rj72jqwqbt" path="res://scenes/ui/end_screen.tscn" id="2_vt4lv"]
+[ext_resource type="PackedScene" uid="uid://da6rj72jqwqbt" path="res://scenes/ui/end_screen/end_screen.tscn" id="2_vt4lv"]
 
 [node name="ArenaTimeManager" type="Node"]
 script = ExtResource("1_h76kk")

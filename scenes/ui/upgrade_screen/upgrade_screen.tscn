@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cim4wq4tak2e0"]
 
-[ext_resource type="PackedScene" uid="uid://cu5jy6ihbkhxs" path="res://scenes/ui/ability_upgrade_card.tscn" id="1_clnow"]
-[ext_resource type="Script" uid="uid://blbv1y6erh4nd" path="res://scenes/ui/upgrade_screen.gd" id="1_eg2gl"]
+[ext_resource type="PackedScene" uid="uid://cu5jy6ihbkhxs" path="res://scenes/ui/ability_upgrade_card/ability_upgrade_card.tscn" id="1_clnow"]
+[ext_resource type="Script" uid="uid://blbv1y6erh4nd" path="res://scenes/ui/upgrade_screen/upgrade_screen.gd" id="1_eg2gl"]
 
 [node name="UpgradeScreen" type="CanvasLayer"]
 process_mode = 3
