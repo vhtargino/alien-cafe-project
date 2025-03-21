@@ -32,10 +32,11 @@ max_speed = 60
 acceleration = 4.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_74qiw")]
-max_health = 30.0
+max_health = 20.0
 
 [node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_h4ano")]
 health_component = NodePath("../HealthComponent")
+experience_amount = 2.0
 
 [node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("4_7kpoi")]
 health_component = NodePath("../HealthComponent")

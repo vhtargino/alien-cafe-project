@@ -5,4 +5,4 @@
 
 [node name="VialDropComponent" type="Node"]
 script = ExtResource("1_l1ouf")
-vial_scene = ExtResource("2_txokj")
+experience_vial_scene = ExtResource("2_txokj")

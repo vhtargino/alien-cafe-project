@@ -3,9 +3,13 @@ extends Node2D
 @onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var sprite: Sprite2D = $Sprite2D
 
+@export var experience_amount: float
+
+var alternative_experience_vial = preload("res://scenes/game_object/experience_vial/experience_vial_2.png")
 
 
 func _ready():
+	change_sprite()
 	$Area2D.area_entered.connect(on_area_entered)
 
 
@@ -26,8 +30,15 @@ func disable_collision():
 
 
 func collect():
-	GameEvents.emit_experience_vial_collected(1)
+	GameEvents.emit_experience_vial_collected(experience_amount)
 	queue_free()
+
+
+func change_sprite():
+	if experience_amount > 1:
+		sprite.texture = alternative_experience_vial
+	else:
+		return
 
 
 func on_area_entered(_other_area: Area2D):
