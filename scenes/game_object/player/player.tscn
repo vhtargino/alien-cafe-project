@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://duy34q0exwehe"]
+[gd_scene load_steps=14 format=3 uid="uid://duy34q0exwehe"]
 
 [ext_resource type="Script" uid="uid://dxlfrc1brodwd" path="res://scenes/game_object/player/player.gd" id="1_chboc"]
 [ext_resource type="PackedScene" uid="uid://hhx6iyx5cxh" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_h7tiq"]
+[ext_resource type="PackedScene" uid="uid://bg05buf3ev5eg" path="res://scenes/component/velocity_component/velocity_component.tscn" id="2_rix40"]
 [ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component/health_component.tscn" id="2_ss5pk"]
 [ext_resource type="SpriteFrames" uid="uid://dagtd40gw1ynx" path="res://resources/main_char_sprites.tres" id="2_vs77x"]
 [ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="3_rix40"]
@@ -36,6 +37,10 @@ radius = 5.0
 collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_chboc")
+
+[node name="VelocityComponent" parent="." instance=ExtResource("2_rix40")]
+max_speed = 70
+acceleration = 70.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_ss5pk")]
 

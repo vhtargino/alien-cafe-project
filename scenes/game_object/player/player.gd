@@ -3,19 +3,21 @@ extends CharacterBody2D
 var horizontal_queue = []
 var vertical_queue = []
 
-var character_speed = 70
-
 @onready var sprite = %PlayerSprite
 @onready var health_component = $HealthComponent
 @onready var damage_interval_timer = $DamageIntervalTimer
 @onready var health_bar = $HealthBar
 @onready var abilities = $Abilities
 @onready var visuals: Node2D = $Visuals
+@onready var velocity_component: Node = $VelocityComponent
 
 var number_colliding_bodies = 0
+var base_speed = 0
 
 
 func _ready():
+	base_speed = velocity_component.max_speed
+	
 	$CollisionArea2D.body_entered.connect(on_body_entered)
 	$CollisionArea2D.body_exited.connect(on_body_exited)
 	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
@@ -26,8 +28,9 @@ func _ready():
 
 func _process(_delta: float):
 	var movement_vector = get_movement_vector()
-	velocity = movement_vector.normalized() * character_speed
-	move_and_slide()
+	var direction = movement_vector.normalized()
+	velocity_component.accelerate_in_direction(direction)
+	velocity_component.move(self)
 	
 	if movement_vector.x != 0 or movement_vector.y != 0:
 		sprite.play("player_walk")
@@ -105,8 +108,9 @@ func on_health_changed():
 
 
 func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades: Dictionary):
-	if not ability_upgrade is Ability:
-		return
-	
-	#var ability = ability_upgrade as Ability
-	abilities.add_child(ability_upgrade.ability_controller_scene.instantiate())
+	if ability_upgrade is Ability:
+		var ability = ability_upgrade as Ability
+		abilities.add_child(ability_upgrade.ability_controller_scene.instantiate())
+	elif ability_upgrade.id == "player_speed":
+		velocity_component.max_speed = base_speed + (base_speed * current_upgrades["player_speed"]["quantity"] * .1)
+		

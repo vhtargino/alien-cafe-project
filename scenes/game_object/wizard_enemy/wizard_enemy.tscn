@@ -29,7 +29,6 @@ script = ExtResource("1_sjtyn")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("3_qct4f")]
 max_speed = 60
-acceleration = 4.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_74qiw")]
 max_health = 20.0

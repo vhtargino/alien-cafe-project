@@ -10,12 +10,14 @@ var upgrade_axe = preload("res://resources/upgrades/axe.tres")
 var upgrade_axe_damage = preload("res://resources/upgrades/axe_damage.tres")
 var upgrade_sword_rate = preload("res://resources/upgrades/sword_rate.tres")
 var upgrade_sword_damage = preload("res://resources/upgrades/sword_damage.tres")
+var upgrade_player_speed = preload("res://resources/upgrades/player_speed.tres")
 
 
 func _ready():
 	upgrade_pool.add_item(upgrade_axe, 10)
 	upgrade_pool.add_item(upgrade_sword_rate, 10)
 	upgrade_pool.add_item(upgrade_sword_damage, 10)
+	upgrade_pool.add_item(upgrade_player_speed, 5)
 	
 	experience_manager.level_up.connect(on_level_up)
 
@@ -46,7 +48,7 @@ func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
 
 func pick_upgrades():
 	var chosen_upgrades: Array[AbilityUpgrade] = []
-	for i in 2:
+	for i in 3:
 		if upgrade_pool.items.size() == chosen_upgrades.size():
 			break
 		var chosen_upgrade = upgrade_pool.pick_item(chosen_upgrades)
@@ -60,8 +62,6 @@ func on_upgrade_selected(upgrade: AbilityUpgrade):
 
 
 func on_level_up(_current_level: int):
-	
-	
 	var upgrade_screen_instance = upgrade_screen_scene.instantiate()
 	add_child(upgrade_screen_instance)
 	var chosen_upgrades = pick_upgrades()
