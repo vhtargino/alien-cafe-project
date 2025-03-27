@@ -7,4 +7,6 @@ script = ExtResource("1_ocgv3")
 id = "player_speed"
 max_quantity = 8
 name = "Move speed"
+type = "power_up"
+sub_type = "player_speed"
 description = "Increases player move speed by 10%"

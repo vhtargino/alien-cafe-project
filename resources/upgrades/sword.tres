@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://crxdofyplx1lp"]
+
+[ext_resource type="PackedScene" uid="uid://hhx6iyx5cxh" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="1_acgx6"]
+[ext_resource type="Script" uid="uid://dcbylr71isyxe" path="res://resources/upgrades/ability.gd" id="2_h6d1q"]
+
+[resource]
+script = ExtResource("2_h6d1q")
+ability_controller_scene = ExtResource("1_acgx6")
+id = "sword"
+max_quantity = 1
+name = "Sword"
+type = "weapon"
+sub_type = "sword"
+description = "Periodically attacks enemy around with a floating sword"

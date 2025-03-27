@@ -3,14 +3,17 @@ extends Node
 @export var experience_manager: Node
 @export var upgrade_screen_scene: PackedScene
 
-var current_upgrades = {}
-var upgrade_pool: WeightedTable = WeightedTable.new()
-
+var initial_sword = preload("res://resources/upgrades/sword.tres")
 var upgrade_axe = preload("res://resources/upgrades/axe.tres")
 var upgrade_axe_damage = preload("res://resources/upgrades/axe_damage.tres")
+var upgrade_axe_rate = preload("res://resources/upgrades/axe_rate.tres")
+var upgrade_axe_range = preload("res://resources/upgrades/axe_range.tres")
 var upgrade_sword_rate = preload("res://resources/upgrades/sword_rate.tres")
 var upgrade_sword_damage = preload("res://resources/upgrades/sword_damage.tres")
 var upgrade_player_speed = preload("res://resources/upgrades/player_speed.tres")
+
+var current_upgrades = {}
+var upgrade_pool: WeightedTable = WeightedTable.new()
 
 
 func _ready():
@@ -20,6 +23,8 @@ func _ready():
 	upgrade_pool.add_item(upgrade_player_speed, 5)
 	
 	experience_manager.level_up.connect(on_level_up)
+	
+	current_upgrades[initial_sword.id] = {"resource": initial_sword, "quantity": 1}
 
 
 func apply_upgrade(upgrade: AbilityUpgrade):
@@ -44,6 +49,8 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
 	if chosen_upgrade.id == upgrade_axe.id:
 		upgrade_pool.add_item(upgrade_axe_damage, 10)
+		upgrade_pool.add_item(upgrade_axe_rate, 10)
+		upgrade_pool.add_item(upgrade_axe_range, 10)
 
 
 func pick_upgrades():
