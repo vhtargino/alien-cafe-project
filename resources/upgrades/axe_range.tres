@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource("1_0l0re")
 id = "axe_range"
-max_quantity = 0
-name = "Axe Range"
+max_quantity = 2
+name = "axe"
 type = "weapon"
-sub_type = "axe"
+sub_type = "weapon_upgrade"
 description = "Increases axe range by 10%"

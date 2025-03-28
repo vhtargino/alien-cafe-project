@@ -3,14 +3,18 @@ extends Node
 @export var experience_manager: Node
 @export var upgrade_screen_scene: PackedScene
 
-var initial_sword = preload("res://resources/upgrades/sword.tres")
-var upgrade_axe = preload("res://resources/upgrades/axe.tres")
+var initial_sword = preload("res://resources/upgrades/sword_main.tres")
+var upgrade_sword_rate = preload("res://resources/upgrades/sword_rate.tres")
+var upgrade_sword_damage = preload("res://resources/upgrades/sword_damage.tres")
+var upgrade_sword_range = preload("res://resources/upgrades/sword_range.tres")
+
+var upgrade_axe = preload("res://resources/upgrades/axe_main.tres")
 var upgrade_axe_damage = preload("res://resources/upgrades/axe_damage.tres")
 var upgrade_axe_rate = preload("res://resources/upgrades/axe_rate.tres")
 var upgrade_axe_range = preload("res://resources/upgrades/axe_range.tres")
-var upgrade_sword_rate = preload("res://resources/upgrades/sword_rate.tres")
-var upgrade_sword_damage = preload("res://resources/upgrades/sword_damage.tres")
+
 var upgrade_player_speed = preload("res://resources/upgrades/player_speed.tres")
+var upgrade_pickup_range = preload("res://resources/upgrades/pickup_range.tres")
 
 var current_upgrades = {}
 var upgrade_pool: WeightedTable = WeightedTable.new()
@@ -20,7 +24,9 @@ func _ready():
 	upgrade_pool.add_item(upgrade_axe, 10)
 	upgrade_pool.add_item(upgrade_sword_rate, 10)
 	upgrade_pool.add_item(upgrade_sword_damage, 10)
+	upgrade_pool.add_item(upgrade_sword_range, 10)
 	upgrade_pool.add_item(upgrade_player_speed, 5)
+	upgrade_pool.add_item(upgrade_pickup_range, 5)
 	
 	experience_manager.level_up.connect(on_level_up)
 	
@@ -69,8 +75,12 @@ func on_upgrade_selected(upgrade: AbilityUpgrade):
 
 
 func on_level_up(_current_level: int):
+	var chosen_upgrades = pick_upgrades()
+	if chosen_upgrades.size() == 0:
+		# Implementar lógica para quando acabarem os upgrades disponíveis
+		return
+	
 	var upgrade_screen_instance = upgrade_screen_scene.instantiate()
 	add_child(upgrade_screen_instance)
-	var chosen_upgrades = pick_upgrades()
 	upgrade_screen_instance.set_ability_upgrades(chosen_upgrades as Array[AbilityUpgrade])
 	upgrade_screen_instance.upgrade_selected.connect(on_upgrade_selected)

@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("2_h6d1q")
 ability_controller_scene = ExtResource("1_acgx6")
-id = "sword"
+id = "sword_main"
 max_quantity = 1
-name = "Sword"
+name = "sword"
 type = "weapon"
-sub_type = "sword"
+sub_type = "weapon_main"
 description = "Periodically attacks enemy around with a floating sword"

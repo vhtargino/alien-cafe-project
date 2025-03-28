@@ -11,7 +11,7 @@ func _ready():
 
 
 func set_ability_upgrade(upgrade: AbilityUpgrade):
-	name_label.text = upgrade.name
+	name_label.text = upgrade.name.capitalize()
 	description_label.text = upgrade.description
 
 

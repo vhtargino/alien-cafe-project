@@ -51,5 +51,7 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Diction
 		var percent_reduction = current_upgrades["sword_rate"]["quantity"] * .1
 		$Timer.wait_time = base_wait_time * (1 - percent_reduction)
 		$Timer.start()
-	if upgrade.id == "sword_damage":
+	elif upgrade.id == "sword_damage":
 		additional_damage_percent = 1 + (current_upgrades["sword_damage"]["quantity"] * .15)
+	elif upgrade.id == "sword_range":
+		max_range *= 1.15 # Limpar para o acesso ficar indireto

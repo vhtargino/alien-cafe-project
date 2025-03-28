@@ -40,11 +40,9 @@ func on_timer_timeout():
 func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):
 	if upgrade.id == "axe_damage":
 		additional_damage_percent = 1 + (current_upgrades["axe_damage"]["quantity"] * .1)
-	
-	if upgrade.id == "axe_rate":
+	elif upgrade.id == "axe_rate":
 		var percent_reduction = current_upgrades["axe_rate"]["quantity"] * .1
 		$Timer.wait_time = base_wait_time * (1 - percent_reduction)
 		$Timer.start()
-	
-	if upgrade.id == "axe_range":
+	elif upgrade.id == "axe_range":
 		additional_range_percent = 1 + (current_upgrades["axe_range"]["quantity"] * .1)

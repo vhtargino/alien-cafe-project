@@ -10,6 +10,7 @@ var vertical_queue = []
 @onready var abilities = $Abilities
 @onready var visuals: Node2D = $Visuals
 @onready var velocity_component: Node = $VelocityComponent
+@onready var pickup_area_collision: CollisionShape2D = $PickupArea2D/CollisionShape2D
 
 var number_colliding_bodies = 0
 var base_speed = 0
@@ -112,5 +113,6 @@ func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades:
 		var ability = ability_upgrade as Ability
 		abilities.add_child(ability_upgrade.ability_controller_scene.instantiate())
 	elif ability_upgrade.id == "player_speed":
-		velocity_component.max_speed = base_speed + (base_speed * current_upgrades["player_speed"]["quantity"] * .1)
-		
+		velocity_component.max_speed = base_speed + (base_speed * current_upgrades["player_speed"]["quantity"] * .15)
+	elif ability_upgrade.id == "pickup_range":
+		pickup_area_collision.shape.radius *= 1.2 # Limpar para o acesso ficar indireto
