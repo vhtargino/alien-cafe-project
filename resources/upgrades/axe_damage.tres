@@ -9,4 +9,4 @@ max_quantity = 4
 name = "axe"
 type = "weapon"
 sub_type = "weapon_upgrade"
-description = "Increases axe attack damage by 10%"
+description = "Axe damage is increased by 10%"

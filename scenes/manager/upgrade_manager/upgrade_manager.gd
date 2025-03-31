@@ -64,7 +64,9 @@ func pick_upgrades():
 	for i in 3:
 		if upgrade_pool.items.size() == chosen_upgrades.size():
 			break
+		
 		var chosen_upgrade = upgrade_pool.pick_item(chosen_upgrades)
+		
 		chosen_upgrades.append(chosen_upgrade)
 	
 	return chosen_upgrades
@@ -77,7 +79,6 @@ func on_upgrade_selected(upgrade: AbilityUpgrade):
 func on_level_up(_current_level: int):
 	var chosen_upgrades = pick_upgrades()
 	if chosen_upgrades.size() == 0:
-		# Implementar lógica para quando acabarem os upgrades disponíveis
 		return
 	
 	var upgrade_screen_instance = upgrade_screen_scene.instantiate()

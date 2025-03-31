@@ -9,4 +9,4 @@ max_quantity = 2
 name = "sword"
 type = "weapon"
 sub_type = "weapon_upgrade"
-description = "Increases sword attack range by 15%"
+description = "Increases the range of the sword by 15%"
