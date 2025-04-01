@@ -33,7 +33,7 @@ func on_timer_timeout():
 	axe_instance.tween_to = base_tween_to * additional_range_percent
 	axe_instance.tween_duration = base_tween_duration * additional_range_percent
 	foreground_layer.add_child(axe_instance)
-	axe_instance.global_position = player.global_position
+	#axe_instance.global_position = player.global_position
 	axe_instance.hitbox_component.damage = base_damage * additional_damage_percent
 
 

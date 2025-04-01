@@ -6,14 +6,18 @@ extends Node
 var initial_sword = preload("res://resources/upgrades/sword_main.tres")
 var upgrade_sword_rate = preload("res://resources/upgrades/sword_rate.tres")
 var upgrade_sword_damage = preload("res://resources/upgrades/sword_damage.tres")
-var upgrade_sword_range = preload("res://resources/upgrades/sword_range.tres")
 
 var upgrade_axe = preload("res://resources/upgrades/axe_main.tres")
 var upgrade_axe_damage = preload("res://resources/upgrades/axe_damage.tres")
 var upgrade_axe_rate = preload("res://resources/upgrades/axe_rate.tres")
 var upgrade_axe_range = preload("res://resources/upgrades/axe_range.tres")
 
+var upgrade_spear = preload("res://resources/upgrades/spear_main.tres")
+var upgrade_spear_damage = preload("res://resources/upgrades/spear_damage.tres")
+var upgrade_spear_rate = preload("res://resources/upgrades/spear_rate.tres")
+
 var upgrade_player_speed = preload("res://resources/upgrades/player_speed.tres")
+var upgrade_player_health = preload("res://resources/upgrades/player_health.tres")
 var upgrade_pickup_range = preload("res://resources/upgrades/pickup_range.tres")
 
 var current_upgrades = {}
@@ -22,10 +26,14 @@ var upgrade_pool: WeightedTable = WeightedTable.new()
 
 func _ready():
 	upgrade_pool.add_item(upgrade_axe, 10)
+	
+	upgrade_pool.add_item(upgrade_spear, 10)
+
 	upgrade_pool.add_item(upgrade_sword_rate, 10)
 	upgrade_pool.add_item(upgrade_sword_damage, 10)
-	upgrade_pool.add_item(upgrade_sword_range, 10)
+	
 	upgrade_pool.add_item(upgrade_player_speed, 5)
+	upgrade_pool.add_item(upgrade_player_health, 5)
 	upgrade_pool.add_item(upgrade_pickup_range, 5)
 	
 	experience_manager.level_up.connect(on_level_up)
@@ -57,7 +65,10 @@ func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
 		upgrade_pool.add_item(upgrade_axe_damage, 10)
 		upgrade_pool.add_item(upgrade_axe_rate, 10)
 		upgrade_pool.add_item(upgrade_axe_range, 10)
-
+	elif chosen_upgrade.id == upgrade_spear.id:
+		upgrade_pool.add_item(upgrade_spear_damage, 10)
+		upgrade_pool.add_item(upgrade_spear_rate, 10)
+	
 
 func pick_upgrades():
 	var chosen_upgrades: Array[AbilityUpgrade] = []

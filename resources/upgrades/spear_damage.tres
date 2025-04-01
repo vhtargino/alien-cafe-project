@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://vh7f0ijbu4r8"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://27um5j1420wi"]
 
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_xqdqh"]
 
 [resource]
 script = ExtResource("1_xqdqh")
-id = "sword_damage"
-max_quantity = 5
-name = "sword"
+id = "spear_damage"
+max_quantity = 3
+name = "spear"
 type = "weapon"
 sub_type = "weapon_upgrade"
-description = "Sword damage is increased by 15%"
+description = "Increases spear damage by 10%"

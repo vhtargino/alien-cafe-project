@@ -1,12 +1,14 @@
 extends Node
 
-var max_range = 150
+var max_range = 250
 
-@export var sword_ability: PackedScene
+@export var spear_ability: PackedScene
 
-var base_damage = 5
+var base_damage = 7
 var additional_damage_percent = 1
 var base_wait_time
+
+var speed = 300
 
 
 func _ready() -> void:
@@ -34,22 +36,33 @@ func on_timer_timeout():
 		return a_distance < b_distance
 	)
 	
-	var sword_instance = sword_ability.instantiate() as SwordAbility
+	var spear_instance = spear_ability.instantiate() as SpearAbility
 	var foreground_layer = get_tree().get_first_node_in_group("foreground_layer")
-	foreground_layer.add_child(sword_instance)
-	sword_instance.hitbox_component.damage = base_damage * additional_damage_percent
+	foreground_layer.add_child(spear_instance)
+	spear_instance.hitbox_component.damage = base_damage * additional_damage_percent
 	
-	sword_instance.global_position = enemies[0].global_position
-	sword_instance.global_position += Vector2.RIGHT.rotated(randf_range(0, TAU)) * 4
+	spear_instance.global_position = player.global_position
 	
-	var enemy_direction = enemies[0].global_position - sword_instance.global_position
-	sword_instance.rotation = enemy_direction.angle()
+	var target_enemy = enemies[0]
+	spear_instance.look_at(target_enemy.global_position)
+	spear_instance.rotation += PI / 2
+	
+	var distance = spear_instance.global_position.distance_to(target_enemy.global_position)
+	var time = distance / speed
+	
+	var tween = spear_instance.create_tween()
+	tween.tween_property(spear_instance, "global_position", target_enemy.global_position, time)\
+	.set_trans(Tween.TRANS_LINEAR)\
+	.set_ease(Tween.EASE_OUT)
+	
+	await tween.finished
+	spear_instance.queue_free()
 
 
 func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):
-	if upgrade.id == "sword_rate":
-		var percent_reduction = current_upgrades["sword_rate"]["quantity"] * .1
+	if upgrade.id == "spear_rate":
+		var percent_reduction = current_upgrades["spear_rate"]["quantity"] * .15
 		$Timer.wait_time = base_wait_time * (1 - percent_reduction)
 		$Timer.start()
-	elif upgrade.id == "sword_damage":
-		additional_damage_percent = 1 + (current_upgrades["sword_damage"]["quantity"] * .15)
+	elif upgrade.id == "spear_damage":
+		additional_damage_percent = 1 + (current_upgrades["spear_damage"]["quantity"] * .1)

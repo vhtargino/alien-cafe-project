@@ -1,8 +1,5 @@
 extends CharacterBody2D
 
-var horizontal_queue = []
-var vertical_queue = []
-
 @onready var sprite = %PlayerSprite
 @onready var health_component = $HealthComponent
 @onready var damage_interval_timer = $DamageIntervalTimer
@@ -14,6 +11,8 @@ var vertical_queue = []
 
 var number_colliding_bodies = 0
 var base_speed = 0
+
+var health_increase_percent = 1
 
 
 func _ready():
@@ -48,36 +47,6 @@ func get_movement_vector():
 	var y_movement = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	
 	return Vector2(x_movement, y_movement)
-
-
-#func get_movement_vector() -> Vector2:
-	## Atualiza filas removendo teclas soltas e adicionando novas pressionadas
-	#horizontal_queue = horizontal_queue.filter(Input.is_action_pressed)
-	#vertical_queue = vertical_queue.filter(Input.is_action_pressed)
-#
-	#for action in ["move_right", "move_left"]:
-		#if Input.is_action_just_pressed(action):
-			#horizontal_queue.append(action)
-#
-	#for action in ["move_down", "move_up"]:
-		#if Input.is_action_just_pressed(action):
-			#vertical_queue.append(action)
-#
-	#if vertical_queue or horizontal_queue:
-		#sprite.play("player_walk")
-	#else:
-		#sprite.play("player_idle")
-		#
-	#if horizontal_queue and horizontal_queue[-1] == "move_left":
-		#sprite.flip_h = true
-	#if horizontal_queue and horizontal_queue[-1] == "move_right":
-		#sprite.flip_h = false
-#
-	## Define os valores diretamente, eliminando verificações desnecessárias
-	#var x_input = 1 if horizontal_queue and horizontal_queue[-1] == "move_right" else -1 if horizontal_queue else 0
-	#var y_input = 1 if vertical_queue and vertical_queue[-1] == "move_down" else -1 if vertical_queue else 0
-#
-	#return Vector2(x_input, y_input)
 
 
 func update_health_display():
@@ -115,4 +84,7 @@ func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades:
 	elif ability_upgrade.id == "player_speed":
 		velocity_component.max_speed = base_speed + (base_speed * current_upgrades["player_speed"]["quantity"] * .15)
 	elif ability_upgrade.id == "pickup_range":
-		pickup_area_collision.shape.radius *= 1.2 # Limpar para o acesso ficar indireto
+		pickup_area_collision.shape.radius *= 1.2 # Limpar
+	elif ability_upgrade.id == "player_health":
+		health_component.max_health = health_component.max_health + (health_component.max_health * .15)
+		health_component.current_health = health_component.current_health + (health_component.current_health * .15)
