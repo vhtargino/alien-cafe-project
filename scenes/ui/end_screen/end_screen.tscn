@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://da6rj72jqwqbt"]
+[gd_scene load_steps=3 format=3 uid="uid://da6rj72jqwqbt"]
 
 [ext_resource type="Script" uid="uid://dqwgqfvs8xsof" path="res://scenes/ui/end_screen/end_screen.gd" id="1_4ttpn"]
+[ext_resource type="PackedScene" uid="uid://daxd3e0ew2exd" path="res://scenes/ui/sound_button/sound_button.tscn" id="2_20hmq"]
 
 [node name="EndScreen" type="CanvasLayer"]
 process_mode = 3
@@ -41,12 +42,12 @@ layout_mode = 2
 text = "You won!"
 horizontal_alignment = 1
 
-[node name="RestartButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="RestartButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_20hmq")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Restart"
 
-[node name="QuitToMenuButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="QuitToMenuButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_20hmq")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Quit to Menu"

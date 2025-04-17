@@ -14,6 +14,8 @@ var base_speed = 0
 
 var health_increase_percent = 1
 
+var attack_speed_multiplier: float = 1.0
+
 
 func _ready():
 	base_speed = velocity_component.max_speed
@@ -60,12 +62,12 @@ func check_deal_damage():
 	damage_interval_timer.start()
 
 
-func on_body_entered(other_body: Node2D):
+func on_body_entered(_other_body: Node2D):
 	number_colliding_bodies += 1
 	check_deal_damage()
 
 
-func on_body_exited(other_body: Node2D):
+func on_body_exited(_other_body: Node2D):
 	number_colliding_bodies -= 1
 
 
@@ -78,8 +80,11 @@ func on_health_changed():
 
 
 func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades: Dictionary):
+	if ability_upgrade == null:
+		return
+	
 	if ability_upgrade is Ability:
-		var ability = ability_upgrade as Ability
+		var _ability = ability_upgrade as Ability
 		abilities.add_child(ability_upgrade.ability_controller_scene.instantiate())
 	elif ability_upgrade.id == "player_speed":
 		velocity_component.max_speed = base_speed + (base_speed * current_upgrades["player_speed"]["quantity"] * .15)
@@ -88,3 +93,7 @@ func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades:
 	elif ability_upgrade.id == "player_health":
 		health_component.max_health = health_component.max_health + (health_component.max_health * .15)
 		health_component.current_health = health_component.current_health + (health_component.current_health * .15)
+
+
+func set_attack_speed_multiplier(multiplier: float):
+	attack_speed_multiplier = multiplier

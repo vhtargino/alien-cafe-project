@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://duvmucstpqrss"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://duvmucstpqrss"]
 
+[ext_resource type="Texture2D" uid="uid://48ov4j8bxk0n" path="res://resources/upgrades/life.png" id="1_l7g11"]
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_t7uv4"]
 
 [resource]
 script = ExtResource("1_t7uv4")
+image = ExtResource("1_l7g11")
 id = "player_health"
 max_quantity = 6
 name = "max health"

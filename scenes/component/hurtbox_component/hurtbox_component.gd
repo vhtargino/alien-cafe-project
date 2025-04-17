@@ -1,6 +1,8 @@
 extends Area2D
 class_name HurtboxComponent
 
+signal hit
+
 @export var health_component: Node
 #@export var floating_text_scene: PackedScene
 
@@ -12,6 +14,7 @@ func _ready():
 
 
 func on_area_entered(other_area: Area2D):
+	
 	if not other_area is HitboxComponent:
 		return
 	
@@ -28,3 +31,4 @@ func on_area_entered(other_area: Area2D):
 	floating_text_instance.global_position = global_position + (Vector2.UP * 8)
 	floating_text_instance.start(str(int(hitbox_component.damage * 10)))
 	
+	hit.emit()

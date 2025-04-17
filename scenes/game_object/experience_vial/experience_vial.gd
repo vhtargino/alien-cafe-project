@@ -53,3 +53,5 @@ func on_area_entered(_other_area: Area2D):
 	tween.chain()
 	tween.tween_callback(collect)
 	
+	await get_tree().create_timer(.45).timeout
+	$RandomStreamPlayerComponent.play_random()

@@ -2,6 +2,7 @@ extends PanelContainer
 
 signal selected
 
+@onready var ability_texture: TextureRect = %TextureRect
 @onready var name_label: Label = %NameLabel
 @onready var description_label: Label = %DescriptionLabel
 
@@ -11,6 +12,7 @@ func _ready():
 
 
 func set_ability_upgrade(upgrade: AbilityUpgrade):
+	ability_texture.texture = upgrade.image
 	name_label.text = upgrade.name.capitalize()
 	description_label.text = upgrade.description
 

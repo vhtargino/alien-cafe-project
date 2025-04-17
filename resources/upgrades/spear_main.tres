@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://cbg6a6h88tgqk"]
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://cbg6a6h88tgqk"]
 
 [ext_resource type="PackedScene" uid="uid://bo8q8s2mlev4l" path="res://scenes/ability/spear_ability_controller/spear_ability_controller.tscn" id="1_t43pb"]
+[ext_resource type="Texture2D" uid="uid://cllr0bor6ux5r" path="res://resources/upgrades/spear.png" id="2_qb63q"]
 [ext_resource type="Script" uid="uid://dcbylr71isyxe" path="res://resources/upgrades/ability.gd" id="2_y1aps"]
 
 [resource]
 script = ExtResource("2_y1aps")
 ability_controller_scene = ExtResource("1_t43pb")
+image = ExtResource("2_qb63q")
 id = "spear_main"
 max_quantity = 1
 name = "spear"

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwcs47owte5ef"]
+[gd_scene load_steps=3 format=3 uid="uid://bwcs47owte5ef"]
 
 [ext_resource type="Script" uid="uid://b5cfjitbvkuul" path="res://scenes/ui/main_menu/main_menu.gd" id="1_1ch07"]
+[ext_resource type="PackedScene" uid="uid://daxd3e0ew2exd" path="res://scenes/ui/sound_button/sound_button.tscn" id="2_e8t4i"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_1ch07")
@@ -30,15 +31,20 @@ theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 30
 text = "Alien Cafe"
 
-[node name="PlayButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="PlayButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_e8t4i")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Play"
 
-[node name="QuitGameButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="OptionsButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_e8t4i")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Options"
+
+[node name="QuitGameButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_e8t4i")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"

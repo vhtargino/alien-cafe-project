@@ -1,5 +1,7 @@
 extends Node
 
+signal ability_level_up(current_abilities_level: Dictionary)
+
 @export var experience_manager: Node
 @export var upgrade_screen_scene: PackedScene
 
@@ -23,6 +25,8 @@ var upgrade_pickup_range = preload("res://resources/upgrades/pickup_range.tres")
 var current_upgrades = {}
 var upgrade_pool: WeightedTable = WeightedTable.new()
 
+var abilities_current_level = {}
+
 
 func _ready():
 	upgrade_pool.add_item(upgrade_axe, 10)
@@ -39,6 +43,7 @@ func _ready():
 	experience_manager.level_up.connect(on_level_up)
 	
 	current_upgrades[initial_sword.id] = {"resource": initial_sword, "quantity": 1}
+	abilities_current_level[initial_sword.name] = {"image": initial_sword.image, "type": initial_sword.type, "level": 1}
 
 
 func apply_upgrade(upgrade: AbilityUpgrade):
@@ -58,6 +63,20 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 	
 	update_upgrade_pool(upgrade)
 	GameEvents.emit_ability_upgrade_added(upgrade, current_upgrades)
+
+
+func set_ability_level(upgrade: AbilityUpgrade):
+	var has_upgrade = abilities_current_level.has(upgrade.name)
+	if not has_upgrade:
+		abilities_current_level[upgrade.name] = {
+			"image": upgrade.image,
+			"type": upgrade.type,
+			"level": 1
+		}
+	else:
+		abilities_current_level[upgrade.name]["level"] += 1
+	
+	ability_level_up.emit(abilities_current_level)
 
 
 func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
@@ -85,6 +104,7 @@ func pick_upgrades():
 
 func on_upgrade_selected(upgrade: AbilityUpgrade):
 	apply_upgrade(upgrade)
+	set_ability_level(upgrade)
 
 
 func on_level_up(_current_level: int):
@@ -94,5 +114,6 @@ func on_level_up(_current_level: int):
 	
 	var upgrade_screen_instance = upgrade_screen_scene.instantiate()
 	add_child(upgrade_screen_instance)
+	
 	upgrade_screen_instance.set_ability_upgrades(chosen_upgrades as Array[AbilityUpgrade])
 	upgrade_screen_instance.upgrade_selected.connect(on_upgrade_selected)

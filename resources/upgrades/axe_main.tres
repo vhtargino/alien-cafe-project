@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://bjsxdxcet15sn"]
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://bjsxdxcet15sn"]
 
 [ext_resource type="PackedScene" uid="uid://csh61bot4cmh7" path="res://scenes/ability/axe_ability_controller/axe_ability_controller.tscn" id="1_lxg8a"]
 [ext_resource type="Script" uid="uid://dcbylr71isyxe" path="res://resources/upgrades/ability.gd" id="1_vgov1"]
+[ext_resource type="Texture2D" uid="uid://dhsndek5113no" path="res://resources/upgrades/axe.png" id="2_awstk"]
 
 [resource]
 script = ExtResource("1_vgov1")
 ability_controller_scene = ExtResource("1_lxg8a")
+image = ExtResource("2_awstk")
 id = "axe_main"
 max_quantity = 1
 name = "axe"

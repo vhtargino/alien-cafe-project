@@ -8,11 +8,35 @@ var base_damage = 5
 var additional_damage_percent = 1
 var base_wait_time
 
+var upgrade_rate_multiplier = 1.0
+var booster_rate_multiplier = 1.0
+
 
 func _ready() -> void:
+	var player = get_tree().get_first_node_in_group("player")
+	if player == null:
+		return
+	
 	base_wait_time = $Timer.wait_time
 	$Timer.timeout.connect(on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
+	GameEvents.dose_dupla_booster_applied.connect(on_dose_dupla_booster_applied)
+
+
+func update_timer_wait_time():
+	var final_multiplier = upgrade_rate_multiplier * booster_rate_multiplier
+	var final_wait_time = base_wait_time * final_multiplier
+	
+	#print("\n[SWORD] Atualizando wait_time")
+	#print("Base:", base_wait_time)
+	#print("Upgrade Multiplier:", upgrade_rate_multiplier)
+	#print("Booster Multiplier:", booster_rate_multiplier)
+	#print("Final wait_time:", final_wait_time)
+	
+	$Timer.wait_time = final_wait_time
+	$Timer.start()
+	
+	#print("Wait Time Atualizado: ", $Timer.wait_time)
 
 
 func on_timer_timeout():
@@ -48,8 +72,32 @@ func on_timer_timeout():
 
 func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):
 	if upgrade.id == "sword_rate":
-		var percent_reduction = current_upgrades["sword_rate"]["quantity"] * .1
-		$Timer.wait_time = base_wait_time * (1 - percent_reduction)
-		$Timer.start()
+		var percent_reduction = current_upgrades["sword_rate"]["quantity"] * 0.1
+		upgrade_rate_multiplier = 1.0 - percent_reduction
+		
+		#print("\n[SWORD UPGRADE] Upgrade de velocidade aplicado")
+		#print("Quantidade de upgrades:", current_upgrades["sword_rate"]["quantity"])
+		#print("Novo upgrade_rate_multiplier:", upgrade_rate_multiplier)
+		
+		update_timer_wait_time()
 	elif upgrade.id == "sword_damage":
 		additional_damage_percent = 1 + (current_upgrades["sword_damage"]["quantity"] * .15)
+
+
+func on_dose_dupla_booster_applied(duration: float):
+	var player = get_tree().get_first_node_in_group("player")
+	if player == null:
+		return
+	
+	#print("\n[BOOSTER] Dose Dupla Ativado")
+	#print("Player attack_speed_multiplier:", player.attack_speed_multiplier)
+	
+	booster_rate_multiplier = 1.0 / player.attack_speed_multiplier
+	update_timer_wait_time()
+
+	await get_tree().create_timer(duration).timeout
+	
+	#print("\n[BOOSTER] Dose Dupla Encerrado")
+	
+	booster_rate_multiplier = 1.0
+	update_timer_wait_time()

@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://27um5j1420wi"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://27um5j1420wi"]
 
+[ext_resource type="Texture2D" uid="uid://cllr0bor6ux5r" path="res://resources/upgrades/spear.png" id="1_gf2qr"]
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_xqdqh"]
 
 [resource]
 script = ExtResource("1_xqdqh")
+image = ExtResource("1_gf2qr")
 id = "spear_damage"
 max_quantity = 3
 name = "spear"
