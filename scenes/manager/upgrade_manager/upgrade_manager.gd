@@ -27,6 +27,11 @@ var upgrade_pool: WeightedTable = WeightedTable.new()
 
 var abilities_current_level = {}
 
+var current_weapons_quantity: int
+var max_weapons_quantity: int = 4
+var current_power_ups_quantity: int
+var max_power_ups_quantity: int = 4
+
 
 func _ready():
 	upgrade_pool.add_item(upgrade_axe, 10)
@@ -36,18 +41,27 @@ func _ready():
 	upgrade_pool.add_item(upgrade_sword_rate, 10)
 	upgrade_pool.add_item(upgrade_sword_damage, 10)
 	
-	upgrade_pool.add_item(upgrade_player_speed, 5)
-	upgrade_pool.add_item(upgrade_player_health, 5)
-	upgrade_pool.add_item(upgrade_pickup_range, 5)
+	upgrade_pool.add_item(upgrade_player_speed, 7)
+	upgrade_pool.add_item(upgrade_player_health, 7)
+	upgrade_pool.add_item(upgrade_pickup_range, 7)
 	
 	experience_manager.level_up.connect(on_level_up)
 	
 	current_upgrades[initial_sword.id] = {"resource": initial_sword, "quantity": 1}
 	abilities_current_level[initial_sword.name] = {"image": initial_sword.image, "type": initial_sword.type, "level": 1}
+	current_weapons_quantity = 1
 
 
 func apply_upgrade(upgrade: AbilityUpgrade):
 	var has_upgrade = current_upgrades.has(upgrade.id)
+	
+	if upgrade.sub_type == "weapon_main":
+		current_weapons_quantity += 1
+	
+	if upgrade.sub_type == "power_up_upgrade":
+		if not has_upgrade:
+			current_power_ups_quantity += 1
+	
 	if not has_upgrade:
 		current_upgrades[upgrade.id] = {
 			"resource": upgrade,
@@ -65,6 +79,16 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 	GameEvents.emit_ability_upgrade_added(upgrade, current_upgrades)
 
 
+func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
+	if chosen_upgrade.id == upgrade_axe.id:
+		upgrade_pool.add_item(upgrade_axe_damage, 7)
+		upgrade_pool.add_item(upgrade_axe_rate, 7)
+		upgrade_pool.add_item(upgrade_axe_range, 7)
+	elif chosen_upgrade.id == upgrade_spear.id:
+		upgrade_pool.add_item(upgrade_spear_damage, 7)
+		upgrade_pool.add_item(upgrade_spear_rate, 7)
+
+
 func set_ability_level(upgrade: AbilityUpgrade):
 	var has_upgrade = abilities_current_level.has(upgrade.name)
 	if not has_upgrade:
@@ -79,16 +103,6 @@ func set_ability_level(upgrade: AbilityUpgrade):
 	ability_level_up.emit(abilities_current_level)
 
 
-func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
-	if chosen_upgrade.id == upgrade_axe.id:
-		upgrade_pool.add_item(upgrade_axe_damage, 10)
-		upgrade_pool.add_item(upgrade_axe_rate, 10)
-		upgrade_pool.add_item(upgrade_axe_range, 10)
-	elif chosen_upgrade.id == upgrade_spear.id:
-		upgrade_pool.add_item(upgrade_spear_damage, 10)
-		upgrade_pool.add_item(upgrade_spear_rate, 10)
-	
-
 func pick_upgrades():
 	var chosen_upgrades: Array[AbilityUpgrade] = []
 	for i in 3:
@@ -102,13 +116,22 @@ func pick_upgrades():
 	return chosen_upgrades
 
 
-func on_upgrade_selected(upgrade: AbilityUpgrade):
-	apply_upgrade(upgrade)
-	set_ability_level(upgrade)
+func clear_maximized_abilities_in_upgrade_pool(ability_sub_type: String):	
+	for item in upgrade_pool.items:
+		if item["item"]["sub_type"] == ability_sub_type:
+			upgrade_pool.items.erase(item)
 
 
 func on_level_up(_current_level: int):
+	if current_weapons_quantity == max_weapons_quantity:
+		clear_maximized_abilities_in_upgrade_pool("weapon_main")
+	
+	if current_power_ups_quantity == max_power_ups_quantity:
+		clear_maximized_abilities_in_upgrade_pool("power_up_upgrade")
+	
 	var chosen_upgrades = pick_upgrades()
+	
+	# Caso não existem mais upgrades disponíveis no upgrade pool
 	if chosen_upgrades.size() == 0:
 		return
 	
@@ -117,3 +140,8 @@ func on_level_up(_current_level: int):
 	
 	upgrade_screen_instance.set_ability_upgrades(chosen_upgrades as Array[AbilityUpgrade])
 	upgrade_screen_instance.upgrade_selected.connect(on_upgrade_selected)
+
+
+func on_upgrade_selected(upgrade: AbilityUpgrade):
+	apply_upgrade(upgrade)
+	set_ability_level(upgrade)
