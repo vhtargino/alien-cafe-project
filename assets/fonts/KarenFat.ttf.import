@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://creevh0wcd264"
-path="res://.godot/imported/Pixolletta8px.ttf-6a7523235b5e3ba1a5abe78796ca8901.fontdata"
+uid="uid://cdb46il14mar7"
+path="res://.godot/imported/KarenFat.ttf-6caf8618574fe63b8c07232b6c0dce10.fontdata"
 
 [deps]
 
-source_file="res://resources/theme/Pixolletta8px.ttf"
-dest_files=["res://.godot/imported/Pixolletta8px.ttf-6a7523235b5e3ba1a5abe78796ca8901.fontdata"]
+source_file="res://assets/fonts/KarenFat.ttf"
+dest_files=["res://.godot/imported/KarenFat.ttf-6caf8618574fe63b8c07232b6c0dce10.fontdata"]
 
 [params]
 
@@ -22,7 +22,7 @@ msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
 hinting=0
-subpixel_positioning=4
+subpixel_positioning=0
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
@@ -33,8 +33,7 @@ preload=[{
 "chars": [],
 "glyphs": [],
 "name": "New Configuration",
-"size": Vector2i(16, 0),
-&"variation_embolden": 0.0
+"size": Vector2i(16, 0)
 }]
 language_support={}
 script_support={}

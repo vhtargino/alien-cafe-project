@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://dc2bvkwsdf5q3"]
 
 [ext_resource type="Texture2D" uid="uid://d0qkbdimc344t" path="res://assets/ui/ui.png" id="1_8n3oo"]
-[ext_resource type="FontFile" uid="uid://creevh0wcd264" path="res://resources/theme/Pixolletta8px.ttf" id="2_8n3oo"]
+[ext_resource type="FontFile" uid="uid://creevh0wcd264" path="res://assets/fonts/Pixolletta8px.ttf" id="2_8n3oo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8n3oo"]
 content_margin_left = 4.0

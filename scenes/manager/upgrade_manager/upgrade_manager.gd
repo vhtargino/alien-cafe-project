@@ -18,9 +18,15 @@ var upgrade_spear = preload("res://resources/upgrades/spear_main.tres")
 var upgrade_spear_damage = preload("res://resources/upgrades/spear_damage.tres")
 var upgrade_spear_rate = preload("res://resources/upgrades/spear_rate.tres")
 
+var upgrade_force_field = preload("res://resources/upgrades/force_field_main.tres")
+var upgrade_force_field_range = preload("res://resources/upgrades/force_field_range.tres")
+var upgrade_force_field_damage = preload("res://resources/upgrades/force_field_damage.tres")
+var upgrade_force_field_rate = preload("res://resources/upgrades/force_field_rate.tres")
+
 var upgrade_player_speed = preload("res://resources/upgrades/player_speed.tres")
 var upgrade_player_health = preload("res://resources/upgrades/player_health.tres")
 var upgrade_pickup_range = preload("res://resources/upgrades/pickup_range.tres")
+var upgrade_player_armor = preload("res://resources/upgrades/player_armor.tres")
 
 var current_upgrades = {}
 var upgrade_pool: WeightedTable = WeightedTable.new()
@@ -37,6 +43,8 @@ func _ready():
 	upgrade_pool.add_item(upgrade_axe, 10)
 	
 	upgrade_pool.add_item(upgrade_spear, 10)
+	
+	upgrade_pool.add_item(upgrade_force_field, 10)
 
 	upgrade_pool.add_item(upgrade_sword_rate, 10)
 	upgrade_pool.add_item(upgrade_sword_damage, 10)
@@ -44,6 +52,7 @@ func _ready():
 	upgrade_pool.add_item(upgrade_player_speed, 7)
 	upgrade_pool.add_item(upgrade_player_health, 7)
 	upgrade_pool.add_item(upgrade_pickup_range, 7)
+	upgrade_pool.add_item(upgrade_player_armor, 3)
 	
 	experience_manager.level_up.connect(on_level_up)
 	
@@ -87,6 +96,10 @@ func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
 	elif chosen_upgrade.id == upgrade_spear.id:
 		upgrade_pool.add_item(upgrade_spear_damage, 7)
 		upgrade_pool.add_item(upgrade_spear_rate, 7)
+	elif chosen_upgrade.id == upgrade_force_field.id:
+		upgrade_pool.add_item(upgrade_force_field_range, 7)
+		upgrade_pool.add_item(upgrade_force_field_damage, 7)
+		upgrade_pool.add_item(upgrade_force_field_rate, 7)
 
 
 func set_ability_level(upgrade: AbilityUpgrade):
@@ -116,30 +129,54 @@ func pick_upgrades():
 	return chosen_upgrades
 
 
-func clear_maximized_abilities_in_upgrade_pool(ability_sub_type: String):	
-	for item in upgrade_pool.items:
-		if item["item"]["sub_type"] == ability_sub_type:
+func clear_unacquired_weapon_mains_from_pool():
+	if current_weapons_quantity >= max_weapons_quantity:
+		var items_to_remove = []
+
+		for item in upgrade_pool.items:
+			var upgrade: AbilityUpgrade = item["item"]
+			
+			if upgrade.sub_type == "weapon_main" and not current_upgrades.has(upgrade.id):
+				items_to_remove.append(item)
+
+		for item in items_to_remove:
+			upgrade_pool.items.erase(item)
+
+
+func clear_unacquired_power_ups_from_pool():
+	if current_power_ups_quantity >= max_power_ups_quantity:
+		var items_to_remove = []
+
+		for item in upgrade_pool.items:
+			var upgrade: AbilityUpgrade = item["item"]
+			
+			if upgrade.sub_type == "power_up_upgrade" and not current_upgrades.has(upgrade.id):
+				items_to_remove.append(item)
+
+		for item in items_to_remove:
 			upgrade_pool.items.erase(item)
 
 
 func on_level_up(_current_level: int):
-	if current_weapons_quantity == max_weapons_quantity:
-		clear_maximized_abilities_in_upgrade_pool("weapon_main")
-	
-	if current_power_ups_quantity == max_power_ups_quantity:
-		clear_maximized_abilities_in_upgrade_pool("power_up_upgrade")
+	clear_unacquired_weapon_mains_from_pool()
+	clear_unacquired_power_ups_from_pool()
 	
 	var chosen_upgrades = pick_upgrades()
 	
-	# Caso não existem mais upgrades disponíveis no upgrade pool
-	if chosen_upgrades.size() == 0:
+	if chosen_upgrades.is_empty():
 		return
 	
-	var upgrade_screen_instance = upgrade_screen_scene.instantiate()
+	var upgrade_screen_instance = upgrade_screen_scene.instantiate() as CanvasLayer
 	add_child(upgrade_screen_instance)
 	
 	upgrade_screen_instance.set_ability_upgrades(chosen_upgrades as Array[AbilityUpgrade])
 	upgrade_screen_instance.upgrade_selected.connect(on_upgrade_selected)
+
+	var first_card = upgrade_screen_instance.card_container.get_child(0)
+	if first_card == null:
+		return
+	
+	first_card.grab_focus()
 
 
 func on_upgrade_selected(upgrade: AbilityUpgrade):

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b6ssk71vtt6j6"
-path="res://.godot/imported/Rockboxcond12.ttf-6ec46e755c0cb4bc7bf74c19c1d5cac8.fontdata"
+uid="uid://creevh0wcd264"
+path="res://.godot/imported/Pixolletta8px.ttf-6b7a42d9cc392bea5bf3a157e50b55f8.fontdata"
 
 [deps]
 
-source_file="res://resources/theme/Rockboxcond12.ttf"
-dest_files=["res://.godot/imported/Rockboxcond12.ttf-6ec46e755c0cb4bc7bf74c19c1d5cac8.fontdata"]
+source_file="res://assets/fonts/Pixolletta8px.ttf"
+dest_files=["res://.godot/imported/Pixolletta8px.ttf-6b7a42d9cc392bea5bf3a157e50b55f8.fontdata"]
 
 [params]
 
@@ -22,7 +22,7 @@ msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
 hinting=0
-subpixel_positioning=0
+subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
@@ -33,7 +33,8 @@ preload=[{
 "chars": [],
 "glyphs": [],
 "name": "New Configuration",
-"size": Vector2i(16, 0)
+"size": Vector2i(16, 0),
+&"variation_embolden": 0.0
 }]
 language_support={}
 script_support={}

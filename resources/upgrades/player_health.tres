@@ -7,7 +7,7 @@
 script = ExtResource("1_t7uv4")
 image = ExtResource("1_l7g11")
 id = "player_health"
-max_quantity = 6
+max_quantity = 5
 name = "max health"
 type = "power_up"
 sub_type = "power_up_upgrade"

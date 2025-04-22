@@ -9,6 +9,12 @@ signal selected
 
 func _ready():
 	gui_input.connect(on_gui_input)
+	focus_mode = Control.FOCUS_ALL
+	
+	focus_entered.connect(on_focus_entered)
+	focus_exited.connect(on_focus_exited)
+	
+	mouse_entered.connect(on_mouse_entered)
 
 
 func set_ability_upgrade(upgrade: AbilityUpgrade):
@@ -18,5 +24,17 @@ func set_ability_upgrade(upgrade: AbilityUpgrade):
 
 
 func on_gui_input(event: InputEvent):
-	if event.is_action_pressed("left_click"):
+	if event.is_action_pressed("left_click") or event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_select"):
 		selected.emit()
+
+
+func on_focus_entered():
+	self.self_modulate = Color(0.8, 0.8, 0.8, 1)
+
+
+func on_focus_exited():
+	self.self_modulate = Color(1, 1, 1, 1)
+
+
+func on_mouse_entered():
+	self.grab_focus()

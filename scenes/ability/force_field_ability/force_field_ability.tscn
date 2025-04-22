@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://kyn4547o4dgt"]
+
+[ext_resource type="Script" uid="uid://ckvbopl0sbcin" path="res://scenes/ability/force_field_ability/force_field_ability.gd" id="1_5ub3p"]
+[ext_resource type="Texture2D" uid="uid://b8m67f4tkcxb2" path="res://scenes/ability/force_field_ability/force_field.png" id="1_y1ybd"]
+[ext_resource type="PackedScene" uid="uid://clkxgjwrus2sy" path="res://scenes/component/hitbox_component/hitbox_component.tscn" id="2_tngu5"]
+
+[sub_resource type="Animation" id="Animation_6ai3x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5ub3p"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5rv8l"]
+_data = {
+&"RESET": SubResource("Animation_6ai3x"),
+&"default": SubResource("Animation_5ub3p")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ub3p"]
+radius = 25.0
+
+[node name="ForceFieldAbility" type="Node2D"]
+script = ExtResource("1_5ub3p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5rv8l")
+}
+autoplay = "default"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("1_y1ybd")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("2_tngu5")]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_5ub3p")

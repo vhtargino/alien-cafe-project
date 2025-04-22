@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dds0881ly2w1o"
-path="res://.godot/imported/PixeloidSans-Bold.ttf-6101c6820342ebb9119a21d308209fda.fontdata"
+uid="uid://b6ssk71vtt6j6"
+path="res://.godot/imported/Rockboxcond12.ttf-61a0d80becf129e5eb10d2864280ff14.fontdata"
 
 [deps]
 
-source_file="res://resources/theme/PixeloidSans-Bold.ttf"
-dest_files=["res://.godot/imported/PixeloidSans-Bold.ttf-6101c6820342ebb9119a21d308209fda.fontdata"]
+source_file="res://assets/fonts/Rockboxcond12.ttf"
+dest_files=["res://.godot/imported/Rockboxcond12.ttf-61a0d80becf129e5eb10d2864280ff14.fontdata"]
 
 [params]
 

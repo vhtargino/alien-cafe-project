@@ -3,12 +3,12 @@ extends Node
 signal experience_vial_collected(number: float)
 signal ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary)
 
-signal dose_dupla_booster_applied(effect_duration: float)
+signal double_shot_booster_applied(effect_duration: float)
 
-var dose_dupla: int = 1000
-var acordador: int = 10
-var cafe_gelado: int = 10
-var expresso_turbo: int = 10
+var double_shot: int = 5
+var waker: int = 2
+var iced_coffee: int = 2
+var turbo_expresso: int = 2
 
 
 func emit_experience_vial_collected(number: float):
@@ -19,5 +19,5 @@ func emit_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dicti
 	ability_upgrade_added.emit(upgrade, current_upgrades)
 
 
-func emit_dose_dupla_booster_applied(effect_duration: float):
-	dose_dupla_booster_applied.emit(effect_duration)
+func emit_double_shot_booster_applied(effect_duration: float):
+	double_shot_booster_applied.emit(effect_duration)

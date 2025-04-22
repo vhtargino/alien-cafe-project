@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://cwbsovv0cygf8"]
+
+[ext_resource type="Texture2D" uid="uid://b72blf2d0rsse" path="res://resources/upgrades/force_field.png" id="1_4u4bu"]
+[ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="2_c3prk"]
+
+[resource]
+script = ExtResource("2_c3prk")
+image = ExtResource("1_4u4bu")
+id = "force_field_damage"
+max_quantity = 3
+name = "force field"
+type = "weapon"
+sub_type = "weapon_upgrade"
+description = "Increases the periodic damage dealt by 20%"

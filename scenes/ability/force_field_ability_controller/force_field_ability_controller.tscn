@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://trbfkirqd4uq"]
+
+[ext_resource type="Script" uid="uid://c8y6evpmhkicr" path="res://scenes/ability/force_field_ability_controller/force_field_ability_controller.gd" id="1_ikqom"]
+[ext_resource type="PackedScene" uid="uid://kyn4547o4dgt" path="res://scenes/ability/force_field_ability/force_field_ability.tscn" id="2_e1102"]
+
+[node name="ForceFieldAbilityController" type="Node"]
+script = ExtResource("1_ikqom")
+force_field_ability = ExtResource("2_e1102")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

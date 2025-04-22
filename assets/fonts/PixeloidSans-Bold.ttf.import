@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cdb46il14mar7"
-path="res://.godot/imported/KarenFat.ttf-528ccfa4dd79d57f3a390a9eaa87305b.fontdata"
+uid="uid://dds0881ly2w1o"
+path="res://.godot/imported/PixeloidSans-Bold.ttf-e4d266c92ee49092dc3bafa99c93eb77.fontdata"
 
 [deps]
 
-source_file="res://resources/theme/KarenFat.ttf"
-dest_files=["res://.godot/imported/KarenFat.ttf-528ccfa4dd79d57f3a390a9eaa87305b.fontdata"]
+source_file="res://assets/fonts/PixeloidSans-Bold.ttf"
+dest_files=["res://.godot/imported/PixeloidSans-Bold.ttf-e4d266c92ee49092dc3bafa99c93eb77.fontdata"]
 
 [params]
 

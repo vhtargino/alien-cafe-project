@@ -10,9 +10,11 @@ extends CharacterBody2D
 @onready var pickup_area_collision: CollisionShape2D = $PickupArea2D/CollisionShape2D
 
 var number_colliding_bodies = 0
+var colliding_bodies = []
 var base_speed = 0
 
 var health_increase_percent = 1
+var armor = 0
 
 var attack_speed_multiplier: float = 1.0
 
@@ -55,24 +57,40 @@ func update_health_display():
 	health_bar.value = health_component.get_health_percent()
 
 
-func check_deal_damage():
+func check_deal_damage(damage: int):
 	if number_colliding_bodies == 0 or not damage_interval_timer.is_stopped():
 		return
-	health_component.damage(1)
+	
+	var final_damage = max(0, damage - armor)
+	print("Raw damage: ", damage)
+	print("Reduced damage: ", final_damage)
+	
+	health_component.damage(final_damage)
 	damage_interval_timer.start()
 
 
-func on_body_entered(_other_body: Node2D):
+func on_body_entered(other_body: Node2D):
 	number_colliding_bodies += 1
-	check_deal_damage()
+	colliding_bodies.append(other_body)
+	check_deal_damage(other_body.damage)
 
 
-func on_body_exited(_other_body: Node2D):
+func on_body_exited(other_body: Node2D):
 	number_colliding_bodies -= 1
+	colliding_bodies.erase(other_body)
 
 
 func on_damage_interval_timer_timeout():
-	check_deal_damage()
+	if colliding_bodies.is_empty():
+		return
+
+	var strongest_body = colliding_bodies[0]
+
+	for body in colliding_bodies:
+		if body.damage > strongest_body.damage:
+			strongest_body = body
+	
+	check_deal_damage(strongest_body.damage)
 
 
 func on_health_changed():
@@ -93,6 +111,8 @@ func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades:
 	elif ability_upgrade.id == "player_health":
 		health_component.max_health = health_component.max_health + (health_component.max_health * .15)
 		health_component.current_health = health_component.current_health + (health_component.current_health * .15)
+	elif ability_upgrade.id == "player_armor":
+		armor += 1
 
 
 func set_attack_speed_multiplier(multiplier: float):

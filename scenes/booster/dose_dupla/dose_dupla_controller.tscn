@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq6mbwailxphi"]
-
-[ext_resource type="Script" uid="uid://cra2qgo68uiov" path="res://scenes/booster/dose_dupla/dose_dupla_controller.gd" id="1_7ojql"]
-
-[node name="DoseDuplaController" type="Node"]
-script = ExtResource("1_7ojql")
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true

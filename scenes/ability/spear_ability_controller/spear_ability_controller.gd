@@ -18,7 +18,7 @@ func _ready() -> void:
 	base_wait_time = $Timer.wait_time
 	$Timer.timeout.connect(on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
-	GameEvents.dose_dupla_booster_applied.connect(on_dose_dupla_booster_applied)
+	GameEvents.double_shot_booster_applied.connect(on_double_shot_booster_applied)
 
 
 func update_timer_wait_time():
@@ -79,7 +79,7 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Diction
 		additional_damage_percent = 1 + (current_upgrades["spear_damage"]["quantity"] * .1)
 
 
-func on_dose_dupla_booster_applied(duration: float):
+func on_double_shot_booster_applied(duration: float):
 	var player = get_tree().get_first_node_in_group("player")
 	if player == null:
 		return

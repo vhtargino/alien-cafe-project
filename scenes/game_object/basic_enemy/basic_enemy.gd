@@ -2,10 +2,13 @@ extends CharacterBody2D
 
 @onready var visuals: Node2D = $Visuals
 @onready var velocity_component = $VelocityComponent
+@onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
+
+@export var damage: int = 1
 
 
 func _ready():
-	$HurtboxComponent.hit.connect(on_hit)
+	hurtbox_component.hit.connect(on_hit)
 
 
 func _process(_delta: float) -> void:

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq6mbwailxphi"]
+
+[ext_resource type="Script" uid="uid://cra2qgo68uiov" path="res://scenes/booster/dose_dupla/double_shot_controller.gd" id="1_esyjx"]
+
+[node name="DoubleShotController" type="Node"]
+script = ExtResource("1_esyjx")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
