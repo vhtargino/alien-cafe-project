@@ -13,14 +13,10 @@ var booster_rate_multiplier = 1.0
 
 
 func _ready() -> void:
-	var player = get_tree().get_first_node_in_group("player")
-	if player == null:
-		return
-	
 	base_wait_time = $Timer.wait_time
 	$Timer.timeout.connect(on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
-	GameEvents.double_shot_booster_applied.connect(on_double_shot_booster_applied)
+	BoosterEvents.double_shot_booster_applied.connect(on_double_shot_booster_applied)
 
 
 func update_timer_wait_time():

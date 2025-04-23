@@ -1,12 +1,18 @@
 extends CanvasLayer
 
+@onready var play_button = %PlayButton
+@onready var options_button = %OptionsButton
+@onready var quit_game_button = %QuitGameButton
+
 var options_scene = preload("res://scenes/ui/options_menu/options_menu.tscn")
 
 
 func _ready():
-	%PlayButton.pressed.connect(on_play_pressed)
-	%QuitGameButton.pressed.connect(on_quit_game_button_pressed)
-	%OptionsButton.pressed.connect(on_options_pressed)
+	play_button.pressed.connect(on_play_pressed)
+	options_button.pressed.connect(on_options_pressed)
+	quit_game_button.pressed.connect(on_quit_game_button_pressed)
+	
+	play_button.grab_focus()
 
 
 func on_play_pressed():
@@ -20,8 +26,11 @@ func on_options_pressed():
 
 
 func on_quit_game_button_pressed():
+	await SoundUtils.check_sound_playing(quit_game_button)
+	
 	get_tree().quit()
 
 
-func on_options_closed(options_instance: Node):
+func on_options_closed(options_instance: Node):	
 	options_instance.queue_free()
+	play_button.grab_focus()

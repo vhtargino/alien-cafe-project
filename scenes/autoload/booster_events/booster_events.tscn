@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://v5g42mb6f3ys"]
+
+[ext_resource type="Script" uid="uid://c1pmpa3paa341" path="res://scenes/autoload/booster_events/booster_events.gd" id="1_lp8an"]
+
+[node name="BoosterEvents" type="Node"]
+script = ExtResource("1_lp8an")

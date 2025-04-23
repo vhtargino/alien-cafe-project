@@ -32,7 +32,6 @@ collision_layer = 12
 collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_sjtyn")
-damage = 3
 
 [node name="VelocityComponent" parent="." instance=ExtResource("3_qct4f")]
 max_speed = 50

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://bjcwjlo7ut0an"]
+
+[ext_resource type="Texture2D" uid="uid://cn1la2q78vjhk" path="res://resources/upgrades/anvil.png" id="1_gc32v"]
+[ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="2_6y7uw"]
+
+[resource]
+script = ExtResource("2_6y7uw")
+image = ExtResource("1_gc32v")
+id = "anvil_rate"
+max_quantity = 5
+name = "anvil"
+type = "weapon"
+sub_type = "weapon_upgrade"
+description = "Anvil attack rate is increased by 15%"

@@ -4,7 +4,7 @@ extends Node
 
 @onready var timer: Timer = $Timer
 
-var base_damage = 2
+var base_damage = 4
 var base_wait_time
 const initial_radius = 25.0
 
@@ -20,7 +20,7 @@ func _ready() -> void:
 	base_wait_time = $Timer.wait_time
 	$Timer.timeout.connect(on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
-	GameEvents.double_shot_booster_applied.connect(on_double_shot_booster_applied)
+	BoosterEvents.double_shot_booster_applied.connect(on_double_shot_booster_applied)
 	
 	instantiate_force_field()
 	force_field_instance.hitbox_component.body_entered.connect(on_body_entered)

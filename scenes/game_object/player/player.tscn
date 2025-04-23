@@ -44,7 +44,7 @@ max_speed = 70
 acceleration = 70.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_ss5pk")]
-max_health = 20.0
+max_health = 30.0
 
 [node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "animated_sprite") instance=ExtResource("3_rix40")]
 health_component = NodePath("../HealthComponent")
@@ -58,6 +58,10 @@ hit_flash_material = SubResource("ShaderMaterial_dy4tu")
 [node name="Boosters" type="Node" parent="."]
 
 [node name="DoseDuplaController" parent="Boosters" instance=ExtResource("7_dy4tu")]
+
+[node name="HealthRegenTimer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
 
 [node name="DamageIntervalTimer" type="Timer" parent="."]
 wait_time = 0.6

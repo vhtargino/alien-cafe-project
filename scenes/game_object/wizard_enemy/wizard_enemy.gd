@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var velocity_component = $VelocityComponent
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 
-@export var damage: int = 1
+@export var damage: int = 3
 
 
 func _ready():

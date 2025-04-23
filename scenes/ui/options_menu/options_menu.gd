@@ -12,6 +12,8 @@ func _ready():
 
 	%MusicSlider.value_changed.connect(func(value): _set_bus_volume("Music", value))
 	%SFXSlider.value_changed.connect(func(value): _set_bus_volume("SFX", value))
+	
+	%MusicSlider.grab_focus()
 
 
 func _set_bus_volume(bus_name: String, value: float):
@@ -20,4 +22,6 @@ func _set_bus_volume(bus_name: String, value: float):
 
 
 func on_back_pressed():
+	await SoundUtils.check_sound_playing(back_button)
+	
 	back_pressed.emit()

@@ -11,4 +11,4 @@ max_quantity = 3
 name = "force field"
 type = "weapon"
 sub_type = "weapon_upgrade"
-description = "Force field gets 40% bigger"
+description = "Force field base radius gets 40% bigger"

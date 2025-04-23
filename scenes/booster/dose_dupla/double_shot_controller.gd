@@ -19,10 +19,10 @@ func activate_booster():
 	if effect_active:
 		return
 	
-	if GameEvents.double_shot <= 0:
+	if BoosterEvents.double_shot <= 0:
 		return
 	
-	GameEvents.double_shot -= 1
+	BoosterEvents.double_shot -= 1
 
 	effect_active = true
 	
@@ -33,9 +33,9 @@ func activate_booster():
 	if player.has_method("set_attack_speed_multiplier"):
 		player.set_attack_speed_multiplier(2.0)
 	
-	GameEvents.emit_double_shot_booster_applied(duration)
+	BoosterEvents.emit_double_shot_booster_applied(duration)
 	
-	timer.start(duration)
+	timer.start()
 
 
 func on_timer_timeout():

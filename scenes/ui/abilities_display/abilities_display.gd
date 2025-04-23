@@ -10,12 +10,12 @@ var displayed_upgrades = []
 
 func _ready():
 	upgrade_manager.ability_level_up.connect(on_ability_level_up)
-	GameEvents.double_shot_booster_applied.connect(on_double_shoot_booster_applied)
+	BoosterEvents.double_shot_booster_applied.connect(on_double_shoot_booster_applied)
 	
-	%B1Label.text = str(GameEvents.double_shot)
-	%B2Label.text = str(GameEvents.waker)
-	%B3Label.text = str(GameEvents.iced_coffee)
-	%B4Label.text = str(GameEvents.turbo_expresso)
+	%B1Label.text = str(BoosterEvents.double_shot)
+	%B2Label.text = str(BoosterEvents.waker)
+	%B3Label.text = str(BoosterEvents.iced_coffee)
+	%B4Label.text = str(BoosterEvents.turbo_expresso)
 
 	var initial = upgrade_manager.initial_sword
 	$CenterContainer/HBoxContainer/WeaponsContainer/Weapon1/W1Texture.texture = initial.image
@@ -50,4 +50,4 @@ func on_ability_level_up(abilities_current_level: Dictionary):
 
 
 func on_double_shoot_booster_applied(_effect_duration: float):
-	%B1Label.text = str(GameEvents.double_shot)
+	%B1Label.text = str(BoosterEvents.double_shot)

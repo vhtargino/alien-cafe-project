@@ -23,10 +23,15 @@ var upgrade_force_field_range = preload("res://resources/upgrades/force_field_ra
 var upgrade_force_field_damage = preload("res://resources/upgrades/force_field_damage.tres")
 var upgrade_force_field_rate = preload("res://resources/upgrades/force_field_rate.tres")
 
+var upgrade_anvil = preload("res://resources/upgrades/anvil_main.tres")
+var upgrade_anvil_damage = preload("res://resources/upgrades/anvil_damage.tres")
+var upgrade_anvil_rate = preload("res://resources/upgrades/anvil_rate.tres")
+
 var upgrade_player_speed = preload("res://resources/upgrades/player_speed.tres")
 var upgrade_player_health = preload("res://resources/upgrades/player_health.tres")
 var upgrade_pickup_range = preload("res://resources/upgrades/pickup_range.tres")
 var upgrade_player_armor = preload("res://resources/upgrades/player_armor.tres")
+var upgrade_player_regeneration = preload("res://resources/upgrades/player_regeneration.tres")
 
 var current_upgrades = {}
 var upgrade_pool: WeightedTable = WeightedTable.new()
@@ -41,10 +46,9 @@ var max_power_ups_quantity: int = 4
 
 func _ready():
 	upgrade_pool.add_item(upgrade_axe, 10)
-	
 	upgrade_pool.add_item(upgrade_spear, 10)
-	
 	upgrade_pool.add_item(upgrade_force_field, 10)
+	upgrade_pool.add_item(upgrade_anvil, 5)
 
 	upgrade_pool.add_item(upgrade_sword_rate, 10)
 	upgrade_pool.add_item(upgrade_sword_damage, 10)
@@ -53,6 +57,7 @@ func _ready():
 	upgrade_pool.add_item(upgrade_player_health, 7)
 	upgrade_pool.add_item(upgrade_pickup_range, 7)
 	upgrade_pool.add_item(upgrade_player_armor, 3)
+	upgrade_pool.add_item(upgrade_player_regeneration, 7)
 	
 	experience_manager.level_up.connect(on_level_up)
 	
@@ -100,6 +105,9 @@ func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
 		upgrade_pool.add_item(upgrade_force_field_range, 7)
 		upgrade_pool.add_item(upgrade_force_field_damage, 7)
 		upgrade_pool.add_item(upgrade_force_field_rate, 7)
+	elif chosen_upgrade.id == upgrade_anvil.id:
+		upgrade_pool.add_item(upgrade_anvil_damage, 7)
+		upgrade_pool.add_item(upgrade_anvil_rate, 5)
 
 
 func set_ability_level(upgrade: AbilityUpgrade):

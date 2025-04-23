@@ -1,10 +1,18 @@
 extends Node2D
 
 @export var end_screen_scene: PackedScene
+@export var pause_menu_scene: PackedScene
 
 
 func _ready():
 	%Player.health_component.died.connect(on_player_died)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		var pause_menu_instance = pause_menu_scene.instantiate()
+		add_child(pause_menu_instance)
+		get_tree().root.set_input_as_handled()
 
 
 func create_camera():

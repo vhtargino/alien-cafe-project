@@ -21,7 +21,7 @@ func _ready():
 	base_wait_time = timer.wait_time
 	$Timer.timeout.connect(on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
-	GameEvents.double_shot_booster_applied.connect(on_double_shot_booster_applied)
+	BoosterEvents.double_shot_booster_applied.connect(on_double_shot_booster_applied)
 
 
 func update_timer_wait_time():

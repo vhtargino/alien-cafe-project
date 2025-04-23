@@ -10,12 +10,12 @@ extends CharacterBody2D
 @onready var pickup_area_collision: CollisionShape2D = $PickupArea2D/CollisionShape2D
 
 var number_colliding_bodies = 0
-var colliding_bodies = []
+var colliding_bodies: Array = []
+
 var base_speed = 0
-
 var health_increase_percent = 1
+var regeneration_amount = 0
 var armor = 0
-
 var attack_speed_multiplier: float = 1.0
 
 
@@ -26,6 +26,7 @@ func _ready():
 	$CollisionArea2D.body_exited.connect(on_body_exited)
 	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
 	health_component.health_changed.connect(on_health_changed)
+	$HealthRegenTimer.timeout.connect(on_health_regen_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 	update_health_display()
 
@@ -61,12 +62,14 @@ func check_deal_damage(damage: int):
 	if number_colliding_bodies == 0 or not damage_interval_timer.is_stopped():
 		return
 	
-	var final_damage = max(0, damage - armor)
-	print("Raw damage: ", damage)
-	print("Reduced damage: ", final_damage)
+	var final_damage = max(1, damage - armor)
 	
 	health_component.damage(final_damage)
 	damage_interval_timer.start()
+
+
+func set_attack_speed_multiplier(multiplier: float):
+	attack_speed_multiplier = multiplier
 
 
 func on_body_entered(other_body: Node2D):
@@ -97,6 +100,14 @@ func on_health_changed():
 	update_health_display()
 
 
+func on_health_regen_timeout():
+	if health_component.current_health == health_component.max_health:
+		return
+	
+	health_component.current_health += regeneration_amount
+	update_health_display()
+
+
 func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades: Dictionary):
 	if ability_upgrade == null:
 		return
@@ -113,7 +124,5 @@ func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades:
 		health_component.current_health = health_component.current_health + (health_component.current_health * .15)
 	elif ability_upgrade.id == "player_armor":
 		armor += 1
-
-
-func set_attack_speed_multiplier(multiplier: float):
-	attack_speed_multiplier = multiplier
+	elif ability_upgrade.id == "player_regeneration":
+		regeneration_amount += 1
