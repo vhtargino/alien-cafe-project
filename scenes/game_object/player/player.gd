@@ -14,7 +14,6 @@ var colliding_bodies: Array = []
 
 var base_speed = 0
 var health_increase_percent = 1
-var regeneration_amount = 0
 var armor = 0
 var attack_speed_multiplier: float = 1.0
 
@@ -104,7 +103,7 @@ func on_health_regen_timeout():
 	if health_component.current_health == health_component.max_health:
 		return
 	
-	health_component.current_health += regeneration_amount
+	health_component.current_health += 1
 	update_health_display()
 
 
@@ -125,4 +124,4 @@ func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades:
 	elif ability_upgrade.id == "player_armor":
 		armor += 1
 	elif ability_upgrade.id == "player_regeneration":
-		regeneration_amount += 1
+		$DamageIntervalTimer.wait_time *= .9
