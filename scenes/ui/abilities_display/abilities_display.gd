@@ -11,6 +11,9 @@ var displayed_upgrades = []
 func _ready():
 	upgrade_manager.ability_level_up.connect(on_ability_level_up)
 	BoosterEvents.double_shot_booster_applied.connect(on_double_shoot_booster_applied)
+	BoosterEvents.waker_booster_applied.connect(on_waker_booster_applied)
+	BoosterEvents.iced_coffee_booster_applied.connect(on_iced_coffee_booster_applied)
+	BoosterEvents.turbo_expresso_booster_applied.connect(on_turbo_expresso_booster_applied)
 	
 	%B1Label.text = str(BoosterEvents.double_shot)
 	%B2Label.text = str(BoosterEvents.waker)
@@ -49,5 +52,17 @@ func on_ability_level_up(abilities_current_level: Dictionary):
 				break
 
 
-func on_double_shoot_booster_applied(_effect_duration: float):
+func on_double_shoot_booster_applied():
 	%B1Label.text = str(BoosterEvents.double_shot)
+
+
+func on_waker_booster_applied():
+	%B2Label.text = str(BoosterEvents.waker)
+
+
+func on_iced_coffee_booster_applied():
+	%B3Label.text = str(BoosterEvents.iced_coffee)
+
+
+func on_turbo_expresso_booster_applied():
+	%B4Label.text = str(BoosterEvents.turbo_expresso)

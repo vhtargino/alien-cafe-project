@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://deaw0j1ach3ew"]
+
+[ext_resource type="Script" uid="uid://bl88jplgpytft" path="res://scenes/booster/waker_booster/waker_booster_controller.gd" id="1_27mnf"]
+[ext_resource type="SpriteFrames" uid="uid://bdsfa8fxp1kap" path="res://resources/green_healing_fx.tres" id="2_tumkb"]
+
+[node name="WakerBoosterController" type="Node"]
+script = ExtResource("1_27mnf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = ExtResource("2_tumkb")
+animation = &"healing"
+offset = Vector2(0, -8)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

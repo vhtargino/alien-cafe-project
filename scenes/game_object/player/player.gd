@@ -8,6 +8,8 @@ extends CharacterBody2D
 @onready var visuals: Node2D = $Visuals
 @onready var velocity_component: Node = $VelocityComponent
 @onready var pickup_area_collision: CollisionShape2D = $PickupArea2D/CollisionShape2D
+@onready var double_shot_booster_controller: Node = $Boosters/DoubleShotBoosterController
+
 
 var number_colliding_bodies = 0
 var colliding_bodies: Array = []
@@ -26,7 +28,10 @@ func _ready():
 	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
 	health_component.health_changed.connect(on_health_changed)
 	$HealthRegenTimer.timeout.connect(on_health_regen_timeout)
+	
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
+	BoosterEvents.waker_booster_applied.connect(on_waker_booster_applied)
+	
 	update_health_display()
 
 
@@ -57,8 +62,11 @@ func update_health_display():
 	health_bar.value = health_component.get_health_percent()
 
 
-func check_deal_damage(damage: int):
+func check_deal_damage(damage: int, damage_source: Node2D):
 	if number_colliding_bodies == 0 or not damage_interval_timer.is_stopped():
+		return
+	
+	if "is_frozen" in damage_source and damage_source.is_frozen:
 		return
 	
 	var final_damage = max(1, damage - armor)
@@ -74,7 +82,7 @@ func set_attack_speed_multiplier(multiplier: float):
 func on_body_entered(other_body: Node2D):
 	number_colliding_bodies += 1
 	colliding_bodies.append(other_body)
-	check_deal_damage(other_body.damage)
+	check_deal_damage(other_body.damage, other_body)
 
 
 func on_body_exited(other_body: Node2D):
@@ -89,10 +97,12 @@ func on_damage_interval_timer_timeout():
 	var strongest_body = colliding_bodies[0]
 
 	for body in colliding_bodies:
+		if "is_frozen" in body and body.is_frozen:
+			continue
 		if body.damage > strongest_body.damage:
 			strongest_body = body
 	
-	check_deal_damage(strongest_body.damage)
+	check_deal_damage(strongest_body.damage, strongest_body)
 
 
 func on_health_changed():
@@ -124,4 +134,12 @@ func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades:
 	elif ability_upgrade.id == "player_armor":
 		armor += 1
 	elif ability_upgrade.id == "player_regeneration":
-		$DamageIntervalTimer.wait_time *= .9
+		if current_upgrades["player_regeneration"]["quantity"] == 1:
+			$HealthRegenTimer.start()
+		$HealthRegenTimer.wait_time *= .9
+
+
+func on_waker_booster_applied():
+	var health_to_regenerate = health_component.max_health / 2
+	health_component.current_health = min(health_component.max_health, (health_component.current_health + health_to_regenerate))
+	update_health_display()

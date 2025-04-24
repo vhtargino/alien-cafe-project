@@ -76,7 +76,7 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Diction
 		update_timer_wait_time()
 
 
-func on_double_shot_booster_applied(duration: float):
+func on_double_shot_booster_applied():
 	var player = get_tree().get_first_node_in_group("player")
 	if player == null:
 		return
@@ -84,7 +84,8 @@ func on_double_shot_booster_applied(duration: float):
 	booster_rate_multiplier = 1.0 / player.attack_speed_multiplier
 	update_timer_wait_time()
 
-	await get_tree().create_timer(duration).timeout
+	#await get_tree().create_timer(duration).timeout
+	await player.double_shot_booster_controller.timer.timeout
 	
 	booster_rate_multiplier = 1.0
 	update_timer_wait_time()

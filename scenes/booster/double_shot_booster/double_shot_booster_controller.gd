@@ -12,19 +12,19 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("use_booster_1"):
-		activate_booster()
+		activate_double_shot_booster()
 
 
-func activate_booster():
+func activate_double_shot_booster():
 	if effect_active:
 		return
 	
 	if BoosterEvents.double_shot <= 0:
 		return
 	
-	BoosterEvents.double_shot -= 1
-
 	effect_active = true
+	
+	BoosterEvents.double_shot -= 1
 	
 	var player = get_tree().get_first_node_in_group("player")
 	if player == null:
@@ -33,7 +33,7 @@ func activate_booster():
 	if player.has_method("set_attack_speed_multiplier"):
 		player.set_attack_speed_multiplier(2.0)
 	
-	BoosterEvents.emit_double_shot_booster_applied(duration)
+	BoosterEvents.emit_double_shot_booster_applied()
 	
 	timer.start()
 
