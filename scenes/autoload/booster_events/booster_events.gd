@@ -23,5 +23,5 @@ func emit_iced_coffee_booster_applied():
 	iced_coffee_booster_applied.emit()
 
 
-func emit_turbo_expresso_applied():
+func emit_turbo_expresso_booster_applied():
 	turbo_expresso_booster_applied.emit()

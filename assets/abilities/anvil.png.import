@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cllr0bor6ux5r"
-path="res://.godot/imported/spear.png-ccf1ae6bde46d9c210c0f924a0a796e7.ctex"
+uid="uid://cn1la2q78vjhk"
+path="res://.godot/imported/anvil.png-044440646f3509c4f8e0acea5e856a4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/upgrades/spear.png"
-dest_files=["res://.godot/imported/spear.png-ccf1ae6bde46d9c210c0f924a0a796e7.ctex"]
+source_file="res://assets/abilities/anvil.png"
+dest_files=["res://.godot/imported/anvil.png-044440646f3509c4f8e0acea5e856a4e.ctex"]
 
 [params]
 

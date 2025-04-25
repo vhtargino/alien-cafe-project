@@ -8,6 +8,8 @@ func _ready():
 	get_tree().paused = true
 	restart_button.pressed.connect(on_restart_button_pressed)
 	quit_to_menu_button.pressed.connect(on_quit_to_menu_button_pressed)
+	
+	restart_button.grab_focus()
 
 
 func set_defeat():
@@ -24,7 +26,7 @@ func on_restart_button_pressed():
 
 
 func on_quit_to_menu_button_pressed():
-	await SoundUtils.check_sound_playing(restart_button)
+	await SoundUtils.check_sound_playing(quit_to_menu_button)
 	
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu/main_menu.tscn")

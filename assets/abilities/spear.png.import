@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cir0k5hjtc0s8"
-path="res://.godot/imported/sword.png-ff3e0788fdcacb644e22058a7e65a9d5.ctex"
+uid="uid://cllr0bor6ux5r"
+path="res://.godot/imported/spear.png-4a3563b2d24fa1903bddc676c3802ae8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/upgrades/sword.png"
-dest_files=["res://.godot/imported/sword.png-ff3e0788fdcacb644e22058a7e65a9d5.ctex"]
+source_file="res://assets/abilities/spear.png"
+dest_files=["res://.godot/imported/spear.png-4a3563b2d24fa1903bddc676c3802ae8.ctex"]
 
 [params]
 

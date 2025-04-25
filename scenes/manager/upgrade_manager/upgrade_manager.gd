@@ -53,7 +53,7 @@ func _ready():
 	upgrade_pool.add_item(upgrade_sword_rate, 10)
 	upgrade_pool.add_item(upgrade_sword_damage, 10)
 	
-	upgrade_pool.add_item(upgrade_player_speed, 7)
+	upgrade_pool.add_item(upgrade_player_speed, 70000)
 	upgrade_pool.add_item(upgrade_player_health, 7)
 	upgrade_pool.add_item(upgrade_pickup_range, 7)
 	upgrade_pool.add_item(upgrade_player_armor, 3)
@@ -71,10 +71,16 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 	
 	if upgrade.sub_type == "weapon_main":
 		current_weapons_quantity += 1
+		if current_weapons_quantity == max_weapons_quantity:
+			print("chegou em 4 armas")
+			clear_unacquired_weapon_mains_from_pool()
 	
 	if upgrade.sub_type == "power_up_upgrade":
 		if not has_upgrade:
 			current_power_ups_quantity += 1
+			if current_power_ups_quantity == max_power_ups_quantity:
+				print("chegou em 4 pups")
+				clear_unacquired_power_ups_from_pool()
 	
 	if not has_upgrade:
 		current_upgrades[upgrade.id] = {
@@ -132,42 +138,29 @@ func pick_upgrades():
 		
 		var chosen_upgrade = upgrade_pool.pick_item(chosen_upgrades)
 		
-		chosen_upgrades.append(chosen_upgrade)
+		if chosen_upgrade != null:
+			chosen_upgrades.append(chosen_upgrade)
 	
 	return chosen_upgrades
 
 
 func clear_unacquired_weapon_mains_from_pool():
 	if current_weapons_quantity >= max_weapons_quantity:
-		var items_to_remove = []
-
 		for item in upgrade_pool.items:
-			var upgrade: AbilityUpgrade = item["item"]
-			
-			if upgrade.sub_type == "weapon_main" and not current_upgrades.has(upgrade.id):
-				items_to_remove.append(item)
-
-		for item in items_to_remove:
-			upgrade_pool.items.erase(item)
+			if item["item"].sub_type == "weapon_main":
+				upgrade_pool.remove_item(item["item"] as AbilityUpgrade)
 
 
 func clear_unacquired_power_ups_from_pool():
 	if current_power_ups_quantity >= max_power_ups_quantity:
-		var items_to_remove = []
-
 		for item in upgrade_pool.items:
-			var upgrade: AbilityUpgrade = item["item"]
-			
-			if upgrade.sub_type == "power_up_upgrade" and not current_upgrades.has(upgrade.id):
-				items_to_remove.append(item)
-
-		for item in items_to_remove:
-			upgrade_pool.items.erase(item)
+			if item["item"].sub_type == "power_up_upgrade" and not current_upgrades.has(item["item"].id):
+				upgrade_pool.remove_item(item["item"] as AbilityUpgrade)
 
 
 func on_level_up(_current_level: int):
-	clear_unacquired_weapon_mains_from_pool()
-	clear_unacquired_power_ups_from_pool()
+	#clear_unacquired_weapon_mains_from_pool()
+	#clear_unacquired_power_ups_from_pool()
 	
 	var chosen_upgrades = pick_upgrades()
 	
@@ -176,7 +169,7 @@ func on_level_up(_current_level: int):
 	
 	var upgrade_screen_instance = upgrade_screen_scene.instantiate() as CanvasLayer
 	add_child(upgrade_screen_instance)
-	
+
 	upgrade_screen_instance.set_ability_upgrades(chosen_upgrades as Array[AbilityUpgrade])
 	upgrade_screen_instance.upgrade_selected.connect(on_upgrade_selected)
 

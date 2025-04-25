@@ -62,7 +62,7 @@ func on_double_shot_booster_applied():
 	update_timer_wait_time()
 
 	#await get_tree().create_timer(duration).timeout
-	await player.double_shot_booster_controller.timer.timeout
+	await player.double_shot_booster.timer.timeout
 	
 	booster_rate_multiplier = 1.0
 	update_timer_wait_time()

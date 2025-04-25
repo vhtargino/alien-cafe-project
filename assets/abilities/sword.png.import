@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6cdm6mqk447m"
-path="res://.godot/imported/armor.png-d65044598059714d63df1927bfc845ed.ctex"
+uid="uid://cir0k5hjtc0s8"
+path="res://.godot/imported/sword.png-d9d8cd8cff2e61cc3b725a6b2a41f812.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/upgrades/armor.png"
-dest_files=["res://.godot/imported/armor.png-d65044598059714d63df1927bfc845ed.ctex"]
+source_file="res://assets/abilities/sword.png"
+dest_files=["res://.godot/imported/sword.png-d9d8cd8cff2e61cc3b725a6b2a41f812.ctex"]
 
 [params]
 

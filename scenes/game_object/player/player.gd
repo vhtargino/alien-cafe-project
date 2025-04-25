@@ -8,8 +8,8 @@ extends CharacterBody2D
 @onready var visuals: Node2D = $Visuals
 @onready var velocity_component: Node = $VelocityComponent
 @onready var pickup_area_collision: CollisionShape2D = $PickupArea2D/CollisionShape2D
-@onready var double_shot_booster_controller: Node = $Boosters/DoubleShotBoosterController
-
+@onready var double_shot_booster: Node = $Boosters/DoubleShotBooster
+@onready var turbo_expresso_booster: Node = $Boosters/TurboExpressoBooster
 
 var number_colliding_bodies = 0
 var colliding_bodies: Array = []
@@ -17,7 +17,11 @@ var colliding_bodies: Array = []
 var base_speed = 0
 var health_increase_percent = 1
 var armor = 0
+
 var attack_speed_multiplier: float = 1.0
+
+var booster_speed_multiplier: float = 1.0
+var upgrade_speed_multiplier: float = 1.0
 
 
 func _ready():
@@ -31,6 +35,7 @@ func _ready():
 	
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 	BoosterEvents.waker_booster_applied.connect(on_waker_booster_applied)
+	BoosterEvents.turbo_expresso_booster_applied.connect(on_turbo_expresso_booster_applied)
 	
 	update_health_display()
 
@@ -56,6 +61,12 @@ func get_movement_vector():
 	var y_movement = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	
 	return Vector2(x_movement, y_movement)
+
+
+func update_speed():
+	var final_speed_multiplier = upgrade_speed_multiplier * booster_speed_multiplier
+	var final_speed = base_speed * final_speed_multiplier
+	velocity_component.max_speed = final_speed
 
 
 func update_health_display():
@@ -125,7 +136,10 @@ func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades:
 		var _ability = ability_upgrade as Ability
 		abilities.add_child(ability_upgrade.ability_controller_scene.instantiate())
 	elif ability_upgrade.id == "player_speed":
-		velocity_component.max_speed = base_speed + (base_speed * current_upgrades["player_speed"]["quantity"] * .15)
+		#velocity_component.max_speed = base_speed + (base_speed * current_upgrades["player_speed"]["quantity"] * .15)
+		var percent_increase = current_upgrades["player_speed"]["quantity"] * .15
+		upgrade_speed_multiplier = 1.0 + percent_increase
+		update_speed()
 	elif ability_upgrade.id == "pickup_range":
 		pickup_area_collision.shape.radius *= 1.2 # Limpar
 	elif ability_upgrade.id == "player_health":
@@ -143,3 +157,13 @@ func on_waker_booster_applied():
 	var health_to_regenerate = health_component.max_health / 2
 	health_component.current_health = min(health_component.max_health, (health_component.current_health + health_to_regenerate))
 	update_health_display()
+
+
+func on_turbo_expresso_booster_applied():
+	booster_speed_multiplier = 2.0
+	update_speed()
+	
+	await turbo_expresso_booster.timer.timeout
+	
+	booster_speed_multiplier = 1.0
+	update_speed()

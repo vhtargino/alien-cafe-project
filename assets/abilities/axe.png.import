@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3mt4m5c67wy5"
-path="res://.godot/imported/pill.png-951a423e3c46d34e2748bcc031d89fed.ctex"
+uid="uid://dhsndek5113no"
+path="res://.godot/imported/axe.png-3c881885babfbc98a293dd716f90c3ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/upgrades/pill.png"
-dest_files=["res://.godot/imported/pill.png-951a423e3c46d34e2748bcc031d89fed.ctex"]
+source_file="res://assets/abilities/axe.png"
+dest_files=["res://.godot/imported/axe.png-3c881885babfbc98a293dd716f90c3ef.ctex"]
 
 [params]
 

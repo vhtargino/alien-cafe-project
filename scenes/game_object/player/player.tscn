@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://duy34q0exwehe"]
+[gd_scene load_steps=18 format=3 uid="uid://duy34q0exwehe"]
 
 [ext_resource type="Script" uid="uid://dxlfrc1brodwd" path="res://scenes/game_object/player/player.gd" id="1_chboc"]
 [ext_resource type="PackedScene" uid="uid://hhx6iyx5cxh" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_h7tiq"]
@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component/health_component.tscn" id="2_ss5pk"]
 [ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="3_rix40"]
 [ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="4_rix40"]
-[ext_resource type="PackedScene" uid="uid://bq6mbwailxphi" path="res://scenes/booster/double_shot_booster/double_shot_booster_controller.tscn" id="7_dy4tu"]
+[ext_resource type="PackedScene" uid="uid://bq6mbwailxphi" path="res://scenes/booster/double_shot_booster/double_shot_booster.tscn" id="7_dy4tu"]
 [ext_resource type="SpriteFrames" uid="uid://dagtd40gw1ynx" path="res://resources/main_char_sprites.tres" id="7_rix40"]
-[ext_resource type="PackedScene" uid="uid://deaw0j1ach3ew" path="res://scenes/booster/waker_booster/waker_booster_controller.tscn" id="8_gqr5v"]
+[ext_resource type="PackedScene" uid="uid://deaw0j1ach3ew" path="res://scenes/booster/waker_booster/waker_booster.tscn" id="8_gqr5v"]
 [ext_resource type="PackedScene" uid="uid://56ugs0sthyj2" path="res://scenes/booster/iced_coffee_booster/iced_coffee_booster.tscn" id="9_28lpv"]
+[ext_resource type="PackedScene" uid="uid://cu55qh8jtvdcu" path="res://scenes/booster/turbo_expresso_booster/turbo_expresso_booster.tscn" id="10_gbew5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dy4tu"]
 resource_local_to_scene = true
@@ -59,11 +60,13 @@ hit_flash_material = SubResource("ShaderMaterial_dy4tu")
 
 [node name="Boosters" type="Node" parent="."]
 
-[node name="DoubleShotBoosterController" parent="Boosters" instance=ExtResource("7_dy4tu")]
+[node name="DoubleShotBooster" parent="Boosters" instance=ExtResource("7_dy4tu")]
 
-[node name="WakerBoosterController" parent="Boosters" instance=ExtResource("8_gqr5v")]
+[node name="WakerBooster" parent="Boosters" instance=ExtResource("8_gqr5v")]
 
 [node name="IcedCoffeeBooster" parent="Boosters" instance=ExtResource("9_28lpv")]
+
+[node name="TurboExpressoBooster" parent="Boosters" instance=ExtResource("10_gbew5")]
 
 [node name="HealthRegenTimer" type="Timer" parent="."]
 wait_time = 8.0

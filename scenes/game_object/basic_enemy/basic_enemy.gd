@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 @onready var normal_material : Material = sprite.material
 
-@export var damage: int
+@export var damage: int = 2
 @export var freeze_material: ShaderMaterial
 
 var is_frozen: bool = false
