@@ -1,6 +1,6 @@
 extends Node
 
-signal double_shot_booster_applied()
+signal double_shot_booster_applied
 signal waker_booster_applied
 signal iced_coffee_booster_applied
 signal turbo_expresso_booster_applied

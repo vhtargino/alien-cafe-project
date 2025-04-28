@@ -10,8 +10,8 @@ func _ready():
 	timer.timeout.connect(on_timer_timeout)
 
 
-func _process(_delta):
-	if Input.is_action_just_pressed("use_booster_2"):
+func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("use_booster_2"):
 		activate_waker_booster()
 
 
@@ -24,7 +24,6 @@ func activate_waker_booster():
 	
 	sprite.visible = true
 	effect_active = true
-	
 	BoosterEvents.waker -= 1
 	
 	var player = get_tree().get_first_node_in_group("player") as Node2D
@@ -35,7 +34,6 @@ func activate_waker_booster():
 	sprite.play("healing")
 	
 	BoosterEvents.emit_waker_booster_applied()
-	
 	timer.start()
 	
 	await sprite.animation_finished

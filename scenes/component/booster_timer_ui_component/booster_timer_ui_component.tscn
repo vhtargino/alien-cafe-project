@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctbvss7ur2041"]
+
+[ext_resource type="Script" uid="uid://bheknhuev67u2" path="res://scenes/component/booster_timer_ui_component/booster_timer_ui_component.gd" id="1_488y2"]
+
+[sub_resource type="Animation" id="Animation_pfskl"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8dec"]
+_data = {
+&"RESET": SubResource("Animation_pfskl")
+}
+
+[node name="BoosterTimerUiComponent" type="Node2D"]
+script = ExtResource("1_488y2")
+label_x = 458.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Label")
+libraries = {
+&"": SubResource("AnimationLibrary_g8dec")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 458.0
+offset_top = 309.0
+offset_right = 470.0
+offset_bottom = 329.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(6, 10)
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.498039)
+theme_override_colors/font_outline_color = Color(0.14902, 0.168627, 0.266667, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 20
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

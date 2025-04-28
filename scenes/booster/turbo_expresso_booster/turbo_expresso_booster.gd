@@ -9,8 +9,8 @@ func _ready():
 	timer.timeout.connect(on_timer_timeout)
 
 
-func _process(_delta):
-	if Input.is_action_just_pressed("use_booster_4"):
+func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("use_booster_4"):
 		activate_turbo_expresso_booster()
 
 
@@ -22,11 +22,9 @@ func activate_turbo_expresso_booster():
 		return
 	
 	effect_active = true
-	
 	BoosterEvents.turbo_expresso -= 1
 	
 	BoosterEvents.emit_turbo_expresso_booster_applied()
-	
 	timer.start()
 
 

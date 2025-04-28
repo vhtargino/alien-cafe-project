@@ -8,7 +8,10 @@ extends CharacterBody2D
 @onready var visuals: Node2D = $Visuals
 @onready var velocity_component: Node = $VelocityComponent
 @onready var pickup_area_collision: CollisionShape2D = $PickupArea2D/CollisionShape2D
+
 @onready var double_shot_booster: Node = $Boosters/DoubleShotBooster
+@onready var waker_booster: Node = $Boosters/WakerBooster
+@onready var iced_coffee_booster: Node = $Boosters/IcedCoffeeBooster
 @onready var turbo_expresso_booster: Node = $Boosters/TurboExpressoBooster
 
 var number_colliding_bodies = 0
@@ -34,6 +37,7 @@ func _ready():
 	$HealthRegenTimer.timeout.connect(on_health_regen_timeout)
 	
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
+	
 	BoosterEvents.waker_booster_applied.connect(on_waker_booster_applied)
 	BoosterEvents.turbo_expresso_booster_applied.connect(on_turbo_expresso_booster_applied)
 	

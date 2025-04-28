@@ -2,8 +2,10 @@ extends Node
 
 @onready var timer: Timer = $Timer
 
-var duration: float = 8.0
 var effect_active: bool = false
+
+var label: Label
+var canvas: CanvasLayer
 
 
 func _ready():
@@ -11,7 +13,12 @@ func _ready():
 
 
 func _process(_delta):
-	if Input.is_action_just_pressed("use_booster_1"):
+	if label:
+		label.text = str(int(timer.time_left + 1))
+
+
+func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("use_booster_1"):
 		activate_double_shot_booster()
 
 
@@ -21,9 +28,10 @@ func activate_double_shot_booster():
 	
 	if BoosterEvents.double_shot <= 0:
 		return
-	
+
+	show_timer()
+
 	effect_active = true
-	
 	BoosterEvents.double_shot -= 1
 	
 	var player = get_tree().get_first_node_in_group("player")
@@ -34,11 +42,26 @@ func activate_double_shot_booster():
 		player.set_attack_speed_multiplier(2.0)
 	
 	BoosterEvents.emit_double_shot_booster_applied()
-	
 	timer.start()
 
 
+func show_timer():
+	var ui_layer = get_tree().get_first_node_in_group("ui_layer")
+	if ui_layer == null:
+		return
+	
+	label = Label.new()
+	canvas = CanvasLayer.new()
+
+	canvas.add_child(label)
+	
+	ui_layer.add_child(canvas)
+
+
 func on_timer_timeout():
+	canvas.queue_free()
+	label.queue_free()
+	
 	effect_active = false
 	var player = get_tree().get_first_node_in_group("player")
 	if player == null:

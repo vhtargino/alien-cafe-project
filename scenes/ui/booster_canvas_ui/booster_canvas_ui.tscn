@@ -1,0 +1,375 @@
+[gd_scene load_steps=14 format=3 uid="uid://du85xj0benkrs"]
+
+[sub_resource type="GDScript" id="GDScript_k4a1q"]
+script/source = "extends CanvasLayer
+
+@onready var double_shot_label: Label = $DoubleShotLabel
+@onready var waker_label: Label = $WakerLabel
+@onready var iced_coffee_label: Label = $IcedCoffeeLabel
+@onready var turbo_expresso_label: Label = $TurboExpressoLabel
+
+@onready var double_shot_timer: Timer = $DoubleShotTimer
+@onready var waker_timer: Timer = $WakerTimer
+@onready var iced_coffee_timer: Timer = $IcedCoffeeTimer
+@onready var turbo_expresso_timer: Timer = $TurboExpressoTimer
+
+var double_shot_active = false
+var waker_active = false
+var iced_coffee_active = false
+var turbo_expresso_active = false
+
+
+func _ready():
+	BoosterEvents.double_shot_booster_applied.connect(on_double_shot_booster_applied)
+	BoosterEvents.waker_booster_applied.connect(on_waker_booster_applied)
+	BoosterEvents.iced_coffee_booster_applied.connect(on_iced_coffee_booster_applied)
+	BoosterEvents.turbo_expresso_booster_applied.connect(on_turbo_expresso_booster_applied)
+
+
+func _process(_delta):
+	if double_shot_active:
+		double_shot_label.text = str(int(ceil(double_shot_timer.time_left)))
+	
+	if waker_active:
+		waker_label.text = str(int(ceil(waker_timer.time_left)))
+	
+	if iced_coffee_active:
+		iced_coffee_label.text = str(int(ceil(iced_coffee_timer.time_left)))
+	
+	if turbo_expresso_active:
+		turbo_expresso_label.text = str(int(ceil(turbo_expresso_timer.time_left)))
+
+
+func on_double_shot_booster_applied():
+	double_shot_active = true
+	double_shot_timer.start()
+	$DoubleShotAnimation.play(\"default\")
+	double_shot_label.visible = true
+	
+	await double_shot_timer.timeout
+	
+	$DoubleShotAnimation.stop()
+	double_shot_label.visible = false
+	double_shot_active = false
+
+
+func on_waker_booster_applied():
+	waker_active = true
+	waker_timer.start()
+	$WakerAnimation.play(\"default\")
+	waker_label.visible = true
+	
+	await waker_timer.timeout
+	
+	$WakerAnimation.stop()
+	waker_label.visible = false
+	waker_active = false
+
+
+func on_iced_coffee_booster_applied():
+	iced_coffee_active = true
+	iced_coffee_timer.start()
+	$IcedCoffeeAnimation.play(\"default\")
+	iced_coffee_label.visible = true
+	
+	await iced_coffee_timer.timeout
+	
+	$IcedCoffeeAnimation.stop()
+	iced_coffee_label.visible = false
+	iced_coffee_active = false
+
+
+func on_turbo_expresso_booster_applied():
+	turbo_expresso_active = true
+	turbo_expresso_timer.start()
+	$TurboExpressoAnimation.play(\"default\")
+	turbo_expresso_label.visible = true
+	
+	await turbo_expresso_timer.timeout
+	
+	$TurboExpressoAnimation.stop()
+	turbo_expresso_label.visible = false
+	turbo_expresso_active = false
+"
+
+[sub_resource type="Animation" id="Animation_pfskl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(458, 309)]
+}
+
+[sub_resource type="Animation" id="Animation_ty47o"]
+resource_name = "default"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(458, 309), Vector2(458, 300), Vector2(458, 309)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8dec"]
+_data = {
+&"RESET": SubResource("Animation_pfskl"),
+&"default": SubResource("Animation_ty47o")
+}
+
+[sub_resource type="Animation" id="Animation_4j0x5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../WakerLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(486, 309)]
+}
+
+[sub_resource type="Animation" id="Animation_g8dec"]
+resource_name = "default"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../WakerLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(486, 309), Vector2(486, 300), Vector2(486, 309)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ovy8"]
+_data = {
+&"RESET": SubResource("Animation_4j0x5"),
+&"default": SubResource("Animation_g8dec")
+}
+
+[sub_resource type="Animation" id="Animation_yeg6u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IcedCoffeeLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(514, 309)]
+}
+
+[sub_resource type="Animation" id="Animation_6ovy8"]
+resource_name = "default"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IcedCoffeeLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(514, 309), Vector2(514, 300), Vector2(514, 309)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_intyj"]
+_data = {
+&"RESET": SubResource("Animation_yeg6u"),
+&"default": SubResource("Animation_6ovy8")
+}
+
+[sub_resource type="Animation" id="Animation_h5tqf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurboExpressoLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(542, 309)]
+}
+
+[sub_resource type="Animation" id="Animation_80f1x"]
+resource_name = "default"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurboExpressoLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(542, 309), Vector2(542, 300), Vector2(542, 309)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eik3d"]
+_data = {
+&"RESET": SubResource("Animation_h5tqf"),
+&"default": SubResource("Animation_80f1x")
+}
+
+[node name="BoosterCanvasUi" type="CanvasLayer"]
+script = SubResource("GDScript_k4a1q")
+
+[node name="DoubleShotAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../DoubleShotLabel")
+libraries = {
+&"": SubResource("AnimationLibrary_g8dec")
+}
+
+[node name="WakerAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../DoubleShotAnimation")
+libraries = {
+&"": SubResource("AnimationLibrary_6ovy8")
+}
+
+[node name="IcedCoffeeAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_intyj")
+}
+
+[node name="TurboExpressoAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_eik3d")
+}
+
+[node name="DoubleShotTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="WakerTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="IcedCoffeeTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="TurboExpressoTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="DoubleShotLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 138.0
+offset_top = 129.0
+offset_right = 150.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(6, 10)
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.498039)
+theme_override_colors/font_outline_color = Color(0.14902, 0.168627, 0.266667, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 20
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WakerLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 166.0
+offset_top = 129.0
+offset_right = 178.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.498039)
+theme_override_colors/font_outline_color = Color(0.14902, 0.168627, 0.266667, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 20
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IcedCoffeeLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 194.0
+offset_top = 129.0
+offset_right = 206.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.498039)
+theme_override_colors/font_outline_color = Color(0.14902, 0.168627, 0.266667, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 20
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TurboExpressoLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 222.0
+offset_top = 120.0
+offset_right = 234.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.498039)
+theme_override_colors/font_outline_color = Color(0.14902, 0.168627, 0.266667, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 20
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c6vego054goa6"]
+[gd_scene load_steps=15 format=4 uid="uid://c6vego054goa6"]
 
 [ext_resource type="Script" uid="uid://bpcmci87vc2r8" path="res://scenes/main/main.gd" id="1_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://e4jpc4yocvno" path="res://scenes/manager/enemy_manager/enemy_manager.tscn" id="1_bu345"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dxyn1oj8e8a2v" path="res://scenes/ui/current_level_display/current_level_display.tscn" id="5_ouso4"]
 [ext_resource type="PackedScene" uid="uid://bfum4iq3si2lf" path="res://scenes/ui/abilities_display/abilities_display.tscn" id="6_blune"]
 [ext_resource type="PackedScene" uid="uid://cegr05gx1wvyo" path="res://scenes/manager/upgrade_manager/upgrade_manager.tscn" id="6_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://du85xj0benkrs" path="res://scenes/ui/booster_canvas_ui/booster_canvas_ui.tscn" id="8_7smn1"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_b1x3f")
@@ -25,17 +26,21 @@ volume_db = -18.0
 autoplay = true
 bus = &"Music"
 
-[node name="ArenaTimeUI" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("4_l3cfh")]
-arena_time_manager = NodePath("../ArenaTimeManager")
+[node name="UI" type="Node2D" parent="." groups=["ui_layer"]]
 
-[node name="ExperienceBar" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("2_hujxm")]
-experience_manager = NodePath("../ExperienceManager")
+[node name="ArenaTimeUI" parent="UI" node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("4_l3cfh")]
+arena_time_manager = NodePath("../../ArenaTimeManager")
 
-[node name="CurrentLevelDisplay" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("5_ouso4")]
-experience_manager = NodePath("../ExperienceManager")
+[node name="ExperienceBar" parent="UI" node_paths=PackedStringArray("experience_manager") instance=ExtResource("2_hujxm")]
+experience_manager = NodePath("../../ExperienceManager")
 
-[node name="AbilitiesDisplay" parent="." node_paths=PackedStringArray("upgrade_manager") instance=ExtResource("6_blune")]
-upgrade_manager = NodePath("../UpgradeManager")
+[node name="CurrentLevelDisplay" parent="UI" node_paths=PackedStringArray("experience_manager") instance=ExtResource("5_ouso4")]
+experience_manager = NodePath("../../ExperienceManager")
+
+[node name="AbilitiesDisplay" parent="UI" node_paths=PackedStringArray("upgrade_manager") instance=ExtResource("6_blune")]
+upgrade_manager = NodePath("../../UpgradeManager")
+
+[node name="BoosterCanvasUi" parent="UI" instance=ExtResource("8_7smn1")]
 
 [node name="ArenaTimeManager" parent="." instance=ExtResource("2_6q06x")]
 
