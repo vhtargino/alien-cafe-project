@@ -169,6 +169,7 @@ interpolate = false
 process_material = SubResource("ParticleProcessMaterial_m0lxl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -96)
 texture = ExtResource("1_d53oa")
 offset = Vector2(0, -7)
 

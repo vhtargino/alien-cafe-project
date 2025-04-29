@@ -159,16 +159,17 @@ func clear_unacquired_power_ups_from_pool():
 
 
 func on_level_up(_current_level: int):
-	#clear_unacquired_weapon_mains_from_pool()
-	#clear_unacquired_power_ups_from_pool()
-	
 	var chosen_upgrades = pick_upgrades()
 	
 	if chosen_upgrades.is_empty():
 		return
 	
+	var ui_layer = get_tree().get_first_node_in_group("ui_layer")
+	if ui_layer == null:
+		return
+	
 	var upgrade_screen_instance = upgrade_screen_scene.instantiate() as CanvasLayer
-	add_child(upgrade_screen_instance)
+	ui_layer.add_child(upgrade_screen_instance)
 
 	upgrade_screen_instance.set_ability_upgrades(chosen_upgrades as Array[AbilityUpgrade])
 	upgrade_screen_instance.upgrade_selected.connect(on_upgrade_selected)
@@ -177,7 +178,9 @@ func on_level_up(_current_level: int):
 	if first_card == null:
 		return
 	
+	first_card.can_play_focus_sound = false
 	first_card.grab_focus()
+	first_card.can_play_focus_sound = true
 
 
 func on_upgrade_selected(upgrade: AbilityUpgrade):

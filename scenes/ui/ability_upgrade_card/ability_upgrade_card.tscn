@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu5jy6ihbkhxs"]
+[gd_scene load_steps=4 format=3 uid="uid://cu5jy6ihbkhxs"]
 
 [ext_resource type="Script" uid="uid://e7uejh555j4s" path="res://scenes/ui/ability_upgrade_card/ability_upgrade_card.gd" id="1_8ur3e"]
+[ext_resource type="AudioStream" uid="uid://u5a4pmuj4fxt" path="res://assets/audio/menu-button-focus.ogg" id="2_nnc20"]
+[ext_resource type="AudioStream" uid="uid://yise5fikayvj" path="res://assets/audio/beep-confirm.ogg" id="3_p84sm"]
 
 [node name="AbilityUpgradeCard" type="PanelContainer"]
 custom_minimum_size = Vector2(155, 150)
@@ -8,6 +10,14 @@ offset_right = 155.0
 offset_bottom = 194.0
 focus_mode = 2
 script = ExtResource("1_8ur3e")
+
+[node name="FocusPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nnc20")
+bus = &"SFX"
+
+[node name="SelectedPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_p84sm")
+bus = &"SFX"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyk5mcvreu6el"]
+[gd_scene load_steps=4 format=3 uid="uid://cyk5mcvreu6el"]
 
 [ext_resource type="Script" uid="uid://cspqgpg7adya3" path="res://scenes/ui/options_menu/options_menu.gd" id="1_r4unu"]
 [ext_resource type="PackedScene" uid="uid://daxd3e0ew2exd" path="res://scenes/ui/sound_button/sound_button.tscn" id="2_6i5u7"]
+[ext_resource type="AudioStream" uid="uid://u5a4pmuj4fxt" path="res://assets/audio/menu-button-focus.ogg" id="2_kyv63"]
 
 [node name="OptionsMenu" type="CanvasLayer"]
 layer = 2
 script = ExtResource("1_r4unu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kyv63")
+bus = &"SFX"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15

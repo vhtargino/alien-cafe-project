@@ -9,7 +9,7 @@ signal upgrade_selected(upgrade: AbilityUpgrade)
 
 func _ready():
 	get_tree().paused = true
-	enable_music_filter()
+	SoundUtils.enable_music_filter()
 
 
 func set_ability_upgrades(upgrades: Array[AbilityUpgrade]):
@@ -23,17 +23,5 @@ func set_ability_upgrades(upgrades: Array[AbilityUpgrade]):
 func on_upgrade_selected(upgrade: AbilityUpgrade):
 	upgrade_selected.emit(upgrade)
 	get_tree().paused = false
-	disable_music_filter()
+	SoundUtils.disable_music_filter()
 	queue_free()
-
-
-func enable_music_filter():
-	var bus_index = AudioServer.get_bus_index("Music")
-	AudioServer.set_bus_effect_enabled(bus_index, 0, true)
-	AudioServer.set_bus_effect_enabled(bus_index, 1, true)
-
-
-func disable_music_filter():
-	var bus_index = AudioServer.get_bus_index("Music")
-	AudioServer.set_bus_effect_enabled(bus_index, 0, false)
-	AudioServer.set_bus_effect_enabled(bus_index, 1, false)

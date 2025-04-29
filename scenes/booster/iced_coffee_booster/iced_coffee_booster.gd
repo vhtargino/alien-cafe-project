@@ -1,8 +1,9 @@
 extends Node
 
 @onready var timer: Timer = $Timer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
-#var duration: float = 6.0
 var effect_active: bool = false
 
 
@@ -21,6 +22,9 @@ func activate_iced_coffee_booster():
 	
 	if BoosterEvents.iced_coffee <= 0:
 		return
+	
+	animation_player.play("flash")
+	audio_stream_player.play()
 	
 	effect_active = true
 	BoosterEvents.iced_coffee -= 1

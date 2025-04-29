@@ -16,11 +16,13 @@ func _ready():
 	options_button.pressed.connect(on_options_pressed)
 	quit_to_menu_button.pressed.connect(on_quit_to_menu_pressed)
 	
+	SoundUtils.enable_music_filter()
 	resume_button.grab_focus()
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
+		SoundUtils.disable_music_filter()
 		close()
 		get_tree().root.set_input_as_handled()
 
@@ -35,7 +37,8 @@ func close():
 
 
 func on_resume_pressed():
-	await SoundUtils.check_sound_playing(resume_button)
+	await SoundUtils.check_button_sound_playing(resume_button)
+	SoundUtils.disable_music_filter()
 	close()
 
 
@@ -46,8 +49,11 @@ func on_options_pressed():
 
 
 func on_quit_to_menu_pressed():
-	await SoundUtils.check_sound_playing(quit_to_menu_button)
+	get_tree().get_root().set_disable_input(true)
+	await SoundUtils.check_button_sound_playing(quit_to_menu_button)
+	get_tree().get_root().set_disable_input(false)
 	get_tree().paused = false
+	SoundUtils.disable_music_filter()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu/main_menu.tscn")
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c6vego054goa6"]
+[gd_scene load_steps=16 format=4 uid="uid://c6vego054goa6"]
 
 [ext_resource type="Script" uid="uid://bpcmci87vc2r8" path="res://scenes/main/main.gd" id="1_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://e4jpc4yocvno" path="res://scenes/manager/enemy_manager/enemy_manager.tscn" id="1_bu345"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bpp3wnd02wd8n" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="3_th5th"]
 [ext_resource type="PackedScene" uid="uid://dtlqrknqemekh" path="res://scenes/manager/experience_manager/experience_manager.tscn" id="4_hujxm"]
 [ext_resource type="PackedScene" uid="uid://cgo6p22slx0sn" path="res://scenes/ui/arena_time_ui/arena_time_ui.tscn" id="4_l3cfh"]
+[ext_resource type="AudioStream" uid="uid://bntqoj7oqdxal" path="res://assets/music/synthwave-music-for-creating-a-captivating-background-ambiance-311391.mp3" id="4_raeie"]
 [ext_resource type="PackedScene" uid="uid://dxyn1oj8e8a2v" path="res://scenes/ui/current_level_display/current_level_display.tscn" id="5_ouso4"]
 [ext_resource type="PackedScene" uid="uid://bfum4iq3si2lf" path="res://scenes/ui/abilities_display/abilities_display.tscn" id="6_blune"]
 [ext_resource type="PackedScene" uid="uid://cegr05gx1wvyo" path="res://scenes/manager/upgrade_manager/upgrade_manager.tscn" id="6_yyfjg"]
@@ -22,9 +23,11 @@ pause_menu_scene = ExtResource("3_th5th")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-volume_db = -18.0
+stream = ExtResource("4_raeie")
+volume_db = -12.0
 autoplay = true
 bus = &"Music"
+parameters/looping = true
 
 [node name="UI" type="Node2D" parent="." groups=["ui_layer"]]
 
