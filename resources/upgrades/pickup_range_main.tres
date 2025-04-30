@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_tw3th")
 image = ExtResource("1_3ve3m")
-id = "pickup_range"
+id = "pickup_range_main"
 max_quantity = 1
 name = "magnet"
 type = "power_up"

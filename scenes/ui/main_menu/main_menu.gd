@@ -20,7 +20,7 @@ func on_play_pressed():
 	get_tree().get_root().set_disable_input(true)
 	await SoundUtils.check_button_sound_playing(play_button)
 	get_tree().get_root().set_disable_input(false)
-	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/level_select/level_select.tscn")
 
 
 func on_options_pressed():

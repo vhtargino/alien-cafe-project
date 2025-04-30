@@ -8,6 +8,9 @@ const SPAWN_RADIUS = 330
 @export var spider_enemy_scene: PackedScene
 @export var cyclops_enemy_scene: PackedScene
 @export var crab_enemy_scene: PackedScene
+@export var knight_enemy_scene: PackedScene
+@export var rogue_enemy_scene: PackedScene
+@export var ghost_enemy_scene: PackedScene
 
 @export var arena_time_manager: Node
 
@@ -35,7 +38,7 @@ func on_timer_timeout():
 	var spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
 	
 	var enemy_scene = enemy_table.pick_item()
-	var enemy = enemy_scene.instantiate() as Node2D
+1	var enemy = enemy_scene.instantiate() as Node2D
 	var entities_layer = get_tree().get_first_node_in_group("entities_layer")
 	entities_layer.add_child(enemy)
 	enemy.global_position = spawn_position
@@ -56,3 +59,9 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 		enemy_table.add_item(cyclops_enemy_scene, 160)
 	elif arena_difficulty == 60:
 		enemy_table.add_item(crab_enemy_scene, 320)
+	elif arena_difficulty == 72:
+		enemy_table.add_item(knight_enemy_scene, 640)
+	elif arena_difficulty == 84:
+		enemy_table.add_item(rogue_enemy_scene, 1280)
+	elif arena_difficulty == 96:
+		enemy_table.add_item(ghost_enemy_scene, 2560)

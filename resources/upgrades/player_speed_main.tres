@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_vpylr")
 image = ExtResource("1_olmjv")
-id = "player_speed"
+id = "player_speed_main"
 max_quantity = 1
 name = "speed sneakers"
 type = "power_up"

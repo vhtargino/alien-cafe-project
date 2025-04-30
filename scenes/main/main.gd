@@ -15,11 +15,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_tree().root.set_input_as_handled()
 
 
-func create_camera():
-	var camera = Camera2D.new()
-	camera.position = %Player.global_position
-	camera.make_current()
-	add_child(camera)
+#func create_camera():
+	#var camera = Camera2D.new()
+	#camera.position = %Player.global_position
+	#camera.make_current()
+	#add_child(camera)
 
 
 func on_player_died():

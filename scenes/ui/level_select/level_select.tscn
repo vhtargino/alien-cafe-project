@@ -1,0 +1,273 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1ghor281ult"]
+
+[ext_resource type="Script" uid="uid://c8uh60161mg2a" path="res://scenes/ui/level_select/level_select.gd" id="1_kvtm6"]
+[ext_resource type="Texture2D" uid="uid://6jba13g1hxjh" path="res://assets/stages/stage_1.png" id="2_gth3g"]
+[ext_resource type="PackedScene" uid="uid://daxd3e0ew2exd" path="res://scenes/ui/sound_button/sound_button.tscn" id="3_2apfw"]
+[ext_resource type="Texture2D" uid="uid://f22k42wcutcc" path="res://assets/stages/stage_2.png" id="4_an507"]
+[ext_resource type="Texture2D" uid="uid://d103v2a3onuev" path="res://assets/stages/stage_3.png" id="5_5qe3y"]
+
+[node name="LevelSelect" type="CanvasLayer"]
+script = ExtResource("1_kvtm6")
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Container"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Level1Card" type="PanelContainer" parent="Container/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/CenterContainer/HBoxContainer/Level1Card"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/CenterContainer/HBoxContainer/Level1Card/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="Container/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.501961)
+theme_override_font_sizes/font_size = 20
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer1" type="PanelContainer" parent="Container/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="TextureRect" type="TextureRect" parent="Container/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer/PanelContainer1"]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+texture = ExtResource("2_gth3g")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="PanelContainer2" type="PanelContainer" parent="Container/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Container/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer/PanelContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.501961)
+text = "Caffeinated Contacts of the Third Degree"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="PanelContainer3" type="PanelContainer" parent="Container/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Container/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer/PanelContainer3"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.501961)
+theme_override_constants/line_spacing = 1
+text = "Oh, no! Aliens are invading Earth to steal all the coffee, starting with the Alien Cafe!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Level1Button" parent="Container/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer/MarginContainer" instance=ExtResource("3_2apfw")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Select"
+
+[node name="Level2Card" type="PanelContainer" parent="Container/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/CenterContainer/HBoxContainer/Level2Card"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/CenterContainer/HBoxContainer/Level2Card/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="Container/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.501961)
+theme_override_font_sizes/font_size = 20
+text = "Level 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer1" type="PanelContainer" parent="Container/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="TextureRect" type="TextureRect" parent="Container/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer/PanelContainer1"]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+texture = ExtResource("4_an507")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="PanelContainer2" type="PanelContainer" parent="Container/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Container/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer/PanelContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.501961)
+text = "The Espresso Strikes Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="PanelContainer3" type="PanelContainer" parent="Container/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Container/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer/PanelContainer3"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.501961)
+theme_override_constants/line_spacing = 1
+text = "Defend the farms at all costs! The Javanians want to steal the land and enslave us all!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Level2Button" parent="Container/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer/MarginContainer" instance=ExtResource("3_2apfw")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+text = "Select"
+
+[node name="Level3Card" type="PanelContainer" parent="Container/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/CenterContainer/HBoxContainer/Level3Card"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/CenterContainer/HBoxContainer/Level3Card/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="Container/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.501961)
+theme_override_font_sizes/font_size = 20
+text = "Level 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer1" type="PanelContainer" parent="Container/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="TextureRect" type="TextureRect" parent="Container/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer/PanelContainer1"]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+texture = ExtResource("5_5qe3y")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="PanelContainer2" type="PanelContainer" parent="Container/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Container/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer/PanelContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.501961)
+text = "Battlestar Baristica"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="PanelContainer3" type="PanelContainer" parent="Container/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Container/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer/PanelContainer3"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.501961)
+theme_override_constants/line_spacing = 1
+text = "Let's invade the mothership! Send these aliens from whence they came and claim victory!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Container/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Level3Button" parent="Container/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer/MarginContainer" instance=ExtResource("3_2apfw")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+text = "Select"
+
+[node name="MarginContainer" type="MarginContainer" parent="Container"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -28.0
+offset_right = 60.0
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BackButton" parent="Container/MarginContainer" instance=ExtResource("3_2apfw")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back
+"
