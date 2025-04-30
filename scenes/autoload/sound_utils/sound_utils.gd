@@ -1,5 +1,7 @@
 extends Node
 
+@onready var selected_audio_player: AudioStreamPlayer = $SelectedAudioPlayer
+
 
 func check_button_sound_playing(button):
 	if button.random_stream_player_component.playing:

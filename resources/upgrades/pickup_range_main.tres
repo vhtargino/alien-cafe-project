@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://dkp6o2da3hn0x"]
+
+[ext_resource type="Texture2D" uid="uid://dq8tux10aefsw" path="res://assets/abilities/magnet.png" id="1_3ve3m"]
+[ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="2_tw3th"]
+
+[resource]
+script = ExtResource("2_tw3th")
+image = ExtResource("1_3ve3m")
+id = "pickup_range"
+max_quantity = 1
+name = "magnet"
+type = "power_up"
+sub_type = "power_up_main"
+description = "Magnet that increases item pickup range by 20%"

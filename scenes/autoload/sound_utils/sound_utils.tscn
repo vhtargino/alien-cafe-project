@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://xs8a85dgrx47"]
+[gd_scene load_steps=3 format=3 uid="uid://xs8a85dgrx47"]
 
 [ext_resource type="Script" uid="uid://c117eyk6yyb0w" path="res://scenes/autoload/sound_utils/sound_utils.gd" id="1_r8vor"]
+[ext_resource type="AudioStream" uid="uid://yise5fikayvj" path="res://assets/audio/beep-confirm.ogg" id="2_vfwut"]
 
 [node name="SoundUtils" type="Node"]
 script = ExtResource("1_r8vor")
+
+[node name="SelectedAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vfwut")

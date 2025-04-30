@@ -1,0 +1,81 @@
+[gd_scene load_steps=21 format=3 uid="uid://xicthuvts4gh"]
+
+[ext_resource type="Script" uid="uid://b8lh3l45chfho" path="res://scenes/game_object/enemies/crab_enemy/crab_enemy.gd" id="1_2x1ee"]
+[ext_resource type="Shader" uid="uid://b4tphr583qfyf" path="res://assets/freeze_shader.gdshader" id="2_jo8ac"]
+[ext_resource type="PackedScene" uid="uid://bg05buf3ev5eg" path="res://scenes/component/velocity_component/velocity_component.tscn" id="3_kua1u"]
+[ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component/health_component.tscn" id="4_7mcq8"]
+[ext_resource type="PackedScene" uid="uid://dc3ubxkagms0a" path="res://scenes/component/vial_drop_component/vial_drop_component.tscn" id="5_yypf5"]
+[ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="6_aqpkm"]
+[ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="7_a50is"]
+[ext_resource type="PackedScene" uid="uid://ff8i0llbatvj" path="res://scenes/component/death_component/death_component.tscn" id="8_pi6ew"]
+[ext_resource type="PackedScene" uid="uid://87mxu58jbk5t" path="res://scenes/component/random_stream_player_component/random_stream_player_component.tscn" id="9_i4ove"]
+[ext_resource type="AudioStream" uid="uid://btp0ulurvdbah" path="res://assets/audio/footstep_carpet_000.ogg" id="10_3q8no"]
+[ext_resource type="AudioStream" uid="uid://ctru6wilu8udn" path="res://assets/audio/footstep_carpet_001.ogg" id="11_74kba"]
+[ext_resource type="AudioStream" uid="uid://dyuvb4be8svd0" path="res://assets/audio/footstep_carpet_002.ogg" id="12_2mjak"]
+[ext_resource type="AudioStream" uid="uid://budcyhuksf87k" path="res://assets/audio/footstep_carpet_003.ogg" id="13_8rfi6"]
+[ext_resource type="AudioStream" uid="uid://crikxtf4jrg14" path="res://assets/audio/footstep_carpet_004.ogg" id="14_e676h"]
+[ext_resource type="PackedScene" uid="uid://d5l8117qmu3d" path="res://scenes/component/hurtbox_component/hurtbox_component.tscn" id="15_xgrp4"]
+[ext_resource type="Texture2D" uid="uid://deiqv2jtoonpa" path="res://scenes/game_object/enemies/crab_enemy/crab.png" id="16_px774"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1fubd"]
+shader = ExtResource("2_jo8ac")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74qiw"]
+resource_local_to_scene = true
+shader = ExtResource("7_a50is")
+shader_parameter/lerp_percent = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qgqx6"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wso2b"]
+radius = 4.0
+
+[node name="CrabEnemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 12
+collision_mask = 7
+motion_mode = 1
+script = ExtResource("1_2x1ee")
+damage = 6
+freeze_material = SubResource("ShaderMaterial_1fubd")
+
+[node name="VelocityComponent" parent="." instance=ExtResource("3_kua1u")]
+max_speed = 75
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_7mcq8")]
+max_health = 48.0
+
+[node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_yypf5")]
+drop_percent = 0.9
+health_component = NodePath("../HealthComponent")
+experience_amount = 6.0
+
+[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("6_aqpkm")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Visuals/Sprite2D")
+hit_flash_material = SubResource("ShaderMaterial_74qiw")
+
+[node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("8_pi6ew")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Visuals/Sprite2D")
+
+[node name="EnemyHitRandomStreamPlayerComponent" parent="." instance=ExtResource("9_i4ove")]
+volume_db = -6.0
+streams = Array[AudioStream]([ExtResource("10_3q8no"), ExtResource("11_74kba"), ExtResource("12_2mjak"), ExtResource("13_8rfi6"), ExtResource("14_e676h")])
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("15_xgrp4")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_qgqx6")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("16_px774")
+offset = Vector2(0, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_wso2b")

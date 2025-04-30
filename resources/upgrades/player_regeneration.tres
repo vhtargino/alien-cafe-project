@@ -7,8 +7,8 @@
 script = ExtResource("2_sj1wl")
 image = ExtResource("1_xh0um")
 id = "player_regeneration"
-max_quantity = 5
+max_quantity = 4
 name = "life regeneration"
 type = "power_up"
 sub_type = "power_up_upgrade"
-description = "Periodically heals the player's health"
+description = "Player heal's health 10% faster"

@@ -34,6 +34,9 @@ func on_gui_input(event: InputEvent):
 		selected_player.play()
 		await SoundUtils.check_player_sound_playing(selected_player)
 		get_tree().get_root().set_disable_input(false)
+		
+		#SoundUtils.selected_audio_player.play()
+		
 		selected.emit()
 
 

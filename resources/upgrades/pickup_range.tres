@@ -7,7 +7,7 @@
 script = ExtResource("1_enhw4")
 image = ExtResource("1_i1i8h")
 id = "pickup_range"
-max_quantity = 5
+max_quantity = 4
 name = "magnet"
 type = "power_up"
 sub_type = "power_up_upgrade"

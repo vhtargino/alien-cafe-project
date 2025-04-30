@@ -7,14 +7,14 @@ extends CharacterBody2D
 
 @onready var normal_material : Material = sprite.material
 
-@export var damage: int = 3
+@export var damage: int = 1
 @export var freeze_material: ShaderMaterial
 
 var is_frozen: bool = false
 
 
 func _ready():
-	$HurtboxComponent.hit.connect(on_hit)
+	hurtbox_component.hit.connect(on_hit)
 
 
 func _process(_delta: float) -> void:

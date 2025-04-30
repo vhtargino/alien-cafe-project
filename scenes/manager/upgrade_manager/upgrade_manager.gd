@@ -27,10 +27,19 @@ var upgrade_anvil = preload("res://resources/upgrades/anvil_main.tres")
 var upgrade_anvil_damage = preload("res://resources/upgrades/anvil_damage.tres")
 var upgrade_anvil_rate = preload("res://resources/upgrades/anvil_rate.tres")
 
+var upgrade_player_speed_main = preload("res://resources/upgrades/player_speed_main.tres")
 var upgrade_player_speed = preload("res://resources/upgrades/player_speed.tres")
+
+var upgrade_player_health_main = preload("res://resources/upgrades/player_health_main.tres")
 var upgrade_player_health = preload("res://resources/upgrades/player_health.tres")
+
+var upgrade_pickup_range_main = preload("res://resources/upgrades/pickup_range_main.tres")
 var upgrade_pickup_range = preload("res://resources/upgrades/pickup_range.tres")
+
+var upgrade_player_armor_main = preload("res://resources/upgrades/player_armor_main.tres")
 var upgrade_player_armor = preload("res://resources/upgrades/player_armor.tres")
+
+var upgrade_player_regeneration_main = preload("res://resources/upgrades/player_regeneration_main.tres")
 var upgrade_player_regeneration = preload("res://resources/upgrades/player_regeneration.tres")
 
 var current_upgrades = {}
@@ -48,16 +57,16 @@ func _ready():
 	upgrade_pool.add_item(upgrade_axe, 10)
 	upgrade_pool.add_item(upgrade_spear, 10)
 	upgrade_pool.add_item(upgrade_force_field, 10)
-	upgrade_pool.add_item(upgrade_anvil, 5)
+	upgrade_pool.add_item(upgrade_anvil, 10)
 
-	upgrade_pool.add_item(upgrade_sword_rate, 10)
-	upgrade_pool.add_item(upgrade_sword_damage, 10)
+	upgrade_pool.add_item(upgrade_sword_rate, 7)
+	upgrade_pool.add_item(upgrade_sword_damage, 6)
 	
-	upgrade_pool.add_item(upgrade_player_speed, 70000)
-	upgrade_pool.add_item(upgrade_player_health, 7)
-	upgrade_pool.add_item(upgrade_pickup_range, 7)
-	upgrade_pool.add_item(upgrade_player_armor, 3)
-	upgrade_pool.add_item(upgrade_player_regeneration, 7)
+	upgrade_pool.add_item(upgrade_player_speed_main, 7)
+	upgrade_pool.add_item(upgrade_player_health_main, 7)
+	upgrade_pool.add_item(upgrade_pickup_range_main, 7)
+	upgrade_pool.add_item(upgrade_player_armor_main, 4)
+	upgrade_pool.add_item(upgrade_player_regeneration_main, 7)
 	
 	experience_manager.level_up.connect(on_level_up)
 	
@@ -72,15 +81,12 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 	if upgrade.sub_type == "weapon_main":
 		current_weapons_quantity += 1
 		if current_weapons_quantity == max_weapons_quantity:
-			print("chegou em 4 armas")
 			clear_unacquired_weapon_mains_from_pool()
 	
-	if upgrade.sub_type == "power_up_upgrade":
-		if not has_upgrade:
-			current_power_ups_quantity += 1
-			if current_power_ups_quantity == max_power_ups_quantity:
-				print("chegou em 4 pups")
-				clear_unacquired_power_ups_from_pool()
+	if upgrade.sub_type == "power_up_main":
+		current_power_ups_quantity += 1
+		if current_power_ups_quantity == max_power_ups_quantity:
+			clear_unacquired_power_ups_from_pool()
 	
 	if not has_upgrade:
 		current_upgrades[upgrade.id] = {
@@ -101,19 +107,29 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 
 func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
 	if chosen_upgrade.id == upgrade_axe.id:
-		upgrade_pool.add_item(upgrade_axe_damage, 7)
 		upgrade_pool.add_item(upgrade_axe_rate, 7)
-		upgrade_pool.add_item(upgrade_axe_range, 7)
+		upgrade_pool.add_item(upgrade_axe_damage, 6)
+		upgrade_pool.add_item(upgrade_axe_range, 5)
 	elif chosen_upgrade.id == upgrade_spear.id:
-		upgrade_pool.add_item(upgrade_spear_damage, 7)
 		upgrade_pool.add_item(upgrade_spear_rate, 7)
+		upgrade_pool.add_item(upgrade_spear_damage, 6)
 	elif chosen_upgrade.id == upgrade_force_field.id:
 		upgrade_pool.add_item(upgrade_force_field_range, 7)
-		upgrade_pool.add_item(upgrade_force_field_damage, 7)
+		upgrade_pool.add_item(upgrade_force_field_damage, 6)
 		upgrade_pool.add_item(upgrade_force_field_rate, 7)
 	elif chosen_upgrade.id == upgrade_anvil.id:
 		upgrade_pool.add_item(upgrade_anvil_damage, 7)
-		upgrade_pool.add_item(upgrade_anvil_rate, 5)
+		upgrade_pool.add_item(upgrade_anvil_rate, 6)
+	elif chosen_upgrade.id == upgrade_pickup_range_main.id:
+		upgrade_pool.add_item(upgrade_pickup_range, 7)
+	elif chosen_upgrade.id == upgrade_player_armor_main.id:
+		upgrade_pool.add_item(upgrade_player_armor, 7)
+	elif chosen_upgrade.id == upgrade_player_health_main.id:
+		upgrade_pool.add_item(upgrade_player_health, 7)
+	elif chosen_upgrade.id == upgrade_player_regeneration_main.id:
+		upgrade_pool.add_item(upgrade_player_regeneration, 7)
+	elif chosen_upgrade.id == upgrade_player_speed_main.id:
+		upgrade_pool.add_item(upgrade_player_speed, 7)
 
 
 func set_ability_level(upgrade: AbilityUpgrade):
@@ -154,7 +170,7 @@ func clear_unacquired_weapon_mains_from_pool():
 func clear_unacquired_power_ups_from_pool():
 	if current_power_ups_quantity >= max_power_ups_quantity:
 		for item in upgrade_pool.items:
-			if item["item"].sub_type == "power_up_upgrade" and not current_upgrades.has(item["item"].id):
+			if item["item"].sub_type == "power_up_main":
 				upgrade_pool.remove_item(item["item"] as AbilityUpgrade)
 
 

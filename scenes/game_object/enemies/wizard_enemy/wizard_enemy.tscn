@@ -1,15 +1,15 @@
 [gd_scene load_steps=21 format=3 uid="uid://ub0enf81lbab"]
 
-[ext_resource type="Script" uid="uid://dig22dqqigk87" path="res://scenes/game_object/wizard_enemy/wizard_enemy.gd" id="1_sjtyn"]
+[ext_resource type="Script" uid="uid://dig22dqqigk87" path="res://scenes/game_object/enemies/wizard_enemy/wizard_enemy.gd" id="1_sjtyn"]
 [ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component/health_component.tscn" id="2_74qiw"]
-[ext_resource type="Shader" uid="uid://b4tphr583qfyf" path="res://scenes/game_object/freeze_shader.gdshader" id="2_hcfsk"]
+[ext_resource type="Shader" uid="uid://b4tphr583qfyf" path="res://assets/freeze_shader.gdshader" id="2_hcfsk"]
 [ext_resource type="PackedScene" uid="uid://dc3ubxkagms0a" path="res://scenes/component/vial_drop_component/vial_drop_component.tscn" id="3_h4ano"]
 [ext_resource type="PackedScene" uid="uid://bg05buf3ev5eg" path="res://scenes/component/velocity_component/velocity_component.tscn" id="3_qct4f"]
 [ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="4_7kpoi"]
 [ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="5_uxq61"]
 [ext_resource type="PackedScene" uid="uid://ff8i0llbatvj" path="res://scenes/component/death_component/death_component.tscn" id="6_fqmqf"]
 [ext_resource type="PackedScene" uid="uid://d5l8117qmu3d" path="res://scenes/component/hurtbox_component/hurtbox_component.tscn" id="7_mrvcy"]
-[ext_resource type="Texture2D" uid="uid://dq5bgt074o1v6" path="res://scenes/game_object/wizard_enemy/wizard.png" id="8_4s742"]
+[ext_resource type="Texture2D" uid="uid://dq5bgt074o1v6" path="res://scenes/game_object/enemies/wizard_enemy/wizard.png" id="8_4s742"]
 [ext_resource type="PackedScene" uid="uid://87mxu58jbk5t" path="res://scenes/component/random_stream_player_component/random_stream_player_component.tscn" id="8_hcfsk"]
 [ext_resource type="AudioStream" uid="uid://btp0ulurvdbah" path="res://assets/audio/footstep_carpet_000.ogg" id="9_vrtha"]
 [ext_resource type="AudioStream" uid="uid://ctru6wilu8udn" path="res://assets/audio/footstep_carpet_001.ogg" id="10_ka3t7"]
@@ -36,15 +36,17 @@ collision_layer = 12
 collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_sjtyn")
+damage = 3
 freeze_material = SubResource("ShaderMaterial_vrtha")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("3_qct4f")]
-max_speed = 50
+max_speed = 47
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_74qiw")]
-max_health = 18.0
+max_health = 16.0
 
 [node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_h4ano")]
+drop_percent = 0.9
 health_component = NodePath("../HealthComponent")
 experience_amount = 2.0
 

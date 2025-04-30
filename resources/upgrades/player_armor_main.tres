@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://cl3880cutxbao"]
+
+[ext_resource type="Texture2D" uid="uid://c6cdm6mqk447m" path="res://assets/abilities/armor.png" id="1_b5y0w"]
+[ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="2_sv4oc"]
+
+[resource]
+script = ExtResource("2_sv4oc")
+image = ExtResource("1_b5y0w")
+id = "player_armor"
+max_quantity = 1
+name = "armor"
+type = "power_up"
+sub_type = "power_up_main"
+description = "Armor that reduces damage received by 1"
+metadata/_custom_type_script = "uid://dqduk38jdctil"
