@@ -13,6 +13,9 @@ func _ready():
 	quit_game_button.pressed.connect(on_quit_game_button_pressed)
 	self.child_exiting_tree.connect(on_options_exiting_tree)
 	
+	if not MainMusicPlayer.playing:
+		MainMusicPlayer.play()
+	
 	play_button.grab_focus()
 
 
