@@ -29,7 +29,7 @@ shader_parameter/lerp_percent = 0.0
 radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wso2b"]
-radius = 4.0
+radius = 5.0
 
 [node name="GhostEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 12
@@ -76,5 +76,5 @@ texture = ExtResource("15_0n0hn")
 offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_wso2b")

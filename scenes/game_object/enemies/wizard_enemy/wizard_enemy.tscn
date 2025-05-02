@@ -29,7 +29,7 @@ shader_parameter/lerp_percent = 0.0
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qct4f"]
-radius = 4.0
+radius = 5.0
 
 [node name="WizardEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 12
@@ -77,5 +77,5 @@ texture = ExtResource("8_4s742")
 offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_qct4f")

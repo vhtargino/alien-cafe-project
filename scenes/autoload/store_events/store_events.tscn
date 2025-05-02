@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://k1t6bmanisvm"]
+
+[ext_resource type="Script" uid="uid://cljpccs3d1r31" path="res://scenes/autoload/store_events/store_events.gd" id="1_iarna"]
+
+[node name="StoreEvents" type="Node"]
+script = ExtResource("1_iarna")

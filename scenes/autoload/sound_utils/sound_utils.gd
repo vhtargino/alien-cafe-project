@@ -1,6 +1,30 @@
 extends Node
 
-@onready var selected_audio_player: AudioStreamPlayer = $SelectedAudioPlayer
+const FOCUS = preload("res://assets/audio/menu-button-focus.ogg")
+const BUTTON_PRESSED = preload("res://assets/audio/beep-confirm.ogg")
+
+@onready var ui_player: AudioStreamPlayer = $UiPlayer
+
+var allow_focus_sound: bool = false
+
+
+func play_ui_sound(name: String):
+	if name == "focus" and not allow_focus_sound:
+		return
+	
+	match name:
+		"button_pressed": ui_player.stream = BUTTON_PRESSED
+		"focus": ui_player.stream = FOCUS
+	if not ui_player.playing:
+		ui_player.play()
+
+
+func enable_focus_sound():
+	allow_focus_sound = true
+
+
+func disable_focus_sound():
+	allow_focus_sound = false
 
 
 func check_button_sound_playing(button):

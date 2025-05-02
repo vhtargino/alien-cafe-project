@@ -1,0 +1,381 @@
+[gd_scene load_steps=7 format=3 uid="uid://bra8u7cp632cg"]
+
+[ext_resource type="Script" uid="uid://dntjdo58w7ax5" path="res://scenes/ui/store_menu/store_menu.gd" id="1_oifsy"]
+[ext_resource type="Texture2D" uid="uid://ltr886e5r5m6" path="res://assets/boosters/booster1.png" id="2_ek826"]
+[ext_resource type="PackedScene" uid="uid://daxd3e0ew2exd" path="res://scenes/ui/sound_button/sound_button.tscn" id="3_e7pqr"]
+[ext_resource type="Texture2D" uid="uid://j5s3ragk1xpd" path="res://assets/boosters/booster2.png" id="4_qe68t"]
+[ext_resource type="Texture2D" uid="uid://blvo7xs42tmxa" path="res://assets/boosters/booster3.png" id="5_ti2ft"]
+[ext_resource type="Texture2D" uid="uid://cj5suksqk1jg6" path="res://assets/boosters/booster4.png" id="6_10w5d"]
+
+[node name="StoreMenu" type="CanvasLayer"]
+script = ExtResource("1_oifsy")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="Control"]
+custom_minimum_size = Vector2(420, 260)
+layout_mode = 0
+offset_left = 110.0
+offset_top = 42.5
+offset_right = 530.0
+offset_bottom = 320.5
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Boosters" type="PanelContainer" parent="Control/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/TabContainer/Boosters"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="DoubleShot" type="PanelContainer" parent="Control/TabContainer/Boosters/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot"]
+layout_mode = 2
+theme_override_constants/margin_top = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 21
+
+[node name="Label" type="Label" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Double Shot"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("2_ek826")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(75, 65)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(75, 70)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "+100% attack speed for 6 seconds"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 11
+
+[node name="DoubleShotButton" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer/MarginContainer4" instance=ExtResource("3_e7pqr")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy 100¢"
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 26
+
+[node name="DoubleShotHeld" type="Label" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer/MarginContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Held:"
+
+[node name="Waker" type="PanelContainer" parent="Control/TabContainer/Boosters/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/Waker"]
+layout_mode = 2
+theme_override_constants/margin_top = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 21
+
+[node name="Label" type="Label" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Waker"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("4_qe68t")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(75, 65)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(75, 70)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Instantly heals 50% of max health"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 11
+
+[node name="WakerButton" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer/MarginContainer4" instance=ExtResource("3_e7pqr")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy 100¢"
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 26
+
+[node name="WakerHeld" type="Label" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer/MarginContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Held:"
+
+[node name="IcedCoffee" type="PanelContainer" parent="Control/TabContainer/Boosters/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee"]
+layout_mode = 2
+theme_override_constants/margin_top = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 21
+
+[node name="Label" type="Label" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Iced Coffee"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("5_ti2ft")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(75, 65)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(75, 70)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Freeze enemies for 6 seconds"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 11
+
+[node name="IcedCoffeeButton" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer/MarginContainer4" instance=ExtResource("3_e7pqr")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy 100¢"
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 26
+
+[node name="IcedCoffeeHeld" type="Label" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer/MarginContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Held:"
+
+[node name="TurboExpresso" type="PanelContainer" parent="Control/TabContainer/Boosters/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso"]
+layout_mode = 2
+theme_override_constants/margin_top = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 21
+
+[node name="Label" type="Label" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Turbo Expresso"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("6_10w5d")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(75, 65)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(75, 70)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "+100% move speed for 6 seconds"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 11
+
+[node name="TurboExpressoButton" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer/MarginContainer4" instance=ExtResource("3_e7pqr")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy 100¢"
+
+[node name="MarginContainer5" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 26
+
+[node name="TurboExpressoHeld" type="Label" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer/MarginContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Held:"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 10.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="CurrencyLabel" type="Label" parent="Control/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "¢: 9999"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -28.0
+offset_right = 60.0
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BackButton" parent="Control/MarginContainer2" instance=ExtResource("3_e7pqr")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back
+"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+title = ""
+initial_position = 5
+size = Vector2i(200, 80)
+unresizable = true
+borderless = true
+always_on_top = true
+min_size = Vector2i(120, 50)
+dialog_text = "Confirm purchase?"
+dialog_autowrap = true

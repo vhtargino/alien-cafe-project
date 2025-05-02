@@ -6,5 +6,6 @@
 [node name="SoundUtils" type="Node"]
 script = ExtResource("1_r8vor")
 
-[node name="SelectedAudioPlayer" type="AudioStreamPlayer" parent="."]
+[node name="UiPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vfwut")
+bus = &"SFX"
