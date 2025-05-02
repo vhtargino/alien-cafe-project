@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1ghor281ult"]
+[gd_scene load_steps=5 format=3 uid="uid://b1ghor281ult"]
 
 [ext_resource type="Script" uid="uid://c8uh60161mg2a" path="res://scenes/ui/level_select/level_select.gd" id="1_kvtm6"]
 [ext_resource type="Texture2D" uid="uid://6jba13g1hxjh" path="res://assets/stages/stage_1.png" id="2_gth3g"]
-[ext_resource type="PackedScene" uid="uid://daxd3e0ew2exd" path="res://scenes/ui/sound_button/sound_button.tscn" id="3_2apfw"]
 [ext_resource type="Texture2D" uid="uid://f22k42wcutcc" path="res://assets/stages/stage_2.png" id="4_an507"]
 [ext_resource type="Texture2D" uid="uid://d103v2a3onuev" path="res://assets/stages/stage_3.png" id="5_5qe3y"]
 
@@ -94,7 +93,7 @@ autowrap_mode = 2
 layout_mode = 2
 theme_override_constants/margin_top = 4
 
-[node name="Level1Button" parent="Control/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer/MarginContainer" instance=ExtResource("3_2apfw")]
+[node name="Level1Button" type="Button" parent="Control/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer/MarginContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
@@ -169,7 +168,7 @@ autowrap_mode = 2
 layout_mode = 2
 theme_override_constants/margin_top = 4
 
-[node name="Level2Button" parent="Control/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer/MarginContainer" instance=ExtResource("3_2apfw")]
+[node name="Level2Button" type="Button" parent="Control/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer/MarginContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
@@ -245,7 +244,7 @@ autowrap_mode = 2
 layout_mode = 2
 theme_override_constants/margin_top = 4
 
-[node name="Level3Button" parent="Control/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer/MarginContainer" instance=ExtResource("3_2apfw")]
+[node name="Level3Button" type="Button" parent="Control/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer/MarginContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
@@ -266,7 +265,7 @@ grow_vertical = 0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="BackButton" parent="Control/MarginContainer" instance=ExtResource("3_2apfw")]
+[node name="BackButton" type="Button" parent="Control/MarginContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Back

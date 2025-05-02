@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpp3wnd02wd8n"]
+[gd_scene load_steps=3 format=3 uid="uid://bpp3wnd02wd8n"]
 
 [ext_resource type="Script" uid="uid://docu0ng15rqdd" path="res://scenes/ui/pause_menu/pause_menu.gd" id="1_rbnsh"]
 [ext_resource type="PackedScene" uid="uid://cyk5mcvreu6el" path="res://scenes/ui/options_menu/options_menu.tscn" id="2_rv5mv"]
-[ext_resource type="PackedScene" uid="uid://daxd3e0ew2exd" path="res://scenes/ui/sound_button/sound_button.tscn" id="2_xgg5q"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -46,17 +45,17 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Paused"
 
-[node name="ResumeButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_xgg5q")]
+[node name="ResumeButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Resume"
 
-[node name="OptionsButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_xgg5q")]
+[node name="OptionsButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Options"
 
-[node name="QuitToMenuButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_xgg5q")]
+[node name="QuitToMenuButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Quit To Menu"
+text = "Quit to Menu"

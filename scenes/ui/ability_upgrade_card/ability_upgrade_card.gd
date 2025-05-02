@@ -30,20 +30,14 @@ func set_ability_upgrade(upgrade: AbilityUpgrade):
 
 func on_gui_input(event: InputEvent):
 	if event.is_action_pressed("left_click") or event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_select"):
-		get_tree().get_root().set_disable_input(true)
-		selected_player.play()
-		await SoundUtils.check_player_sound_playing(selected_player)
-		get_tree().get_root().set_disable_input(false)
-		
-		#SoundUtils.selected_audio_player.play()
-		
+		SoundUtils.play_ui_sound("button_pressed")
+		SoundUtils.disable_focus_sound() # Só de segurança
 		selected.emit()
 
 
 func on_focus_entered():
 	self.self_modulate = Color(0.8, 0.8, 0.8, 1)
-	if can_play_focus_sound:
-		focus_player.play()
+	SoundUtils.play_ui_sound("focus")
 
 
 func on_focus_exited():

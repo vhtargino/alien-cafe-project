@@ -11,8 +11,6 @@ var options_scene = preload("res://scenes/ui/options_menu/options_menu.tscn")
 func _ready():
 	for button in get_tree().get_nodes_in_group("ui_buttons"):
 		button.focus_entered.connect(on_focus_entered)
-	
-	for button in get_tree().get_nodes_in_group("ui_buttons"):
 		button.pressed.connect(on_button_pressed)
 	
 	play_button.pressed.connect(on_play_pressed)

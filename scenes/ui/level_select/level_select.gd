@@ -1,12 +1,16 @@
 extends CanvasLayer
 
-@onready var level_1_button: SoundButton = %Level1Button
-@onready var level_2_button: SoundButton = %Level2Button
-@onready var level_3_button: SoundButton = %Level3Button
-@onready var back_button: SoundButton = %BackButton
+@onready var level_1_button: Button = %Level1Button
+@onready var level_2_button: Button = %Level2Button
+@onready var level_3_button: Button = %Level3Button
+@onready var back_button: Button = %BackButton
 
 
 func _ready():
+	for button in get_tree().get_nodes_in_group("ui_buttons"):
+		button.focus_entered.connect(on_focus_entered)
+		button.pressed.connect(on_button_pressed)
+	
 	level_1_button.pressed.connect(on_level_1_pressed)
 	level_2_button.pressed.connect(on_level_2_pressed)
 	level_3_button.pressed.connect(on_level_3_pressed)
@@ -14,14 +18,13 @@ func _ready():
 	
 	check_level_finished()
 	
+	SoundUtils.disable_focus_sound()
 	level_1_button.grab_focus()
+	SoundUtils.enable_focus_sound()
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("ui_cancel"):
-		#get_tree().get_root().set_disable_input(true)
-		#await SoundUtils.check_button_sound_playing(back_button)
-		#get_tree().get_root().set_disable_input(false)
 		get_tree().change_scene_to_file("res://scenes/ui/main_menu/main_menu.tscn")
 
 
@@ -32,10 +35,15 @@ func check_level_finished():
 		level_3_button.disabled = false
 
 
+func on_focus_entered():
+	SoundUtils.play_ui_sound("focus")
+
+
+func on_button_pressed():
+	SoundUtils.play_ui_sound("button_pressed")
+
+
 func on_level_1_pressed():
-	get_tree().get_root().set_disable_input(true)
-	await SoundUtils.check_button_sound_playing(level_1_button)
-	get_tree().get_root().set_disable_input(false)
 	MainMusicPlayer.stop()
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
@@ -49,7 +57,5 @@ func on_level_3_pressed():
 
 
 func on_back_pressed():
-	get_tree().get_root().set_disable_input(true)
-	await SoundUtils.check_button_sound_playing(back_button)
-	get_tree().get_root().set_disable_input(false)
+	SoundUtils.disable_focus_sound()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu/main_menu.tscn")

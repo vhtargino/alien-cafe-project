@@ -1,10 +1,10 @@
 extends CanvasLayer
 
-@onready var double_shot_button: SoundButton = %DoubleShotButton
-@onready var waker_button: SoundButton = %WakerButton
-@onready var iced_coffee_button: SoundButton = %IcedCoffeeButton
-@onready var turbo_expresso_button: SoundButton = %TurboExpressoButton
-@onready var back_button: SoundButton = %BackButton
+@onready var double_shot_button: Button = %DoubleShotButton
+@onready var waker_button: Button = %WakerButton
+@onready var iced_coffee_button: Button = %IcedCoffeeButton
+@onready var turbo_expresso_button: Button = %TurboExpressoButton
+@onready var back_button: Button = %BackButton
 
 @onready var double_shot_held: Label = %DoubleShotHeld
 @onready var waker_held: Label = %WakerHeld
@@ -39,7 +39,11 @@ func _ready():
 	for key in booster_map:
 		var value = BoosterEvents.get(key)
 		update_held_label(booster_map[key].label, value)
-
+	
+	for button in get_tree().get_nodes_in_group("ui_buttons"):
+		button.focus_entered.connect(on_focus_entered)
+		button.pressed.connect(on_button_pressed)
+	
 	double_shot_button.pressed.connect(on_double_shot_pressed)
 	waker_button.pressed.connect(on_waker_pressed)
 	iced_coffee_button.pressed.connect(on_iced_coffee_pressed)
@@ -50,8 +54,10 @@ func _ready():
 	
 	currency_amount = StoreEvents.currency
 	update_currency_label()
-
+	
+	SoundUtils.disable_focus_sound()
 	double_shot_button.grab_focus()
+	SoundUtils.enable_focus_sound()
 
 
 func update_currency_label():
@@ -122,8 +128,14 @@ func on_confirmed():
 		booster_pending = ""
 
 
+func on_focus_entered():
+	SoundUtils.play_ui_sound("focus")
+
+
+func on_button_pressed():
+	SoundUtils.play_ui_sound("button_pressed")
+
+
 func on_back_pressed():
-	get_tree().get_root().set_disable_input(true)
-	await SoundUtils.check_button_sound_playing(back_button)
-	get_tree().get_root().set_disable_input(false)
+	SoundUtils.disable_focus_sound()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu/main_menu.tscn")

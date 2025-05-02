@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bra8u7cp632cg"]
+[gd_scene load_steps=6 format=3 uid="uid://bra8u7cp632cg"]
 
 [ext_resource type="Script" uid="uid://dntjdo58w7ax5" path="res://scenes/ui/store_menu/store_menu.gd" id="1_oifsy"]
 [ext_resource type="Texture2D" uid="uid://ltr886e5r5m6" path="res://assets/boosters/booster1.png" id="2_ek826"]
-[ext_resource type="PackedScene" uid="uid://daxd3e0ew2exd" path="res://scenes/ui/sound_button/sound_button.tscn" id="3_e7pqr"]
 [ext_resource type="Texture2D" uid="uid://j5s3ragk1xpd" path="res://assets/boosters/booster2.png" id="4_qe68t"]
 [ext_resource type="Texture2D" uid="uid://blvo7xs42tmxa" path="res://assets/boosters/booster3.png" id="5_ti2ft"]
 [ext_resource type="Texture2D" uid="uid://cj5suksqk1jg6" path="res://assets/boosters/booster4.png" id="6_10w5d"]
@@ -92,7 +91,7 @@ autowrap_mode = 3
 layout_mode = 2
 theme_override_constants/margin_top = 11
 
-[node name="DoubleShotButton" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer/MarginContainer4" instance=ExtResource("3_e7pqr")]
+[node name="DoubleShotButton" type="Button" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
@@ -166,7 +165,7 @@ autowrap_mode = 3
 layout_mode = 2
 theme_override_constants/margin_top = 11
 
-[node name="WakerButton" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer/MarginContainer4" instance=ExtResource("3_e7pqr")]
+[node name="WakerButton" type="Button" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
@@ -240,7 +239,7 @@ autowrap_mode = 3
 layout_mode = 2
 theme_override_constants/margin_top = 11
 
-[node name="IcedCoffeeButton" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer/MarginContainer4" instance=ExtResource("3_e7pqr")]
+[node name="IcedCoffeeButton" type="Button" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
@@ -314,7 +313,7 @@ autowrap_mode = 3
 layout_mode = 2
 theme_override_constants/margin_top = 11
 
-[node name="TurboExpressoButton" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer/MarginContainer4" instance=ExtResource("3_e7pqr")]
+[node name="TurboExpressoButton" type="Button" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
@@ -362,7 +361,7 @@ grow_vertical = 0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="BackButton" parent="Control/MarginContainer2" instance=ExtResource("3_e7pqr")]
+[node name="BackButton" type="Button" parent="Control/MarginContainer2" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Back
