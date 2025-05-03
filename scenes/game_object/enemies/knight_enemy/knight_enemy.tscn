@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://bv1enkrc6rnat"]
 
 [ext_resource type="Script" uid="uid://cby1rfr7urnst" path="res://scenes/game_object/enemies/knight_enemy/knight_enemy.gd" id="1_8p23g"]
-[ext_resource type="Shader" uid="uid://b4tphr583qfyf" path="res://assets/freeze_shader.gdshader" id="2_opfrs"]
+[ext_resource type="Shader" uid="uid://b4tphr583qfyf" path="res://resources/freeze_shader.gdshader" id="2_opfrs"]
 [ext_resource type="PackedScene" uid="uid://bg05buf3ev5eg" path="res://scenes/component/velocity_component/velocity_component.tscn" id="3_snaj0"]
 [ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component/health_component.tscn" id="4_e4pfx"]
 [ext_resource type="PackedScene" uid="uid://dc3ubxkagms0a" path="res://scenes/component/vial_drop_component/vial_drop_component.tscn" id="5_26bj5"]

@@ -6,9 +6,9 @@ extends CharacterBody2D
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 
 @onready var normal_material : Material = sprite.material
-@export var freeze_material: ShaderMaterial
 
 @export var damage: int = 1
+@export var freeze_material: ShaderMaterial
 
 var is_frozen: bool = false
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://e4jpc4yocvno"]
+[gd_scene load_steps=12 format=3 uid="uid://e4jpc4yocvno"]
 
 [ext_resource type="Script" uid="uid://cv2eaoy58prdf" path="res://scenes/manager/enemy_manager/enemy_manager.gd" id="1_wuxup"]
 [ext_resource type="PackedScene" uid="uid://ub0enf81lbab" path="res://scenes/game_object/enemies/wizard_enemy/wizard_enemy.tscn" id="2_a1uqj"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bv1enkrc6rnat" path="res://scenes/game_object/enemies/knight_enemy/knight_enemy.tscn" id="8_kadq4"]
 [ext_resource type="PackedScene" uid="uid://dp2xffuso1t80" path="res://scenes/game_object/enemies/rogue_enemy/rogue_enemy.tscn" id="9_jrksc"]
 [ext_resource type="PackedScene" uid="uid://bc4cuohsciyv2" path="res://scenes/game_object/enemies/ghost_enemy/ghost_enemy.tscn" id="10_e8i3x"]
+[ext_resource type="PackedScene" uid="uid://bt3p1b8vremkc" path="res://scenes/game_object/boss_enemies/boss_enemy_1/boss_enemy_1.tscn" id="11_jrksc"]
 
 [node name="EnemyManager" type="Node"]
 script = ExtResource("1_wuxup")
@@ -22,6 +23,7 @@ crab_enemy_scene = ExtResource("7_ebles")
 knight_enemy_scene = ExtResource("8_kadq4")
 rogue_enemy_scene = ExtResource("9_jrksc")
 ghost_enemy_scene = ExtResource("10_e8i3x")
+boss_enemy_1 = ExtResource("11_jrksc")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

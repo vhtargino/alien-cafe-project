@@ -13,8 +13,8 @@ func play_ui_sound(sound_name: String):
 		return
 	
 	match sound_name:
-		"button_pressed": ui_player.stream = BUTTON_PRESSED
 		"focus": ui_player.stream = FOCUS
+		"button_pressed": ui_player.stream = BUTTON_PRESSED
 	ui_player.stop()
 	ui_player.play()
 

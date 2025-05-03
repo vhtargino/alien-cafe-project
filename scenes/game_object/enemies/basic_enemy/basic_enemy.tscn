@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cmln5yerbagin" path="res://scenes/game_object/enemies/basic_enemy/basic_enemy.gd" id="1_4fs2a"]
 [ext_resource type="Texture2D" uid="uid://q7kvkx04s6xo" path="res://scenes/game_object/enemies/basic_enemy/alien_rat.png" id="2_8bf31"]
 [ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component/health_component.tscn" id="2_isd1k"]
-[ext_resource type="Shader" uid="uid://b4tphr583qfyf" path="res://assets/freeze_shader.gdshader" id="2_qku51"]
+[ext_resource type="Shader" uid="uid://b4tphr583qfyf" path="res://resources/freeze_shader.gdshader" id="2_qku51"]
 [ext_resource type="PackedScene" uid="uid://dc3ubxkagms0a" path="res://scenes/component/vial_drop_component/vial_drop_component.tscn" id="3_pcrk2"]
 [ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="4_bq7hi"]
 [ext_resource type="PackedScene" uid="uid://d5l8117qmu3d" path="res://scenes/component/hurtbox_component/hurtbox_component.tscn" id="4_elloc"]
@@ -36,8 +36,8 @@ collision_layer = 12
 collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_4fs2a")
-damage = 2
 freeze_material = SubResource("ShaderMaterial_ws2by")
+damage = 2
 
 [node name="VelocityComponent" parent="." instance=ExtResource("6_t4oqy")]
 
