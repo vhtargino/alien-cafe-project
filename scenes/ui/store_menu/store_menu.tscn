@@ -378,3 +378,72 @@ always_on_top = true
 min_size = Vector2i(120, 50)
 dialog_text = "Confirm purchase?"
 dialog_autowrap = true
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+unique_name_in_owner = true
+initial_position = 5
+size = Vector2i(200, 110)
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupPanel"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 188.0
+offset_bottom = 98.0
+theme_override_constants/margin_top = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel/MarginContainer"]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Label" type="Label" parent="PopupPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "How many?"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+focus_neighbor_bottom = NodePath("../../HBoxContainer2/OKButton")
+min_value = 1.0
+max_value = 99.0
+value = 1.0
+tick_count = 1
+ticks_on_borders = true
+
+[node name="SliderLabel" type="Label" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+text = "99"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PopupPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="OKButton" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer2" groups=["ui_buttons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 18)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "OK"
+
+[node name="CancelButton" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer2" groups=["ui_buttons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Cancel"

@@ -1,6 +1,7 @@
 extends Node
 
 @onready var timer: Timer = $Timer
+@onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 
 var effect_active: bool = false
 
@@ -21,6 +22,9 @@ func activate_turbo_expresso_booster():
 	if BoosterEvents.turbo_expresso <= 0:
 		return
 	
+	color_rect.visible = true
+	SoundUtils.play_booster_sound("turbo_expresso")
+	
 	effect_active = true
 	BoosterEvents.turbo_expresso -= 1
 	
@@ -29,4 +33,5 @@ func activate_turbo_expresso_booster():
 
 
 func on_timer_timeout():
+	color_rect.visible = false
 	effect_active = false

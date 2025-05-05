@@ -14,6 +14,12 @@ extends CanvasLayer
 @onready var currency_label: Label = $Control/MarginContainer/CurrencyLabel
 @onready var confirmation_dialog: ConfirmationDialog = %ConfirmationDialog
 
+@onready var popup_panel: PopupPanel = %PopupPanel
+@onready var h_slider: HSlider = %HSlider
+@onready var slider_label: Label = %SliderLabel
+@onready var ok_button: Button = %OKButton
+@onready var cancel_button: Button = %CancelButton
+
 @export var double_shot_price: int = 100
 @export var waker_price: int = 100
 @export var iced_coffee_price: int = 100
@@ -22,19 +28,21 @@ extends CanvasLayer
 var currency_amount: int
 var booster_pending: String = ""
 
+var booster_quantity: int = 1
+
 var booster_map = {
-	"double_shot": { "price": 0, "label": null },
-	"waker": { "price": 0, "label": null },
-	"iced_coffee": { "price": 0, "label": null },
-	"turbo_expresso": { "price": 0, "label": null },
+	"double_shot": {"price": 0, "label": null, "amount": null},
+	"waker": {"price": 0, "label": null, "amount": null},
+	"iced_coffee": {"price": 0, "label": null, "amount": null},
+	"turbo_expresso": {"price": 0, "label": null, "amount": null},
 }
 
 
 func _ready():
-	booster_map.double_shot = { "price": double_shot_price, "label": double_shot_held }
-	booster_map.waker = { "price": waker_price, "label": waker_held }
-	booster_map.iced_coffee = { "price": iced_coffee_price, "label": iced_coffee_held }
-	booster_map.turbo_expresso = { "price": turbo_expresso_price, "label": turbo_expresso_held }
+	booster_map.double_shot = {"price": double_shot_price, "label": double_shot_held, "amount": BoosterEvents.double_shot}
+	booster_map.waker = {"price": waker_price, "label": waker_held, "amount": BoosterEvents.waker}
+	booster_map.iced_coffee = {"price": iced_coffee_price, "label": iced_coffee_held, "amount": BoosterEvents.iced_coffee}
+	booster_map.turbo_expresso = {"price": turbo_expresso_price, "label": turbo_expresso_held, "amount": BoosterEvents.turbo_expresso}
 	
 	for key in booster_map:
 		var value = BoosterEvents.get(key)
@@ -49,6 +57,9 @@ func _ready():
 	iced_coffee_button.pressed.connect(on_iced_coffee_pressed)
 	turbo_expresso_button.pressed.connect(on_turbo_expresso_pressed)
 	back_button.pressed.connect(on_back_pressed)
+	h_slider.value_changed.connect(on_h_slider_value_changed)
+	ok_button.pressed.connect(on_ok_button_pressed)
+	cancel_button.pressed.connect(on_cancel_button_pressed)
 	
 	confirmation_dialog.confirmed.connect(on_confirmed)
 	
@@ -82,50 +93,89 @@ func try_purchase(price: int):
 	return true
 
 
-func purchase_booster(booster_name: String):
-	var booster_data = booster_map[booster_name]
-	var price = booster_data.price
-	if try_purchase(price):
-		BoosterEvents.set(booster_name, BoosterEvents.get(booster_name) + 1)
-		update_held_label(booster_data.label, BoosterEvents.get(booster_name))
-
-
-func confirm_booster(booster_name: String):
-	var booster_data = booster_map[booster_name]
-	var price = booster_data.price
-	
-	var current_amount = BoosterEvents.get(booster_name)
-	if current_amount >= 99:
+func open_quantity_panel(booster_name: String):
+	if booster_map[booster_name]["amount"] == 99:
 		return
 	
-	if currency_amount < price:
-		return
-
+	var booster_data = booster_map[booster_name]
+	var amount_held = booster_data["amount"]
+	h_slider.max_value = 99 - amount_held
+	
 	booster_pending = booster_name
-	confirmation_dialog.dialog_text = "Deseja gastar ¢%d para comprar '%s'?" % [price, booster_name.capitalize()]
-	confirmation_dialog.popup_centered()
+	h_slider.value = 1
+	slider_label.text = "1"
+	h_slider.grab_focus()
+	popup_panel.popup_centered()
 
 
 func on_double_shot_pressed():
-	confirm_booster("double_shot")
+	open_quantity_panel("double_shot")
 
 
 func on_waker_pressed():
-	confirm_booster("waker")
+	open_quantity_panel("waker")
 
 
 func on_iced_coffee_pressed():
-	confirm_booster("iced_coffee")
+	open_quantity_panel("iced_coffee")
 
 
 func on_turbo_expresso_pressed():
-	confirm_booster("turbo_expresso")
+	open_quantity_panel("turbo_expresso")
+
+
+func on_h_slider_value_changed(value: float):
+	booster_quantity = int(value)
+	slider_label.text = "%d" % booster_quantity
+
+
+func on_ok_button_pressed():
+	if booster_pending == "":
+		return
+
+	var booster_data = booster_map[booster_pending]
+	var price = booster_data.price
+	var total_price = price * booster_quantity
+	var current_amount = BoosterEvents.get(booster_pending)
+
+	if current_amount + booster_quantity > 99:
+		booster_quantity = 99 - current_amount
+		if booster_quantity <= 0:
+			popup_panel.hide()
+			return
+
+		total_price = price * booster_quantity
+
+	if currency_amount < total_price:
+		popup_panel.hide()
+		return
+
+	confirmation_dialog.dialog_text = "Deseja gastar ¢%d para comprar %d '%s'?" % [total_price, booster_quantity, booster_pending.capitalize()]
+	confirmation_dialog.popup_centered()
+	popup_panel.hide()
+
+
+func on_cancel_button_pressed():
+	popup_panel.hide()
+	booster_pending = ""
+	booster_quantity = 1
 
 
 func on_confirmed():
 	if booster_pending != "":
-		purchase_booster(booster_pending)
+		var booster_data = booster_map[booster_pending]
+		var price = booster_data.price
+		var total_price = price * booster_quantity
+
+		if try_purchase(total_price):
+			for i in booster_quantity:
+				BoosterEvents.set(booster_pending, BoosterEvents.get(booster_pending) + 1)
+
+			update_held_label(booster_data.label, BoosterEvents.get(booster_pending))
+			booster_map[booster_pending]["amount"] = BoosterEvents.get(booster_pending)
+
 		booster_pending = ""
+		booster_quantity = 1
 
 
 func on_focus_entered():

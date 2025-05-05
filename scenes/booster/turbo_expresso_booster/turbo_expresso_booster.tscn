@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu55qh8jtvdcu"]
+[gd_scene load_steps=7 format=3 uid="uid://cu55qh8jtvdcu"]
 
 [ext_resource type="Script" uid="uid://cxdfy2r64bgog" path="res://scenes/booster/turbo_expresso_booster/turbo_expresso_booster.gd" id="1_per1n"]
+[ext_resource type="Shader" uid="uid://bf85reytqn5kh" path="res://resources/speed_shader.gdshader" id="2_k6471"]
+
+[sub_resource type="Gradient" id="Gradient_k6471"]
+offsets = PackedFloat32Array(0, 0.888235)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6bhvl"]
+noise_type = 0
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_isx7b"]
+color_ramp = SubResource("Gradient_k6471")
+noise = SubResource("FastNoiseLite_6bhvl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1gnf6"]
+shader = ExtResource("2_k6471")
+shader_parameter/noise = SubResource("NoiseTexture2D_isx7b")
+shader_parameter/line_color = Color(1, 1, 1, 0.321569)
+shader_parameter/line_count = 0.65
+shader_parameter/line_density = 0.5
+shader_parameter/line_faloff = 0.444
+shader_parameter/mask_size = 0.0
+shader_parameter/mask_edge = 0.739
+shader_parameter/animation_speed = 12.52
 
 [node name="TurboExpressoBooster" type="Node"]
 script = ExtResource("1_per1n")
@@ -8,3 +31,15 @@ script = ExtResource("1_per1n")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 6.0
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_1gnf6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

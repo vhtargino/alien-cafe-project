@@ -1,11 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://xs8a85dgrx47"]
 
 [ext_resource type="Script" uid="uid://c117eyk6yyb0w" path="res://scenes/autoload/sound_utils/sound_utils.gd" id="1_r8vor"]
-[ext_resource type="AudioStream" uid="uid://yise5fikayvj" path="res://assets/audio/beep-confirm.ogg" id="2_vfwut"]
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_r8vor"]
 
 [node name="SoundUtils" type="Node"]
 script = ExtResource("1_r8vor")
 
 [node name="UiPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_vfwut")
+volume_db = -12.0
+bus = &"SFX"
+
+[node name="BoosterSoundsPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPolyphonic_r8vor")
+volume_db = -6.0
+max_polyphony = 4
 bus = &"SFX"

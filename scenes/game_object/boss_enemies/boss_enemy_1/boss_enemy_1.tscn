@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://bt3p1b8vremkc"]
+[gd_scene load_steps=21 format=3 uid="uid://bt3p1b8vremkc"]
 
 [ext_resource type="Script" uid="uid://bjectukr78a6m" path="res://scenes/game_object/boss_enemies/boss_enemy_1/boss_enemy_1.gd" id="1_vgj8w"]
+[ext_resource type="Shader" uid="uid://b4tphr583qfyf" path="res://resources/freeze_shader.gdshader" id="2_vgj8w"]
 [ext_resource type="PackedScene" uid="uid://bg05buf3ev5eg" path="res://scenes/component/velocity_component/velocity_component.tscn" id="3_1dyvr"]
 [ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component/health_component.tscn" id="4_36dt2"]
 [ext_resource type="PackedScene" uid="uid://dc3ubxkagms0a" path="res://scenes/component/vial_drop_component/vial_drop_component.tscn" id="5_0pqo3"]
@@ -15,6 +16,9 @@
 [ext_resource type="AudioStream" uid="uid://crikxtf4jrg14" path="res://assets/audio/footstep_carpet_004.ogg" id="14_jc7yd"]
 [ext_resource type="PackedScene" uid="uid://d5l8117qmu3d" path="res://scenes/component/hurtbox_component/hurtbox_component.tscn" id="15_tvxx5"]
 [ext_resource type="Texture2D" uid="uid://dvrvq7hjrjjtr" path="res://scenes/game_object/boss_enemies/boss_enemy_1/crystal-knight.png" id="16_vgj8w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4oges"]
+shader = ExtResource("2_vgj8w")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v58qd"]
 resource_local_to_scene = true
@@ -33,6 +37,7 @@ collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_vgj8w")
 damage = 10
+freeze_material = SubResource("ShaderMaterial_4oges")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("3_1dyvr")]
 max_speed = 120

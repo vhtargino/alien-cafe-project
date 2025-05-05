@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dc2bvkwsdf5q3"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dc2bvkwsdf5q3"]
 
 [ext_resource type="Texture2D" uid="uid://d0qkbdimc344t" path="res://assets/ui/ui.png" id="1_8n3oo"]
 [ext_resource type="FontFile" uid="uid://creevh0wcd264" path="res://assets/fonts/Pixolletta8px.ttf" id="2_8n3oo"]
@@ -35,6 +35,18 @@ texture_margin_right = 12.0
 texture_margin_bottom = 10.0
 region_rect = Rect2(0, 0, 16, 16)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_65ii4"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+texture = ExtResource("1_8n3oo")
+texture_margin_left = 4.0
+texture_margin_top = 6.0
+texture_margin_right = 4.0
+texture_margin_bottom = 3.0
+region_rect = Rect2(0, 0, 16, 16)
+
 [resource]
 default_font = ExtResource("2_8n3oo")
 default_font_size = 10
@@ -44,3 +56,4 @@ ConfirmationDialog/constants/buttons_min_width = 50
 ConfirmationDialog/styles/panel = SubResource("StyleBoxTexture_56c54")
 Label/constants/line_spacing = 0
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_orw62")
+PopupPanel/styles/panel = SubResource("StyleBoxTexture_65ii4")
