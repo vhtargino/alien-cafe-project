@@ -20,10 +20,10 @@ shader_parameter/noise = SubResource("NoiseTexture2D_isx7b")
 shader_parameter/line_color = Color(1, 1, 1, 0.321569)
 shader_parameter/line_count = 0.65
 shader_parameter/line_density = 0.5
-shader_parameter/line_faloff = 0.444
-shader_parameter/mask_size = 0.0
-shader_parameter/mask_edge = 0.739
-shader_parameter/animation_speed = 12.52
+shader_parameter/line_faloff = 0.0
+shader_parameter/mask_size = 0.045
+shader_parameter/mask_edge = 0.91
+shader_parameter/animation_speed = 12.89
 
 [node name="TurboExpressoBooster" type="Node"]
 script = ExtResource("1_per1n")

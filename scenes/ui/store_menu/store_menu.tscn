@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bra8u7cp632cg"]
+[gd_scene load_steps=10 format=3 uid="uid://bra8u7cp632cg"]
 
 [ext_resource type="Script" uid="uid://dntjdo58w7ax5" path="res://scenes/ui/store_menu/store_menu.gd" id="1_oifsy"]
 [ext_resource type="Texture2D" uid="uid://ltr886e5r5m6" path="res://assets/boosters/booster1.png" id="2_ek826"]
 [ext_resource type="Texture2D" uid="uid://j5s3ragk1xpd" path="res://assets/boosters/booster2.png" id="4_qe68t"]
 [ext_resource type="Texture2D" uid="uid://blvo7xs42tmxa" path="res://assets/boosters/booster3.png" id="5_ti2ft"]
 [ext_resource type="Texture2D" uid="uid://cj5suksqk1jg6" path="res://assets/boosters/booster4.png" id="6_10w5d"]
+[ext_resource type="Texture2D" uid="uid://dfhby2i8mj2ys" path="res://assets/ui/coin_02e.png" id="6_vnq0h"]
+[ext_resource type="Texture2D" uid="uid://cht8fum1yi16m" path="res://assets/ui/coin_03e.png" id="7_t03xh"]
+[ext_resource type="Texture2D" uid="uid://bd2m10mavu8g6" path="res://assets/ui/coin_04e.png" id="8_6aqvp"]
+[ext_resource type="Texture2D" uid="uid://cqgagc6y1efhb" path="res://assets/ui/coin_05e.png" id="9_p11xj"]
 
 [node name="StoreMenu" type="CanvasLayer"]
 script = ExtResource("1_oifsy")
@@ -29,6 +33,7 @@ grow_vertical = 2
 current_tab = 0
 
 [node name="Boosters" type="PanelContainer" parent="Control/TabContainer"]
+custom_minimum_size = Vector2(420, 260)
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -333,6 +338,265 @@ size_flags_vertical = 8
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
 text = "Held:"
 
+[node name="Credits" type="PanelContainer" parent="Control/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(420, 260)
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/TabContainer/Credits"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Credits100" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits100"]
+layout_mode = 2
+theme_override_constants/margin_top = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 21
+
+[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "100¢"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("6_vnq0h")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(75, 65)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(75, 70)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Adds 100 credits to the wallet"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 11
+
+[node name="Credits100Button" type="Button" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "R$ 10"
+
+[node name="Credits200" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits200"]
+layout_mode = 2
+theme_override_constants/margin_top = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 21
+
+[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "200¢"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("7_t03xh")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(75, 65)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(75, 70)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Adds 200 credits to the wallet"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 11
+
+[node name="Credits200Button" type="Button" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "R$ 18"
+
+[node name="Credits500" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits500"]
+layout_mode = 2
+theme_override_constants/margin_top = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 21
+
+[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "500¢"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("8_6aqvp")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(75, 65)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(75, 70)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Adds 500 credits to the wallet"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 11
+
+[node name="Credits500Button" type="Button" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "R$ 40"
+
+[node name="Credits1500" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500"]
+layout_mode = 2
+theme_override_constants/margin_top = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 21
+
+[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "1500¢"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("9_p11xj")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(75, 65)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(75, 70)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
+text = "Adds 1500 credits to the wallet"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 11
+
+[node name="Credits1500Button" type="Button" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "R$ 100"
+
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 1
@@ -411,7 +675,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-focus_neighbor_bottom = NodePath("../../HBoxContainer2/OKButton")
+focus_neighbor_bottom = NodePath("../../HBoxContainer2/QuantityOKButton")
 min_value = 1.0
 max_value = 99.0
 value = 1.0
@@ -432,7 +696,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="OKButton" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer2" groups=["ui_buttons"]]
+[node name="QuantityOKButton" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer2" groups=["ui_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(25, 18)
 layout_mode = 2
@@ -440,7 +704,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "OK"
 
-[node name="CancelButton" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer2" groups=["ui_buttons"]]
+[node name="QuantityCancelButton" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer2" groups=["ui_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(25, 20)
 layout_mode = 2

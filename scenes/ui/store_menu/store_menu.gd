@@ -4,7 +4,6 @@ extends CanvasLayer
 @onready var waker_button: Button = %WakerButton
 @onready var iced_coffee_button: Button = %IcedCoffeeButton
 @onready var turbo_expresso_button: Button = %TurboExpressoButton
-@onready var back_button: Button = %BackButton
 
 @onready var double_shot_held: Label = %DoubleShotHeld
 @onready var waker_held: Label = %WakerHeld
@@ -14,11 +13,17 @@ extends CanvasLayer
 @onready var currency_label: Label = $Control/MarginContainer/CurrencyLabel
 @onready var confirmation_dialog: ConfirmationDialog = %ConfirmationDialog
 
+@onready var credits_100_button: Button = %Credits100Button
+@onready var credits_200_button: Button = %Credits200Button
+@onready var credits_500_button: Button = %Credits500Button
+@onready var credits_1500_button: Button = %Credits1500Button
+
+@onready var back_button: Button = %BackButton
 @onready var popup_panel: PopupPanel = %PopupPanel
 @onready var h_slider: HSlider = %HSlider
 @onready var slider_label: Label = %SliderLabel
-@onready var ok_button: Button = %OKButton
-@onready var cancel_button: Button = %CancelButton
+@onready var quantity_ok_button: Button = %QuantityOKButton
+@onready var quantity_cancel_button: Button = %QuantityCancelButton
 
 @export var double_shot_price: int = 100
 @export var waker_price: int = 100
@@ -36,6 +41,9 @@ var booster_map = {
 	"iced_coffee": {"price": 0, "label": null, "amount": null},
 	"turbo_expresso": {"price": 0, "label": null, "amount": null},
 }
+
+var is_credit_purchase: bool = false
+var pending_credit_amount: int = 0
 
 
 func _ready():
@@ -56,10 +64,14 @@ func _ready():
 	waker_button.pressed.connect(on_waker_pressed)
 	iced_coffee_button.pressed.connect(on_iced_coffee_pressed)
 	turbo_expresso_button.pressed.connect(on_turbo_expresso_pressed)
+	credits_100_button.pressed.connect(on_credits_100_pressed)
+	credits_200_button.pressed.connect(on_credits_200_pressed)
+	credits_500_button.pressed.connect(on_credits_500_pressed)
+	credits_1500_button.pressed.connect(on_credits_1500_pressed)
 	back_button.pressed.connect(on_back_pressed)
 	h_slider.value_changed.connect(on_h_slider_value_changed)
-	ok_button.pressed.connect(on_ok_button_pressed)
-	cancel_button.pressed.connect(on_cancel_button_pressed)
+	quantity_ok_button.pressed.connect(on_quantity_ok_button_pressed)
+	quantity_cancel_button.pressed.connect(on_quantity_cancel_button_pressed)
 	
 	confirmation_dialog.confirmed.connect(on_confirmed)
 	
@@ -95,6 +107,7 @@ func try_purchase(price: int):
 
 func open_quantity_panel(booster_name: String):
 	if booster_map[booster_name]["amount"] == 99:
+		SoundUtils.play_ui_sound("denied")
 		return
 	
 	var booster_data = booster_map[booster_name]
@@ -106,6 +119,13 @@ func open_quantity_panel(booster_name: String):
 	slider_label.text = "1"
 	h_slider.grab_focus()
 	popup_panel.popup_centered()
+
+
+func open_credit_purchase_confirmation(money_amount: int, credit_amount: int):
+	is_credit_purchase = true
+	pending_credit_amount = credit_amount
+	confirmation_dialog.dialog_text = "Deseja gastar R$%d para comprar %d¢?" % [money_amount, credit_amount]
+	confirmation_dialog.popup_centered()
 
 
 func on_double_shot_pressed():
@@ -124,49 +144,60 @@ func on_turbo_expresso_pressed():
 	open_quantity_panel("turbo_expresso")
 
 
+func on_credits_100_pressed():
+	open_credit_purchase_confirmation(10, 100)
+
+
+func on_credits_200_pressed():
+	open_credit_purchase_confirmation(18, 200)
+
+
+func on_credits_500_pressed():
+	open_credit_purchase_confirmation(50, 500)
+
+
+func on_credits_1500_pressed():
+	open_credit_purchase_confirmation(100, 1500)
+
+
 func on_h_slider_value_changed(value: float):
 	booster_quantity = int(value)
 	slider_label.text = "%d" % booster_quantity
 
 
-func on_ok_button_pressed():
+func on_quantity_ok_button_pressed():
 	if booster_pending == "":
 		return
 
 	var booster_data = booster_map[booster_pending]
 	var price = booster_data.price
 	var total_price = price * booster_quantity
-	var current_amount = BoosterEvents.get(booster_pending)
-
-	if current_amount + booster_quantity > 99:
-		booster_quantity = 99 - current_amount
-		if booster_quantity <= 0:
-			popup_panel.hide()
-			return
-
-		total_price = price * booster_quantity
 
 	if currency_amount < total_price:
+		SoundUtils.play_ui_sound("denied")
 		popup_panel.hide()
 		return
 
+	is_credit_purchase = false
 	confirmation_dialog.dialog_text = "Deseja gastar ¢%d para comprar %d '%s'?" % [total_price, booster_quantity, booster_pending.capitalize()]
 	confirmation_dialog.popup_centered()
 	popup_panel.hide()
 
 
-func on_cancel_button_pressed():
+func on_quantity_cancel_button_pressed():
 	popup_panel.hide()
 	booster_pending = ""
 	booster_quantity = 1
 
 
 func on_confirmed():
-	if booster_pending != "":
+	if is_credit_purchase:
+		update_currency(pending_credit_amount)
+	else:
 		var booster_data = booster_map[booster_pending]
 		var price = booster_data.price
 		var total_price = price * booster_quantity
-
+		
 		if try_purchase(total_price):
 			for i in booster_quantity:
 				BoosterEvents.set(booster_pending, BoosterEvents.get(booster_pending) + 1)
@@ -174,8 +205,10 @@ func on_confirmed():
 			update_held_label(booster_data.label, BoosterEvents.get(booster_pending))
 			booster_map[booster_pending]["amount"] = BoosterEvents.get(booster_pending)
 
-		booster_pending = ""
-		booster_quantity = 1
+	booster_pending = ""
+	booster_quantity = 1
+	is_credit_purchase = false
+	pending_credit_amount = 0
 
 
 func on_focus_entered():

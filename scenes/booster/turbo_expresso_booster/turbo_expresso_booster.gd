@@ -5,9 +5,18 @@ extends Node
 
 var effect_active: bool = false
 
+var shader_material: ShaderMaterial
 
 func _ready():
+	shader_material = color_rect.material
 	timer.timeout.connect(on_timer_timeout)
+	print(shader_material)
+	print(shader_material.get_shader_parameter("animation_speed"))
+
+
+func _process(delta: float) -> void:
+	if get_tree().paused:
+		pass
 
 
 func _unhandled_input(event: InputEvent):
@@ -35,3 +44,4 @@ func activate_turbo_expresso_booster():
 func on_timer_timeout():
 	color_rect.visible = false
 	effect_active = false
+	BoosterEvents.emit_turbo_expresso_booster_ended()

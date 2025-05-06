@@ -50,3 +50,5 @@ func on_timer_timeout():
 	for enemy in enemies:
 		if enemy.has_method("unfreeze"):
 			enemy.unfreeze()
+	
+	BoosterEvents.emit_iced_coffee_booster_ended()

@@ -4,4 +4,4 @@ var currency: int
 
 
 func _ready():
-	currency = 1000000
+	currency = 400

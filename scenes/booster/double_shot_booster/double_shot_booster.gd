@@ -47,3 +47,5 @@ func on_timer_timeout():
 		
 	if player.has_method("set_attack_speed_multiplier"):
 		player.set_attack_speed_multiplier(1.0)
+	
+	BoosterEvents.emit_double_shot_booster_ended()

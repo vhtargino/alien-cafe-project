@@ -2,6 +2,7 @@ extends Node
 
 const FOCUS = preload("res://assets/audio/menu-button-focus.ogg")
 const BUTTON_PRESSED = preload("res://assets/audio/beep-confirm.ogg")
+const DENIED = preload("res://assets/audio/wrong.mp3")
 
 const DOUBLE_SHOT_SOUND = preload("res://assets/audio/knife-sound.mp3")
 const ICED_COFFEE_SOUND = preload("res://assets/audio/wind.ogg")
@@ -26,6 +27,7 @@ func play_ui_sound(sound_name: String):
 	match sound_name:
 		"focus": ui_player.stream = FOCUS
 		"button_pressed": ui_player.stream = BUTTON_PRESSED
+		"denied": ui_player.stream = DENIED
 	ui_player.play()
 
 

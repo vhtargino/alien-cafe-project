@@ -42,3 +42,4 @@ func activate_waker_booster():
 
 func on_timer_timeout():
 	effect_active = false
+	BoosterEvents.emit_waker_booster_ended()
