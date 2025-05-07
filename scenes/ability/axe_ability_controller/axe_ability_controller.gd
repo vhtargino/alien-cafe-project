@@ -46,6 +46,7 @@ func on_timer_timeout():
 	foreground_layer.add_child(axe_instance)
 	#axe_instance.global_position = player.global_position
 	axe_instance.hitbox_component.damage = base_damage * additional_damage_percent
+	SoundUtils.play_weapons_sound("turkish")
 
 
 func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):

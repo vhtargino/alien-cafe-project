@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8lsnnmdxcliq"
-path="res://.godot/imported/portafilter.png-91612e45e1c593884372cc7755f39b55.ctex"
+uid="uid://bwr5q28884k6j"
+path="res://.godot/imported/frying-pan-ai.png-2f166ec8a0831adee2fd3f178594c9bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/abilities/portafilter.png"
-dest_files=["res://.godot/imported/portafilter.png-91612e45e1c593884372cc7755f39b55.ctex"]
+source_file="res://assets/abilities/frying-pan-ai.png"
+dest_files=["res://.godot/imported/frying-pan-ai.png-2f166ec8a0831adee2fd3f178594c9bf.ctex"]
 
 [params]
 

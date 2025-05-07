@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://84q8hmpwicki"]
 
-[ext_resource type="Texture2D" uid="uid://b1imvqkwyvtha" path="res://scenes/ability/axe_ability/axe.png" id="1_65u81"]
 [ext_resource type="Script" uid="uid://v0epcr34unrx" path="res://scenes/ability/axe_ability/axe_ability.gd" id="1_m8265"]
 [ext_resource type="PackedScene" uid="uid://clkxgjwrus2sy" path="res://scenes/component/hitbox_component/hitbox_component.tscn" id="2_m8265"]
+[ext_resource type="Texture2D" uid="uid://dhsndek5113no" path="res://assets/abilities/axe.png" id="2_r58rl"]
 
 [sub_resource type="Animation" id="Animation_m8265"]
 length = 0.001
@@ -54,7 +54,7 @@ libraries = {
 autoplay = "spin"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_65u81")
+texture = ExtResource("2_r58rl")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("2_m8265")]
 
