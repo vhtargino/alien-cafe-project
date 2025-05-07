@@ -23,6 +23,7 @@ func activate_waker_booster():
 		return
 	
 	sprite.visible = true
+	SoundUtils.play_booster_sound("waker")
 	effect_active = true
 	BoosterEvents.waker -= 1
 	

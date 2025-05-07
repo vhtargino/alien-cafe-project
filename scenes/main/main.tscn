@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://c6vego054goa6"]
+[gd_scene load_steps=17 format=4 uid="uid://c6vego054goa6"]
 
 [ext_resource type="Script" uid="uid://bpcmci87vc2r8" path="res://scenes/main/main.gd" id="1_b1x3f"]
 [ext_resource type="PackedScene" uid="uid://e4jpc4yocvno" path="res://scenes/manager/enemy_manager/enemy_manager.tscn" id="1_bu345"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bfum4iq3si2lf" path="res://scenes/ui/abilities_display/abilities_display.tscn" id="6_blune"]
 [ext_resource type="PackedScene" uid="uid://cegr05gx1wvyo" path="res://scenes/manager/upgrade_manager/upgrade_manager.tscn" id="6_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://du85xj0benkrs" path="res://scenes/ui/booster_canvas_ui/booster_canvas_ui.tscn" id="8_7smn1"]
+[ext_resource type="PackedScene" uid="uid://b80776lexmyqq" path="res://scenes/ui/enemy_death_counter/enemy_death_counter.tscn" id="10_hxu8e"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_b1x3f")
@@ -44,6 +45,8 @@ experience_manager = NodePath("../../ExperienceManager")
 upgrade_manager = NodePath("../../UpgradeManager")
 
 [node name="BoosterCanvasUi" parent="UI" instance=ExtResource("8_7smn1")]
+
+[node name="EnemyDeathCounter" parent="UI" instance=ExtResource("10_hxu8e")]
 
 [node name="ArenaTimeManager" parent="." instance=ExtResource("2_6q06x")]
 

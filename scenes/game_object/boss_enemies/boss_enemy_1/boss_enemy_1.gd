@@ -42,4 +42,4 @@ func _process(_delta: float) -> void:
 
 
 func on_hit():
-	$EnemyHitRandomStreamPlayerComponent.play_random()
+	pass

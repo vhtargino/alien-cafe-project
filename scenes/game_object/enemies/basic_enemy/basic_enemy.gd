@@ -42,4 +42,4 @@ func unfreeze():
 
 
 func on_hit():
-	$EnemyHitRandomStreamPlayerComponent.play_random()
+	pass

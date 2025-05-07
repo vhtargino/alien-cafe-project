@@ -36,6 +36,7 @@ func _ready():
 	health_component.health_changed.connect(on_health_changed)
 	$HealthRegenTimer.timeout.connect(on_health_regen_timeout)
 	
+	GameEvents.health_vial_collected.connect(on_health_vial_collected)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 	
 	BoosterEvents.waker_booster_applied.connect(on_waker_booster_applied)
@@ -87,6 +88,7 @@ func check_deal_damage(damage: int, damage_source: Node2D):
 	var final_damage = max(1, damage - armor)
 	
 	health_component.damage(final_damage)
+	SoundUtils.play_player_sound("damage")
 	damage_interval_timer.start()
 
 
@@ -129,6 +131,12 @@ func on_health_regen_timeout():
 		return
 	
 	health_component.current_health += 1
+	update_health_display()
+
+
+func on_health_vial_collected():
+	var health_to_regenerate = 15
+	health_component.current_health = min(health_component.max_health, (health_component.current_health + health_to_regenerate))
 	update_health_display()
 
 

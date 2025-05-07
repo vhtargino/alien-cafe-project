@@ -26,5 +26,7 @@ func get_health_percent():
 
 func check_death():
 	if current_health == 0:
+		if owner in get_tree().get_nodes_in_group("enemy"):
+			GameEvents.emit_enemy_died()
 		died.emit()
 		owner.queue_free()
