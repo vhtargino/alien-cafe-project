@@ -3,15 +3,10 @@
 [ext_resource type="Script" uid="uid://dx2qyoybj2lcs" path="res://scenes/ui/experience_bar/experience_bar.gd" id="1_r233f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r233f"]
-bg_color = Color(0.247059, 0.14902, 0.192157, 0.709804)
+bg_color = Color(0.298039, 0.329412, 0.34902, 0.709804)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmm3j"]
-bg_color = Color(0.268235, 0.641777, 0.844804, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.8, 0.8, 0.8, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1wdu"]
+bg_color = Color(0.47451, 0.92549, 0.541176, 1)
 
 [node name="ExperienceBar" type="CanvasLayer"]
 script = ExtResource("1_r233f")
@@ -34,7 +29,7 @@ layout_mode = 2
 size_flags_vertical = 8
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_r233f")
-theme_override_styles/fill = SubResource("StyleBoxFlat_gmm3j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_l1wdu")
 max_value = 1.0
 value = 0.5
 show_percentage = false

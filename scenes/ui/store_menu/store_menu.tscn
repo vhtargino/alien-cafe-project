@@ -102,6 +102,7 @@ custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"AlternativeButton"
 text = "Buy 100¢"
 
 [node name="MarginContainer5" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer"]
@@ -176,6 +177,7 @@ custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"AlternativeButton"
 text = "Buy 100¢"
 
 [node name="MarginContainer5" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer"]
@@ -250,6 +252,7 @@ custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"AlternativeButton"
 text = "Buy 100¢"
 
 [node name="MarginContainer5" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer"]
@@ -324,6 +327,7 @@ custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"AlternativeButton"
 text = "Buy 100¢"
 
 [node name="MarginContainer5" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer"]
@@ -409,6 +413,7 @@ custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"AlternativeButton"
 text = "R$ 10"
 
 [node name="Credits200" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
@@ -471,6 +476,7 @@ custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"AlternativeButton"
 text = "R$ 18"
 
 [node name="Credits500" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
@@ -533,6 +539,7 @@ custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"AlternativeButton"
 text = "R$ 40"
 
 [node name="Credits1500" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
@@ -595,6 +602,7 @@ custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"AlternativeButton"
 text = "R$ 100"
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
@@ -633,25 +641,30 @@ text = "Back
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 unique_name_in_owner = true
+transparent_bg = true
+canvas_item_default_texture_filter = 0
 title = ""
 initial_position = 5
 size = Vector2i(200, 80)
 unresizable = true
 borderless = true
 always_on_top = true
+transparent = true
 min_size = Vector2i(120, 50)
 dialog_text = "Confirm purchase?"
 dialog_autowrap = true
 
 [node name="PopupPanel" type="PopupPanel" parent="."]
 unique_name_in_owner = true
+canvas_item_default_texture_filter = 0
 initial_position = 5
-size = Vector2i(200, 110)
+size = Vector2i(174, 110)
+sharp_corners = true
 
 [node name="MarginContainer" type="MarginContainer" parent="PopupPanel"]
 offset_left = 12.0
 offset_top = 12.0
-offset_right = 188.0
+offset_right = 162.0
 offset_bottom = 98.0
 theme_override_constants/margin_top = 4
 
@@ -698,15 +711,16 @@ alignment = 1
 
 [node name="QuantityOKButton" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer2" groups=["ui_buttons"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(25, 18)
+custom_minimum_size = Vector2(45, 18)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_neighbor_top = NodePath("../../HBoxContainer/HSlider")
 text = "OK"
 
 [node name="QuantityCancelButton" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer2" groups=["ui_buttons"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(25, 20)
+custom_minimum_size = Vector2(45, 20)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

@@ -33,7 +33,7 @@ theme_override_constants/separation = 4
 [node name="Weapon1" type="PanelContainer" parent="CenterContainer/HBoxContainer/WeaponsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="W1Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/WeaponsContainer/Weapon1"]
 custom_minimum_size = Vector2(16, 16)
@@ -61,7 +61,7 @@ vertical_alignment = 2
 [node name="Weapon2" type="PanelContainer" parent="CenterContainer/HBoxContainer/WeaponsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="W2Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/WeaponsContainer/Weapon2"]
 custom_minimum_size = Vector2(16, 16)
@@ -88,7 +88,7 @@ vertical_alignment = 2
 [node name="Weapon3" type="PanelContainer" parent="CenterContainer/HBoxContainer/WeaponsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="W3Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/WeaponsContainer/Weapon3"]
 custom_minimum_size = Vector2(16, 16)
@@ -115,7 +115,7 @@ vertical_alignment = 2
 [node name="Weapon4" type="PanelContainer" parent="CenterContainer/HBoxContainer/WeaponsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="W4Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/WeaponsContainer/Weapon4"]
 custom_minimum_size = Vector2(16, 16)
@@ -146,7 +146,7 @@ theme_override_constants/separation = 4
 [node name="PowerUp1" type="PanelContainer" parent="CenterContainer/HBoxContainer/PowerUpsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="PU1Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/PowerUpsContainer/PowerUp1"]
 custom_minimum_size = Vector2(16, 16)
@@ -173,7 +173,7 @@ vertical_alignment = 2
 [node name="PowerUp2" type="PanelContainer" parent="CenterContainer/HBoxContainer/PowerUpsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="PU2Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/PowerUpsContainer/PowerUp2"]
 custom_minimum_size = Vector2(16, 16)
@@ -200,7 +200,7 @@ vertical_alignment = 2
 [node name="PowerUp3" type="PanelContainer" parent="CenterContainer/HBoxContainer/PowerUpsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="PU3Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/PowerUpsContainer/PowerUp3"]
 custom_minimum_size = Vector2(16, 16)
@@ -227,7 +227,7 @@ vertical_alignment = 2
 [node name="PowerUp4" type="PanelContainer" parent="CenterContainer/HBoxContainer/PowerUpsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="PU4Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/PowerUpsContainer/PowerUp4"]
 custom_minimum_size = Vector2(16, 16)
@@ -259,7 +259,7 @@ theme_override_constants/separation = 4
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="B1Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster1"]
 custom_minimum_size = Vector2(16, 16)
@@ -291,7 +291,7 @@ vertical_alignment = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="B2Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster2"]
 custom_minimum_size = Vector2(16, 16)
@@ -321,7 +321,7 @@ vertical_alignment = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="B3Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster3"]
 custom_minimum_size = Vector2(16, 16)
@@ -351,7 +351,7 @@ vertical_alignment = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="B4Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster4"]
 custom_minimum_size = Vector2(16, 16)
