@@ -4,6 +4,8 @@ class_name OptionsMenu
 signal back_pressed
 
 @onready var back_button = %BackButton
+@onready var music_slider = %MusicSlider
+@onready var sfx_slider = %SFXSlider
 
 
 func _ready():
@@ -11,15 +13,16 @@ func _ready():
 		slider.focus_entered.connect(on_focus_entered)
 	
 	back_button.pressed.connect(on_back_pressed)
+	back_button.focus_entered.connect(on_focus_entered)
 	
-	%MusicSlider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
-	%SFXSlider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
+	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
+	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
 	
-	%MusicSlider.value_changed.connect(func(value): _set_bus_volume("Music", value))
-	%SFXSlider.value_changed.connect(func(value): _set_bus_volume("SFX", value))
+	music_slider.value_changed.connect(func(value): _set_bus_volume("Music", value))
+	sfx_slider.value_changed.connect(func(value): _set_bus_volume("SFX", value))
 	
 	SoundUtils.disable_focus_sound()
-	%MusicSlider.grab_focus()
+	music_slider.grab_focus()
 	SoundUtils.enable_focus_sound()
 
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d103v2a3onuev"
-path="res://.godot/imported/stage_3.png-90bc71e0a6c2e63ba2ad835de378c848.ctex"
+uid="uid://dw3toqvmovkek"
+path="res://.godot/imported/city_tilemap_packed.png-f63539aad20693027f9872739192d410.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stages/stage_3.png"
-dest_files=["res://.godot/imported/stage_3.png-90bc71e0a6c2e63ba2ad835de378c848.ctex"]
+source_file="res://assets/environment/city_tilemap_packed.png"
+dest_files=["res://.godot/imported/city_tilemap_packed.png-f63539aad20693027f9872739192d410.ctex"]
 
 [params]
 

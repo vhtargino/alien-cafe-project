@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://dx2qyoybj2lcs" path="res://scenes/ui/experience_bar/experience_bar.gd" id="1_r233f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r233f"]
-bg_color = Color(0.298039, 0.329412, 0.34902, 0.709804)
+bg_color = Color(0.298039, 0.329412, 0.34902, 0.752941)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1wdu"]
-bg_color = Color(0.47451, 0.92549, 0.541176, 1)
+bg_color = Color(0.245986, 0.956259, 0.238496, 0.752941)
 
 [node name="ExperienceBar" type="CanvasLayer"]
 script = ExtResource("1_r233f")

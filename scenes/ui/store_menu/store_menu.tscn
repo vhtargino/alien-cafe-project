@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bra8u7cp632cg"]
+[gd_scene load_steps=13 format=3 uid="uid://bra8u7cp632cg"]
 
 [ext_resource type="Script" uid="uid://dntjdo58w7ax5" path="res://scenes/ui/store_menu/store_menu.gd" id="1_oifsy"]
 [ext_resource type="Texture2D" uid="uid://ltr886e5r5m6" path="res://assets/boosters/booster1.png" id="2_ek826"]
+[ext_resource type="Shader" uid="uid://bbab2riuh3e74" path="res://resources/shaders/scroll_shader.gdshader" id="2_t03xh"]
+[ext_resource type="Texture2D" uid="uid://dblhnqfqhnqqr" path="res://assets/main_menu/outer-space.png" id="3_6aqvp"]
 [ext_resource type="Texture2D" uid="uid://j5s3ragk1xpd" path="res://assets/boosters/booster2.png" id="4_qe68t"]
 [ext_resource type="Texture2D" uid="uid://blvo7xs42tmxa" path="res://assets/boosters/booster3.png" id="5_ti2ft"]
 [ext_resource type="Texture2D" uid="uid://cj5suksqk1jg6" path="res://assets/boosters/booster4.png" id="6_10w5d"]
@@ -10,8 +12,22 @@
 [ext_resource type="Texture2D" uid="uid://bd2m10mavu8g6" path="res://assets/ui/coin_04e.png" id="8_6aqvp"]
 [ext_resource type="Texture2D" uid="uid://cqgagc6y1efhb" path="res://assets/ui/coin_05e.png" id="9_p11xj"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p11xj"]
+shader = ExtResource("2_t03xh")
+shader_parameter/speed = 0.05
+
 [node name="StoreMenu" type="CanvasLayer"]
 script = ExtResource("1_oifsy")
+
+[node name="OuterSpace" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_p11xj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_6aqvp")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -676,7 +692,6 @@ theme_override_constants/separation = 18
 [node name="Label" type="Label" parent="PopupPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
 text = "How many?"
 horizontal_alignment = 1
 
@@ -716,6 +731,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_top = NodePath("../../HBoxContainer/HSlider")
+theme_type_variation = &"AlternativeButton"
 text = "OK"
 
 [node name="QuantityCancelButton" type="Button" parent="PopupPanel/MarginContainer/VBoxContainer/HBoxContainer2" groups=["ui_buttons"]]
@@ -724,4 +740,5 @@ custom_minimum_size = Vector2(45, 20)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"AlternativeButton"
 text = "Cancel"

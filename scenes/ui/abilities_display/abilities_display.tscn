@@ -196,6 +196,7 @@ grow_horizontal = 0
 grow_vertical = 0
 horizontal_alignment = 1
 vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="PowerUp3" type="PanelContainer" parent="CenterContainer/HBoxContainer/PowerUpsContainer"]
 custom_minimum_size = Vector2(16, 16)

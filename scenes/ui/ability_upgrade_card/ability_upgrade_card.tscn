@@ -61,21 +61,20 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 mouse_filter = 1
-theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.313726)
-theme_override_colors/font_outline_color = Color(0.14902, 0.168627, 0.266667, 1)
-theme_override_constants/outline_size = 2
 text = "Teste"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="DescriptionLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="PanelContainer3" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(123, 67)
+layout_mode = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer3"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 6
 mouse_filter = 1
-theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.313726)
-theme_override_colors/font_outline_color = Color(0.14902, 0.168627, 0.266667, 1)
-theme_override_constants/outline_size = 2
 text = "Escrevendo alguma descricao de teste para ver como isso esta se comportando. Ate agora tudo bem."
 autowrap_mode = 2

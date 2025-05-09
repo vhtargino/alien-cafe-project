@@ -29,5 +29,4 @@ texture = ExtResource("2_eyaj3")
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
 text = "9999"

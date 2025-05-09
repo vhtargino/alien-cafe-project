@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6jba13g1hxjh"
-path="res://.godot/imported/stage_1.png-6c78f1f4ca3eafe5ad57a1c71d657c2e.ctex"
+uid="uid://cwxpr25cqu2gy"
+path="res://.godot/imported/stage-select1.png-1a1dcb02155b48b974c8e3cb4b0f41f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stages/stage_1.png"
-dest_files=["res://.godot/imported/stage_1.png-6c78f1f4ca3eafe5ad57a1c71d657c2e.ctex"]
+source_file="res://assets/stages/stage-select1.png"
+dest_files=["res://.godot/imported/stage-select1.png-1a1dcb02155b48b974c8e3cb4b0f41f1.ctex"]
 
 [params]
 

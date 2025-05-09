@@ -1,11 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://xs8a85dgrx47"]
 
 [ext_resource type="Script" uid="uid://c117eyk6yyb0w" path="res://scenes/autoload/sound_utils/sound_utils.gd" id="1_r8vor"]
-[ext_resource type="AudioStream" uid="uid://d1b0w5lo1mwld" path="res://assets/audio/enemy_hit.ogg" id="2_vfwut"]
 [ext_resource type="AudioStream" uid="uid://c6ayjmfup42n4" path="res://assets/audio/impactGeneric_light_000.ogg" id="3_jjjis"]
 [ext_resource type="AudioStream" uid="uid://bohcwm6427lo" path="res://assets/audio/health_up.ogg" id="3_wxa1l"]
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_jjjis"]
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_wxa1l"]
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_r8vor"]
 
@@ -27,9 +28,9 @@ max_polyphony = 32
 bus = &"SFX"
 
 [node name="EnemyPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_vfwut")
+stream = SubResource("AudioStreamPolyphonic_wxa1l")
 volume_db = -6.0
-bus = &"SFX"
+bus = &"EnemyHit"
 
 [node name="BoosterSoundsPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPolyphonic_r8vor")

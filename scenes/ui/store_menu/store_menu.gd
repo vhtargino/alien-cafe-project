@@ -64,11 +64,14 @@ func _ready():
 	waker_button.pressed.connect(on_waker_pressed)
 	iced_coffee_button.pressed.connect(on_iced_coffee_pressed)
 	turbo_expresso_button.pressed.connect(on_turbo_expresso_pressed)
+	
 	credits_100_button.pressed.connect(on_credits_100_pressed)
 	credits_200_button.pressed.connect(on_credits_200_pressed)
 	credits_500_button.pressed.connect(on_credits_500_pressed)
 	credits_1500_button.pressed.connect(on_credits_1500_pressed)
+	
 	back_button.pressed.connect(on_back_pressed)
+	
 	h_slider.value_changed.connect(on_h_slider_value_changed)
 	quantity_ok_button.pressed.connect(on_quantity_ok_button_pressed)
 	quantity_cancel_button.pressed.connect(on_quantity_cancel_button_pressed)
@@ -81,6 +84,12 @@ func _ready():
 	SoundUtils.disable_focus_sound()
 	double_shot_button.grab_focus()
 	SoundUtils.enable_focus_sound()
+	
+	$Control/TabContainer.tab_selected.connect(on_tab_selected)
+
+
+func on_tab_selected(_tab):
+	SoundUtils.play_ui_sound("focus")
 
 
 func update_currency_label():

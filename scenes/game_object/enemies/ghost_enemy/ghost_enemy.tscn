@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bc4cuohsciyv2"]
 
 [ext_resource type="Script" uid="uid://3btwt647u047" path="res://scenes/game_object/enemies/ghost_enemy/ghost_enemy.gd" id="1_jis5d"]
-[ext_resource type="Shader" uid="uid://b4tphr583qfyf" path="res://resources/freeze_shader.gdshader" id="2_mmpqg"]
+[ext_resource type="Shader" uid="uid://b4tphr583qfyf" path="res://resources/shaders/freeze_shader.gdshader" id="2_mmpqg"]
 [ext_resource type="PackedScene" uid="uid://bg05buf3ev5eg" path="res://scenes/component/velocity_component/velocity_component.tscn" id="3_07xu6"]
 [ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component/health_component.tscn" id="4_w8kli"]
 [ext_resource type="PackedScene" uid="uid://dc3ubxkagms0a" path="res://scenes/component/vial_drop_component/vial_drop_component.tscn" id="5_nchyd"]
@@ -28,7 +28,7 @@ radius = 5.0
 
 [node name="GhostEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 12
-collision_mask = 7
+collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_jis5d")
 damage = 9

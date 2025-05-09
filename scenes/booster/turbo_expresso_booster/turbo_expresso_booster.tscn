@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cu55qh8jtvdcu"]
 
 [ext_resource type="Script" uid="uid://cxdfy2r64bgog" path="res://scenes/booster/turbo_expresso_booster/turbo_expresso_booster.gd" id="1_per1n"]
-[ext_resource type="Shader" uid="uid://bf85reytqn5kh" path="res://resources/speed_shader.gdshader" id="2_k6471"]
+[ext_resource type="Shader" uid="uid://bf85reytqn5kh" path="res://resources/shaders/speed_shader.gdshader" id="2_k6471"]
 
 [sub_resource type="Gradient" id="Gradient_k6471"]
 offsets = PackedFloat32Array(0, 0.888235)
