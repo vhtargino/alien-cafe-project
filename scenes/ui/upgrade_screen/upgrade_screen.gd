@@ -10,7 +10,6 @@ signal upgrade_selected(upgrade: AbilityUpgrade)
 func _ready():
 	get_tree().paused = true
 	SoundUtils.enable_music_filter()
-	SoundUtils.play_ui_sound("level_up")
 
 
 func set_ability_upgrades(upgrades: Array[AbilityUpgrade]):

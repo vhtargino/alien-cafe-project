@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhav55ogv83r5"]
-
-[ext_resource type="Script" uid="uid://d0f7qmgyin34f" path="res://scenes/component/test_death_component/test_death_component.gd" id="1_liqq2"]
-
-[node name="TestDeathComponent" type="Node2D"]
-script = ExtResource("1_liqq2")

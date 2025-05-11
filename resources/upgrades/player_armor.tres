@@ -7,7 +7,7 @@
 script = ExtResource("2_wb20e")
 image = ExtResource("1_hhb0s")
 id = "player_armor"
-max_quantity = 4
+max_quantity = 7
 name = "armor"
 type = "power_up"
 sub_type = "power_up_upgrade"
