@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cccnxrpmr7m3s"
-path="res://.godot/imported/skull.png-3e055ad5f81110e677dfb0bbeaa33886.ctex"
+uid="uid://bd55wdo44l7to"
+path="res://.godot/imported/enemy_death_counter.png-61e555bcb4bc4857cd88c4df1bf496f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/ui/enemy_death_counter/skull.png"
-dest_files=["res://.godot/imported/skull.png-3e055ad5f81110e677dfb0bbeaa33886.ctex"]
+source_file="res://assets/ui/enemy_death_counter.png"
+dest_files=["res://.godot/imported/enemy_death_counter.png-61e555bcb4bc4857cd88c4df1bf496f0.ctex"]
 
 [params]
 

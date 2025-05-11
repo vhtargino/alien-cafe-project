@@ -6,6 +6,7 @@ extends Node2D
 
 func _ready():
 	%Player.health_component.died.connect(on_player_died)
+	show_stage_title()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -13,6 +14,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		var pause_menu_instance = pause_menu_scene.instantiate()
 		add_child(pause_menu_instance)
 		get_tree().root.set_input_as_handled()
+
+
+func show_stage_title():
+	get_tree().paused = true
+	$StageTitle/AnimationPlayer.play("default")
+	await $StageTitle/AnimationPlayer.animation_finished
+	get_tree().paused = false
+	$StageTitle.queue_free()
 
 
 #func create_camera():

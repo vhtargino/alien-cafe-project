@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://deaw0j1ach3ew"]
 
 [ext_resource type="Script" uid="uid://bl88jplgpytft" path="res://scenes/booster/waker_booster/waker_booster.gd" id="1_27mnf"]
-[ext_resource type="SpriteFrames" uid="uid://bdsfa8fxp1kap" path="res://resources/green_healing_fx.tres" id="2_tumkb"]
+[ext_resource type="SpriteFrames" uid="uid://bdsfa8fxp1kap" path="res://resources/sprite_sheets/green_healing_fx.tres" id="2_tumkb"]
 
 [node name="WakerBooster" type="Node"]
 script = ExtResource("1_27mnf")

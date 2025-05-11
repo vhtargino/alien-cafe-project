@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
 @onready var visuals: Node2D = $Visuals
-@onready var sprite: Sprite2D = $Visuals/Sprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $Visuals/AnimatedSprite2D
 @onready var velocity_component = $VelocityComponent
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
+@onready var health_component: HealthComponent = $HealthComponent
 
-@onready var normal_material : Material = sprite.material
+@onready var normal_material : Material = animated_sprite_2d.material
 @export var freeze_material: ShaderMaterial
 
 @export var damage: int = 1
@@ -26,6 +27,8 @@ func _process(_delta: float) -> void:
 	velocity_component.accelerate_to_player()
 	velocity_component.move(self)
 	
+	animated_sprite_2d.play("walk")
+	
 	var move_sign = sign(velocity.x)
 	if velocity.x != 0:
 		visuals.scale = Vector2(-move_sign, 1)
@@ -33,13 +36,29 @@ func _process(_delta: float) -> void:
 
 func freeze():
 	is_frozen = true
-	sprite.material = freeze_material
+	animated_sprite_2d.stop()
+	animated_sprite_2d.material = freeze_material
 
 
 func unfreeze():
 	is_frozen = false
-	sprite.material = normal_material
+	animated_sprite_2d.play("walk")
+	animated_sprite_2d.material = normal_material
 
 
 func on_hit():
 	pass
+
+
+func on_died():
+	pass
+	#var animation_spawn_position = global_position
+	#var entities = get_tree().get_first_node_in_group("entities_layer")
+	#
+	#animated_sprite_2d.material = null
+	#$Visuals.remove_child(animated_sprite_2d)
+	#entities.add_child(animated_sprite_2d)
+	#animated_sprite_2d.global_position = animation_spawn_position
+	#
+	#animated_sprite_2d.play("death")
+	#await animated_sprite_2d.animation_finished

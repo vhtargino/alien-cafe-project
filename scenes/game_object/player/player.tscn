@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="3_rix40"]
 [ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="4_rix40"]
 [ext_resource type="PackedScene" uid="uid://bq6mbwailxphi" path="res://scenes/booster/double_shot_booster/double_shot_booster.tscn" id="7_dy4tu"]
-[ext_resource type="SpriteFrames" uid="uid://dagtd40gw1ynx" path="res://resources/main_char_sprites.tres" id="7_rix40"]
+[ext_resource type="SpriteFrames" uid="uid://dagtd40gw1ynx" path="res://resources/sprite_sheets/main_char_sprites.tres" id="7_rix40"]
 [ext_resource type="PackedScene" uid="uid://deaw0j1ach3ew" path="res://scenes/booster/waker_booster/waker_booster.tscn" id="8_gqr5v"]
 [ext_resource type="PackedScene" uid="uid://56ugs0sthyj2" path="res://scenes/booster/iced_coffee_booster/iced_coffee_booster.tscn" id="9_28lpv"]
 [ext_resource type="PackedScene" uid="uid://cu55qh8jtvdcu" path="res://scenes/booster/turbo_expresso_booster/turbo_expresso_booster.tscn" id="10_gbew5"]
@@ -101,8 +101,8 @@ shape = SubResource("CircleShape2D_s3670")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="Visuals"]
 unique_name_in_owner = true
 sprite_frames = ExtResource("7_rix40")
-animation = &"player_idle"
-offset = Vector2(0, -10)
+animation = &"player_walk"
+offset = Vector2(0, -9)
 
 [node name="CollisionArea2D" type="Area2D" parent="."]
 position = Vector2(0, -6)

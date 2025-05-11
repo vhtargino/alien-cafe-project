@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b80776lexmyqq"]
 
 [ext_resource type="Script" uid="uid://c1y0cp4bsit0o" path="res://scenes/ui/enemy_death_counter/enemy_death_counter.gd" id="1_t28do"]
-[ext_resource type="Texture2D" uid="uid://cccnxrpmr7m3s" path="res://scenes/ui/enemy_death_counter/skull.png" id="2_eyaj3"]
+[ext_resource type="Texture2D" uid="uid://bd55wdo44l7to" path="res://assets/ui/enemy_death_counter.png" id="2_eyaj3"]
 
 [node name="EnemyDeathCounter" type="CanvasLayer"]
 script = ExtResource("1_t28do")

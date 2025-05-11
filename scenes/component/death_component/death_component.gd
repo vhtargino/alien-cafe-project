@@ -21,3 +21,4 @@ func on_died():
 	global_position = spawn_position
 	
 	$AnimationPlayer.play("default_enemy_death")
+	
