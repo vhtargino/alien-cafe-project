@@ -60,34 +60,42 @@ func on_ability_level_up(abilities_current_level: Dictionary):
 func on_double_shoot_booster_applied():
 	%B1Label.text = str(BoosterEvents.double_shot)
 	%Booster1.self_modulate = Color(0.8, 0.8, 0.8, 1)
+	%ReferenceRect.visible = true
 
 
 func on_waker_booster_applied():
 	%B2Label.text = str(BoosterEvents.waker)
 	%Booster2.self_modulate = Color(0.8, 0.8, 0.8, 1)
+	%ReferenceRect2.visible = true
 
 
 func on_iced_coffee_booster_applied():
 	%B3Label.text = str(BoosterEvents.iced_coffee)
 	%Booster3.self_modulate = Color(0.8, 0.8, 0.8, 1)
+	%ReferenceRect3.visible = true
 
 
 func on_turbo_expresso_booster_applied():
 	%B4Label.text = str(BoosterEvents.turbo_expresso)
 	%Booster4.self_modulate = Color(0.8, 0.8, 0.8, 1)
+	%ReferenceRect4.visible = true
 
 
 func on_double_shoot_booster_ended():
 	%Booster1.self_modulate = Color(1, 1, 1, 1)
+	%ReferenceRect.visible = false
 
 
 func on_waker_booster_ended():
 	%Booster2.self_modulate = Color(1, 1, 1, 1)
-	
+	%ReferenceRect2.visible = false
+
 
 func on_iced_coffee_booster_ended():
 	%Booster3.self_modulate = Color(1, 1, 1, 1)
-	
+	%ReferenceRect3.visible = false
+
 
 func on_turbo_expresso_booster_ended():
 	%Booster4.self_modulate = Color(1, 1, 1, 1)
+	%ReferenceRect4.visible = false

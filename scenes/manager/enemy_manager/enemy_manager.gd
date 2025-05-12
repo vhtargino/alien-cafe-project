@@ -5,7 +5,7 @@ const SPAWN_RADIUS = 330
 @export var alien_0001_scene: PackedScene
 @export var alien_0002_scene: PackedScene
 @export var alien_0003_scene: PackedScene
-@export var spider_enemy_scene: PackedScene
+@export var alien_0004_scene: PackedScene
 @export var alien_0005_scene: PackedScene
 @export var crab_enemy_scene: PackedScene
 @export var alien_0007_scene: PackedScene
@@ -60,7 +60,7 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 		enemy_table.add_item(alien_0003_scene, 40)
 	elif arena_difficulty == 36:
 		enemy_table.remove_item(alien_0001_scene)
-		enemy_table.add_item(spider_enemy_scene, 80)
+		enemy_table.add_item(alien_0004_scene, 80)
 	elif arena_difficulty == 48:
 		enemy_table.remove_item(alien_0002_scene)
 		enemy_table.add_item(alien_0005_scene, 160)
@@ -68,7 +68,7 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 		enemy_table.remove_item(alien_0003_scene)
 		enemy_table.add_item(crab_enemy_scene, 320)
 	elif arena_difficulty == 72:
-		enemy_table.remove_item(spider_enemy_scene)
+		enemy_table.remove_item(alien_0004_scene)
 		enemy_table.add_item(alien_0007_scene, 640)
 	elif arena_difficulty == 84:
 		enemy_table.remove_item(alien_0005_scene)

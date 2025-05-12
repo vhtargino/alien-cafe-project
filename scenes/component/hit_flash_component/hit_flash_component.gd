@@ -34,4 +34,3 @@ func create_hit_flash_tween(target: CanvasItem):
 	hit_flash_tween = create_tween()
 	hit_flash_tween.tween_property(target.material, "shader_parameter/lerp_percent", 0.0, .25)\
 	.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
-	

@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cs1erg3kov16k" path="res://scenes/component/health_drop_component/health_drop_component.tscn" id="6_2k23j"]
 [ext_resource type="PackedScene" uid="uid://d5l8117qmu3d" path="res://scenes/component/hurtbox_component/hurtbox_component.tscn" id="7_mrvcy"]
 [ext_resource type="PackedScene" uid="uid://dhav55ogv83r5" path="res://scenes/component/animated_death_component/animated_death_component.tscn" id="8_4mg3i"]
-[ext_resource type="SpriteFrames" uid="uid://cmvg844cuobyq" path="res://resources/sprite_sheets/alien_0002_frames.tres" id="10_y3d86"]
+[ext_resource type="SpriteFrames" uid="uid://cmvg844cuobyq" path="res://resources/sprite_sheets/alien_0002_sprites.tres" id="10_y3d86"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y3d86"]
 shader = ExtResource("2_hcfsk")
@@ -49,9 +49,8 @@ experience_amount = 2.0
 drop_percent = 0.01
 health_component = NodePath("../HealthComponent")
 
-[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite", "animated_sprite") instance=ExtResource("4_7kpoi")]
+[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "animated_sprite") instance=ExtResource("4_7kpoi")]
 health_component = NodePath("../HealthComponent")
-sprite = NodePath("")
 animated_sprite = NodePath("../Visuals/AnimatedSprite2D")
 hit_flash_material = SubResource("ShaderMaterial_74qiw")
 

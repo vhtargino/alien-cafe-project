@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfum4iq3si2lf"]
+[gd_scene load_steps=9 format=3 uid="uid://bfum4iq3si2lf"]
 
 [ext_resource type="Script" uid="uid://dxa42qn2qcim3" path="res://scenes/ui/abilities_display/abilities_display.gd" id="1_8f0eq"]
 [ext_resource type="Texture2D" uid="uid://ltr886e5r5m6" path="res://assets/boosters/booster1.png" id="2_l2ycp"]
@@ -6,8 +6,125 @@
 [ext_resource type="Texture2D" uid="uid://blvo7xs42tmxa" path="res://assets/boosters/booster3.png" id="4_g4v47"]
 [ext_resource type="Texture2D" uid="uid://cj5suksqk1jg6" path="res://assets/boosters/booster4.png" id="5_najb3"]
 
+[sub_resource type="Animation" id="Animation_l2ycp"]
+resource_name = "default"
+length = 2.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster1/ReferenceRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.172549, 0.796078, 0.662745, 1), Color(0.768627, 0.796078, 0.172549, 1), Color(1, 0.698039, 0, 1), Color(0.913725, 0.266667, 0.266667, 1), Color(0.658824, 0.0352941, 0.831373, 1), Color(0.172549, 0.796078, 0.662745, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster2/ReferenceRect2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.658824, 0.0352941, 0.831373, 1), Color(0.172549, 0.796078, 0.662745, 1), Color(0.768627, 0.796078, 0.172549, 1), Color(1, 0.698039, 0, 1), Color(0.913725, 0.266667, 0.266667, 1), Color(0.658824, 0.0352941, 0.831373, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster3/ReferenceRect3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.913725, 0.266667, 0.266667, 1), Color(0.658824, 0.0352941, 0.831373, 1), Color(0.172549, 0.796078, 0.662745, 1), Color(0.768627, 0.796078, 0.172549, 1), Color(1, 0.698039, 0, 1), Color(0.913725, 0.266667, 0.266667, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster4/ReferenceRect4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.698039, 0, 1), Color(0.913725, 0.266667, 0.266667, 1), Color(0.658824, 0.0352941, 0.831373, 1), Color(0.172549, 0.796078, 0.662745, 1), Color(0.768627, 0.796078, 0.172549, 1), Color(1, 0.698039, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p1ts6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster1/ReferenceRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster2/ReferenceRect2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster3/ReferenceRect3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster4/ReferenceRect4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g4v47"]
+_data = {
+&"RESET": SubResource("Animation_p1ts6"),
+&"default": SubResource("Animation_l2ycp")
+}
+
 [node name="AbilitiesDisplay" type="CanvasLayer"]
 script = ExtResource("1_8f0eq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_g4v47")
+}
+autoplay = "default"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 7
@@ -262,6 +379,13 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer3"
 
+[node name="ReferenceRect" type="ReferenceRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster1"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+border_color = Color(1, 1, 1, 1)
+editor_only = false
+
 [node name="B1Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster1"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
@@ -294,6 +418,13 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer3"
 
+[node name="ReferenceRect2" type="ReferenceRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+border_color = Color(1, 1, 1, 1)
+editor_only = false
+
 [node name="B2Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster2"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
@@ -324,6 +455,13 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer3"
 
+[node name="ReferenceRect3" type="ReferenceRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+border_color = Color(1, 1, 1, 1)
+editor_only = false
+
 [node name="B3Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster3"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
@@ -353,6 +491,13 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer3"
+
+[node name="ReferenceRect4" type="ReferenceRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster4"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+border_color = Color(1, 1, 1, 1)
+editor_only = false
 
 [node name="B4Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster4"]
 custom_minimum_size = Vector2(16, 16)

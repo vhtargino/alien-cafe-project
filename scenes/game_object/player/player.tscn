@@ -101,7 +101,7 @@ shape = SubResource("CircleShape2D_s3670")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="Visuals"]
 unique_name_in_owner = true
 sprite_frames = ExtResource("7_rix40")
-animation = &"player_walk"
+animation = &"player_idle"
 offset = Vector2(0, -9)
 
 [node name="CollisionArea2D" type="Area2D" parent="."]
