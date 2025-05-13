@@ -8,10 +8,7 @@ const LEVEL_UP = preload("res://assets/audio/level_up.ogg")
 const PLAYER_DAMAGE = preload("res://assets/audio/player_hit.ogg")
 const HEALING = preload("res://assets/audio/health_up.ogg")
 
-const SWORD_SOUND = preload("res://assets/audio/sword_sound.ogg")
 const AXE_SOUND = preload("res://assets/audio/spinning_woosh.ogg")
-
-const ENEMY_HIT = preload("res://assets/audio/enemy_hit.ogg")
 
 const DOUBLE_SHOT_SOUND = preload("res://assets/audio/knife-sound.mp3")
 const ICED_COFFEE_SOUND = preload("res://assets/audio/wind.ogg")
@@ -19,14 +16,13 @@ const TURBO_EXPRESSO = preload("res://assets/audio/high-speed.mp3")
 
 @onready var ui_player: AudioStreamPlayer = $UiPlayer
 @onready var player_player: AudioStreamPlayer = $PlayerPlayer
-@onready var weapons_player: AudioStreamPlayer = $WeaponsPlayer
+@onready var sword_player: AudioStreamPlayer = $SwordPlayer
+@onready var axe_player: AudioStreamPlayer = $AxePlayer
 @onready var enemy_player: AudioStreamPlayer = $EnemyPlayer
 @onready var booster_sounds_player: AudioStreamPlayer = $BoosterSoundsPlayer
 @onready var experience_collect_player: AudioStreamPlayer = $ExperienceCollectPlayer
 @onready var health_collect_player: AudioStreamPlayer = $HealthCollectPlayer
 
-#var weapons_polyphonic_playback: AudioStreamPlaybackPolyphonic
-var enemies_polyphonic_playback: AudioStreamPlaybackPolyphonic
 var boosters_polyphonic_playback: AudioStreamPlaybackPolyphonic
 
 var allow_focus_sound: bool = false
@@ -35,8 +31,6 @@ var allow_focus_sound: bool = false
 func _ready():
 	booster_sounds_player.play()
 	boosters_polyphonic_playback = booster_sounds_player.get_stream_playback()
-	enemy_player.play()
-	enemies_polyphonic_playback = enemy_player.get_stream_playback()
 
 
 func enable_focus_sound():
@@ -66,15 +60,17 @@ func play_player_sound(sound_name: String):
 	player_player.play()
 
 
-func play_weapons_sound(sound_name: String):
-	match sound_name:
-		"portafilter": boosters_polyphonic_playback.play_stream(SWORD_SOUND)
-		"turkish": boosters_polyphonic_playback.play_stream(AXE_SOUND)
+func play_sword_sound():
+	sword_player.play()
+
+
+func play_axe_sound():
+	axe_player.play()
 
 
 func play_enemy_sound():
-	var random_pitch = randf_range(0.8, 1.2)
-	enemies_polyphonic_playback.play_stream(ENEMY_HIT, 0, 0, random_pitch)
+	enemy_player.pitch_scale = randf_range(0.8, 1.2)
+	enemy_player.play()
 
 
 func play_booster_sound(sound_name: String):

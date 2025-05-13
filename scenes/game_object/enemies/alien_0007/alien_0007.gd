@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-@onready var visuals: Node2D = $Visuals
-@onready var animated_sprite_2d: AnimatedSprite2D = $Visuals/AnimatedSprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var velocity_component = $VelocityComponent
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 @onready var health_component: HealthComponent = $HealthComponent
@@ -31,7 +30,7 @@ func _process(_delta: float) -> void:
 	
 	var move_sign = sign(velocity.x)
 	if velocity.x != 0:
-		visuals.scale = Vector2(-move_sign, 1)
+		animated_sprite_2d.scale = Vector2(-move_sign, 1)
 
 
 func freeze():

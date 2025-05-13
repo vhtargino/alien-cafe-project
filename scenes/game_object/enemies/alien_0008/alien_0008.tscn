@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dp2xffuso1t80"]
 
-[ext_resource type="Script" uid="uid://dq2aso3k1yshr" path="res://scenes/game_object/enemies/rogue_enemy/rogue_enemy.gd" id="1_601jx"]
+[ext_resource type="Script" uid="uid://dq2aso3k1yshr" path="res://scenes/game_object/enemies/alien_0008/alien_0008.gd" id="1_601jx"]
 [ext_resource type="Shader" uid="uid://b4tphr583qfyf" path="res://resources/shaders/freeze_shader.gdshader" id="2_mxro0"]
 [ext_resource type="PackedScene" uid="uid://bg05buf3ev5eg" path="res://scenes/component/velocity_component/velocity_component.tscn" id="3_t58xn"]
 [ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component/health_component.tscn" id="4_mqmj2"]
@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cs1erg3kov16k" path="res://scenes/component/health_drop_component/health_drop_component.tscn" id="6_7ocy7"]
 [ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="6_bwaq6"]
 [ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="7_8dfqc"]
-[ext_resource type="PackedScene" uid="uid://ff8i0llbatvj" path="res://scenes/component/death_component/death_component.tscn" id="8_pw5ud"]
+[ext_resource type="PackedScene" uid="uid://dhav55ogv83r5" path="res://scenes/component/animated_death_component/animated_death_component.tscn" id="9_d1uua"]
+[ext_resource type="SpriteFrames" uid="uid://csqx0tq5iskaj" path="res://resources/sprite_sheets/alien_0008_sprites.tres" id="11_hvn4m"]
 [ext_resource type="PackedScene" uid="uid://d5l8117qmu3d" path="res://scenes/component/hurtbox_component/hurtbox_component.tscn" id="15_nqrij"]
-[ext_resource type="Texture2D" uid="uid://ddbgex6f7pq0h" path="res://scenes/game_object/enemies/rogue_enemy/rogue.png" id="16_7ocy7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_85h30"]
 shader = ExtResource("2_mxro0")
@@ -21,18 +21,18 @@ shader = ExtResource("7_8dfqc")
 shader_parameter/lerp_percent = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qgqx6"]
-radius = 9.0
+radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wso2b"]
-radius = 5.0
+radius = 7.0
 
-[node name="RogueEnemy" type="CharacterBody2D" groups=["enemy"]]
+[node name="Alien0008" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 12
 collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_601jx")
-damage = 8
 freeze_material = SubResource("ShaderMaterial_85h30")
+damage = 9
 
 [node name="VelocityComponent" parent="." instance=ExtResource("3_t58xn")]
 max_speed = 89
@@ -46,16 +46,17 @@ health_component = NodePath("../HealthComponent")
 experience_amount = 8.0
 
 [node name="HealthDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_7ocy7")]
+drop_percent = 0.01
 health_component = NodePath("../HealthComponent")
 
-[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("6_bwaq6")]
+[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "animated_sprite") instance=ExtResource("6_bwaq6")]
 health_component = NodePath("../HealthComponent")
-sprite = NodePath("../Visuals/Sprite2D")
+animated_sprite = NodePath("../AnimatedSprite2D")
 hit_flash_material = SubResource("ShaderMaterial_74qiw")
 
-[node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("8_pw5ud")]
+[node name="AnimatedDeathComponent" parent="." node_paths=PackedStringArray("health_component", "animated_sprite_2d") instance=ExtResource("9_d1uua")]
 health_component = NodePath("../HealthComponent")
-sprite = NodePath("../Visuals/Sprite2D")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
 
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("15_nqrij")]
 health_component = NodePath("../HealthComponent")
@@ -64,12 +65,11 @@ health_component = NodePath("../HealthComponent")
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_qgqx6")
 
-[node name="Visuals" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
-texture = ExtResource("16_7ocy7")
-offset = Vector2(0, -8)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("11_hvn4m")
+animation = &"walk"
+offset = Vector2(0, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_wso2b")

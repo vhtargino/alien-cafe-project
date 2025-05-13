@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvrvq7hjrjjtr"
-path="res://.godot/imported/crystal-knight.png-d7396717f194a8cdb3e1b2469e9c2334.ctex"
+uid="uid://bcn4lwgsr7p0g"
+path="res://.godot/imported/alien_0006a3.png-cf0c914e769f1105c670f94af6f02770.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/game_object/boss_enemies/boss_enemy_1/crystal-knight.png"
-dest_files=["res://.godot/imported/crystal-knight.png-d7396717f194a8cdb3e1b2469e9c2334.ctex"]
+source_file="res://assets/enemies/alien_0006/alien_0006a3.png"
+dest_files=["res://.godot/imported/alien_0006a3.png-cf0c914e769f1105c670f94af6f02770.ctex"]
 
 [params]
 

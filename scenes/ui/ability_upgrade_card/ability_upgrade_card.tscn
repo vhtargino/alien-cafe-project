@@ -32,7 +32,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0.172549, 0.796078, 0.662745, 1), Color(0.768627, 0.796078, 0.172549, 1), Color(1, 0.698039, 0, 1), Color(0.913725, 0.266667, 0.266667, 1), Color(0.658824, 0.0352941, 0.831373, 1), Color(0.172549, 0.796078, 0.662745, 1)]
+"values": [Color(0.172549, 0.796078, 0.662745, 1), Color(0.768627, 0.796078, 0.172549, 1), Color(1, 0.698039, 0, 1), Color(1, 0.305882, 0.305882, 1), Color(0.807843, 0.117647, 1, 1), Color(0.172549, 0.796078, 0.662745, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nnc20"]

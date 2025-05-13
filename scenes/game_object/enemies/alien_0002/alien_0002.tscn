@@ -51,12 +51,12 @@ health_component = NodePath("../HealthComponent")
 
 [node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "animated_sprite") instance=ExtResource("4_7kpoi")]
 health_component = NodePath("../HealthComponent")
-animated_sprite = NodePath("../Visuals/AnimatedSprite2D")
+animated_sprite = NodePath("../AnimatedSprite2D")
 hit_flash_material = SubResource("ShaderMaterial_74qiw")
 
 [node name="AnimatedDeathComponent" parent="." node_paths=PackedStringArray("health_component", "animated_sprite_2d") instance=ExtResource("8_4mg3i")]
 health_component = NodePath("../HealthComponent")
-animated_sprite_2d = NodePath("../Visuals/AnimatedSprite2D")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
 
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_mrvcy")]
 health_component = NodePath("../HealthComponent")
@@ -65,11 +65,11 @@ health_component = NodePath("../HealthComponent")
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_qgqx6")
 
-[node name="Visuals" type="Node2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("10_y3d86")
-animation = &"death"
+animation = &"walk"
+frame = 2
+frame_progress = 0.133894
 offset = Vector2(0, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
