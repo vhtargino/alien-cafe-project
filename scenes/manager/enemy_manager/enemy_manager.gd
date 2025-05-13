@@ -1,13 +1,13 @@
 extends Node
 
-const SPAWN_RADIUS = 330
+const SPAWN_RADIUS = 340
 
 @export var alien_0001_scene: PackedScene
 @export var alien_0002_scene: PackedScene
 @export var alien_0003_scene: PackedScene
 @export var alien_0004_scene: PackedScene
 @export var alien_0005_scene: PackedScene
-@export var alien_006_scene: PackedScene
+@export var alien_0006_scene: PackedScene
 @export var alien_0007_scene: PackedScene
 @export var alien_0008_scene: PackedScene
 @export var alien_0009_scene: PackedScene
@@ -20,9 +20,10 @@ const SPAWN_RADIUS = 330
 var base_spawn_time
 
 var enemy_table = WeightedTable.new()
+var number_to_spawn: int = 1
 
 
-func _ready() -> void:
+func _ready():
 	enemy_table.add_item(alien_0001_scene, 10)
 	base_spawn_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
@@ -46,7 +47,8 @@ func spawn_enemy(enemy_scene: PackedScene):
 func on_timer_timeout():
 	timer.start()
 	var enemy_scene = enemy_table.pick_item()
-	spawn_enemy(enemy_scene)
+	for i in number_to_spawn:
+		spawn_enemy(enemy_scene)
 
 
 func on_arena_difficulty_increased(arena_difficulty: int):
@@ -66,7 +68,8 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 		enemy_table.add_item(alien_0005_scene, 160)
 	elif arena_difficulty == 60:
 		enemy_table.remove_item(alien_0003_scene)
-		enemy_table.add_item(alien_006_scene, 320)
+		enemy_table.add_item(alien_0006_scene, 320)
+		number_to_spawn += 1
 	elif arena_difficulty == 72:
 		enemy_table.remove_item(alien_0004_scene)
 		enemy_table.add_item(alien_0007_scene, 640)
@@ -74,7 +77,10 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 		enemy_table.remove_item(alien_0005_scene)
 		enemy_table.add_item(alien_0008_scene, 1280)
 	elif arena_difficulty == 96:
-		enemy_table.remove_item(alien_006_scene)
+		enemy_table.remove_item(alien_0006_scene)
 		enemy_table.add_item(alien_0009_scene, 2560)
 	elif arena_difficulty == 108:
 		spawn_enemy(boss_0001_scene)
+	
+	#if (arena_difficulty % 60) == 0:
+		#number_to_spawn += 1

@@ -116,6 +116,7 @@ autowrap_mode = 2
 
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 layout_mode = 2
+mouse_filter = 2
 border_color = Color(1, 1, 1, 1)
 border_width = 2.0
 editor_only = false

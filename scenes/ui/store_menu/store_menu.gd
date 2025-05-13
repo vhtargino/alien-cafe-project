@@ -77,6 +77,7 @@ func _ready():
 	quantity_cancel_button.pressed.connect(on_quantity_cancel_button_pressed)
 	
 	confirmation_dialog.confirmed.connect(on_confirmed)
+	confirmation_dialog.canceled.connect(on_canceled)
 	
 	currency_amount = StoreEvents.currency
 	update_currency_label()
@@ -214,10 +215,15 @@ func on_confirmed():
 			update_held_label(booster_data.label, BoosterEvents.get(booster_pending))
 			booster_map[booster_pending]["amount"] = BoosterEvents.get(booster_pending)
 
+	SoundUtils.play_ui_sound("button_pressed")
 	booster_pending = ""
 	booster_quantity = 1
 	is_credit_purchase = false
 	pending_credit_amount = 0
+
+
+func on_canceled():
+	pass
 
 
 func on_focus_entered():

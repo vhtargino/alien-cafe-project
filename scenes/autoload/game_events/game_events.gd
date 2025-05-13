@@ -4,6 +4,7 @@ signal experience_vial_collected(number: float)
 signal health_vial_collected
 signal ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary)
 signal enemy_died
+signal player_damaged
 
 var level_1_finished: bool = false
 var level_2_finished: bool = false
@@ -23,3 +24,7 @@ func emit_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dicti
 
 func emit_enemy_died():
 	enemy_died.emit()
+
+
+func emit_player_damaged():
+	player_damaged.emit()

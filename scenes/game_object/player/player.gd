@@ -88,6 +88,7 @@ func check_deal_damage(damage: int, damage_source: Node2D):
 	var final_damage = max(1, damage - armor)
 	
 	health_component.damage(final_damage)
+	GameEvents.emit_player_damaged()
 	SoundUtils.play_player_sound("damage")
 	damage_interval_timer.start()
 
