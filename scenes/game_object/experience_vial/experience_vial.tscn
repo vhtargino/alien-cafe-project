@@ -6,6 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jmuu1"]
 
 [node name="ExperienceVial" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_jmuu1")
 
 [node name="Area2D" type="Area2D" parent="."]

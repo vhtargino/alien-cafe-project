@@ -27,8 +27,9 @@ radius = 11.0
 radius = 11.0
 
 [node name="Alien0006" type="CharacterBody2D" groups=["enemy"]]
+y_sort_enabled = true
 collision_layer = 12
-collision_mask = 6
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_2x1ee")
 freeze_material = SubResource("ShaderMaterial_d1uua")

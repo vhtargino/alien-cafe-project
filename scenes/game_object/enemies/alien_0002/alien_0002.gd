@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Alien2
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var velocity_component = $VelocityComponent
