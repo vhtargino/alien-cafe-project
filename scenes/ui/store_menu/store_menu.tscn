@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://bra8u7cp632cg"]
 
 [ext_resource type="Script" uid="uid://dntjdo58w7ax5" path="res://scenes/ui/store_menu/store_menu.gd" id="1_oifsy"]
-[ext_resource type="Texture2D" uid="uid://ltr886e5r5m6" path="res://assets/boosters/booster1.png" id="2_ek826"]
 [ext_resource type="Shader" uid="uid://bbab2riuh3e74" path="res://resources/shaders/scroll_shader.gdshader" id="2_t03xh"]
 [ext_resource type="Texture2D" uid="uid://dblhnqfqhnqqr" path="res://assets/main_menu/outer-space.png" id="3_6aqvp"]
-[ext_resource type="Texture2D" uid="uid://j5s3ragk1xpd" path="res://assets/boosters/booster2.png" id="4_qe68t"]
-[ext_resource type="Texture2D" uid="uid://blvo7xs42tmxa" path="res://assets/boosters/booster3.png" id="5_ti2ft"]
-[ext_resource type="Texture2D" uid="uid://cj5suksqk1jg6" path="res://assets/boosters/booster4.png" id="6_10w5d"]
+[ext_resource type="Texture2D" uid="uid://ddoegffo7josn" path="res://assets/boosters/double_shot_a.png" id="4_t03xh"]
+[ext_resource type="Texture2D" uid="uid://dvhugor4h18xn" path="res://assets/boosters/waker_a.png" id="5_6aqvp"]
+[ext_resource type="Texture2D" uid="uid://ds2kdkh4al0j7" path="res://assets/boosters/iced_coffee_a.png" id="6_p11xj"]
 [ext_resource type="Texture2D" uid="uid://dfhby2i8mj2ys" path="res://assets/ui/coin_02e.png" id="6_vnq0h"]
+[ext_resource type="Texture2D" uid="uid://v57n6dvqr0yb" path="res://assets/boosters/turbo_expresso_a.png" id="7_rxc81"]
 [ext_resource type="Texture2D" uid="uid://cht8fum1yi16m" path="res://assets/ui/coin_03e.png" id="7_t03xh"]
 [ext_resource type="Texture2D" uid="uid://bd2m10mavu8g6" path="res://assets/ui/coin_04e.png" id="8_6aqvp"]
 [ext_resource type="Texture2D" uid="uid://cqgagc6y1efhb" path="res://assets/ui/coin_05e.png" id="9_p11xj"]
@@ -59,7 +59,7 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 10
 
 [node name="DoubleShot" type="PanelContainer" parent="Control/TabContainer/Boosters/HBoxContainer"]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
 
@@ -88,7 +88,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-texture = ExtResource("2_ek826")
+texture = ExtResource("4_t03xh")
 expand_mode = 3
 stretch_mode = 5
 
@@ -134,7 +134,7 @@ theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.2
 text = "Held:"
 
 [node name="Waker" type="PanelContainer" parent="Control/TabContainer/Boosters/HBoxContainer"]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
 
@@ -163,7 +163,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-texture = ExtResource("4_qe68t")
+texture = ExtResource("5_6aqvp")
 expand_mode = 3
 stretch_mode = 5
 
@@ -209,7 +209,7 @@ theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.2
 text = "Held:"
 
 [node name="IcedCoffee" type="PanelContainer" parent="Control/TabContainer/Boosters/HBoxContainer"]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
 
@@ -238,7 +238,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-texture = ExtResource("5_ti2ft")
+texture = ExtResource("6_p11xj")
 expand_mode = 3
 stretch_mode = 5
 
@@ -284,7 +284,7 @@ theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.2
 text = "Held:"
 
 [node name="TurboExpresso" type="PanelContainer" parent="Control/TabContainer/Boosters/HBoxContainer"]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
 
@@ -313,7 +313,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-texture = ExtResource("6_10w5d")
+texture = ExtResource("7_rxc81")
 expand_mode = 3
 stretch_mode = 5
 
@@ -370,7 +370,7 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 10
 
 [node name="Credits100" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
 
@@ -433,7 +433,7 @@ theme_type_variation = &"AlternativeButton"
 text = "R$ 10"
 
 [node name="Credits200" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
 
@@ -496,7 +496,7 @@ theme_type_variation = &"AlternativeButton"
 text = "R$ 18"
 
 [node name="Credits500" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
 
@@ -559,7 +559,7 @@ theme_type_variation = &"AlternativeButton"
 text = "R$ 40"
 
 [node name="Credits1500" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
 

@@ -5,8 +5,8 @@ extends Node2D
 
 @export var experience_amount: float
 
-var alternative_experience_vial_2 = preload("res://assets/experience_pod/experience_pod_c2.png")
-var alternative_experience_vial_3 = preload("res://assets/experience_pod/experience_pod_c3.png")
+var alternative_experience_vial_2 = preload("res://assets/experience_pod/experience_pod_d2.png")
+var alternative_experience_vial_3 = preload("res://assets/experience_pod/experience_pod_d3.png")
 
 
 func _ready():

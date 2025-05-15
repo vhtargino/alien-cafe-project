@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bfum4iq3si2lf"]
 
 [ext_resource type="Script" uid="uid://dxa42qn2qcim3" path="res://scenes/ui/abilities_display/abilities_display.gd" id="1_8f0eq"]
-[ext_resource type="Texture2D" uid="uid://ltr886e5r5m6" path="res://assets/boosters/booster1.png" id="2_l2ycp"]
-[ext_resource type="Texture2D" uid="uid://j5s3ragk1xpd" path="res://assets/boosters/booster2.png" id="3_p1ts6"]
-[ext_resource type="Texture2D" uid="uid://blvo7xs42tmxa" path="res://assets/boosters/booster3.png" id="4_g4v47"]
-[ext_resource type="Texture2D" uid="uid://cj5suksqk1jg6" path="res://assets/boosters/booster4.png" id="5_najb3"]
+[ext_resource type="Texture2D" uid="uid://ddoegffo7josn" path="res://assets/boosters/double_shot_a.png" id="2_l2ycp"]
+[ext_resource type="Texture2D" uid="uid://dvhugor4h18xn" path="res://assets/boosters/waker_a.png" id="3_p1ts6"]
+[ext_resource type="Texture2D" uid="uid://ds2kdkh4al0j7" path="res://assets/boosters/iced_coffee_a.png" id="4_g4v47"]
+[ext_resource type="Texture2D" uid="uid://v57n6dvqr0yb" path="res://assets/boosters/turbo_expresso_a.png" id="5_najb3"]
 
 [sub_resource type="Animation" id="Animation_p1ts6"]
 length = 0.001
@@ -165,10 +165,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "1"
@@ -193,10 +193,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 horizontal_alignment = 1
@@ -220,10 +220,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 horizontal_alignment = 1
@@ -247,10 +247,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 horizontal_alignment = 1
@@ -278,10 +278,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 horizontal_alignment = 1
@@ -305,15 +305,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 horizontal_alignment = 1
 vertical_alignment = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="PowerUp3" type="PanelContainer" parent="CenterContainer/HBoxContainer/PowerUpsContainer"]
 custom_minimum_size = Vector2(16, 16)
@@ -333,10 +332,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 horizontal_alignment = 1
@@ -360,10 +359,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 horizontal_alignment = 1
@@ -377,7 +376,7 @@ theme_override_constants/separation = 4
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer3"
+theme_type_variation = &"AlternativePanelContainer"
 
 [node name="ReferenceRect" type="ReferenceRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster1"]
 unique_name_in_owner = true
@@ -403,10 +402,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 horizontal_alignment = 1
@@ -416,7 +415,7 @@ vertical_alignment = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer3"
+theme_type_variation = &"AlternativePanelContainer"
 
 [node name="ReferenceRect2" type="ReferenceRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster2"]
 unique_name_in_owner = true
@@ -440,10 +439,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 horizontal_alignment = 1
@@ -453,7 +452,7 @@ vertical_alignment = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer3"
+theme_type_variation = &"AlternativePanelContainer"
 
 [node name="ReferenceRect3" type="ReferenceRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster3"]
 unique_name_in_owner = true
@@ -477,10 +476,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 horizontal_alignment = 1
@@ -490,7 +489,7 @@ vertical_alignment = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer3"
+theme_type_variation = &"AlternativePanelContainer"
 
 [node name="ReferenceRect4" type="ReferenceRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster4"]
 unique_name_in_owner = true
@@ -514,10 +513,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -7.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 horizontal_alignment = 1

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqgai4difc1sx"]
 
 [ext_resource type="Script" uid="uid://cvl7hv7nb8ool" path="res://scenes/game_object/experience_vial/experience_vial.gd" id="1_jmuu1"]
-[ext_resource type="Texture2D" uid="uid://dp0mloywd4oyk" path="res://assets/experience_pod/experience_pod_c1.png" id="2_jmuu1"]
+[ext_resource type="Texture2D" uid="uid://e5cc24fx5qwf" path="res://assets/experience_pod/experience_pod_d1.png" id="2_jmuu1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jmuu1"]
 

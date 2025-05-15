@@ -5,19 +5,9 @@ extends Node
 
 var effect_active: bool = false
 
-#var shader_material: ShaderMaterial
-
 
 func _ready():
-	#shader_material = color_rect.material
 	timer.timeout.connect(on_timer_timeout)
-	#print(shader_material)
-	#print(shader_material.get_shader_parameter("animation_speed"))
-
-
-#func _process(_delta: float) -> void:
-	#if get_tree().paused:
-		#pass
 
 
 func _unhandled_input(event: InputEvent):

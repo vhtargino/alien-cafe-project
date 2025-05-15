@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://ytkp0inaawl0"]
 
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_ocgv3"]
-[ext_resource type="Texture2D" uid="uid://bwt7p1e8p7r0a" path="res://assets/abilities/boot.png" id="1_sk3u1"]
+[ext_resource type="Texture2D" uid="uid://ba2cilr8vdior" path="res://assets/power-ups/speed_sneakers_a.png" id="1_sk3u1"]
 
 [resource]
 script = ExtResource("1_ocgv3")

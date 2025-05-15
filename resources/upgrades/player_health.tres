@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://duvmucstpqrss"]
 
-[ext_resource type="Texture2D" uid="uid://48ov4j8bxk0n" path="res://assets/abilities/life.png" id="1_l7g11"]
+[ext_resource type="Texture2D" uid="uid://0kar6cddo2r" path="res://assets/power-ups/max_health_croissant_a.png" id="1_l7g11"]
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_t7uv4"]
 
 [resource]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bq6mbwailxphi"]
 
 [ext_resource type="Script" uid="uid://cra2qgo68uiov" path="res://scenes/booster/double_shot_booster/double_shot_booster.gd" id="1_xon1e"]
-[ext_resource type="Texture2D" uid="uid://3e0vvsnqmexv" path="res://assets/doubleshotflash.png" id="2_x6lxf"]
+[ext_resource type="Texture2D" uid="uid://3e0vvsnqmexv" path="res://assets/boosters/doubleshotflash.png" id="2_x6lxf"]
 
 [sub_resource type="Animation" id="Animation_pjxj0"]
 length = 0.001

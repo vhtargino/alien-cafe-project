@@ -134,6 +134,11 @@ use_booster_4={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://translation_csv.en.translation", "res://translation_csv.pt_BR.translation")
+locale/include_text_server_data=true
+
 [layer_names]
 
 2d_physics/layer_1="Terrain"
