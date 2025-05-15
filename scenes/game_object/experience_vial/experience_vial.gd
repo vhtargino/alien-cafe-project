@@ -5,7 +5,8 @@ extends Node2D
 
 @export var experience_amount: float
 
-var alternative_experience_vial = preload("res://scenes/game_object/experience_vial/experience_vial_2.png")
+var alternative_experience_vial_2 = preload("res://assets/experience_pod/experience_pod_c2.png")
+var alternative_experience_vial_3 = preload("res://assets/experience_pod/experience_pod_c3.png")
 
 
 func _ready():
@@ -36,10 +37,13 @@ func collect():
 
 
 func change_sprite():
-	if experience_amount > 3:
-		sprite.texture = alternative_experience_vial
-	else:
+	if experience_amount < 4:
 		return
+	
+	if experience_amount < 7:
+		sprite.texture = alternative_experience_vial_2
+	else:
+		sprite.texture = alternative_experience_vial_3
 
 
 func on_area_entered(_other_area: Area2D):

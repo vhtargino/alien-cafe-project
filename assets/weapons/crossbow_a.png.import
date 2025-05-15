@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8lsnnmdxcliq"
-path="res://.godot/imported/portafilter1.png-d5d5599aca1c803131bb4b73a78dc04d.ctex"
+uid="uid://c5t8t1ew8h0sv"
+path="res://.godot/imported/crossbow_a.png-021b914587e728bb0cd41ce215febb9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/abilities/portafilter1.png"
-dest_files=["res://.godot/imported/portafilter1.png-d5d5599aca1c803131bb4b73a78dc04d.ctex"]
+source_file="res://assets/weapons/crossbow_a.png"
+dest_files=["res://.godot/imported/crossbow_a.png-021b914587e728bb0cd41ce215febb9e.ctex"]
 
 [params]
 

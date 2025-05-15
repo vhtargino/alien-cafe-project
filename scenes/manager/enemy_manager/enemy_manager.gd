@@ -37,17 +37,29 @@ func get_spawn_position() -> Vector2:
 	
 	var spawn_position = Vector2.ZERO
 	var random_direction = Vector2.RIGHT.rotated(randf_range(0, TAU))
-	for i in 4:
+	for i in 32:
 		spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
-		#var additional_check_offset = random_direction * 20
+		var additional_check_offset = random_direction * 20
 		
-		var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position, 1)
+		var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position + additional_check_offset, 1)
 		var result = get_tree().root.world_2d.direct_space_state.intersect_ray(query_parameters)
+		
+		# Para visualizar linhas em modo debug:
+		#if get_tree().debug_collisions_hint:
+			#var debug_line = Line2D.new()
+			#debug_line.z_index = 99 # Draw on top of everything
+			#debug_line.width = 1
+			#debug_line.add_point(query_parameters.from, 0)
+			#debug_line.add_point(query_parameters.to, 1)
+			#add_child(debug_line)
+			#if !result.is_empty():
+				#debug_line.set_point_position(1, result.get("position"))
+				#debug_line.default_color = Color.RED
 		
 		if result.is_empty():
 			break
 		else:
-			random_direction = random_direction.rotated(deg_to_rad(90))
+			random_direction = random_direction.rotated(deg_to_rad(11.25))
 		
 	return spawn_position
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://vh7f0ijbu4r8"]
 
-[ext_resource type="Texture2D" uid="uid://cir0k5hjtc0s8" path="res://assets/abilities/sword.png" id="1_5wl4v"]
+[ext_resource type="Texture2D" uid="uid://cg1x5xjjavi0a" path="res://assets/weapons/frying_pan_a.png" id="1_5wl4v"]
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_xqdqh"]
 
 [resource]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwr5q28884k6j"
-path="res://.godot/imported/frying-pan-ai.png-2f166ec8a0831adee2fd3f178594c9bf.ctex"
+uid="uid://d13p71ekhff7v"
+path="res://.godot/imported/experience_pod_c2.png-9e0b647b4c63f4547760ae417a45a63b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/abilities/frying-pan-ai.png"
-dest_files=["res://.godot/imported/frying-pan-ai.png-2f166ec8a0831adee2fd3f178594c9bf.ctex"]
+source_file="res://assets/experience_pod/experience_pod_c2.png"
+dest_files=["res://.godot/imported/experience_pod_c2.png-9e0b647b4c63f4547760ae417a45a63b.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://bjcwjlo7ut0an"]
 
-[ext_resource type="Texture2D" uid="uid://cn1la2q78vjhk" path="res://assets/abilities/anvil.png" id="1_gc32v"]
+[ext_resource type="Texture2D" uid="uid://b10vnsi051urd" path="res://assets/weapons/coffee_machine_a.png" id="1_gc32v"]
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="2_6y7uw"]
 
 [resource]

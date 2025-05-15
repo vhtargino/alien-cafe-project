@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lsbma0cr1x6q"
-path="res://.godot/imported/frying-pan.png-85ee6af2c23621cc0877c09572aa8487.ctex"
+uid="uid://b10vnsi051urd"
+path="res://.godot/imported/coffee_machine_a.png-2a8faec2442bee7bd299b67edd7a1d45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/abilities/frying-pan.png"
-dest_files=["res://.godot/imported/frying-pan.png-85ee6af2c23621cc0877c09572aa8487.ctex"]
+source_file="res://assets/weapons/coffee_machine_a.png"
+dest_files=["res://.godot/imported/coffee_machine_a.png-2a8faec2442bee7bd299b67edd7a1d45.ctex"]
 
 [params]
 

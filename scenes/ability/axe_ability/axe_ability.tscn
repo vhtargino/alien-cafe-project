@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://v0epcr34unrx" path="res://scenes/ability/axe_ability/axe_ability.gd" id="1_m8265"]
 [ext_resource type="PackedScene" uid="uid://clkxgjwrus2sy" path="res://scenes/component/hitbox_component/hitbox_component.tscn" id="2_m8265"]
-[ext_resource type="Texture2D" uid="uid://dhsndek5113no" path="res://assets/abilities/axe.png" id="2_r58rl"]
+[ext_resource type="Texture2D" uid="uid://li3wsuo2stf1" path="res://assets/weapons/coffee_pot_a.png" id="2_r58rl"]
 
 [sub_resource type="Animation" id="Animation_m8265"]
 length = 0.001

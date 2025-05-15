@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://drndceivgb4is"]
 
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_6t6ff"]
-[ext_resource type="Texture2D" uid="uid://dhsndek5113no" path="res://assets/abilities/axe.png" id="1_jkpjs"]
+[ext_resource type="Texture2D" uid="uid://li3wsuo2stf1" path="res://assets/weapons/coffee_pot_a.png" id="1_jkpjs"]
 
 [resource]
 script = ExtResource("1_6t6ff")

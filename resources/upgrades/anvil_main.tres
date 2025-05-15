@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://dq0ko5v40lqq8"]
 
 [ext_resource type="PackedScene" uid="uid://dbb7tqrr70qps" path="res://scenes/ability/anvil_ability_controller/anvil_ability_controller.tscn" id="1_10fah"]
-[ext_resource type="Texture2D" uid="uid://cn1la2q78vjhk" path="res://assets/abilities/anvil.png" id="2_0juf4"]
+[ext_resource type="Texture2D" uid="uid://b10vnsi051urd" path="res://assets/weapons/coffee_machine_a.png" id="2_10fah"]
 [ext_resource type="Script" uid="uid://dcbylr71isyxe" path="res://resources/upgrades/ability.gd" id="3_s7ak7"]
 
 [resource]
 script = ExtResource("3_s7ak7")
 ability_controller_scene = ExtResource("1_10fah")
-image = ExtResource("2_0juf4")
+image = ExtResource("2_10fah")
 id = "anvil_main"
 max_quantity = 1
 name = "anvil"

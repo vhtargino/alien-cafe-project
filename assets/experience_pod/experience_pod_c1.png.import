@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpuqli10pngc1"
-path="res://.godot/imported/turkish.png-0c0d7f38dbddd7d5a6336c3d0b900f12.ctex"
+uid="uid://dp0mloywd4oyk"
+path="res://.godot/imported/experience_pod_c1.png-fee8b71c916d415b86dffaddb3e2d4f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/abilities/turkish.png"
-dest_files=["res://.godot/imported/turkish.png-0c0d7f38dbddd7d5a6336c3d0b900f12.ctex"]
+source_file="res://assets/experience_pod/experience_pod_c1.png"
+dest_files=["res://.godot/imported/experience_pod_c1.png-fee8b71c916d415b86dffaddb3e2d4f2.ctex"]
 
 [params]
 
