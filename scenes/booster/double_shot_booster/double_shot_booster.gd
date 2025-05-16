@@ -23,7 +23,7 @@ func activate_double_shot_booster():
 		return
 	
 	animation_player.play("flash")
-	SoundUtils.play_booster_sound("double_shot")
+	SoundUtils.play_double_shot_sound()
 
 	effect_active = true
 	BoosterEvents.double_shot -= 1

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://hrshni6snkma"]
 
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_enhw4"]
-[ext_resource type="Texture2D" uid="uid://dq8tux10aefsw" path="res://assets/abilities/magnet.png" id="1_i1i8h"]
+[ext_resource type="Texture2D" uid="uid://qsj3mo2ow46v" path="res://assets/power-ups/magnet_a.png" id="1_i1i8h"]
 
 [resource]
 script = ExtResource("1_enhw4")

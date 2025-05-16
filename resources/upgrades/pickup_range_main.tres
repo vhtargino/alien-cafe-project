@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://dkp6o2da3hn0x"]
 
-[ext_resource type="Texture2D" uid="uid://dq8tux10aefsw" path="res://assets/abilities/magnet.png" id="1_3ve3m"]
+[ext_resource type="Texture2D" uid="uid://qsj3mo2ow46v" path="res://assets/power-ups/magnet_a.png" id="1_3ve3m"]
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="2_tw3th"]
 
 [resource]

@@ -21,7 +21,6 @@ config/icon="res://icon.svg"
 GameEvents="*res://scenes/autoload/game_events/game_events.tscn"
 SoundUtils="*res://scenes/autoload/sound_utils/sound_utils.tscn"
 BoosterEvents="*res://scenes/autoload/booster_events/booster_events.tscn"
-MainMusicPlayer="*res://scenes/autoload/main_music_player/main_music_player.tscn"
 StoreEvents="*res://scenes/autoload/store_events/store_events.tscn"
 
 [display]

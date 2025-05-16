@@ -79,7 +79,7 @@ theme_override_constants/margin_bottom = 21
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Double Shot"
+text = "DOUBLE_SHOT"
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer"]
@@ -103,7 +103,7 @@ theme_type_variation = &"AlternativePanelContainer"
 custom_minimum_size = Vector2(75, 70)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "+100% attack speed for 6 seconds"
+text = "DS_DESC"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -114,12 +114,12 @@ theme_override_constants/margin_top = 11
 
 [node name="DoubleShotButton" type="Button" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(65, 0)
+custom_minimum_size = Vector2(75, 15)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_type_variation = &"AlternativeButton"
-text = "Buy 100¢"
+text = "BUY_BOOSTER"
 
 [node name="MarginContainer5" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/DoubleShot/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -131,7 +131,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Held:"
+text = "HELD"
 
 [node name="Waker" type="PanelContainer" parent="Control/TabContainer/Boosters/HBoxContainer"]
 custom_minimum_size = Vector2(95, 0)
@@ -154,7 +154,7 @@ theme_override_constants/margin_bottom = 21
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Waker"
+text = "WAKER"
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer"]
@@ -178,7 +178,7 @@ theme_type_variation = &"AlternativePanelContainer"
 custom_minimum_size = Vector2(75, 70)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Instantly heals 50% of max health"
+text = "WK_DESC"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -189,12 +189,12 @@ theme_override_constants/margin_top = 11
 
 [node name="WakerButton" type="Button" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(65, 0)
+custom_minimum_size = Vector2(75, 15)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_type_variation = &"AlternativeButton"
-text = "Buy 100¢"
+text = "BUY_BOOSTER"
 
 [node name="MarginContainer5" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/Waker/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -206,7 +206,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Held:"
+text = "HELD"
 
 [node name="IcedCoffee" type="PanelContainer" parent="Control/TabContainer/Boosters/HBoxContainer"]
 custom_minimum_size = Vector2(95, 0)
@@ -229,7 +229,7 @@ theme_override_constants/margin_bottom = 21
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Iced Coffee"
+text = "ICED_COFFEE"
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer"]
@@ -253,7 +253,7 @@ theme_type_variation = &"AlternativePanelContainer"
 custom_minimum_size = Vector2(75, 70)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Freeze enemies for 6 seconds"
+text = "IC_DESC"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -264,12 +264,12 @@ theme_override_constants/margin_top = 11
 
 [node name="IcedCoffeeButton" type="Button" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(65, 0)
+custom_minimum_size = Vector2(75, 15)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_type_variation = &"AlternativeButton"
-text = "Buy 100¢"
+text = "BUY_BOOSTER"
 
 [node name="MarginContainer5" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/IcedCoffee/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -281,7 +281,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Held:"
+text = "HELD"
 
 [node name="TurboExpresso" type="PanelContainer" parent="Control/TabContainer/Boosters/HBoxContainer"]
 custom_minimum_size = Vector2(95, 0)
@@ -304,7 +304,7 @@ theme_override_constants/margin_bottom = 21
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Turbo Expresso"
+text = "TURBO_EXPRESSO"
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer"]
@@ -328,7 +328,7 @@ theme_type_variation = &"AlternativePanelContainer"
 custom_minimum_size = Vector2(75, 70)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "+100% move speed for 6 seconds"
+text = "TE_DESC"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -339,12 +339,12 @@ theme_override_constants/margin_top = 11
 
 [node name="TurboExpressoButton" type="Button" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(65, 0)
+custom_minimum_size = Vector2(75, 15)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_type_variation = &"AlternativeButton"
-text = "Buy 100¢"
+text = "BUY_BOOSTER"
 
 [node name="MarginContainer5" type="MarginContainer" parent="Control/TabContainer/Boosters/HBoxContainer/TurboExpresso/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -356,74 +356,74 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Held:"
+text = "HELD"
 
-[node name="Credits" type="PanelContainer" parent="Control/TabContainer"]
+[node name="CREDITS" type="PanelContainer" parent="Control/TabContainer"]
 visible = false
 custom_minimum_size = Vector2(420, 260)
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/TabContainer/Credits"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/TabContainer/CREDITS"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 10
 
-[node name="Credits100" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
+[node name="Credits100" type="PanelContainer" parent="Control/TabContainer/CREDITS/HBoxContainer"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits100"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits100"]
 layout_mode = 2
 theme_override_constants/margin_top = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits100/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits100/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 21
 
-[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits100/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
 text = "100¢"
 horizontal_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits100/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer/MarginContainer2"]
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits100/MarginContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("6_vnq0h")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits100/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(75, 65)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_type_variation = &"AlternativePanelContainer"
 
-[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer/MarginContainer3"]
+[node name="Label" type="Label" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits100/MarginContainer/VBoxContainer/MarginContainer3"]
 custom_minimum_size = Vector2(75, 70)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Adds 100 credits to the wallet"
+text = "CREDITS_1"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits100/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 11
 
-[node name="Credits100Button" type="Button" parent="Control/TabContainer/Credits/HBoxContainer/Credits100/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
+[node name="Credits100Button" type="Button" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits100/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
@@ -432,61 +432,61 @@ size_flags_vertical = 4
 theme_type_variation = &"AlternativeButton"
 text = "R$ 10"
 
-[node name="Credits200" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
+[node name="Credits200" type="PanelContainer" parent="Control/TabContainer/CREDITS/HBoxContainer"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits200"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits200"]
 layout_mode = 2
 theme_override_constants/margin_top = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits200/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits200/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 21
 
-[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits200/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
 text = "200¢"
 horizontal_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits200/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer/MarginContainer2"]
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits200/MarginContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("7_t03xh")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits200/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(75, 65)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_type_variation = &"AlternativePanelContainer"
 
-[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer/MarginContainer3"]
+[node name="Label" type="Label" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits200/MarginContainer/VBoxContainer/MarginContainer3"]
 custom_minimum_size = Vector2(75, 70)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Adds 200 credits to the wallet"
+text = "CREDITS_2"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits200/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 11
 
-[node name="Credits200Button" type="Button" parent="Control/TabContainer/Credits/HBoxContainer/Credits200/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
+[node name="Credits200Button" type="Button" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits200/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
@@ -495,61 +495,61 @@ size_flags_vertical = 4
 theme_type_variation = &"AlternativeButton"
 text = "R$ 18"
 
-[node name="Credits500" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
+[node name="Credits500" type="PanelContainer" parent="Control/TabContainer/CREDITS/HBoxContainer"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits500"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits500"]
 layout_mode = 2
 theme_override_constants/margin_top = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits500/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits500/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 21
 
-[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits500/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
 text = "500¢"
 horizontal_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits500/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer/MarginContainer2"]
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits500/MarginContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("8_6aqvp")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits500/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(75, 65)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_type_variation = &"AlternativePanelContainer"
 
-[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer/MarginContainer3"]
+[node name="Label" type="Label" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits500/MarginContainer/VBoxContainer/MarginContainer3"]
 custom_minimum_size = Vector2(75, 70)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Adds 500 credits to the wallet"
+text = "CREDITS_3"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits500/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 11
 
-[node name="Credits500Button" type="Button" parent="Control/TabContainer/Credits/HBoxContainer/Credits500/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
+[node name="Credits500Button" type="Button" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits500/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
@@ -558,61 +558,61 @@ size_flags_vertical = 4
 theme_type_variation = &"AlternativeButton"
 text = "R$ 40"
 
-[node name="Credits1500" type="PanelContainer" parent="Control/TabContainer/Credits/HBoxContainer"]
+[node name="Credits1500" type="PanelContainer" parent="Control/TabContainer/CREDITS/HBoxContainer"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits1500"]
 layout_mode = 2
 theme_override_constants/margin_top = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits1500/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits1500/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 21
 
-[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits1500/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
 text = "1500¢"
 horizontal_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits1500/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer/MarginContainer2"]
+[node name="TextureRect" type="TextureRect" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits1500/MarginContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 texture = ExtResource("9_p11xj")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits1500/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(75, 65)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_type_variation = &"AlternativePanelContainer"
 
-[node name="Label" type="Label" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer/MarginContainer3"]
+[node name="Label" type="Label" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits1500/MarginContainer/VBoxContainer/MarginContainer3"]
 custom_minimum_size = Vector2(75, 70)
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 0.25098)
-text = "Adds 1500 credits to the wallet"
+text = "CREDITS_4"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits1500/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 11
 
-[node name="Credits1500Button" type="Button" parent="Control/TabContainer/Credits/HBoxContainer/Credits1500/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
+[node name="Credits1500Button" type="Button" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits1500/MarginContainer/VBoxContainer/MarginContainer4" groups=["ui_buttons"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
@@ -652,8 +652,7 @@ theme_override_constants/margin_bottom = 10
 [node name="BackButton" type="Button" parent="Control/MarginContainer2" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Back
-"
+text = "BACK"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 unique_name_in_owner = true
@@ -669,6 +668,7 @@ transparent = true
 min_size = Vector2i(120, 50)
 dialog_text = "Confirm purchase?"
 dialog_autowrap = true
+cancel_button_text = "CANCEL"
 
 [node name="PopupPanel" type="PopupPanel" parent="."]
 unique_name_in_owner = true
@@ -692,7 +692,7 @@ theme_override_constants/separation = 18
 [node name="Label" type="Label" parent="PopupPanel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "How many?"
+text = "HOW_MANY"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PopupPanel/MarginContainer/VBoxContainer"]
@@ -741,4 +741,4 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_type_variation = &"AlternativeButton"
-text = "Cancel"
+text = "CANCEL"

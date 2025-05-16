@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://d2t8yosirc4s"]
 
-[ext_resource type="Texture2D" uid="uid://3mt4m5c67wy5" path="res://assets/abilities/pill.png" id="1_xh0um"]
+[ext_resource type="Texture2D" uid="uid://kc4ml20ocqle" path="res://assets/power-ups/regen_cappuccino_a.png" id="1_xh0um"]
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="2_sj1wl"]
 
 [resource]

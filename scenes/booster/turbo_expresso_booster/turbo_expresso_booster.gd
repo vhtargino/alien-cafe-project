@@ -23,7 +23,7 @@ func activate_turbo_expresso_booster():
 		return
 	
 	color_rect.visible = true
-	SoundUtils.play_booster_sound("turbo_expresso")
+	SoundUtils.play_turbo_expresso_sound()
 	
 	effect_active = true
 	BoosterEvents.turbo_expresso -= 1

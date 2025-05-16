@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://xs8a85dgrx47"]
+[gd_scene load_steps=10 format=3 uid="uid://xs8a85dgrx47"]
 
 [ext_resource type="Script" uid="uid://c117eyk6yyb0w" path="res://scenes/autoload/sound_utils/sound_utils.gd" id="1_r8vor"]
 [ext_resource type="AudioStream" uid="uid://cwnrr3tc6rqpq" path="res://assets/audio/sword_sound.ogg" id="2_jjjis"]
@@ -6,11 +6,17 @@
 [ext_resource type="AudioStream" uid="uid://c6ayjmfup42n4" path="res://assets/audio/impactGeneric_light_000.ogg" id="3_jjjis"]
 [ext_resource type="AudioStream" uid="uid://bohcwm6427lo" path="res://assets/audio/health_up.ogg" id="3_wxa1l"]
 [ext_resource type="AudioStream" uid="uid://d1b0w5lo1mwld" path="res://assets/audio/enemy_hit.ogg" id="3_x8u8p"]
-
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_r8vor"]
+[ext_resource type="AudioStream" uid="uid://w03x01g7q406" path="res://assets/audio/knife-sound.mp3" id="5_vlmnk"]
+[ext_resource type="AudioStream" uid="uid://c3v1av67oi7if" path="res://assets/audio/wind.ogg" id="7_p4k1f"]
+[ext_resource type="AudioStream" uid="uid://b45kmc6x2btbp" path="res://assets/audio/high-speed.mp3" id="8_p0ev1"]
 
 [node name="SoundUtils" type="Node"]
 script = ExtResource("1_r8vor")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+volume_db = -12.0
+bus = &"Music"
 
 [node name="UiPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -12.0
@@ -37,8 +43,26 @@ volume_db = -6.0
 max_polyphony = 24
 bus = &"EnemyHit"
 
-[node name="BoosterSoundsPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamPolyphonic_r8vor")
+[node name="DoubleShotPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vlmnk")
+volume_db = -6.0
+max_polyphony = 4
+bus = &"SFX"
+
+[node name="WakerPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wxa1l")
+volume_db = -6.0
+max_polyphony = 4
+bus = &"SFX"
+
+[node name="IcedCoffeePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_p4k1f")
+volume_db = -6.0
+max_polyphony = 4
+bus = &"SFX"
+
+[node name="TurboExpressoPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_p0ev1")
 volume_db = -6.0
 max_polyphony = 4
 bus = &"SFX"

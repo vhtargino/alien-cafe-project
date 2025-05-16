@@ -60,7 +60,7 @@ alignment = 1
 [node name="Label" type="Label" parent="Control/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Level 1"
+text = "STAGE_1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -83,7 +83,7 @@ theme_type_variation = &"AlternativePanelContainer"
 [node name="Label" type="Label" parent="Control/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer/PanelContainer2"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-text = "Caffeinated Encounters of the Third Degree"
+text = "CAFFEINATED_ENC"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -130,7 +130,7 @@ alignment = 1
 [node name="Label" type="Label" parent="Control/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Level 2"
+text = "STAGE_2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -153,7 +153,7 @@ theme_type_variation = &"AlternativePanelContainer"
 [node name="Label" type="Label" parent="Control/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer/PanelContainer2"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-text = "The Espresso Strikes Back"
+text = "THE_ESPRESSO"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -201,7 +201,7 @@ alignment = 1
 [node name="Label" type="Label" parent="Control/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Level 3"
+text = "STAGE_3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -224,7 +224,7 @@ theme_type_variation = &"AlternativePanelContainer"
 [node name="Label" type="Label" parent="Control/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer/PanelContainer2"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-text = "Battlestar Baristica"
+text = "BATTLESTAR"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -270,5 +270,5 @@ theme_override_constants/margin_bottom = 10
 [node name="BackButton" type="Button" parent="Control/MarginContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Back
+text = "BACK
 "

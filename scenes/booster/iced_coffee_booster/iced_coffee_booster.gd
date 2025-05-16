@@ -23,7 +23,7 @@ func activate_iced_coffee_booster():
 		return
 	
 	animation_player.play("flash")
-	SoundUtils.play_booster_sound("iced_coffee")
+	SoundUtils.play_iced_coffee_sound()
 	
 	effect_active = true
 	BoosterEvents.iced_coffee -= 1

@@ -98,7 +98,7 @@ func update_currency_label():
 
 
 func update_held_label(label: Label, amount: int):
-	label.text = "Held: %d" % amount
+	label.text = tr("HELD") + "%d" % amount
 
 
 func update_currency(amount: int):
@@ -134,7 +134,7 @@ func open_quantity_panel(booster_name: String):
 func open_credit_purchase_confirmation(money_amount: int, credit_amount: int):
 	is_credit_purchase = true
 	pending_credit_amount = credit_amount
-	confirmation_dialog.dialog_text = "Deseja gastar R$%d para comprar %d¢?" % [money_amount, credit_amount]
+	confirmation_dialog.dialog_text = tr("BUY_CREDIT_CONFIRMATION") % [money_amount, credit_amount]
 	confirmation_dialog.popup_centered()
 
 
@@ -189,7 +189,7 @@ func on_quantity_ok_button_pressed():
 		return
 
 	is_credit_purchase = false
-	confirmation_dialog.dialog_text = "Deseja gastar ¢%d para comprar %d '%s'?" % [total_price, booster_quantity, booster_pending.capitalize()]
+	confirmation_dialog.dialog_text = tr("BUY_BOOSTER_CONFIRMATION") % [total_price, booster_quantity, booster_pending.capitalize()]
 	confirmation_dialog.popup_centered()
 	popup_panel.hide()
 

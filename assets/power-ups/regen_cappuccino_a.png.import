@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkd24l6nh3dqa"
-path="res://.godot/imported/health_vial.png-2f2c05cc345b4601230ed1a0718be686.ctex"
+uid="uid://kc4ml20ocqle"
+path="res://.godot/imported/regen_cappuccino_a.png-c3eb2d6ed00f721a5d832f76a6a98e24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/game_object/health_vial/health_vial.png"
-dest_files=["res://.godot/imported/health_vial.png-2f2c05cc345b4601230ed1a0718be686.ctex"]
+source_file="res://assets/power-ups/regen_cappuccino_a.png"
+dest_files=["res://.godot/imported/regen_cappuccino_a.png-c3eb2d6ed00f721a5d832f76a6a98e24.ctex"]
 
 [params]
 

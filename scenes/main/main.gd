@@ -5,6 +5,7 @@ extends Node2D
 
 
 func _ready():
+	SoundUtils.play_music_player("stage_1")
 	%Player.health_component.died.connect(on_player_died)
 	show_stage_title()
 

@@ -44,7 +44,7 @@ func on_button_pressed():
 
 
 func on_level_1_pressed():
-	MainMusicPlayer.stop()
+	#MainMusicPlayer.stop()
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
 
 

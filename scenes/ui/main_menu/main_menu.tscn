@@ -126,19 +126,19 @@ theme_override_constants/separation = 8
 [node name="PlayButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Play"
+text = "PLAY"
 
 [node name="StoreButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Store"
+text = "STORE_MENU"
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Options"
+text = "OPTIONS_MENU"
 
 [node name="QuitGameButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Quit"
+text = "QUIT_GAME"

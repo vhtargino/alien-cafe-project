@@ -3,11 +3,41 @@ key,en,pt_BR
 PLAY,Play,Jogar
 STORE_MENU,Store,Loja
 OPTIONS_MENU,Options,Opções
-QUIT_GAME,Quit,Sair
+QUIT_GAME,Quit Game,Sair do Jogo
+
+BACK,Back,Voltar
+CANCEL,Cancel,Cancelar
+
+CREDITS,Credits,Créditos
 
 DOUBLE_SHOT,Double Shot,Dose Dupla
 WAKER,Waker,Acordador
 ICED_COFFEE,Iced Coffee,Café Gelado
 TURBO_EXPRESSO,Turbo Expresso,Expresso Turbo
 
+DS_DESC,+100% attack speed for 6 seconds,+100% velocidade de ataque por 6 segundos
+WK_DESC,Instantly heals 50% of max health,Cura 50% do life máximo
+IC_DESC,Freeze enemies for 6 seconds,Congela os inimigos por 6 segundos
+TE_DESC,+100% move speed for 6 seconds,+100% de velocidade de movimento por 6 segundos
+
+BUY_BOOSTER,Buy 100¢,Comprar 100¢
+
 HELD,Held: ,Quantia: 
+
+HOW_MANY,How many?,Quantos?
+
+CREDITS_1,Adds 100 credits to the wallet,Adiciona 100 créditos à carteira
+CREDITS_2,Adds 200 credits to the wallet,Adiciona 200 créditos à carteira
+CREDITS_3,Adds 500 credits to the wallet,Adiciona 500 créditos à carteira
+CREDITS_4,Adds 1500 credits to the wallet,Adiciona 1500 créditos à carteira
+
+BUY_CREDIT_CONFIRMATION,Do you wish to spend R$%d to buy %d¢?,Deseja gastar R$%d para comprar %d¢?
+BUY_BOOSTER_CONFIRMATION,Do you wish to spend ¢%d to buy ¢d '%s'?,Deseja gastar ¢%d para comprar %d '%s'?
+
+STAGE_1,Stage 1,1ª Fase
+STAGE_2,Stage 2,2ª Fase
+STAGE_3,Stage 3,3ª Fase
+
+CAFFEINATED_ENC,Caffeinated Encounters of the Third Degree,Contatos Cafeinados de Terceiro Grau
+THE_ESPRESSO,The Espresso Strikes Back,O Espresso Contra-Ataca
+BATTLESTAR,Battlestar Baristica,Battlestar Barística

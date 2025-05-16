@@ -1,5 +1,8 @@
 extends Node
 
+const MAIN_MENU_MUSIC = preload("res://assets/music/the-stakeout-anasta-music-288249.mp3")
+const STAGE_1_MUSIC = preload("res://assets/music/synthwave-music-for-creating-a-captivating-background-ambiance-311391.mp3")
+
 const FOCUS = preload("res://assets/audio/menu-button-focus.ogg")
 const BUTTON_PRESSED = preload("res://assets/audio/beep-confirm.ogg")
 const DENIED = preload("res://assets/audio/wrong.mp3")
@@ -14,23 +17,20 @@ const DOUBLE_SHOT_SOUND = preload("res://assets/audio/knife-sound.mp3")
 const ICED_COFFEE_SOUND = preload("res://assets/audio/wind.ogg")
 const TURBO_EXPRESSO = preload("res://assets/audio/high-speed.mp3")
 
+@onready var music_player: AudioStreamPlayer = $MusicPlayer
 @onready var ui_player: AudioStreamPlayer = $UiPlayer
 @onready var player_player: AudioStreamPlayer = $PlayerPlayer
 @onready var sword_player: AudioStreamPlayer = $SwordPlayer
 @onready var axe_player: AudioStreamPlayer = $AxePlayer
 @onready var enemy_player: AudioStreamPlayer = $EnemyPlayer
-@onready var booster_sounds_player: AudioStreamPlayer = $BoosterSoundsPlayer
+@onready var double_shot_player: AudioStreamPlayer = $DoubleShotPlayer
+@onready var waker_player: AudioStreamPlayer = $WakerPlayer
+@onready var iced_coffee_player: AudioStreamPlayer = $IcedCoffeePlayer
+@onready var turbo_expresso_player: AudioStreamPlayer = $TurboExpressoPlayer
 @onready var experience_collect_player: AudioStreamPlayer = $ExperienceCollectPlayer
 @onready var health_collect_player: AudioStreamPlayer = $HealthCollectPlayer
 
-var boosters_polyphonic_playback: AudioStreamPlaybackPolyphonic
-
 var allow_focus_sound: bool = false
-
-
-func _ready():
-	booster_sounds_player.play()
-	boosters_polyphonic_playback = booster_sounds_player.get_stream_playback()
 
 
 func enable_focus_sound():
@@ -39,6 +39,13 @@ func enable_focus_sound():
 
 func disable_focus_sound():
 	allow_focus_sound = false
+
+
+func play_music_player(sound_name: String):
+	match sound_name:
+		"main_menu": music_player.stream = MAIN_MENU_MUSIC
+		"stage_1": music_player.stream = STAGE_1_MUSIC
+	music_player.play()
 
 
 func play_ui_sound(sound_name: String):
@@ -69,16 +76,25 @@ func play_axe_sound():
 
 
 func play_enemy_sound():
+	enemy_player.stop()
 	enemy_player.pitch_scale = randf_range(0.8, 1.2)
 	enemy_player.play()
 
 
-func play_booster_sound(sound_name: String):
-	match sound_name:
-		"double_shot": boosters_polyphonic_playback.play_stream(DOUBLE_SHOT_SOUND)
-		"waker": boosters_polyphonic_playback.play_stream(HEALING)
-		"iced_coffee": boosters_polyphonic_playback.play_stream(ICED_COFFEE_SOUND)
-		"turbo_expresso": boosters_polyphonic_playback.play_stream(TURBO_EXPRESSO)
+func play_double_shot_sound():
+	double_shot_player.play()
+
+
+func play_waker_sound():
+	waker_player.play()
+
+
+func play_iced_coffee_sound():
+	iced_coffee_player.play()
+
+
+func play_turbo_expresso_sound():
+	turbo_expresso_player.play()
 
 
 func play_experience_sound():
