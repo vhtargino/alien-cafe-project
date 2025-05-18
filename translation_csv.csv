@@ -7,6 +7,17 @@ QUIT_GAME,Quit Game,Sair do Jogo
 
 BACK,Back,Voltar
 CANCEL,Cancel,Cancelar
+SELECT,Select,Selecionar
+NEW,New!,Novo!
+
+OPTIONS,Options,Opções
+MUSIC_VOL,Music Volume,Volume Música
+SFX_VOL,Sound FX Volume,Volume Efeitos
+LANG,Language,Idioma
+
+PAUSED,Paused,Pausado
+RESUME,Resume,Continuar
+QUIT_MENU,Quit to Menu,Sair da Partida
 
 CREDITS,Credits,Créditos
 
@@ -22,7 +33,7 @@ TE_DESC,+100% move speed for 6 seconds,+100% de velocidade de movimento por 6 se
 
 BUY_BOOSTER,Buy 100¢,Comprar 100¢
 
-HELD,Held: ,Quantia: 
+HELD,"Held: ","Quantia: "
 
 HOW_MANY,How many?,Quantos?
 
@@ -41,3 +52,54 @@ STAGE_3,Stage 3,3ª Fase
 CAFFEINATED_ENC,Caffeinated Encounters of the Third Degree,Contatos Cafeinados de Terceiro Grau
 THE_ESPRESSO,The Espresso Strikes Back,O Espresso Contra-Ataca
 BATTLESTAR,Battlestar Baristica,Battlestar Barística
+
+CAFF_DESC,"Oh, no! Aliens are invading Earth to steal all the coffee, starting with the Alien Cafe!","Oh, não! Aliens estão invadindo a Terra para roubar todo o café, começando pelo Alien Cafe!"
+ESPRESSO_DESC,"Defend the farms at all costs! The Javanians want to steal the land and enslave us all!","Defenda as fazendas a qualquer custo! Os Javanenses querem roubar as terras e nos escravizar!"
+BATTLE_DESC,"Let's invade the mothership! Send these aliens from whence they came and claim victory!","Vamos invadir a nave-mãe! Mandem esses aliens de volta de onde vieram e reivindiquem a vitória!"
+
+FP_NAME,Frying Pan,Frigideira
+FP_MAIN,"I need something to defend myself... a frying pan!","Preciso de algo para me defender... uma frigideira!"
+FP_DAM,"Frying pan damage is increased by 15%","O dano da frigideira é aumentado em 15%"
+FP_RATE,"Increases frying pan attack rate by 10%","Aumenta a velocidade de ataque da frigideira em 10%"
+
+CM_NAME,Coffee Machine,Cafeteira
+CM_MAIN,"This machine looks heavy. What if I drop it on top of the aliens?","Essa máquina parece pesada. E se eu jogá-la em cima dos ETs?"
+CM_DAM,"Increases the damage of the coffee machine by 25%","Aumenta o dano da cafeteira em 25%"
+CM_RATE,"Coffee machine attack rate is increased by 15%","A velocidade de ataque da cafeteira é aumentada em 15%"
+
+CPOT_NAME,Coffee Pot,Bule de Café
+CPOT_MAIN,"A pot of hot steaming coffee! Take that, aliens!","Um bule de café fumegante! Tomem essa, aliens!"
+CPOT_DAM,"Coffee pot damage is increased by 10%","O dano do bule de café é aumentado em 10%"
+CPOT_RANGE,"The coffee pot reaches 10% further","O bule de café vai 10% mais longe"
+CPOT_RATE,"Increases coffee pot attack rate by 15%","Aumenta a velocidade de ataque do bule de café em 15%"
+
+FFIELD_NAME,Force Field,Campo de Força
+FFIELD_MAIN,"What is this? Alien tech, neat!","O que é isso? Tecnologia alienígena, legal!"
+FFIELD_DAM,,
+FFIELD_RANG,,
+FFIELD_RATE,,
+
+EC_NAME,Espresso Crossbow,Besta Espresso
+EC_MAIN,"Hey, I can use this to throw coffee beans! Take this one too!","Ei, eu posso usar isso pra atirar grãos de café! Tomem mais essa!"
+EC_DAM,,
+EC_RATE,,
+
+MAGNET_NAME,Item Magnet,Ímã de Itens
+MAGNET_MAIN,"I can use this to collect more things from a distance!","Posso usar isso coletar mais coisas de longe!"
+MAGNET_UP,,
+
+ARMOR_NAME,Pots and Pans,Tampas e Panelas
+ARMOR_MAIN,"An armor is an armor, no matter what is made of!","Uma armadura é uma armadura, não importa do que é feita!"
+ARMOR_UP,,
+
+CROIS_NAME,Life Croissant,Croissant da Vida
+COIS_MAIN,,
+CROIS_UP,,
+
+REGEN_NAME,Cure Cappuccino,Cappuccino da Cura
+REGEN_MAIN,,
+REGEN_UP,,
+
+SPEED_NAME,Future Sneakers,Tênis do Futuro
+SPEED_MAIN,,
+SPEED_UP,,

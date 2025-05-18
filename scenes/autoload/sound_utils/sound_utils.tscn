@@ -26,12 +26,12 @@ bus = &"SFX"
 volume_db = -6.0
 bus = &"SFX"
 
-[node name="SwordPlayer" type="AudioStreamPlayer" parent="."]
+[node name="SwordPlayer" type="AudioStreamPlayer" parent="." groups=["weapons_players"]]
 stream = ExtResource("2_jjjis")
 volume_db = -6.0
 bus = &"SFX"
 
-[node name="AxePlayer" type="AudioStreamPlayer" parent="."]
+[node name="AxePlayer" type="AudioStreamPlayer" parent="." groups=["weapons_players"]]
 stream = ExtResource("3_ii7tu")
 volume_db = -6.0
 max_polyphony = 24

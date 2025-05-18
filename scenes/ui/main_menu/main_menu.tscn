@@ -46,7 +46,8 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r70wa"]
 shader = ExtResource("2_cmwxi")
-shader_parameter/speed = 0.05
+shader_parameter/x_speed = 0.05
+shader_parameter/y_speed = 0.0
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_1ch07")

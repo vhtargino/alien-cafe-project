@@ -44,22 +44,22 @@ theme_override_constants/separation = 8
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Paused"
+text = "PAUSED"
 
 [node name="ResumeButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"AlternativeButton2"
-text = "Resume"
+text = "RESUME"
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"AlternativeButton2"
-text = "Options"
+text = "OPTIONS"
 
 [node name="QuitToMenuButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"AlternativeButton2"
-text = "Quit to Menu"
+text = "QUIT_MENU"

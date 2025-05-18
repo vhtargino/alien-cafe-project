@@ -9,7 +9,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_re87o"]
 shader = ExtResource("2_5qe3y")
-shader_parameter/speed = 0.05
+shader_parameter/x_speed = 0.01
+shader_parameter/y_speed = 0.01
 
 [node name="LevelSelect" type="CanvasLayer"]
 script = ExtResource("1_kvtm6")
@@ -97,7 +98,7 @@ theme_type_variation = &"AlternativePanelContainer"
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme_override_constants/line_spacing = 1
-text = "Oh, no! Aliens are invading Earth to steal all the coffee, starting with the Alien Cafe!"
+text = "CAFF_DESC"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -111,7 +112,7 @@ custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Select"
+text = "SELECT"
 
 [node name="Level2Card" type="PanelContainer" parent="Control/CenterContainer/HBoxContainer"]
 custom_minimum_size = Vector2(150, 150)
@@ -167,7 +168,7 @@ theme_type_variation = &"AlternativePanelContainer"
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme_override_constants/line_spacing = 1
-text = "Defend the farms at all costs! The Javanians want to steal the land and enslave us all!"
+text = "ESPRESSO_DESC"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -182,7 +183,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 disabled = true
-text = "Select"
+text = "SELECT"
 
 [node name="Level3Card" type="PanelContainer" parent="Control/CenterContainer/HBoxContainer"]
 custom_minimum_size = Vector2(150, 150)
@@ -238,7 +239,7 @@ theme_type_variation = &"AlternativePanelContainer"
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme_override_constants/line_spacing = 1
-text = "Let's invade the mothership! Send these aliens from whence they came and claim victory!"
+text = "BATTLE_DESC"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -253,7 +254,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 disabled = true
-text = "Select"
+text = "SELECT"
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 custom_minimum_size = Vector2(60, 0)
@@ -270,5 +271,4 @@ theme_override_constants/margin_bottom = 10
 [node name="BackButton" type="Button" parent="Control/MarginContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
-text = "BACK
-"
+text = "BACK"

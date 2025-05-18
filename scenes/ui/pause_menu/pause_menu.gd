@@ -64,6 +64,11 @@ func on_options_pressed():
 func on_quit_to_menu_pressed():
 	get_tree().paused = false
 	SoundUtils.music_player.stop()
+	
+	for player in get_tree().get_nodes_in_group("weapons_players"):
+		if player.playing:
+			player.stop()
+	
 	SoundUtils.disable_music_filter()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu/main_menu.tscn")
 

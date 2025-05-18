@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg1x5xjjavi0a"
-path="res://.godot/imported/frying_pan_a.png-2cb210489ed453b863fc64067d038817.ctex"
+uid="uid://duhgdmgi1nj72"
+path="res://.godot/imported/frying_pan_b.png-f8fad2c111085a1152963b3380da45ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/weapons/frying_pan_a.png"
-dest_files=["res://.godot/imported/frying_pan_a.png-2cb210489ed453b863fc64067d038817.ctex"]
+source_file="res://assets/weapons/frying_pan_b.png"
+dest_files=["res://.godot/imported/frying_pan_b.png-f8fad2c111085a1152963b3380da45ce.ctex"]
 
 [params]
 

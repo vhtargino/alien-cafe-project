@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://b3orltnjai0ve"]
 
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_pyxp1"]
-[ext_resource type="Texture2D" uid="uid://cg1x5xjjavi0a" path="res://assets/weapons/frying_pan_a.png" id="1_tld5f"]
+[ext_resource type="Texture2D" uid="uid://duhgdmgi1nj72" path="res://assets/weapons/frying_pan_b.png" id="1_tld5f"]
 
 [resource]
 script = ExtResource("1_pyxp1")
 image = ExtResource("1_tld5f")
 id = "sword_rate"
 max_quantity = 4
-name = "sword"
+name = "FP_NAME"
 type = "weapon"
 sub_type = "weapon_upgrade"
-description = "Increases sword attack rate by 10%"
+description = "FP_RATE"

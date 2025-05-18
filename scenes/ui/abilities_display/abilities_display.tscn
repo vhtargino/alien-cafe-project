@@ -165,14 +165,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
+offset_left = -1.0
 offset_top = -2.0
-offset_right = 2.0
+offset_right = 3.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "1"
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Weapon2" type="PanelContainer" parent="CenterContainer/HBoxContainer/WeaponsContainer"]
@@ -193,13 +192,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
+offset_left = -1.0
 offset_top = -2.0
-offset_right = 2.0
+offset_right = 3.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Weapon3" type="PanelContainer" parent="CenterContainer/HBoxContainer/WeaponsContainer"]
@@ -220,13 +218,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
+offset_left = -1.0
 offset_top = -2.0
-offset_right = 2.0
+offset_right = 3.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Weapon4" type="PanelContainer" parent="CenterContainer/HBoxContainer/WeaponsContainer"]
@@ -247,13 +244,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
+offset_left = -1.0
 offset_top = -2.0
-offset_right = 2.0
+offset_right = 3.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="PowerUpsContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -278,13 +274,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
+offset_left = -1.0
 offset_top = -2.0
-offset_right = 2.0
+offset_right = 3.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="PowerUp2" type="PanelContainer" parent="CenterContainer/HBoxContainer/PowerUpsContainer"]
@@ -305,13 +300,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
+offset_left = -1.0
 offset_top = -2.0
-offset_right = 2.0
+offset_right = 3.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="PowerUp3" type="PanelContainer" parent="CenterContainer/HBoxContainer/PowerUpsContainer"]
@@ -332,13 +326,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
+offset_left = -1.0
 offset_top = -2.0
-offset_right = 2.0
+offset_right = 3.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="PowerUp4" type="PanelContainer" parent="CenterContainer/HBoxContainer/PowerUpsContainer"]
@@ -359,13 +352,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
+offset_left = -1.0
 offset_top = -2.0
-offset_right = 2.0
+offset_right = 3.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="BoostersContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -402,13 +394,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
+offset_left = -1.0
 offset_top = -2.0
-offset_right = 2.0
+offset_right = 3.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Booster2" type="PanelContainer" parent="CenterContainer/HBoxContainer/BoostersContainer"]
@@ -439,13 +430,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
+offset_left = -1.0
 offset_top = -2.0
-offset_right = 2.0
+offset_right = 3.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Booster3" type="PanelContainer" parent="CenterContainer/HBoxContainer/BoostersContainer"]
@@ -476,13 +466,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
+offset_left = -1.0
 offset_top = -2.0
-offset_right = 2.0
+offset_right = 3.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Booster4" type="PanelContainer" parent="CenterContainer/HBoxContainer/BoostersContainer"]
@@ -513,11 +502,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -2.0
+offset_left = -1.0
 offset_top = -2.0
-offset_right = 2.0
+offset_right = 3.0
 offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2

@@ -2,10 +2,12 @@ extends PanelContainer
 
 signal selected
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var ref_rect_animation_player: AnimationPlayer = $RefRectAnimationPlayer
+@onready var new_label_animation_player: AnimationPlayer = $NewLabelAnimationPlayer
 @onready var ability_texture: TextureRect = %TextureRect
 @onready var name_label: Label = %NameLabel
 @onready var description_label: Label = %DescriptionLabel
+@onready var new_label: Label = $MarginContainer/VBoxContainer/NewLabel
 @onready var reference_rect: ReferenceRect = $ReferenceRect
 
 var can_play_focus_sound = true
@@ -24,8 +26,12 @@ func _ready():
 
 func set_ability_upgrade(upgrade: AbilityUpgrade):
 	ability_texture.texture = upgrade.image
-	name_label.text = upgrade.name.capitalize()
+	name_label.text = upgrade.name #.capitalize()
 	description_label.text = upgrade.description
+	if upgrade.sub_type == "weapon_main" or upgrade.sub_type == "power_up_main":
+		new_label.visible = true
+	else:
+		new_label.text = ""
 
 
 func on_gui_input(event: InputEvent):
@@ -38,13 +44,13 @@ func on_gui_input(event: InputEvent):
 func on_focus_entered():
 	#self.self_modulate = Color(0.8, 0.8, 0.8, 1)
 	reference_rect.visible = true
-	#animation_player.play("default")
+	#ref_rec_animation_player.play("default")
 	SoundUtils.play_ui_sound("focus")
 
 
 func on_focus_exited():
 	reference_rect.visible = false
-	#animation_player.stop()
+	#ref_rec_animation_player.stop()
 	#self.self_modulate = Color(1, 1, 1, 1)
 
 

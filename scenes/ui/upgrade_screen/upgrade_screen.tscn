@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cim4wq4tak2e0"]
+[gd_scene load_steps=6 format=3 uid="uid://cim4wq4tak2e0"]
 
 [ext_resource type="PackedScene" uid="uid://cu5jy6ihbkhxs" path="res://scenes/ui/ability_upgrade_card/ability_upgrade_card.tscn" id="1_clnow"]
 [ext_resource type="Script" uid="uid://blbv1y6erh4nd" path="res://scenes/ui/upgrade_screen/upgrade_screen.gd" id="1_eg2gl"]
+[ext_resource type="Shader" uid="uid://bbab2riuh3e74" path="res://resources/shaders/scroll_shader.gdshader" id="3_b2av2"]
+[ext_resource type="Texture2D" uid="uid://dv4mhkgrte8c8" path="res://assets/other/level_up_screen_c.png" id="4_b2av2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hotx1"]
+shader = ExtResource("3_b2av2")
+shader_parameter/x_speed = 0.05
+shader_parameter/y_speed = 0.05
 
 [node name="UpgradeScreen" type="CanvasLayer"]
 process_mode = 3
@@ -16,6 +23,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14902, 0.168627, 0.266667, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+texture_repeat = 2
+material = SubResource("ShaderMaterial_hotx1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_b2av2")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 5

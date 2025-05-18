@@ -18,15 +18,11 @@ shader = ExtResource("4_rix40")
 shader_parameter/lerp_percent = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss5pk"]
-bg_color = Color(0.247059, 0.14902, 0.192157, 1)
+bg_color = Color(0.14902, 0.168627, 0.266667, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tj6oj"]
 bg_color = Color(0, 0.872664, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.247059, 0.14902, 0.192157, 1)
+border_color = Color(0.14902, 0.168627, 0.266667, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s3670"]
 radius = 32.0
@@ -78,11 +74,11 @@ one_shot = true
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 z_index = 1
-custom_minimum_size = Vector2(24, 4)
+custom_minimum_size = Vector2(24, 3)
 offset_left = -12.0
 offset_top = 2.0
 offset_right = 12.0
-offset_bottom = 6.0
+offset_bottom = 5.0
 pivot_offset = Vector2(12, 2)
 theme_override_styles/background = SubResource("StyleBoxFlat_ss5pk")
 theme_override_styles/fill = SubResource("StyleBoxFlat_tj6oj")

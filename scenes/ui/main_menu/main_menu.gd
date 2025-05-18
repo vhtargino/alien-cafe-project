@@ -1,4 +1,5 @@
 extends CanvasLayer
+class_name MainMenu
 
 @onready var play_button = %PlayButton
 @onready var store_button = %StoreButton
