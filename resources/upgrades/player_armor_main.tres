@@ -11,5 +11,5 @@ max_quantity = 1
 name = "ARMOR_NAME"
 type = "power_up"
 sub_type = "power_up_main"
-description = "Armor that reduces damage received by 1"
+description = "ARMOR_MAIN"
 metadata/_custom_type_script = "uid://dqduk38jdctil"

@@ -13,4 +13,4 @@ max_quantity = 1
 name = "EC_NAME"
 type = "weapon"
 sub_type = "weapon_main"
-description = "Shoots a spear towards an enemy"
+description = "EC_MAIN"

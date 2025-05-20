@@ -11,4 +11,4 @@ max_quantity = 1
 name = "SPEED_NAME"
 type = "power_up"
 sub_type = "power_up_main"
-description = "Player move speed is increased by 15% each level"
+description = "SPEED_MAIN"

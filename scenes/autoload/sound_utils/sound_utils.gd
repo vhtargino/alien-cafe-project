@@ -2,6 +2,9 @@ extends Node
 
 const MAIN_MENU_MUSIC = preload("res://assets/music/the-stakeout-anasta-music-288249.mp3")
 const STAGE_1_MUSIC = preload("res://assets/music/synthwave-music-for-creating-a-captivating-background-ambiance-311391.mp3")
+const BOSS_MUSIC = preload("res://assets/music/dark-synthwave-obilivion-echo-251687.mp3")
+const VICTORY_MUSIC = preload("res://assets/music/neon-mirage-background-synthwave-music-for-video-vlog-24-second-340201.mp3")
+const GAME_OVER_MUSIC = preload("res://assets/music/sad-documentary-sorrowful-music-342263.mp3")
 
 const FOCUS = preload("res://assets/audio/menu-button-focus.ogg")
 const BUTTON_PRESSED = preload("res://assets/audio/beep-confirm.ogg")
@@ -11,11 +14,11 @@ const LEVEL_UP = preload("res://assets/audio/level_up.ogg")
 const PLAYER_DAMAGE = preload("res://assets/audio/player_hit.ogg")
 const HEALING = preload("res://assets/audio/health_up.ogg")
 
-const AXE_SOUND = preload("res://assets/audio/spinning_woosh.ogg")
-
 const DOUBLE_SHOT_SOUND = preload("res://assets/audio/knife-sound.mp3")
 const ICED_COFFEE_SOUND = preload("res://assets/audio/wind.ogg")
 const TURBO_EXPRESSO = preload("res://assets/audio/high-speed.mp3")
+
+@export var frying_pan_array: Array[AudioStream]
 
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 @onready var ui_player: AudioStreamPlayer = $UiPlayer
@@ -45,6 +48,9 @@ func play_music_player(sound_name: String):
 	match sound_name:
 		"main_menu": music_player.stream = MAIN_MENU_MUSIC
 		"stage_1": music_player.stream = STAGE_1_MUSIC
+		"boss_music": music_player.stream = BOSS_MUSIC
+		"victory_music": music_player.stream = VICTORY_MUSIC
+		"game_over_music": music_player.stream = GAME_OVER_MUSIC
 	music_player.play()
 
 
@@ -68,6 +74,7 @@ func play_player_sound(sound_name: String):
 
 
 func play_sword_sound():
+	sword_player.stream = frying_pan_array.pick_random()
 	sword_player.play()
 
 
@@ -103,6 +110,12 @@ func play_experience_sound():
 
 func play_health_sound():
 	health_collect_player.play()
+
+
+func stop_players():
+	for audio_player: AudioStreamPlayer in get_tree().get_nodes_in_group("sound_players"):
+		if audio_player.playing:
+			audio_player.stop()
 
 
 func enable_music_filter():

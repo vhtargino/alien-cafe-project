@@ -20,8 +20,8 @@ func _ready():
 
 
 func set_defeat():
-	%TitleLabel.text = "Defeat"
-	%DescriptionLabel.text = "You lost!"
+	%TitleLabel.text = "GAME OVER"
+	%DescriptionLabel.text = "YOU_LOST"
 
 
 func on_focus_entered():
@@ -29,6 +29,7 @@ func on_focus_entered():
 
 
 func on_button_pressed():
+	SoundUtils.stop_players()
 	SoundUtils.play_ui_sound("button_pressed")
 
 
@@ -39,10 +40,6 @@ func on_restart_button_pressed():
 
 func on_quit_to_menu_button_pressed():
 	get_tree().paused = false
-	
-	for player in get_tree().get_nodes_in_group("weapons_players"):
-		if player.playing:
-			player.stop()
-	
+	SoundUtils.stop_players()
 	SoundUtils.disable_focus_sound()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu/main_menu.tscn")

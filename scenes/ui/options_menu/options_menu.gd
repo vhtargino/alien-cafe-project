@@ -25,6 +25,11 @@ func _ready():
 	music_slider.value_changed.connect(func(value): _set_bus_volume("Music", value))
 	sfx_slider.value_changed.connect(func(value): _set_bus_volume("SFX", value))
 	
+	language_options.focus_entered.connect(on_focus_entered)
+	language_options.pressed.connect(on_language_pressed)
+	language_options.item_focused.connect(on_item_focused)
+	language_options.item_selected.connect(on_item_selected)
+	
 	SoundUtils.disable_focus_sound()
 	music_slider.grab_focus()
 	SoundUtils.enable_focus_sound()
@@ -71,6 +76,18 @@ func set_language_menu():
 
 func on_focus_entered():
 	SoundUtils.play_ui_sound("focus")
+
+
+func on_language_pressed():
+	SoundUtils.play_ui_sound("button_pressed")
+
+
+func on_item_focused(_index: int):
+	SoundUtils.play_ui_sound("focus")
+
+
+func on_item_selected(_index: int):
+	SoundUtils.play_ui_sound("button_pressed")
 
 
 func on_back_pressed():

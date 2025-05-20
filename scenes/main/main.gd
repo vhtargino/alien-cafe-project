@@ -25,15 +25,15 @@ func show_stage_title():
 	$StageTitle.queue_free()
 
 
-#func create_camera():
-	#var camera = Camera2D.new()
-	#camera.position = %Player.global_position
-	#camera.make_current()
-	#add_child(camera)
+func create_camera():
+	var camera = Camera2D.new()
+	add_child(camera)
 
 
 func on_player_died():
-	#create_camera()
+	create_camera()
+	SoundUtils.stop_players()
 	var end_screen_instance = end_screen_scene.instantiate()
+	SoundUtils.play_music_player("game_over_music")
 	add_child(end_screen_instance)
 	end_screen_instance.set_defeat()

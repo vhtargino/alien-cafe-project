@@ -1,19 +1,26 @@
-[gd_scene load_steps=10 format=3 uid="uid://xs8a85dgrx47"]
+[gd_scene load_steps=16 format=3 uid="uid://xs8a85dgrx47"]
 
 [ext_resource type="Script" uid="uid://c117eyk6yyb0w" path="res://scenes/autoload/sound_utils/sound_utils.gd" id="1_r8vor"]
-[ext_resource type="AudioStream" uid="uid://cwnrr3tc6rqpq" path="res://assets/audio/sword_sound.ogg" id="2_jjjis"]
+[ext_resource type="AudioStream" uid="uid://c613y41otegh2" path="res://assets/audio/frying_pan_hit/frying_pan_hit_1.ogg" id="2_55xlh"]
 [ext_resource type="AudioStream" uid="uid://6q2v0020kc6g" path="res://assets/audio/spinning_woosh.ogg" id="3_ii7tu"]
 [ext_resource type="AudioStream" uid="uid://c6ayjmfup42n4" path="res://assets/audio/impactGeneric_light_000.ogg" id="3_jjjis"]
+[ext_resource type="AudioStream" uid="uid://b55vhx3g7eyc8" path="res://assets/audio/frying_pan_hit/frying_pan_hit_2.ogg" id="3_qrd2q"]
 [ext_resource type="AudioStream" uid="uid://bohcwm6427lo" path="res://assets/audio/health_up.ogg" id="3_wxa1l"]
 [ext_resource type="AudioStream" uid="uid://d1b0w5lo1mwld" path="res://assets/audio/enemy_hit.ogg" id="3_x8u8p"]
+[ext_resource type="AudioStream" uid="uid://cuowpfghqbg71" path="res://assets/audio/frying_pan_hit/frying_pan_hit_3.ogg" id="4_tkl52"]
 [ext_resource type="AudioStream" uid="uid://w03x01g7q406" path="res://assets/audio/knife-sound.mp3" id="5_vlmnk"]
+[ext_resource type="AudioStream" uid="uid://dgbqhu1ojgd6n" path="res://assets/audio/frying_pan_hit/frying_pan_hit_4.ogg" id="5_xstfe"]
+[ext_resource type="AudioStream" uid="uid://db2tgwmusqwuy" path="res://assets/audio/frying_pan_hit/frying_pan_hit_5.ogg" id="6_vuver"]
+[ext_resource type="AudioStream" uid="uid://drc0mf6u47mp6" path="res://assets/audio/frying_pan_hit/frying_pan_hit_6.ogg" id="7_o4qvb"]
 [ext_resource type="AudioStream" uid="uid://c3v1av67oi7if" path="res://assets/audio/wind.ogg" id="7_p4k1f"]
 [ext_resource type="AudioStream" uid="uid://b45kmc6x2btbp" path="res://assets/audio/high-speed.mp3" id="8_p0ev1"]
+[ext_resource type="AudioStream" uid="uid://cjv0kj8ncwwxl" path="res://assets/audio/frying_pan_hit/frying_pan_hit_7.ogg" id="8_q60vw"]
 
 [node name="SoundUtils" type="Node"]
 script = ExtResource("1_r8vor")
+frying_pan_array = Array[AudioStream]([ExtResource("2_55xlh"), ExtResource("3_qrd2q"), ExtResource("4_tkl52"), ExtResource("5_xstfe"), ExtResource("6_vuver"), ExtResource("7_o4qvb"), ExtResource("8_q60vw")])
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 process_mode = 3
 volume_db = -12.0
 bus = &"Music"
@@ -22,57 +29,68 @@ bus = &"Music"
 volume_db = -12.0
 bus = &"SFX"
 
-[node name="PlayerPlayer" type="AudioStreamPlayer" parent="."]
+[node name="PlayerPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 volume_db = -6.0
 bus = &"SFX"
 
-[node name="SwordPlayer" type="AudioStreamPlayer" parent="." groups=["weapons_players"]]
-stream = ExtResource("2_jjjis")
+[node name="SwordPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 volume_db = -6.0
 bus = &"SFX"
 
-[node name="AxePlayer" type="AudioStreamPlayer" parent="." groups=["weapons_players"]]
+[node name="AxePlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("3_ii7tu")
 volume_db = -6.0
 max_polyphony = 24
 bus = &"SFX"
 
-[node name="EnemyPlayer" type="AudioStreamPlayer" parent="."]
+[node name="SpearPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="AnvilPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="EnemyPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("3_x8u8p")
 volume_db = -6.0
 max_polyphony = 24
 bus = &"EnemyHit"
 
-[node name="DoubleShotPlayer" type="AudioStreamPlayer" parent="."]
+[node name="DoubleShotPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("5_vlmnk")
 volume_db = -6.0
 max_polyphony = 4
 bus = &"SFX"
 
-[node name="WakerPlayer" type="AudioStreamPlayer" parent="."]
+[node name="WakerPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("3_wxa1l")
 volume_db = -6.0
 max_polyphony = 4
 bus = &"SFX"
 
-[node name="IcedCoffeePlayer" type="AudioStreamPlayer" parent="."]
+[node name="IcedCoffeePlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("7_p4k1f")
 volume_db = -6.0
 max_polyphony = 4
 bus = &"SFX"
 
-[node name="TurboExpressoPlayer" type="AudioStreamPlayer" parent="."]
+[node name="TurboExpressoPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("8_p0ev1")
 volume_db = -6.0
 max_polyphony = 4
 bus = &"SFX"
 
-[node name="ExperienceCollectPlayer" type="AudioStreamPlayer" parent="."]
+[node name="ExperienceCollectPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("3_jjjis")
 volume_db = -9.0
 bus = &"SFX"
 
-[node name="HealthCollectPlayer" type="AudioStreamPlayer" parent="."]
+[node name="HealthCollectPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("3_wxa1l")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="BossDeathPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 volume_db = -6.0
 bus = &"SFX"

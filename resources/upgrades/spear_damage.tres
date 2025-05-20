@@ -11,4 +11,4 @@ max_quantity = 3
 name = "EC_NAME"
 type = "weapon"
 sub_type = "weapon_upgrade"
-description = "Increases spear damage by 10%"
+description = "EC_DAM"

@@ -11,4 +11,4 @@ max_quantity = 1
 name = "REGEN_NAME"
 type = "power_up"
 sub_type = "power_up_main"
-description = "Periodically heals the player's health"
+description = "REGEN_MAIN"

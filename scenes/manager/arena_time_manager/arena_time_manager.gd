@@ -30,4 +30,5 @@ func on_timer_timeout():
 	GameEvents.level_1_finished = true
 	
 	var end_screen_instance = end_screen_scene.instantiate()
+	SoundUtils.play_music_player("victory_music")
 	add_child(end_screen_instance)

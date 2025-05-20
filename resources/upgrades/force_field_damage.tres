@@ -11,4 +11,4 @@ max_quantity = 3
 name = "FFIELD_NAME"
 type = "weapon"
 sub_type = "weapon_upgrade"
-description = "Increases the periodic damage dealt by 20%"
+description = "FFIELD_DAM"

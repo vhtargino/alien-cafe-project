@@ -21,6 +21,7 @@ var base_spawn_time
 
 var enemy_table = WeightedTable.new()
 var number_to_spawn: int = 1
+var enemy_count: int = 0
 
 
 func _ready():
@@ -28,6 +29,7 @@ func _ready():
 	base_spawn_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
 	arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
+	GameEvents.enemy_died.connect(on_enemy_died)
 
 
 func get_spawn_position() -> Vector2:
@@ -64,13 +66,17 @@ func get_spawn_position() -> Vector2:
 	return spawn_position
 
 
-func spawn_enemy(enemy_scene: PackedScene):
+func spawn_enemy(enemy_scene: PackedScene, is_boss: bool = false):
+	if enemy_count >= 500 and not is_boss:
+		return
+	
 	var spawn_position = get_spawn_position()
 	var entities_layer = get_tree().get_first_node_in_group("entities_layer")
 	var enemy = enemy_scene.instantiate() as Node2D
 	
 	entities_layer.add_child(enemy)
 	enemy.global_position = spawn_position
+	enemy_count += 1
 
 
 func on_timer_timeout():
@@ -109,7 +115,12 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 		enemy_table.remove_item(alien_0006_scene)
 		enemy_table.add_item(alien_0009_scene, 2560)
 	elif arena_difficulty == 108:
-		spawn_enemy(boss_0001_scene)
+		SoundUtils.play_music_player("boss_music")
+		spawn_enemy(boss_0001_scene, true)
 	
 	#if (arena_difficulty % 60) == 0:
 		#number_to_spawn += 1
+
+
+func on_enemy_died():
+	enemy_count -= 1

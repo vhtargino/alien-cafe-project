@@ -19,6 +19,11 @@ PAUSED,Paused,Pausado
 RESUME,Resume,Continuar
 QUIT_MENU,Quit to Menu,Sair da Partida
 
+VICTORY,VICTORY!,VITÓRIA!
+YOU_WON,You won!,Você venceu!
+YOU_LOST,You lost!,Você perdeu!
+RESTART,Restart,Reiniciar
+
 CREDITS,Credits,Créditos
 
 DOUBLE_SHOT,Double Shot,Dose Dupla
@@ -33,7 +38,7 @@ TE_DESC,+100% move speed for 6 seconds,+100% de velocidade de movimento por 6 se
 
 BUY_BOOSTER,Buy 100¢,Comprar 100¢
 
-HELD,"Held: ","Quantia: "
+HELD,Held: ,Quantia: 
 
 HOW_MANY,How many?,Quantos?
 
@@ -75,31 +80,31 @@ CPOT_RATE,"Increases coffee pot attack rate by 15%","Aumenta a velocidade de ata
 
 FFIELD_NAME,Force Field,Campo de Força
 FFIELD_MAIN,"What is this? Alien tech, neat!","O que é isso? Tecnologia alienígena, legal!"
-FFIELD_DAM,,
-FFIELD_RANG,,
-FFIELD_RATE,,
+FFIELD_DAM,"Increases force field damage by 20%","Aumenta o dano do campo de força em 20%"
+FFIELD_RANG,"Force field base radius gets 40% bigger","Raio base do campo de força aumenta em 40%"
+FFIELD_RATE,"Shortens the interval between force field hits","Diminui o intervalo entre ataques do campo de força"
 
 EC_NAME,Espresso Crossbow,Besta Espresso
 EC_MAIN,"Hey, I can use this to throw coffee beans! Take this one too!","Ei, eu posso usar isso pra atirar grãos de café! Tomem mais essa!"
-EC_DAM,,
-EC_RATE,,
+EC_DAM,"Increases crossbow damage by 10%","Aumenta o dano da besta em 10%"
+EC_RATE,"Crossbow attack rate is increased by 15%","A velocidade de ataque da besta aumenta em 15%"
 
 MAGNET_NAME,Item Magnet,Ímã de Itens
-MAGNET_MAIN,"I can use this to collect more things from a distance!","Posso usar isso coletar mais coisas de longe!"
-MAGNET_UP,,
+MAGNET_MAIN,"I can use this to collect more things from a distance!","Posso usar isso coletar coisas mais de longe!"
+MAGNET_UP,"Increases item pickup range by 20%","Aumenta o alcance de coleta de itens em 20%"
 
 ARMOR_NAME,Pots and Pans,Tampas e Panelas
 ARMOR_MAIN,"An armor is an armor, no matter what is made of!","Uma armadura é uma armadura, não importa do que é feita!"
-ARMOR_UP,,
+ARMOR_UP,"Reduces incoming damage to the player by 1","Reduz o dano recebido em 1"
 
 CROIS_NAME,Life Croissant,Croissant da Vida
-COIS_MAIN,,
-CROIS_UP,,
+CROIS_MAIN,Croissant with coffee is life... literally 15% more!,Croissant com café é vida... literalmente 15% a mais!
+CROIS_UP,Max health is increased by 15%,Life máximo é aumentado em 15%
 
-REGEN_NAME,Cure Cappuccino,Cappuccino da Cura
-REGEN_MAIN,,
-REGEN_UP,,
+REGEN_NAME,Healing Cappuccino,Cappuccino da Cura
+REGEN_MAIN,"Feeling better and better with each sip!","Me sentindo melhor a cada gole!"
+REGEN_UP,"Player heal's health 10% faster","Cura o life 10% mais rápido"
 
 SPEED_NAME,Future Sneakers,Tênis do Futuro
-SPEED_MAIN,,
-SPEED_UP,,
+SPEED_MAIN,"Faster! Faster! FASTER!","Mais rápido! Mais rápido! MAIS RÁPIDO!"
+SPEED_UP,"Increases player move speed by 15%","Aumenta a velocidade de movimento em 15%"

@@ -1,17 +1,88 @@
-[gd_scene load_steps=3 format=3 uid="uid://deaw0j1ach3ew"]
+[gd_scene load_steps=5 format=3 uid="uid://deaw0j1ach3ew"]
 
 [ext_resource type="Script" uid="uid://bl88jplgpytft" path="res://scenes/booster/waker_booster/waker_booster.gd" id="1_27mnf"]
-[ext_resource type="SpriteFrames" uid="uid://bdsfa8fxp1kap" path="res://resources/sprite_sheets/green_healing_fx.tres" id="2_tumkb"]
+
+[sub_resource type="Animation" id="Animation_0mq8u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_n2y0f"]
+resource_name = "green_screen_flash"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.05, 0.2, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mwv26"]
+_data = {
+&"RESET": SubResource("Animation_0mq8u"),
+&"green_screen_flash": SubResource("Animation_n2y0f")
+}
 
 [node name="WakerBooster" type="Node"]
 script = ExtResource("1_27mnf")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = ExtResource("2_tumkb")
-animation = &"healing"
-offset = Vector2(0, -8)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mwv26")
+}
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0, 0.215686)

@@ -11,4 +11,4 @@ max_quantity = 3
 name = "FFIELD_NAME"
 type = "weapon"
 sub_type = "weapon_upgrade"
-description = "Shortens the interval between force field hits"
+description = "FFIELD_RATE"

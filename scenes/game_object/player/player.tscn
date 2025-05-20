@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://duy34q0exwehe"]
+[gd_scene load_steps=19 format=3 uid="uid://duy34q0exwehe"]
 
 [ext_resource type="Script" uid="uid://dxlfrc1brodwd" path="res://scenes/game_object/player/player.gd" id="1_chboc"]
 [ext_resource type="PackedScene" uid="uid://hhx6iyx5cxh" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_h7tiq"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://deaw0j1ach3ew" path="res://scenes/booster/waker_booster/waker_booster.tscn" id="8_gqr5v"]
 [ext_resource type="PackedScene" uid="uid://56ugs0sthyj2" path="res://scenes/booster/iced_coffee_booster/iced_coffee_booster.tscn" id="9_28lpv"]
 [ext_resource type="PackedScene" uid="uid://cu55qh8jtvdcu" path="res://scenes/booster/turbo_expresso_booster/turbo_expresso_booster.tscn" id="10_gbew5"]
+[ext_resource type="SpriteFrames" uid="uid://bdsfa8fxp1kap" path="res://resources/sprite_sheets/green_healing_fx.tres" id="12_oxhc3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dy4tu"]
 resource_local_to_scene = true
@@ -101,6 +102,12 @@ unique_name_in_owner = true
 sprite_frames = ExtResource("7_rix40")
 animation = &"player_idle"
 offset = Vector2(0, -9)
+
+[node name="HealingSprite" type="AnimatedSprite2D" parent="Visuals"]
+visible = false
+position = Vector2(0, -8)
+sprite_frames = ExtResource("12_oxhc3")
+animation = &"healing"
 
 [node name="CollisionArea2D" type="Area2D" parent="."]
 position = Vector2(0, -6)

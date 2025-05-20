@@ -11,4 +11,4 @@ max_quantity = 6
 name = "EC_NAME"
 type = "weapon"
 sub_type = "weapon_upgrade"
-description = "Spear attack rate is increased by 15%"
+description = "EC_RATE"

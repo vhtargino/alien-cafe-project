@@ -13,4 +13,4 @@ max_quantity = 1
 name = "FFIELD_NAME"
 type = "weapon"
 sub_type = "weapon_main"
-description = "Creates a force field around the player"
+description = "FFIELD_MAIN"

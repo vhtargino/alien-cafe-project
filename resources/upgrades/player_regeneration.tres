@@ -11,4 +11,4 @@ max_quantity = 7
 name = "REGEN_NAME"
 type = "power_up"
 sub_type = "power_up_upgrade"
-description = "Player heal's health 10% faster"
+description = "REGEN_UP"

@@ -108,7 +108,7 @@ theme_override_constants/margin_top = 4
 
 [node name="Level1Button" type="Button" parent="Control/CenterContainer/HBoxContainer/Level1Card/MarginContainer/VBoxContainer/MarginContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(60, 0)
+custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -178,7 +178,7 @@ theme_override_constants/margin_top = 4
 
 [node name="Level2Button" type="Button" parent="Control/CenterContainer/HBoxContainer/Level2Card/MarginContainer/VBoxContainer/MarginContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(60, 0)
+custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -249,7 +249,7 @@ theme_override_constants/margin_top = 4
 
 [node name="Level3Button" type="Button" parent="Control/CenterContainer/HBoxContainer/Level3Card/MarginContainer/VBoxContainer/MarginContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(60, 0)
+custom_minimum_size = Vector2(65, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
