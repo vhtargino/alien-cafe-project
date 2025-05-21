@@ -62,9 +62,9 @@ func on_options_pressed():
 
 
 func on_quit_to_menu_pressed():
-	SoundUtils.stop_players()
 	get_tree().paused = false
 	SoundUtils.disable_music_filter()
+	SoundUtils.stop_players()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu/main_menu.tscn")
 
 

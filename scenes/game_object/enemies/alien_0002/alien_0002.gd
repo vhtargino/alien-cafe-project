@@ -1,5 +1,4 @@
 extends CharacterBody2D
-class_name Alien2
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var velocity_component = $VelocityComponent
@@ -12,6 +11,7 @@ class_name Alien2
 @export var damage: int = 1
 
 var is_frozen: bool = false
+var is_despawning: bool = false
 
 
 func _ready():
@@ -19,7 +19,7 @@ func _ready():
 
 
 func _process(_delta: float) -> void:
-	if is_frozen:
+	if is_frozen or is_despawning:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
@@ -44,6 +44,13 @@ func unfreeze():
 	is_frozen = false
 	animated_sprite_2d.play("walk")
 	animated_sprite_2d.material = normal_material
+
+
+func despawn():
+	is_despawning = true
+	animated_sprite_2d.play("despawn")
+	await animated_sprite_2d.animation_finished
+	queue_free()
 
 
 func on_hit():

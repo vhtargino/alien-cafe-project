@@ -79,6 +79,14 @@ func spawn_enemy(enemy_scene: PackedScene, is_boss: bool = false):
 	enemy_count += 1
 
 
+func despawn_enemy(enemy_scene: PackedScene):
+	var enemy_scene_path = enemy_scene.resource_path
+	for enemy in get_tree().get_nodes_in_group("enemy"):
+		if enemy.scene_file_path == enemy_scene_path:
+			enemy.despawn()
+			enemy_count -= 1
+
+
 func on_timer_timeout():
 	timer.start()
 	var enemy_scene = enemy_table.pick_item()
@@ -93,27 +101,35 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 	
 	if arena_difficulty == 12:
 		enemy_table.add_item(alien_0002_scene, 20)
+	elif arena_difficulty == 3:
+		despawn_enemy(alien_0001_scene)
 	elif arena_difficulty == 24:
 		enemy_table.add_item(alien_0003_scene, 40)
 	elif arena_difficulty == 36:
 		enemy_table.remove_item(alien_0001_scene)
 		enemy_table.add_item(alien_0004_scene, 80)
+		despawn_enemy(alien_0001_scene)
 	elif arena_difficulty == 48:
 		enemy_table.remove_item(alien_0002_scene)
 		enemy_table.add_item(alien_0005_scene, 160)
+		despawn_enemy(alien_0002_scene)
 	elif arena_difficulty == 60:
 		enemy_table.remove_item(alien_0003_scene)
 		enemy_table.add_item(alien_0006_scene, 320)
+		despawn_enemy(alien_0003_scene)
 		number_to_spawn += 1
 	elif arena_difficulty == 72:
 		enemy_table.remove_item(alien_0004_scene)
 		enemy_table.add_item(alien_0007_scene, 640)
+		despawn_enemy(alien_0004_scene)
 	elif arena_difficulty == 84:
 		enemy_table.remove_item(alien_0005_scene)
 		enemy_table.add_item(alien_0008_scene, 1280)
+		despawn_enemy(alien_0005_scene)
 	elif arena_difficulty == 96:
 		enemy_table.remove_item(alien_0006_scene)
 		enemy_table.add_item(alien_0009_scene, 2560)
+		despawn_enemy(alien_0006_scene)
 	elif arena_difficulty == 108:
 		SoundUtils.play_music_player("boss_music")
 		spawn_enemy(boss_0001_scene, true)

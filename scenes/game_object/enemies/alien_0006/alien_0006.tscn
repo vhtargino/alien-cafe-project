@@ -31,6 +31,7 @@ y_sort_enabled = true
 collision_layer = 12
 collision_mask = 7
 motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_2x1ee")
 freeze_material = SubResource("ShaderMaterial_d1uua")
 damage = 7
