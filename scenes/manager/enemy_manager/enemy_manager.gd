@@ -76,7 +76,9 @@ func spawn_enemy(enemy_scene: PackedScene, is_boss: bool = false):
 	
 	entities_layer.add_child(enemy)
 	enemy.global_position = spawn_position
-	enemy_count += 1
+	
+	if not is_boss:
+		enemy_count += 1
 
 
 func despawn_enemy(enemy_scene: PackedScene):
@@ -101,8 +103,6 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 	
 	if arena_difficulty == 12:
 		enemy_table.add_item(alien_0002_scene, 20)
-	elif arena_difficulty == 3:
-		despawn_enemy(alien_0001_scene)
 	elif arena_difficulty == 24:
 		enemy_table.add_item(alien_0003_scene, 40)
 	elif arena_difficulty == 36:
