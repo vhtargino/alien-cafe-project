@@ -58,6 +58,9 @@ func on_timer_timeout():
 		return
 	
 	for enemy in enemies_inside_area:
+		if not enemy.has_node("HurtboxComponent"):
+			return
+		
 		var hurtbox = enemy.get_node("HurtboxComponent")
 		hurtbox.on_area_entered(force_field_instance.hitbox_component)
 

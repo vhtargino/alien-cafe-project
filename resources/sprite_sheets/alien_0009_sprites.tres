@@ -1,10 +1,16 @@
-[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://cmrmn3keh6suh"]
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://cmrmn3keh6suh"]
 
 [ext_resource type="Texture2D" uid="uid://cjxqgeika24eh" path="res://assets/enemies/alien_0009/alien_0009f3.png" id="1_yfeg0"]
 [ext_resource type="Texture2D" uid="uid://dlcwkhh5emw4s" path="res://assets/enemies/alien_0009/alien_0009f4.png" id="2_tu6o5"]
 [ext_resource type="Texture2D" uid="uid://b2ftknw5wre0f" path="res://assets/enemies/alien_0009/alien_0009f5.png" id="3_op06f"]
 [ext_resource type="Texture2D" uid="uid://b0bg3h8r5gkos" path="res://assets/enemies/alien_0009/alien_0009f1.png" id="4_inm8m"]
+[ext_resource type="Texture2D" uid="uid://cqsx8jtac74yq" path="res://assets/enemies/alien_0009/alien_0009f6.png" id="4_ofdby"]
+[ext_resource type="Texture2D" uid="uid://cru6kymi6e1kp" path="res://assets/enemies/alien_0009/alien_0009f7.png" id="5_iyb6s"]
 [ext_resource type="Texture2D" uid="uid://dk7graulrgdbq" path="res://assets/enemies/alien_0009/alien_0009f2.png" id="5_wlfqy"]
+[ext_resource type="Texture2D" uid="uid://8qte04vubje0" path="res://assets/enemies/alien_0009/alien_0009f8.png" id="6_p0k4m"]
+[ext_resource type="Texture2D" uid="uid://cyvlbdf87w0c1" path="res://assets/enemies/alien_0009/alien_0009f9.png" id="7_wiv3f"]
+[ext_resource type="Texture2D" uid="uid://31to0p2nglde" path="res://assets/enemies/alien_0009/alien_0009f10.png" id="8_2qean"]
+[ext_resource type="Texture2D" uid="uid://cr0nrk01jt01l" path="res://assets/enemies/alien_0009/alien_0009f11.png" id="9_oge12"]
 
 [resource]
 animations = [{
@@ -21,6 +27,29 @@ animations = [{
 "loop": false,
 "name": &"death",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ofdby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iyb6s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p0k4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wiv3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2qean")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oge12")
+}],
+"loop": false,
+"name": &"despawn",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,

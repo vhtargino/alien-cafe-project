@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://j7x80xo0lckc" path="res://scenes/ability/anvil_ability/anvil_ability.gd" id="1_4tak5"]
 [ext_resource type="PackedScene" uid="uid://clkxgjwrus2sy" path="res://scenes/component/hitbox_component/hitbox_component.tscn" id="2_4tak5"]
 [ext_resource type="Texture2D" uid="uid://b10vnsi051urd" path="res://assets/weapons/coffee_machine_a.png" id="3_1311l"]
-[ext_resource type="Texture2D" uid="uid://cve7ne11e0mpp" path="res://assets/particle.png" id="4_1311l"]
+[ext_resource type="Texture2D" uid="uid://cve7ne11e0mpp" path="res://assets/particles/particle.png" id="4_1311l"]
 
 [sub_resource type="Animation" id="Animation_m0lxl"]
 length = 0.001
@@ -169,6 +169,7 @@ interpolate = false
 process_material = SubResource("ParticleProcessMaterial_m0lxl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -100)
 texture = ExtResource("3_1311l")
 offset = Vector2(0, -7)
 

@@ -48,12 +48,16 @@ func unfreeze():
 
 
 func despawn():
-	hurtbox_component.queue_free()
 	is_despawning = true
+	
+	hurtbox_component.queue_free()
+	animated_sprite_2d.material = normal_material
+	
 	var tween = create_tween()
 	tween.tween_property(animated_sprite_2d, "global_position", (global_position + (Vector2.UP * 150)), 0.8)\
 	.set_trans(Tween.TRANS_CUBIC)\
 	.set_ease(Tween.EASE_IN)
+	
 	animated_sprite_2d.play("despawn")
 	await animated_sprite_2d.animation_finished
 	queue_free()

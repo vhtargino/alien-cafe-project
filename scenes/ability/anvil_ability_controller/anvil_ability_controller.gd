@@ -40,6 +40,7 @@ func on_timer_timeout():
 	
 	var anvil_instance = anvil_ability_scene.instantiate() as AnvilAbility
 	foreground.add_child(anvil_instance)
+	SoundUtils.play_anvil_sound()
 	anvil_instance.hitbox_component.damage = base_damage * additional_damage_percent
 	anvil_instance.global_position = spawn_position
 

@@ -41,7 +41,7 @@ func get_spawn_position() -> Vector2:
 	var random_direction = Vector2.RIGHT.rotated(randf_range(0, TAU))
 	for i in 32:
 		spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
-		var additional_check_offset = random_direction * 20
+		var additional_check_offset = random_direction * 25
 		
 		var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position + additional_check_offset, 1)
 		var result = get_tree().root.world_2d.direct_space_state.intersect_ray(query_parameters)
@@ -107,29 +107,29 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 		enemy_table.add_item(alien_0003_scene, 40)
 	elif arena_difficulty == 36:
 		enemy_table.remove_item(alien_0001_scene)
-		enemy_table.add_item(alien_0004_scene, 80)
 		despawn_enemy(alien_0001_scene)
+		enemy_table.add_item(alien_0004_scene, 80)
 	elif arena_difficulty == 48:
 		enemy_table.remove_item(alien_0002_scene)
-		enemy_table.add_item(alien_0005_scene, 160)
 		despawn_enemy(alien_0002_scene)
+		enemy_table.add_item(alien_0005_scene, 160)
 	elif arena_difficulty == 60:
 		enemy_table.remove_item(alien_0003_scene)
-		enemy_table.add_item(alien_0006_scene, 320)
 		despawn_enemy(alien_0003_scene)
+		enemy_table.add_item(alien_0006_scene, 320)
 		number_to_spawn += 1
 	elif arena_difficulty == 72:
 		enemy_table.remove_item(alien_0004_scene)
-		enemy_table.add_item(alien_0007_scene, 640)
 		despawn_enemy(alien_0004_scene)
+		enemy_table.add_item(alien_0007_scene, 640)
 	elif arena_difficulty == 84:
 		enemy_table.remove_item(alien_0005_scene)
-		enemy_table.add_item(alien_0008_scene, 1280)
 		despawn_enemy(alien_0005_scene)
+		enemy_table.add_item(alien_0008_scene, 1280)
 	elif arena_difficulty == 96:
 		enemy_table.remove_item(alien_0006_scene)
-		enemy_table.add_item(alien_0009_scene, 2560)
 		despawn_enemy(alien_0006_scene)
+		enemy_table.add_item(alien_0009_scene, 2560)
 	elif arena_difficulty == 108:
 		SoundUtils.play_music_player("boss_music")
 		spawn_enemy(boss_0001_scene, true)

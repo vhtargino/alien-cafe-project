@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var velocity_component = $VelocityComponent
 @onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var health_bar: ProgressBar = $CanvasLayer/HealthBar
 
 @onready var normal_material : Material = animated_sprite_2d.material
 @export var freeze_material: ShaderMaterial
@@ -14,7 +15,14 @@ extends CharacterBody2D
 
 
 func _ready():
+	health_bar.max_value = health_component.max_health
+	health_bar.value = health_component.current_health
+	
+	health_component.health_changed.connect(on_health_changed)
+	health_component.died.connect(on_died)
 	hurtbox_component.hit.connect(on_hit)
+	
+	update_health_display()
 
 
 func _process(_delta: float) -> void:
@@ -33,6 +41,10 @@ func _process(_delta: float) -> void:
 		animated_sprite_2d.scale = Vector2(-move_sign, 1)
 
 
+func update_health_display():
+	health_bar.value = health_component.current_health
+
+
 #func freeze():
 	#is_frozen = true
 	#animated_sprite_2d.stop()
@@ -45,9 +57,13 @@ func _process(_delta: float) -> void:
 	#animated_sprite_2d.material = normal_material
 
 
+func on_health_changed():
+	update_health_display()
+
+
 func on_hit():
 	pass
 
 
 func on_died():
-	pass
+	SoundUtils.play_boss_death_player()

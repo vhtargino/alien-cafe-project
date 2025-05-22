@@ -1,24 +1,35 @@
-[gd_scene load_steps=16 format=3 uid="uid://xs8a85dgrx47"]
+[gd_scene load_steps=24 format=3 uid="uid://xs8a85dgrx47"]
 
 [ext_resource type="Script" uid="uid://c117eyk6yyb0w" path="res://scenes/autoload/sound_utils/sound_utils.gd" id="1_r8vor"]
-[ext_resource type="AudioStream" uid="uid://c613y41otegh2" path="res://assets/audio/frying_pan_hit/frying_pan_hit_1.ogg" id="2_55xlh"]
-[ext_resource type="AudioStream" uid="uid://6q2v0020kc6g" path="res://assets/audio/spinning_woosh.ogg" id="3_ii7tu"]
-[ext_resource type="AudioStream" uid="uid://c6ayjmfup42n4" path="res://assets/audio/impactGeneric_light_000.ogg" id="3_jjjis"]
-[ext_resource type="AudioStream" uid="uid://b55vhx3g7eyc8" path="res://assets/audio/frying_pan_hit/frying_pan_hit_2.ogg" id="3_qrd2q"]
+[ext_resource type="AudioStream" uid="uid://dm1w1j0otjiv8" path="res://assets/audio/frying_pan_hit/swish-1.ogg" id="2_tkl52"]
+[ext_resource type="AudioStream" uid="uid://6q2v0020kc6g" path="res://assets/audio/coffee_pot_hit/spinning_woosh.ogg" id="3_ii7tu"]
 [ext_resource type="AudioStream" uid="uid://bohcwm6427lo" path="res://assets/audio/health_up.ogg" id="3_wxa1l"]
-[ext_resource type="AudioStream" uid="uid://d1b0w5lo1mwld" path="res://assets/audio/enemy_hit.ogg" id="3_x8u8p"]
-[ext_resource type="AudioStream" uid="uid://cuowpfghqbg71" path="res://assets/audio/frying_pan_hit/frying_pan_hit_3.ogg" id="4_tkl52"]
-[ext_resource type="AudioStream" uid="uid://w03x01g7q406" path="res://assets/audio/knife-sound.mp3" id="5_vlmnk"]
-[ext_resource type="AudioStream" uid="uid://dgbqhu1ojgd6n" path="res://assets/audio/frying_pan_hit/frying_pan_hit_4.ogg" id="5_xstfe"]
-[ext_resource type="AudioStream" uid="uid://db2tgwmusqwuy" path="res://assets/audio/frying_pan_hit/frying_pan_hit_5.ogg" id="6_vuver"]
-[ext_resource type="AudioStream" uid="uid://drc0mf6u47mp6" path="res://assets/audio/frying_pan_hit/frying_pan_hit_6.ogg" id="7_o4qvb"]
+[ext_resource type="AudioStream" uid="uid://co2hxgx4rtcjh" path="res://assets/audio/frying_pan_hit/swish-4.ogg" id="3_xstfe"]
+[ext_resource type="AudioStream" uid="uid://bwafrlu8owbat" path="res://assets/audio/frying_pan_hit/swish-6.ogg" id="4_vuver"]
+[ext_resource type="AudioStream" uid="uid://ds6a8f66r5yaf" path="res://assets/audio/frying_pan_hit/swish-9.ogg" id="5_o4qvb"]
+[ext_resource type="AudioStream" uid="uid://tu24nmbgt6ff" path="res://assets/audio/espresso_crossbow_hit/swish-10.ogg" id="6_tkl52"]
 [ext_resource type="AudioStream" uid="uid://c3v1av67oi7if" path="res://assets/audio/wind.ogg" id="7_p4k1f"]
-[ext_resource type="AudioStream" uid="uid://b45kmc6x2btbp" path="res://assets/audio/high-speed.mp3" id="8_p0ev1"]
-[ext_resource type="AudioStream" uid="uid://cjv0kj8ncwwxl" path="res://assets/audio/frying_pan_hit/frying_pan_hit_7.ogg" id="8_q60vw"]
+[ext_resource type="AudioStream" uid="uid://6jc1af4xcsla" path="res://assets/audio/espresso_crossbow_hit/swish-11.ogg" id="7_xstfe"]
+[ext_resource type="AudioStream" uid="uid://7x0wejmvbnlr" path="res://assets/audio/espresso_crossbow_hit/swish-12.ogg" id="8_vuver"]
+[ext_resource type="AudioStream" uid="uid://cwt2delj0llwj" path="res://assets/audio/espresso_crossbow_hit/swish-13.ogg" id="9_o4qvb"]
+[ext_resource type="AudioStream" uid="uid://dekxc0gggtfsa" path="res://assets/audio/enemy_hit/hit27.mp3.ogg" id="10_tkl52"]
+[ext_resource type="AudioStream" uid="uid://bxakxvyic20x4" path="res://assets/audio/experience_collect/experience_collect_01.ogg" id="10_vj2xh"]
+[ext_resource type="AudioStream" uid="uid://3lkar6s5c7aa" path="res://assets/audio/experience_collect/experience_collect_02.ogg" id="11_7g61p"]
+[ext_resource type="AudioStream" uid="uid://b0xthk7nyntne" path="res://assets/audio/enemy_hit/hit28.mp3.ogg" id="11_xstfe"]
+[ext_resource type="AudioStream" uid="uid://c6bpmaasewtvi" path="res://assets/audio/experience_collect/experience_collect_03.ogg" id="12_b2b21"]
+[ext_resource type="AudioStream" uid="uid://872hx41xdv0f" path="res://assets/audio/enemy_hit/hit29.mp3.ogg" id="12_vuver"]
+[ext_resource type="AudioStream" uid="uid://j2gxjp4a71ph" path="res://assets/audio/experience_collect/experience_collect_04.ogg" id="13_2ij5c"]
+[ext_resource type="AudioStream" uid="uid://p6f0p0jjvldm" path="res://assets/audio/knife-sound.ogg" id="14_tkl52"]
+[ext_resource type="AudioStream" uid="uid://cg0ftg0qguhin" path="res://assets/audio/coffee_machine_hit/coffe_machine_hit.ogg" id="14_vuver"]
+[ext_resource type="AudioStream" uid="uid://balcoj7wpvs24" path="res://assets/audio/high-speed.ogg" id="17_tkl52"]
+[ext_resource type="AudioStream" uid="uid://cl3u6hdaxwxgb" path="res://assets/audio/space_laser.ogg" id="19_xstfe"]
 
 [node name="SoundUtils" type="Node"]
 script = ExtResource("1_r8vor")
-frying_pan_array = Array[AudioStream]([ExtResource("2_55xlh"), ExtResource("3_qrd2q"), ExtResource("4_tkl52"), ExtResource("5_xstfe"), ExtResource("6_vuver"), ExtResource("7_o4qvb"), ExtResource("8_q60vw")])
+frying_pan_array = Array[AudioStream]([ExtResource("2_tkl52"), ExtResource("3_xstfe"), ExtResource("4_vuver"), ExtResource("5_o4qvb")])
+espresso_crossbow_array = Array[AudioStream]([ExtResource("6_tkl52"), ExtResource("7_xstfe"), ExtResource("8_vuver"), ExtResource("9_o4qvb")])
+experience_pod_array = Array[AudioStream]([ExtResource("10_vj2xh"), ExtResource("11_7g61p"), ExtResource("12_b2b21"), ExtResource("13_2ij5c")])
+enemy_hit_array = Array[AudioStream]([ExtResource("10_tkl52"), ExtResource("11_xstfe"), ExtResource("12_vuver")])
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 process_mode = 3
@@ -48,17 +59,17 @@ volume_db = -6.0
 bus = &"SFX"
 
 [node name="AnvilPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
+stream = ExtResource("14_vuver")
 volume_db = -6.0
 bus = &"SFX"
 
 [node name="EnemyPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
-stream = ExtResource("3_x8u8p")
 volume_db = -6.0
 max_polyphony = 24
 bus = &"EnemyHit"
 
 [node name="DoubleShotPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
-stream = ExtResource("5_vlmnk")
+stream = ExtResource("14_tkl52")
 volume_db = -6.0
 max_polyphony = 4
 bus = &"SFX"
@@ -76,14 +87,13 @@ max_polyphony = 4
 bus = &"SFX"
 
 [node name="TurboExpressoPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
-stream = ExtResource("8_p0ev1")
+stream = ExtResource("17_tkl52")
 volume_db = -6.0
 max_polyphony = 4
 bus = &"SFX"
 
 [node name="ExperienceCollectPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
-stream = ExtResource("3_jjjis")
-volume_db = -9.0
+volume_db = -6.0
 bus = &"SFX"
 
 [node name="HealthCollectPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
@@ -92,5 +102,6 @@ volume_db = -6.0
 bus = &"SFX"
 
 [node name="BossDeathPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
+stream = ExtResource("19_xstfe")
 volume_db = -6.0
 bus = &"SFX"

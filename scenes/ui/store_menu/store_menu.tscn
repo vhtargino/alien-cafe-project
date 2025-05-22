@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://ddoegffo7josn" path="res://assets/boosters/double_shot_a.png" id="4_t03xh"]
 [ext_resource type="Texture2D" uid="uid://dvhugor4h18xn" path="res://assets/boosters/waker_a.png" id="5_6aqvp"]
 [ext_resource type="Texture2D" uid="uid://ds2kdkh4al0j7" path="res://assets/boosters/iced_coffee_a.png" id="6_p11xj"]
-[ext_resource type="Texture2D" uid="uid://dfhby2i8mj2ys" path="res://assets/ui/coin_02e.png" id="6_vnq0h"]
 [ext_resource type="Texture2D" uid="uid://v57n6dvqr0yb" path="res://assets/boosters/turbo_expresso_a.png" id="7_rxc81"]
-[ext_resource type="Texture2D" uid="uid://cht8fum1yi16m" path="res://assets/ui/coin_03e.png" id="7_t03xh"]
-[ext_resource type="Texture2D" uid="uid://bd2m10mavu8g6" path="res://assets/ui/coin_04e.png" id="8_6aqvp"]
-[ext_resource type="Texture2D" uid="uid://cqgagc6y1efhb" path="res://assets/ui/coin_05e.png" id="9_p11xj"]
+[ext_resource type="Texture2D" uid="uid://4ecyvhbbdjam" path="res://assets/store/coins_a1.png" id="8_t03xh"]
+[ext_resource type="Texture2D" uid="uid://cinkjufq457u5" path="res://assets/store/coins_a2.png" id="9_6aqvp"]
+[ext_resource type="Texture2D" uid="uid://dhbm83ijs1xi4" path="res://assets/store/coins_a3.png" id="10_p11xj"]
+[ext_resource type="Texture2D" uid="uid://6iscl6hcjvvv" path="res://assets/store/coins_a4.png" id="11_rxc81"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p11xj"]
 shader = ExtResource("2_t03xh")
@@ -400,9 +400,11 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits100/MarginContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-texture = ExtResource("6_vnq0h")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_t03xh")
 expand_mode = 3
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits100/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(75, 65)
@@ -463,9 +465,11 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits200/MarginContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-texture = ExtResource("7_t03xh")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_6aqvp")
 expand_mode = 3
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits200/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(75, 65)
@@ -526,9 +530,10 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits500/MarginContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-texture = ExtResource("8_6aqvp")
+size_flags_horizontal = 4
+texture = ExtResource("10_p11xj")
 expand_mode = 3
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits500/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(75, 65)
@@ -589,9 +594,10 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits1500/MarginContainer/VBoxContainer/MarginContainer2"]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-texture = ExtResource("9_p11xj")
+size_flags_horizontal = 4
+texture = ExtResource("11_rxc81")
 expand_mode = 3
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="MarginContainer3" type="MarginContainer" parent="Control/TabContainer/CREDITS/HBoxContainer/Credits1500/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(75, 65)
