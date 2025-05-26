@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="2DSurvivorsCourse"
+config/name="Alien Cafe"
 run/main_scene="uid://bwcs47owte5ef"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
