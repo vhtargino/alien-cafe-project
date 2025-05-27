@@ -6,27 +6,28 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Godot
-        uses: firebelley/setup-godot@v2
-        with:
-          godot-version: 4.4
-          export-templates: true
+      - name: Install Godot 4.4
+        run: |
+          wget https://downloads.tuxfamily.org/godotengine/4.4/Godot_v4.4-stable_linux.x86_64.zip -O godot.zip
+          unzip godot.zip -d godot
+          sudo mv godot/Godot_v4.4-stable_linux.x86_64 /usr/local/bin/godot
+          chmod +x /usr/local/bin/godot
+          godot --version
 
       - name: Export project to HTML5
         run: |
           mkdir -p build/web
-          godot --headless --export-release "HTML5" build/web/index.html
+          godot --headless --export-release "Web" build/web/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
-          publish_branch: gh-pages
