@@ -1,4 +1,5 @@
-res://scenes/main/main.tscn
+res://default_bus_layout.tres
+res://scenes/maps/stage_1_map.tscn
 res://resources/theme/theme.tres
 res://resources/shaders/freeze_shader.gdshader
 res://scenes/component/hit_flash_component/hit_flash_component_material.tres
@@ -9,7 +10,7 @@ res://resources/shaders/vignette.gdshader
 res://resources/shaders/scroll_shader.gdshader
 res://resources/tilesets/city_tileset.tres
 res://resources/shaders/outline_shader.gdshader
-res://scenes/maps/stage_1_map.tscn
+res://scenes/main/main.tscn
 res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn
 res://scenes/ui/store_menu/store_menu.tscn
 res://scenes/autoload/sound_utils/sound_utils.tscn
