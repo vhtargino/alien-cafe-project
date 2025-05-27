@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://xs8a85dgrx47"]
+[gd_scene load_steps=25 format=3 uid="uid://xs8a85dgrx47"]
 
 [ext_resource type="Script" uid="uid://c117eyk6yyb0w" path="res://scenes/autoload/sound_utils/sound_utils.gd" id="1_r8vor"]
 [ext_resource type="AudioStream" uid="uid://dm1w1j0otjiv8" path="res://assets/audio/frying_pan_hit/swish-1.ogg" id="2_tkl52"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://cg0ftg0qguhin" path="res://assets/audio/coffee_machine_hit/coffe_machine_hit.ogg" id="14_vuver"]
 [ext_resource type="AudioStream" uid="uid://balcoj7wpvs24" path="res://assets/audio/high-speed.ogg" id="17_tkl52"]
 [ext_resource type="AudioStream" uid="uid://cl3u6hdaxwxgb" path="res://assets/audio/space_laser.ogg" id="19_xstfe"]
+[ext_resource type="AudioStream" uid="uid://la5ysauq1fgl" path="res://assets/audio/level_up.ogg" id="23_7g61p"]
 
 [node name="SoundUtils" type="Node"]
 script = ExtResource("1_r8vor")
@@ -41,67 +42,72 @@ volume_db = -12.0
 bus = &"SFX"
 
 [node name="PlayerPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
-volume_db = -6.0
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="SwordPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
-volume_db = -6.0
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="AxePlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("3_ii7tu")
-volume_db = -6.0
+volume_db = -9.0
 max_polyphony = 24
 bus = &"SFX"
 
 [node name="SpearPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
-volume_db = -6.0
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="AnvilPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("14_vuver")
-volume_db = -6.0
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="EnemyPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
-volume_db = -6.0
+volume_db = -9.0
 max_polyphony = 24
 bus = &"EnemyHit"
 
 [node name="DoubleShotPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("14_tkl52")
-volume_db = -6.0
+volume_db = -9.0
 max_polyphony = 4
 bus = &"SFX"
 
 [node name="WakerPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("3_wxa1l")
-volume_db = -6.0
+volume_db = -9.0
 max_polyphony = 4
 bus = &"SFX"
 
 [node name="IcedCoffeePlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("7_p4k1f")
-volume_db = -6.0
+volume_db = -9.0
 max_polyphony = 4
 bus = &"SFX"
 
 [node name="TurboExpressoPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("17_tkl52")
-volume_db = -6.0
+volume_db = -9.0
 max_polyphony = 4
 bus = &"SFX"
 
+[node name="LevelUpPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
+stream = ExtResource("23_7g61p")
+volume_db = -9.0
+bus = &"SFX"
+
 [node name="ExperienceCollectPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
-volume_db = -6.0
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="HealthCollectPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("3_wxa1l")
-volume_db = -6.0
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="BossDeathPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("19_xstfe")
-volume_db = -6.0
+volume_db = -9.0
 bus = &"SFX"

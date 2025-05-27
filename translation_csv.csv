@@ -62,6 +62,8 @@ CAFF_DESC,"Oh, no! Aliens are invading Earth to steal all the coffee, starting w
 ESPRESSO_DESC,"Defend the farms at all costs! The Javanians want to steal the land and enslave us all!","Defenda as fazendas a qualquer custo! Os Javanenses querem roubar as terras e nos escravizar!"
 BATTLE_DESC,"Let's invade the mothership! Send these aliens from whence they came and claim victory!","Vamos invadir a nave-mãe! Mandem esses aliens de volta de onde vieram e reivindiquem a vitória!"
 
+COMMANDER_MOKKA,Commander Mokka,Comandante Mokka
+
 FP_NAME,Frying Pan,Frigideira
 FP_MAIN,"I need something to defend myself... a frying pan!","Preciso de algo para me defender... uma frigideira!"
 FP_DAM,"Frying pan damage is increased by 15%","O dano da frigideira é aumentado em 15%"
@@ -106,5 +108,5 @@ REGEN_MAIN,"Feeling better and better with each sip!","Me sentindo melhor a cada
 REGEN_UP,"Player heal's health 10% faster","Cura o life 10% mais rápido"
 
 SPEED_NAME,Future Sneakers,Tênis do Futuro
-SPEED_MAIN,"Faster! Faster! FASTER!","Mais rápido! Mais rápido! MAIS RÁPIDO!"
+SPEED_MAIN,"Wow, I can run a lot faster with these!","Uau, eu consigo correr muito mais rápido com isso!"
 SPEED_UP,"Increases player move speed by 15%","Aumenta a velocidade de movimento em 15%"

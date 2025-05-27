@@ -25,7 +25,7 @@ func increment_experience(number: float):
 		current_experience = 0
 		experience_updated.emit(current_experience, target_experience)
 		level_up.emit(current_level)
-		SoundUtils.play_ui_sound("level_up")
+		SoundUtils.play_level_up_player()
 
 
 func on_experience_vial_collected(number: float):

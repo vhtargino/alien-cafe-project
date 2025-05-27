@@ -9,7 +9,6 @@ const GAME_OVER_MUSIC = preload("res://assets/music/sad-documentary-sorrowful-mu
 const FOCUS = preload("res://assets/audio/menu-button-focus.ogg")
 const BUTTON_PRESSED = preload("res://assets/audio/beep-confirm.ogg")
 const DENIED = preload("res://assets/audio/wrong.mp3")
-const LEVEL_UP = preload("res://assets/audio/level_up.ogg")
 
 const PLAYER_DAMAGE = preload("res://assets/audio/player_hit.ogg")
 const HEALING = preload("res://assets/audio/health_up.ogg")
@@ -38,6 +37,7 @@ const HEALING = preload("res://assets/audio/health_up.ogg")
 @onready var iced_coffee_player: AudioStreamPlayer = $IcedCoffeePlayer
 @onready var turbo_expresso_player: AudioStreamPlayer = $TurboExpressoPlayer
 
+@onready var level_up_player: AudioStreamPlayer = $LevelUpPlayer
 @onready var experience_collect_player: AudioStreamPlayer = $ExperienceCollectPlayer
 @onready var health_collect_player: AudioStreamPlayer = $HealthCollectPlayer
 
@@ -66,7 +66,6 @@ func play_ui_sound(sound_name: String):
 		"focus": ui_player.stream = FOCUS
 		"button_pressed": ui_player.stream = BUTTON_PRESSED
 		"denied": ui_player.stream = DENIED
-		"level_up": ui_player.stream = LEVEL_UP
 	ui_player.play()
 
 
@@ -123,6 +122,11 @@ func play_iced_coffee_sound():
 
 func play_turbo_expresso_sound():
 	turbo_expresso_player.play()
+
+
+# Level up
+func play_level_up_player():
+	level_up_player.play()
 
 
 # Item collect

@@ -91,12 +91,12 @@ layer = 0
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 127.0
+offset_left = 139.0
 offset_top = -102.0
-offset_right = 224.0
+offset_right = 237.0
 offset_bottom = -92.0
 grow_vertical = 0
-text = "Comandante Mokka"
+text = "COMMANDER_MOKKA"
 
 [node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
 z_index = 1
