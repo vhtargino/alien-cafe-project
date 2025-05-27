@@ -15,11 +15,18 @@ jobs:
 
       - name: Install Godot 4.4
         run: |
-          wget https://sourceforge.net/projects/godot-engine.mirror/files/4.4-stable/Godot_v4.4-stable_linux.x86_64.zip/download -O godot.zip
+          wget https://github.com/godotengine/godot-builds/releases/download/4.4-stable/Godot_v4.4-stable_linux.x86_64.zip -O godot.zip
           unzip godot.zip -d godot
           sudo mv godot/Godot_v4.4-stable_linux.x86_64 /usr/local/bin/godot
           chmod +x /usr/local/bin/godot
           godot --version
+
+      - name: Install Godot Export Templates
+        run: |
+          mkdir -p ~/.local/share/godot/templates
+          wget https://github.com/godotengine/godot/releases/download/4.4-stable/Godot_v4.4-stable_export_templates.tpz -O templates.tpz
+          mkdir -p ~/.local/share/godot/templates/4.4.stable
+          tar -xvf templates.tpz -C ~/.local/share/godot/templates/4.4.stable
 
       - name: Export project to HTML5
         run: |
