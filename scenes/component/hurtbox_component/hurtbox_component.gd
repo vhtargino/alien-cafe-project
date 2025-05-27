@@ -30,4 +30,5 @@ func on_area_entered(other_area: Area2D):
 	floating_text_instance.global_position = global_position + (Vector2.UP * 8)
 	floating_text_instance.start(str(int(hitbox_component.damage * 10)))
 	
-	hit.emit()
+	SoundUtils.play_enemy_sound()
+	#hit.emit()

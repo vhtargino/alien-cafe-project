@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://b6g1jck5ja5pk"]
 
-[ext_resource type="Texture2D" uid="uid://48ov4j8bxk0n" path="res://assets/abilities/life.png" id="1_v4iye"]
+[ext_resource type="Texture2D" uid="uid://0kar6cddo2r" path="res://assets/power-ups/max_health_croissant_a.png" id="1_v4iye"]
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="2_1co5p"]
 
 [resource]
 script = ExtResource("2_1co5p")
 image = ExtResource("1_v4iye")
-id = "player_health"
+id = "player_health_main"
 max_quantity = 1
-name = "max health"
+name = "CROIS_NAME"
 type = "power_up"
 sub_type = "power_up_main"
-description = "Increses player max health by 15%"
+description = "CROIS_MAIN"

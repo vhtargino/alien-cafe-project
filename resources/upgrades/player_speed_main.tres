@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://cax0chdsygwv0"]
 
-[ext_resource type="Texture2D" uid="uid://bwt7p1e8p7r0a" path="res://assets/abilities/boot.png" id="1_olmjv"]
+[ext_resource type="Texture2D" uid="uid://ba2cilr8vdior" path="res://assets/power-ups/speed_sneakers_a.png" id="1_olmjv"]
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="2_vpylr"]
 
 [resource]
 script = ExtResource("2_vpylr")
 image = ExtResource("1_olmjv")
-id = "player_speed"
+id = "player_speed_main"
 max_quantity = 1
-name = "speed sneakers"
+name = "SPEED_NAME"
 type = "power_up"
 sub_type = "power_up_main"
-description = "Player move speed is increased by 15% each level"
+description = "SPEED_MAIN"

@@ -1,0 +1,116 @@
+[gd_scene load_steps=18 format=3 uid="uid://bt3p1b8vremkc"]
+
+[ext_resource type="Script" uid="uid://bjectukr78a6m" path="res://scenes/game_object/boss_enemies/boss_0001/boss_0001.gd" id="1_vgj8w"]
+[ext_resource type="Shader" uid="uid://b4tphr583qfyf" path="res://resources/shaders/freeze_shader.gdshader" id="2_vgj8w"]
+[ext_resource type="PackedScene" uid="uid://bg05buf3ev5eg" path="res://scenes/component/velocity_component/velocity_component.tscn" id="3_1dyvr"]
+[ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component/health_component.tscn" id="4_36dt2"]
+[ext_resource type="PackedScene" uid="uid://dc3ubxkagms0a" path="res://scenes/component/vial_drop_component/vial_drop_component.tscn" id="5_0pqo3"]
+[ext_resource type="PackedScene" uid="uid://cs1erg3kov16k" path="res://scenes/component/health_drop_component/health_drop_component.tscn" id="6_4oges"]
+[ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="6_87sep"]
+[ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="7_l4a2y"]
+[ext_resource type="PackedScene" uid="uid://dhav55ogv83r5" path="res://scenes/component/animated_death_component/animated_death_component.tscn" id="9_7qi6q"]
+[ext_resource type="SpriteFrames" uid="uid://cucrjw6vx78hc" path="res://resources/sprite_sheets/boss_0001_sprites.tres" id="11_rokyg"]
+[ext_resource type="PackedScene" uid="uid://d5l8117qmu3d" path="res://scenes/component/hurtbox_component/hurtbox_component.tscn" id="15_tvxx5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4oges"]
+shader = ExtResource("2_vgj8w")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v58qd"]
+resource_local_to_scene = true
+shader = ExtResource("7_l4a2y")
+shader_parameter/lerp_percent = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bq7hi"]
+radius = 29.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rmgeo"]
+radius = 21.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qi6q"]
+bg_color = Color(0.14902, 0.168627, 0.266667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rokyg"]
+bg_color = Color(0.619608, 0, 0, 1)
+border_color = Color(0.14902, 0.168627, 0.266667, 1)
+
+[node name="Boss0001" type="CharacterBody2D" groups=["enemy"]]
+y_sort_enabled = true
+collision_layer = 12
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_vgj8w")
+freeze_material = SubResource("ShaderMaterial_4oges")
+damage = 10
+
+[node name="VelocityComponent" parent="." instance=ExtResource("3_1dyvr")]
+max_speed = 120
+acceleration = 9.0
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_36dt2")]
+max_health = 3500.0
+
+[node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_0pqo3")]
+drop_percent = 0.9
+health_component = NodePath("../HealthComponent")
+experience_amount = 10.0
+
+[node name="HealthDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_4oges")]
+health_component = NodePath("../HealthComponent")
+
+[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "animated_sprite") instance=ExtResource("6_87sep")]
+health_component = NodePath("../HealthComponent")
+animated_sprite = NodePath("../AnimatedSprite2D")
+hit_flash_material = SubResource("ShaderMaterial_v58qd")
+
+[node name="AnimatedDeathComponent" parent="." node_paths=PackedStringArray("health_component", "animated_sprite_2d") instance=ExtResource("9_7qi6q")]
+health_component = NodePath("../HealthComponent")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("15_tvxx5")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, -28)
+shape = SubResource("CircleShape2D_bq7hi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+sprite_frames = ExtResource("11_rokyg")
+animation = &"walk"
+offset = Vector2(0, -36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -19)
+shape = SubResource("CircleShape2D_rmgeo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 139.0
+offset_top = -102.0
+offset_right = 237.0
+offset_bottom = -92.0
+grow_vertical = 0
+text = "COMMANDER_MOKKA"
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = 94.0
+offset_right = 192.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_7qi6q")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rokyg")
+show_percentage = false

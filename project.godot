@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="2DSurvivorsCourse"
+config/name="Alien Cafe"
 run/main_scene="uid://bwcs47owte5ef"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 GameEvents="*res://scenes/autoload/game_events/game_events.tscn"
 SoundUtils="*res://scenes/autoload/sound_utils/sound_utils.tscn"
 BoosterEvents="*res://scenes/autoload/booster_events/booster_events.tscn"
+StoreEvents="*res://scenes/autoload/store_events/store_events.tscn"
 
 [display]
 
@@ -29,6 +30,10 @@ window/size/viewport_height=360
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+
+[global_group]
+
+ui_buttons=""
 
 [gui]
 
@@ -127,6 +132,11 @@ use_booster_4={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194442,"key_label":0,"unicode":52,"location":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://translation_csv.en.translation", "res://translation_csv.pt_BR.translation")
+locale/include_text_server_data=true
 
 [layer_names]
 

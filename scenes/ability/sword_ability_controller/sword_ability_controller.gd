@@ -55,6 +55,7 @@ func on_timer_timeout():
 	
 	var enemy_direction = enemies[0].global_position - sword_instance.global_position
 	sword_instance.rotation = enemy_direction.angle()
+	SoundUtils.play_sword_sound()
 
 
 func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):

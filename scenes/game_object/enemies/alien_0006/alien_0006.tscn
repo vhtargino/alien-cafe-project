@@ -1,0 +1,77 @@
+[gd_scene load_steps=16 format=3 uid="uid://xicthuvts4gh"]
+
+[ext_resource type="Script" uid="uid://b8lh3l45chfho" path="res://scenes/game_object/enemies/alien_0006/alien_0006.gd" id="1_2x1ee"]
+[ext_resource type="Shader" uid="uid://b4tphr583qfyf" path="res://resources/shaders/freeze_shader.gdshader" id="2_jo8ac"]
+[ext_resource type="PackedScene" uid="uid://bg05buf3ev5eg" path="res://scenes/component/velocity_component/velocity_component.tscn" id="3_kua1u"]
+[ext_resource type="PackedScene" uid="uid://c6exhv2qdl4nk" path="res://scenes/component/health_component/health_component.tscn" id="4_7mcq8"]
+[ext_resource type="PackedScene" uid="uid://cs1erg3kov16k" path="res://scenes/component/health_drop_component/health_drop_component.tscn" id="5_px774"]
+[ext_resource type="PackedScene" uid="uid://dc3ubxkagms0a" path="res://scenes/component/vial_drop_component/vial_drop_component.tscn" id="5_yypf5"]
+[ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="6_aqpkm"]
+[ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="7_a50is"]
+[ext_resource type="PackedScene" uid="uid://dhav55ogv83r5" path="res://scenes/component/animated_death_component/animated_death_component.tscn" id="9_d1uua"]
+[ext_resource type="SpriteFrames" uid="uid://b7dkr5ejk66a2" path="res://resources/sprite_sheets/alien_0006_sprites.tres" id="11_hvn4m"]
+[ext_resource type="PackedScene" uid="uid://d5l8117qmu3d" path="res://scenes/component/hurtbox_component/hurtbox_component.tscn" id="15_xgrp4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d1uua"]
+shader = ExtResource("2_jo8ac")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74qiw"]
+resource_local_to_scene = true
+shader = ExtResource("7_a50is")
+shader_parameter/lerp_percent = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qgqx6"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wso2b"]
+radius = 11.0
+
+[node name="Alien0006" type="CharacterBody2D" groups=["enemy"]]
+y_sort_enabled = true
+collision_layer = 12
+collision_mask = 7
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_2x1ee")
+freeze_material = SubResource("ShaderMaterial_d1uua")
+damage = 7
+
+[node name="VelocityComponent" parent="." instance=ExtResource("3_kua1u")]
+max_speed = 75
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_7mcq8")]
+max_health = 48.0
+
+[node name="HealthDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_px774")]
+drop_percent = 0.01
+health_component = NodePath("../HealthComponent")
+
+[node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_yypf5")]
+drop_percent = 0.9
+health_component = NodePath("../HealthComponent")
+experience_amount = 6.0
+
+[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "animated_sprite") instance=ExtResource("6_aqpkm")]
+health_component = NodePath("../HealthComponent")
+animated_sprite = NodePath("../AnimatedSprite2D")
+hit_flash_material = SubResource("ShaderMaterial_74qiw")
+
+[node name="AnimatedDeathComponent" parent="." node_paths=PackedStringArray("health_component", "animated_sprite_2d") instance=ExtResource("9_d1uua")]
+health_component = NodePath("../HealthComponent")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("15_xgrp4")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_qgqx6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("11_hvn4m")
+animation = &"walk"
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_wso2b")

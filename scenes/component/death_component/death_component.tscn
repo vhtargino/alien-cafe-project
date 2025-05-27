@@ -1,12 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://ff8i0llbatvj"]
+[gd_scene load_steps=8 format=3 uid="uid://ff8i0llbatvj"]
 
 [ext_resource type="Script" uid="uid://byayy7ah8137k" path="res://scenes/component/death_component/death_component.gd" id="1_iwr6c"]
-[ext_resource type="PackedScene" uid="uid://87mxu58jbk5t" path="res://scenes/component/random_stream_player_component/random_stream_player_component.tscn" id="2_7jb1i"]
-[ext_resource type="AudioStream" uid="uid://btp0ulurvdbah" path="res://assets/audio/footstep_carpet_000.ogg" id="3_527a2"]
-[ext_resource type="AudioStream" uid="uid://ctru6wilu8udn" path="res://assets/audio/footstep_carpet_001.ogg" id="4_vvqn8"]
-[ext_resource type="AudioStream" uid="uid://dyuvb4be8svd0" path="res://assets/audio/footstep_carpet_002.ogg" id="5_stni8"]
-[ext_resource type="AudioStream" uid="uid://budcyhuksf87k" path="res://assets/audio/footstep_carpet_003.ogg" id="6_sbsxm"]
-[ext_resource type="AudioStream" uid="uid://crikxtf4jrg14" path="res://assets/audio/footstep_carpet_004.ogg" id="7_ximqd"]
 
 [sub_resource type="Animation" id="Animation_sn7fp"]
 length = 0.001
@@ -92,7 +86,3 @@ one_shot = true
 fixed_fps = 0
 interpolate = false
 process_material = SubResource("ParticleProcessMaterial_iwr6c")
-
-[node name="EnemyHitRandomStreamPlayerComponent" parent="." instance=ExtResource("2_7jb1i")]
-volume_db = -6.0
-streams = Array[AudioStream]([ExtResource("3_527a2"), ExtResource("4_vvqn8"), ExtResource("5_stni8"), ExtResource("6_sbsxm"), ExtResource("7_ximqd")])

@@ -194,9 +194,9 @@ func on_level_up(_current_level: int):
 	if first_card == null:
 		return
 	
-	first_card.can_play_focus_sound = false
+	SoundUtils.disable_focus_sound()
 	first_card.grab_focus()
-	first_card.can_play_focus_sound = true
+	SoundUtils.enable_focus_sound()
 
 
 func on_upgrade_selected(upgrade: AbilityUpgrade):

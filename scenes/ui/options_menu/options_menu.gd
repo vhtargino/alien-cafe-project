@@ -4,25 +4,35 @@ class_name OptionsMenu
 signal back_pressed
 
 @onready var back_button = %BackButton
-@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
-
-var can_play_focus_sound = false
+@onready var music_slider = %MusicSlider
+@onready var sfx_slider = %SFXSlider
+@onready var language_v_box_container: VBoxContainer = %LanguageVBoxContainer
+@onready var language_options: OptionButton = %LanguageOptions
 
 
 func _ready():
+	set_language_menu()
+	
+	for slider in get_tree().get_nodes_in_group("sliders"):
+		slider.focus_entered.connect(on_focus_entered)
+	
 	back_button.pressed.connect(on_back_pressed)
-	%MusicSlider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
-	%SFXSlider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
-
-	%MusicSlider.value_changed.connect(func(value): _set_bus_volume("Music", value))
-	%SFXSlider.value_changed.connect(func(value): _set_bus_volume("SFX", value))
+	back_button.focus_entered.connect(on_focus_entered)
 	
-	%MusicSlider.focus_entered.connect(on_music_slider_focus_entered)
-	%SFXSlider.focus_entered.connect(on_sfx_slider_focus_entered)
+	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
+	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
 	
-	await get_tree().process_frame
-	%MusicSlider.grab_focus()
-	can_play_focus_sound = true
+	music_slider.value_changed.connect(func(value): _set_bus_volume("Music", value))
+	sfx_slider.value_changed.connect(func(value): _set_bus_volume("SFX", value))
+	
+	language_options.focus_entered.connect(on_focus_entered)
+	language_options.pressed.connect(on_language_pressed)
+	language_options.item_focused.connect(on_item_focused)
+	language_options.item_selected.connect(on_item_selected)
+	
+	SoundUtils.disable_focus_sound()
+	music_slider.grab_focus()
+	SoundUtils.enable_focus_sound()
 
 
 func _set_bus_volume(bus_name: String, value: float):
@@ -30,17 +40,56 @@ func _set_bus_volume(bus_name: String, value: float):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus_name), db)
 
 
-func on_music_slider_focus_entered():
-	if can_play_focus_sound:
-		audio_stream_player.play()
+func set_language_menu():
+	if not get_parent() is MainMenu:
+		language_v_box_container.queue_free()
+		return
+
+	var language_map = {
+		"Português": "pt_BR",
+		"English": "en"
+	}
+	
+	language_options.clear()
+	for lang_name in language_map.keys():
+		language_options.add_item(lang_name)
+
+	var current_locale = TranslationServer.get_locale()
+
+	var index_to_select = 0
+	for i in language_map.size():
+		var lang_name = language_options.get_item_text(i)
+		if language_map[lang_name].begins_with(current_locale.substr(0, 2)):
+			index_to_select = i
+			break
+	language_options.select(index_to_select)
+
+	language_options.item_selected.connect(func(index):
+		var selected_lang_name = language_options.get_item_text(index)
+		var new_locale = language_map[selected_lang_name]
+		
+		if TranslationServer.get_locale() != new_locale:
+			TranslationServer.set_locale(new_locale)
+			#get_tree().reload_current_scene()
+	)
 
 
-func on_sfx_slider_focus_entered():
-	audio_stream_player.play()
+func on_focus_entered():
+	SoundUtils.play_ui_sound("focus")
+
+
+func on_language_pressed():
+	SoundUtils.play_ui_sound("button_pressed")
+
+
+func on_item_focused(_index: int):
+	SoundUtils.play_ui_sound("focus")
+
+
+func on_item_selected(_index: int):
+	SoundUtils.play_ui_sound("button_pressed")
 
 
 func on_back_pressed():
-	get_tree().get_root().set_disable_input(true)
-	await SoundUtils.check_button_sound_playing(back_button)
-	get_tree().get_root().set_disable_input(false)
+	SoundUtils.play_ui_sound("button_pressed")
 	back_pressed.emit()

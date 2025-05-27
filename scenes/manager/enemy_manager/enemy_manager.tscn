@@ -1,21 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://e4jpc4yocvno"]
+[gd_scene load_steps=12 format=3 uid="uid://e4jpc4yocvno"]
 
 [ext_resource type="Script" uid="uid://cv2eaoy58prdf" path="res://scenes/manager/enemy_manager/enemy_manager.gd" id="1_wuxup"]
-[ext_resource type="PackedScene" uid="uid://ub0enf81lbab" path="res://scenes/game_object/enemies/wizard_enemy/wizard_enemy.tscn" id="2_a1uqj"]
-[ext_resource type="PackedScene" uid="uid://c2cxbvdjdb13f" path="res://scenes/game_object/enemies/basic_enemy/basic_enemy.tscn" id="2_cg5kq"]
-[ext_resource type="PackedScene" uid="uid://cl8bqvl7sx7gg" path="res://scenes/game_object/enemies/cactus_enemy/cactus_enemy.tscn" id="4_kffme"]
-[ext_resource type="PackedScene" uid="uid://bm3yehgmo4tmy" path="res://scenes/game_object/enemies/spider_enemy/spider_enemy.tscn" id="5_4mqmi"]
-[ext_resource type="PackedScene" uid="uid://b21wklosdfmwd" path="res://scenes/game_object/enemies/cyclops_enemy/cyclops_enemy.tscn" id="6_fp0an"]
-[ext_resource type="PackedScene" uid="uid://xicthuvts4gh" path="res://scenes/game_object/enemies/crab_enemy/crab_enemy.tscn" id="7_ebles"]
+[ext_resource type="PackedScene" uid="uid://ub0enf81lbab" path="res://scenes/game_object/enemies/alien_0002/alien_0002.tscn" id="2_a1uqj"]
+[ext_resource type="PackedScene" uid="uid://c2cxbvdjdb13f" path="res://scenes/game_object/enemies/alien_0001/alien_0001.tscn" id="2_cg5kq"]
+[ext_resource type="PackedScene" uid="uid://cl8bqvl7sx7gg" path="res://scenes/game_object/enemies/alien_0003/alien_0003.tscn" id="4_kffme"]
+[ext_resource type="PackedScene" uid="uid://bm3yehgmo4tmy" path="res://scenes/game_object/enemies/alien_0004/alien_0004.tscn" id="5_4mqmi"]
+[ext_resource type="PackedScene" uid="uid://b21wklosdfmwd" path="res://scenes/game_object/enemies/alien_0005/alien_0005.tscn" id="6_fp0an"]
+[ext_resource type="PackedScene" uid="uid://xicthuvts4gh" path="res://scenes/game_object/enemies/alien_0006/alien_0006.tscn" id="7_ebles"]
+[ext_resource type="PackedScene" uid="uid://bv1enkrc6rnat" path="res://scenes/game_object/enemies/alien_0007/alien_0007.tscn" id="8_kadq4"]
+[ext_resource type="PackedScene" uid="uid://dp2xffuso1t80" path="res://scenes/game_object/enemies/alien_0008/alien_0008.tscn" id="9_jrksc"]
+[ext_resource type="PackedScene" uid="uid://bc4cuohsciyv2" path="res://scenes/game_object/enemies/alien_0009/alien_0009.tscn" id="10_e8i3x"]
+[ext_resource type="PackedScene" uid="uid://bt3p1b8vremkc" path="res://scenes/game_object/boss_enemies/boss_0001/boss_0001.tscn" id="11_jrksc"]
 
 [node name="EnemyManager" type="Node"]
 script = ExtResource("1_wuxup")
-basic_enemy_scene = ExtResource("2_cg5kq")
-wizard_enemy_scene = ExtResource("2_a1uqj")
-cactus_enemy_scene = ExtResource("4_kffme")
-spider_enemy_scene = ExtResource("5_4mqmi")
-cyclops_enemy_scene = ExtResource("6_fp0an")
-crab_enemy_scene = ExtResource("7_ebles")
+alien_0001_scene = ExtResource("2_cg5kq")
+alien_0002_scene = ExtResource("2_a1uqj")
+alien_0003_scene = ExtResource("4_kffme")
+alien_0004_scene = ExtResource("5_4mqmi")
+alien_0005_scene = ExtResource("6_fp0an")
+alien_0006_scene = ExtResource("7_ebles")
+alien_0007_scene = ExtResource("8_kadq4")
+alien_0008_scene = ExtResource("9_jrksc")
+alien_0009_scene = ExtResource("10_e8i3x")
+boss_0001_scene = ExtResource("11_jrksc")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

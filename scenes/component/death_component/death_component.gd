@@ -8,6 +8,7 @@ func _ready():
 	$GPUParticles2D.texture = sprite.texture
 	health_component.died.connect(on_died)
 
+
 func on_died():
 	if owner == null or not owner is Node2D:
 		return
@@ -20,4 +21,4 @@ func on_died():
 	global_position = spawn_position
 	
 	$AnimationPlayer.play("default_enemy_death")
-	$EnemyHitRandomStreamPlayerComponent.play_random()
+	

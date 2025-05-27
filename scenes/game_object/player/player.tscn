@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://duy34q0exwehe"]
+[gd_scene load_steps=19 format=3 uid="uid://duy34q0exwehe"]
 
 [ext_resource type="Script" uid="uid://dxlfrc1brodwd" path="res://scenes/game_object/player/player.gd" id="1_chboc"]
 [ext_resource type="PackedScene" uid="uid://hhx6iyx5cxh" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_h7tiq"]
@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="3_rix40"]
 [ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="4_rix40"]
 [ext_resource type="PackedScene" uid="uid://bq6mbwailxphi" path="res://scenes/booster/double_shot_booster/double_shot_booster.tscn" id="7_dy4tu"]
-[ext_resource type="SpriteFrames" uid="uid://dagtd40gw1ynx" path="res://resources/main_char_sprites.tres" id="7_rix40"]
+[ext_resource type="SpriteFrames" uid="uid://dagtd40gw1ynx" path="res://resources/sprite_sheets/main_char_sprites.tres" id="7_rix40"]
 [ext_resource type="PackedScene" uid="uid://deaw0j1ach3ew" path="res://scenes/booster/waker_booster/waker_booster.tscn" id="8_gqr5v"]
 [ext_resource type="PackedScene" uid="uid://56ugs0sthyj2" path="res://scenes/booster/iced_coffee_booster/iced_coffee_booster.tscn" id="9_28lpv"]
 [ext_resource type="PackedScene" uid="uid://cu55qh8jtvdcu" path="res://scenes/booster/turbo_expresso_booster/turbo_expresso_booster.tscn" id="10_gbew5"]
+[ext_resource type="SpriteFrames" uid="uid://bdsfa8fxp1kap" path="res://resources/sprite_sheets/green_healing_fx.tres" id="12_oxhc3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dy4tu"]
 resource_local_to_scene = true
@@ -18,15 +19,11 @@ shader = ExtResource("4_rix40")
 shader_parameter/lerp_percent = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss5pk"]
-bg_color = Color(0.247059, 0.14902, 0.192157, 1)
+bg_color = Color(0.14902, 0.168627, 0.266667, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tj6oj"]
 bg_color = Color(0, 0.872664, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.247059, 0.14902, 0.192157, 1)
+border_color = Color(0.14902, 0.168627, 0.266667, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s3670"]
 radius = 32.0
@@ -38,6 +35,7 @@ radius = 7.0
 radius = 5.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+y_sort_enabled = true
 collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_chboc")
@@ -76,11 +74,12 @@ wait_time = 0.6
 one_shot = true
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-custom_minimum_size = Vector2(24, 4)
+z_index = 1
+custom_minimum_size = Vector2(24, 3)
 offset_left = -12.0
 offset_top = 2.0
 offset_right = 12.0
-offset_bottom = 6.0
+offset_bottom = 5.0
 pivot_offset = Vector2(12, 2)
 theme_override_styles/background = SubResource("StyleBoxFlat_ss5pk")
 theme_override_styles/fill = SubResource("StyleBoxFlat_tj6oj")
@@ -102,7 +101,13 @@ shape = SubResource("CircleShape2D_s3670")
 unique_name_in_owner = true
 sprite_frames = ExtResource("7_rix40")
 animation = &"player_idle"
-offset = Vector2(0, -10)
+offset = Vector2(0, -9)
+
+[node name="HealingSprite" type="AnimatedSprite2D" parent="Visuals"]
+visible = false
+position = Vector2(0, -8)
+sprite_frames = ExtResource("12_oxhc3")
+animation = &"healing"
 
 [node name="CollisionArea2D" type="Area2D" parent="."]
 position = Vector2(0, -6)

@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://csp0oe5xo7087"]
 
-[ext_resource type="Texture2D" uid="uid://c6cdm6mqk447m" path="res://assets/abilities/armor.png" id="1_hhb0s"]
+[ext_resource type="Texture2D" uid="uid://dcyyiiuhmif64" path="res://assets/power-ups/armor_pan_a.png" id="1_hhb0s"]
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="2_wb20e"]
 
 [resource]
 script = ExtResource("2_wb20e")
 image = ExtResource("1_hhb0s")
 id = "player_armor"
-max_quantity = 4
-name = "armor"
+max_quantity = 7
+name = "ARMOR_NAME"
 type = "power_up"
 sub_type = "power_up_upgrade"
-description = "Reduces incoming damage to the player by 1"
+description = "ARMOR_UP"
 metadata/_custom_type_script = "uid://dqduk38jdctil"

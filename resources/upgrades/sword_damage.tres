@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://vh7f0ijbu4r8"]
 
-[ext_resource type="Texture2D" uid="uid://cir0k5hjtc0s8" path="res://assets/abilities/sword.png" id="1_5wl4v"]
+[ext_resource type="Texture2D" uid="uid://duhgdmgi1nj72" path="res://assets/weapons/frying_pan_b.png" id="1_5wl4v"]
 [ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_xqdqh"]
 
 [resource]
@@ -8,7 +8,7 @@ script = ExtResource("1_xqdqh")
 image = ExtResource("1_5wl4v")
 id = "sword_damage"
 max_quantity = 5
-name = "sword"
+name = "FP_NAME"
 type = "weapon"
 sub_type = "weapon_upgrade"
-description = "Sword damage is increased by 15%"
+description = "FP_DAM"

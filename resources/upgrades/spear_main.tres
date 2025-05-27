@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://cbg6a6h88tgqk"]
 
 [ext_resource type="PackedScene" uid="uid://bo8q8s2mlev4l" path="res://scenes/ability/spear_ability_controller/spear_ability_controller.tscn" id="1_t43pb"]
-[ext_resource type="Texture2D" uid="uid://cllr0bor6ux5r" path="res://assets/abilities/spear.png" id="2_qb63q"]
+[ext_resource type="Texture2D" uid="uid://c5t8t1ew8h0sv" path="res://assets/weapons/crossbow_a.png" id="2_qb63q"]
 [ext_resource type="Script" uid="uid://dcbylr71isyxe" path="res://resources/upgrades/ability.gd" id="2_y1aps"]
 
 [resource]
@@ -10,7 +10,7 @@ ability_controller_scene = ExtResource("1_t43pb")
 image = ExtResource("2_qb63q")
 id = "spear_main"
 max_quantity = 1
-name = "spear"
+name = "EC_NAME"
 type = "weapon"
 sub_type = "weapon_main"
-description = "Shoots a spear towards an enemy"
+description = "EC_MAIN"

@@ -2,7 +2,6 @@ extends Node
 
 @onready var timer: Timer = $Timer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var effect_active: bool = false
 
@@ -24,7 +23,7 @@ func activate_iced_coffee_booster():
 		return
 	
 	animation_player.play("flash")
-	audio_stream_player.play()
+	SoundUtils.play_iced_coffee_sound()
 	
 	effect_active = true
 	BoosterEvents.iced_coffee -= 1
@@ -51,3 +50,5 @@ func on_timer_timeout():
 	for enemy in enemies:
 		if enemy.has_method("unfreeze"):
 			enemy.unfreeze()
+	
+	BoosterEvents.emit_iced_coffee_booster_ended()

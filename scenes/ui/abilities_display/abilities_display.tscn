@@ -1,13 +1,130 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfum4iq3si2lf"]
+[gd_scene load_steps=9 format=3 uid="uid://bfum4iq3si2lf"]
 
 [ext_resource type="Script" uid="uid://dxa42qn2qcim3" path="res://scenes/ui/abilities_display/abilities_display.gd" id="1_8f0eq"]
-[ext_resource type="Texture2D" uid="uid://ltr886e5r5m6" path="res://assets/boosters/booster1.png" id="2_l2ycp"]
-[ext_resource type="Texture2D" uid="uid://j5s3ragk1xpd" path="res://assets/boosters/booster2.png" id="3_p1ts6"]
-[ext_resource type="Texture2D" uid="uid://blvo7xs42tmxa" path="res://assets/boosters/booster3.png" id="4_g4v47"]
-[ext_resource type="Texture2D" uid="uid://cj5suksqk1jg6" path="res://assets/boosters/booster4.png" id="5_najb3"]
+[ext_resource type="Texture2D" uid="uid://ddoegffo7josn" path="res://assets/boosters/double_shot_a.png" id="2_l2ycp"]
+[ext_resource type="Texture2D" uid="uid://dvhugor4h18xn" path="res://assets/boosters/waker_a.png" id="3_p1ts6"]
+[ext_resource type="Texture2D" uid="uid://ds2kdkh4al0j7" path="res://assets/boosters/iced_coffee_a.png" id="4_g4v47"]
+[ext_resource type="Texture2D" uid="uid://v57n6dvqr0yb" path="res://assets/boosters/turbo_expresso_a.png" id="5_najb3"]
+
+[sub_resource type="Animation" id="Animation_p1ts6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster1/ReferenceRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster2/ReferenceRect2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster3/ReferenceRect3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster4/ReferenceRect4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l2ycp"]
+resource_name = "default"
+length = 2.5
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster1/ReferenceRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.172549, 0.796078, 0.662745, 1), Color(0.768627, 0.796078, 0.172549, 1), Color(1, 0.698039, 0, 1), Color(1, 0.305882, 0.305882, 1), Color(0.807843, 0.117647, 1, 1), Color(0.172549, 0.796078, 0.662745, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster2/ReferenceRect2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.807843, 0.117647, 1, 1), Color(0.172549, 0.796078, 0.662745, 1), Color(0.768627, 0.796078, 0.172549, 1), Color(1, 0.698039, 0, 1), Color(1, 0.305882, 0.305882, 1), Color(0.807843, 0.117647, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster3/ReferenceRect3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.913725, 0.266667, 0.266667, 1), Color(0.807843, 0.117647, 1, 1), Color(0.172549, 0.796078, 0.662745, 1), Color(0.768627, 0.796078, 0.172549, 1), Color(1, 0.698039, 0, 1), Color(1, 0.305882, 0.305882, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterContainer/HBoxContainer/BoostersContainer/Booster4/ReferenceRect4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.698039, 0, 1), Color(0.913725, 0.266667, 0.266667, 1), Color(0.807843, 0.117647, 1, 1), Color(0.172549, 0.796078, 0.662745, 1), Color(0.768627, 0.796078, 0.172549, 1), Color(1, 0.698039, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g4v47"]
+_data = {
+&"RESET": SubResource("Animation_p1ts6"),
+&"default": SubResource("Animation_l2ycp")
+}
 
 [node name="AbilitiesDisplay" type="CanvasLayer"]
 script = ExtResource("1_8f0eq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_g4v47")
+}
+autoplay = "default"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 7
@@ -33,7 +150,7 @@ theme_override_constants/separation = 4
 [node name="Weapon1" type="PanelContainer" parent="CenterContainer/HBoxContainer/WeaponsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="W1Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/WeaponsContainer/Weapon1"]
 custom_minimum_size = Vector2(16, 16)
@@ -49,19 +166,18 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -7.0
+offset_top = -2.0
 offset_right = 3.0
-offset_bottom = 3.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "1"
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Weapon2" type="PanelContainer" parent="CenterContainer/HBoxContainer/WeaponsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="W2Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/WeaponsContainer/Weapon2"]
 custom_minimum_size = Vector2(16, 16)
@@ -77,18 +193,17 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -7.0
+offset_top = -2.0
 offset_right = 3.0
-offset_bottom = 3.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Weapon3" type="PanelContainer" parent="CenterContainer/HBoxContainer/WeaponsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="W3Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/WeaponsContainer/Weapon3"]
 custom_minimum_size = Vector2(16, 16)
@@ -104,18 +219,17 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -7.0
+offset_top = -2.0
 offset_right = 3.0
-offset_bottom = 3.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Weapon4" type="PanelContainer" parent="CenterContainer/HBoxContainer/WeaponsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="W4Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/WeaponsContainer/Weapon4"]
 custom_minimum_size = Vector2(16, 16)
@@ -131,12 +245,11 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -7.0
+offset_top = -2.0
 offset_right = 3.0
-offset_bottom = 3.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="PowerUpsContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -146,7 +259,7 @@ theme_override_constants/separation = 4
 [node name="PowerUp1" type="PanelContainer" parent="CenterContainer/HBoxContainer/PowerUpsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="PU1Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/PowerUpsContainer/PowerUp1"]
 custom_minimum_size = Vector2(16, 16)
@@ -162,18 +275,17 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -7.0
+offset_top = -2.0
 offset_right = 3.0
-offset_bottom = 3.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="PowerUp2" type="PanelContainer" parent="CenterContainer/HBoxContainer/PowerUpsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="PU2Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/PowerUpsContainer/PowerUp2"]
 custom_minimum_size = Vector2(16, 16)
@@ -189,18 +301,17 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -7.0
+offset_top = -2.0
 offset_right = 3.0
-offset_bottom = 3.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="PowerUp3" type="PanelContainer" parent="CenterContainer/HBoxContainer/PowerUpsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="PU3Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/PowerUpsContainer/PowerUp3"]
 custom_minimum_size = Vector2(16, 16)
@@ -216,18 +327,17 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -7.0
+offset_top = -2.0
 offset_right = 3.0
-offset_bottom = 3.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="PowerUp4" type="PanelContainer" parent="CenterContainer/HBoxContainer/PowerUpsContainer"]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-theme_type_variation = &"AlternativePanelContainer"
+theme_type_variation = &"AlternativePanelContainer3"
 
 [node name="PU4Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/PowerUpsContainer/PowerUp4"]
 custom_minimum_size = Vector2(16, 16)
@@ -243,12 +353,11 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -7.0
+offset_top = -2.0
 offset_right = 3.0
-offset_bottom = 3.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="BoostersContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -256,9 +365,17 @@ layout_mode = 2
 theme_override_constants/separation = 4
 
 [node name="Booster1" type="PanelContainer" parent="CenterContainer/HBoxContainer/BoostersContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster1"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+border_color = Color(1, 1, 1, 1)
+editor_only = false
 
 [node name="B1Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster1"]
 custom_minimum_size = Vector2(16, 16)
@@ -278,18 +395,25 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -7.0
+offset_top = -2.0
 offset_right = 3.0
-offset_bottom = 3.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Booster2" type="PanelContainer" parent="CenterContainer/HBoxContainer/BoostersContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
+
+[node name="ReferenceRect2" type="ReferenceRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+border_color = Color(1, 1, 1, 1)
+editor_only = false
 
 [node name="B2Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster2"]
 custom_minimum_size = Vector2(16, 16)
@@ -307,18 +431,25 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -7.0
+offset_top = -2.0
 offset_right = 3.0
-offset_bottom = 3.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Booster3" type="PanelContainer" parent="CenterContainer/HBoxContainer/BoostersContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
+
+[node name="ReferenceRect3" type="ReferenceRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+border_color = Color(1, 1, 1, 1)
+editor_only = false
 
 [node name="B3Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster3"]
 custom_minimum_size = Vector2(16, 16)
@@ -336,18 +467,25 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -7.0
+offset_top = -2.0
 offset_right = 3.0
-offset_bottom = 3.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Booster4" type="PanelContainer" parent="CenterContainer/HBoxContainer/BoostersContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 theme_type_variation = &"AlternativePanelContainer"
+
+[node name="ReferenceRect4" type="ReferenceRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster4"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+border_color = Color(1, 1, 1, 1)
+editor_only = false
 
 [node name="B4Texture" type="TextureRect" parent="CenterContainer/HBoxContainer/BoostersContainer/Booster4"]
 custom_minimum_size = Vector2(16, 16)
@@ -365,10 +503,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
-offset_top = -7.0
+offset_top = -2.0
 offset_right = 3.0
-offset_bottom = 3.0
+offset_bottom = 8.0
 grow_horizontal = 0
 grow_vertical = 0
-horizontal_alignment = 1
 vertical_alignment = 2

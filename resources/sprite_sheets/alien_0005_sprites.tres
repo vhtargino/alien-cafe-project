@@ -1,0 +1,64 @@
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://dwq03afyynel5"]
+
+[ext_resource type="Texture2D" uid="uid://nvi8behbj555" path="res://assets/enemies/alien_0005/alien_0005f3.png" id="1_rn1er"]
+[ext_resource type="Texture2D" uid="uid://ckpeelx10syxt" path="res://assets/enemies/alien_0005/alien_0005f4.png" id="2_0cpdd"]
+[ext_resource type="Texture2D" uid="uid://ci1452pwc4do8" path="res://assets/enemies/alien_0005/alien_0005f5.png" id="3_4j156"]
+[ext_resource type="Texture2D" uid="uid://5cu55liyrgys" path="res://assets/enemies/alien_0005/alien_0005f6.png" id="4_hxuan"]
+[ext_resource type="Texture2D" uid="uid://xag47iv2s828" path="res://assets/enemies/alien_0005/alien_0005f1.png" id="4_vkk15"]
+[ext_resource type="Texture2D" uid="uid://bygfy5y5ilc85" path="res://assets/enemies/alien_0005/alien_0005f2.png" id="5_b6jib"]
+[ext_resource type="Texture2D" uid="uid://djrogpekvu76r" path="res://assets/enemies/alien_0005/alien_0005f7.png" id="5_nulwm"]
+[ext_resource type="Texture2D" uid="uid://bconvcki547h8" path="res://assets/enemies/alien_0005/alien_0005f8.png" id="6_yhnxt"]
+[ext_resource type="Texture2D" uid="uid://c8ouh86buaq4h" path="res://assets/enemies/alien_0005/alien_0005f9.png" id="7_ih0c4"]
+[ext_resource type="Texture2D" uid="uid://6opg7acodb5l" path="res://assets/enemies/alien_0005/alien_0005f10.png" id="8_nwane"]
+[ext_resource type="Texture2D" uid="uid://cun2nm4pywcuv" path="res://assets/enemies/alien_0005/alien_0005f11.png" id="9_wat1p"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rn1er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0cpdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4j156")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hxuan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nulwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yhnxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ih0c4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nwane")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wat1p")
+}],
+"loop": false,
+"name": &"despawn",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vkk15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b6jib")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]

@@ -5,7 +5,8 @@ extends Node2D
 
 @export var experience_amount: float
 
-var alternative_experience_vial = preload("res://scenes/game_object/experience_vial/experience_vial_2.png")
+var alternative_experience_vial_2 = preload("res://assets/experience_pod/experience_pod_d2.png")
+var alternative_experience_vial_3 = preload("res://assets/experience_pod/experience_pod_d3.png")
 
 
 func _ready():
@@ -30,15 +31,19 @@ func disable_collision():
 
 
 func collect():
+	SoundUtils.play_experience_sound()
 	GameEvents.emit_experience_vial_collected(experience_amount)
 	queue_free()
 
 
 func change_sprite():
-	if experience_amount > 1:
-		sprite.texture = alternative_experience_vial
-	else:
+	if experience_amount < 4:
 		return
+	
+	if experience_amount < 7:
+		sprite.texture = alternative_experience_vial_2
+	else:
+		sprite.texture = alternative_experience_vial_3
 
 
 func on_area_entered(_other_area: Area2D):
@@ -52,6 +57,3 @@ func on_area_entered(_other_area: Area2D):
 	tween.tween_property(sprite, "scale", Vector2.ZERO, .05).set_delay(.45)
 	tween.chain()
 	tween.tween_callback(collect)
-	
-	await get_tree().create_timer(.45).timeout
-	$RandomStreamPlayerComponent.play_random()

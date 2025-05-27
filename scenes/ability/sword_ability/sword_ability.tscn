@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bpo35to13tjbx"]
 
-[ext_resource type="Texture2D" uid="uid://bchws7pfxsegu" path="res://scenes/ability/sword_ability/sword.png" id="1_qpm16"]
 [ext_resource type="Script" uid="uid://da5jasdvpgpcr" path="res://scenes/ability/sword_ability/sword_ability.gd" id="1_t8g1f"]
 [ext_resource type="PackedScene" uid="uid://clkxgjwrus2sy" path="res://scenes/component/hitbox_component/hitbox_component.tscn" id="2_abpad"]
+[ext_resource type="Texture2D" uid="uid://duhgdmgi1nj72" path="res://assets/weapons/frying_pan_b.png" id="2_t8g1f"]
 
 [sub_resource type="Animation" id="Animation_rt8lm"]
 length = 0.001
@@ -117,9 +117,8 @@ libraries = {
 autoplay = "swing"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_qpm16")
+texture = ExtResource("2_t8g1f")
 offset = Vector2(0, -4)
-flip_h = true
 
 [node name="HitboxComponent" parent="." instance=ExtResource("2_abpad")]
 

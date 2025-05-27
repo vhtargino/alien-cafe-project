@@ -12,12 +12,18 @@ var is_closing = false
 func _ready():
 	get_tree().paused = true
 	
+	for button in get_tree().get_nodes_in_group("ui_buttons"):
+		button.focus_entered.connect(on_focus_entered)
+		button.pressed.connect(on_button_pressed)
+	
 	resume_button.pressed.connect(on_resume_pressed)
 	options_button.pressed.connect(on_options_pressed)
 	quit_to_menu_button.pressed.connect(on_quit_to_menu_pressed)
 	
 	SoundUtils.enable_music_filter()
+	SoundUtils.disable_focus_sound()
 	resume_button.grab_focus()
+	SoundUtils.enable_focus_sound()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -25,6 +31,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		SoundUtils.disable_music_filter()
 		close()
 		get_tree().root.set_input_as_handled()
+
+
+func on_focus_entered():
+	SoundUtils.play_ui_sound("focus")
+
+
+func on_button_pressed():
+	SoundUtils.play_ui_sound("button_pressed")
 
 
 func close():
@@ -37,7 +51,6 @@ func close():
 
 
 func on_resume_pressed():
-	await SoundUtils.check_button_sound_playing(resume_button)
 	SoundUtils.disable_music_filter()
 	close()
 
@@ -49,14 +62,15 @@ func on_options_pressed():
 
 
 func on_quit_to_menu_pressed():
-	get_tree().get_root().set_disable_input(true)
-	await SoundUtils.check_button_sound_playing(quit_to_menu_button)
-	get_tree().get_root().set_disable_input(false)
 	get_tree().paused = false
 	SoundUtils.disable_music_filter()
+	SoundUtils.stop_players()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu/main_menu.tscn")
 
 
 func on_options_back_pressed(options_menu: Node):
+	SoundUtils.disable_focus_sound()
 	options_menu.queue_free()
 	resume_button.grab_focus()
+	SoundUtils.enable_focus_sound()
+	

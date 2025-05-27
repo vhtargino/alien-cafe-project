@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpp3wnd02wd8n"]
+[gd_scene load_steps=3 format=3 uid="uid://bpp3wnd02wd8n"]
 
 [ext_resource type="Script" uid="uid://docu0ng15rqdd" path="res://scenes/ui/pause_menu/pause_menu.gd" id="1_rbnsh"]
 [ext_resource type="PackedScene" uid="uid://cyk5mcvreu6el" path="res://scenes/ui/options_menu/options_menu.tscn" id="2_rv5mv"]
-[ext_resource type="PackedScene" uid="uid://daxd3e0ew2exd" path="res://scenes/ui/sound_button/sound_button.tscn" id="2_xgg5q"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -10,13 +9,12 @@ script = ExtResource("1_rbnsh")
 options_menu_scene = ExtResource("2_rv5mv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(1, 1, 1, 0.25098)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.501961)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -29,6 +27,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"AlternativePanelContainer2"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
@@ -44,19 +43,22 @@ theme_override_constants/separation = 8
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Paused"
+text = "PAUSED"
 
-[node name="ResumeButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_xgg5q")]
+[node name="ResumeButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Resume"
+theme_type_variation = &"AlternativeButton2"
+text = "RESUME"
 
-[node name="OptionsButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_xgg5q")]
+[node name="OptionsButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Options"
+theme_type_variation = &"AlternativeButton2"
+text = "OPTIONS"
 
-[node name="QuitToMenuButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_xgg5q")]
+[node name="QuitToMenuButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" groups=["ui_buttons"]]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Quit To Menu"
+theme_type_variation = &"AlternativeButton2"
+text = "QUIT_MENU"

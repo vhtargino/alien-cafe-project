@@ -1,13 +1,15 @@
 extends Node
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var timer: Timer = $Timer
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 
 var effect_active: bool = false
 
 
 func _ready():
 	timer.timeout.connect(on_timer_timeout)
+	color_rect.visible = false
 
 
 func _unhandled_input(event: InputEvent):
@@ -22,7 +24,7 @@ func activate_waker_booster():
 	if BoosterEvents.waker <= 0:
 		return
 	
-	sprite.visible = true
+	SoundUtils.play_waker_sound()
 	effect_active = true
 	BoosterEvents.waker -= 1
 	
@@ -30,15 +32,13 @@ func activate_waker_booster():
 	if player == null:
 		return
 	
-	sprite.global_position = player.global_position
-	sprite.play("healing")
+	animation_player.play("green_screen_flash")
+	player.play_healing_animation()
 	
 	BoosterEvents.emit_waker_booster_applied()
 	timer.start()
-	
-	await sprite.animation_finished
-	sprite.visible = false
 
 
 func on_timer_timeout():
 	effect_active = false
+	BoosterEvents.emit_waker_booster_ended()

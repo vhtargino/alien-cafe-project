@@ -1,20 +1,13 @@
 extends Node
 
 @onready var timer: Timer = $Timer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var effect_active: bool = false
-
-var label: Label
-var canvas: CanvasLayer
 
 
 func _ready():
 	timer.timeout.connect(on_timer_timeout)
-
-
-func _process(_delta):
-	if label:
-		label.text = str(int(timer.time_left + 1))
 
 
 func _unhandled_input(event: InputEvent):
@@ -28,8 +21,9 @@ func activate_double_shot_booster():
 	
 	if BoosterEvents.double_shot <= 0:
 		return
-
-	show_timer()
+	
+	animation_player.play("flash")
+	SoundUtils.play_double_shot_sound()
 
 	effect_active = true
 	BoosterEvents.double_shot -= 1
@@ -45,23 +39,7 @@ func activate_double_shot_booster():
 	timer.start()
 
 
-func show_timer():
-	var ui_layer = get_tree().get_first_node_in_group("ui_layer")
-	if ui_layer == null:
-		return
-	
-	label = Label.new()
-	canvas = CanvasLayer.new()
-
-	canvas.add_child(label)
-	
-	ui_layer.add_child(canvas)
-
-
 func on_timer_timeout():
-	canvas.queue_free()
-	label.queue_free()
-	
 	effect_active = false
 	var player = get_tree().get_first_node_in_group("player")
 	if player == null:
@@ -69,3 +47,5 @@ func on_timer_timeout():
 		
 	if player.has_method("set_attack_speed_multiplier"):
 		player.set_attack_speed_multiplier(1.0)
+	
+	BoosterEvents.emit_double_shot_booster_ended()

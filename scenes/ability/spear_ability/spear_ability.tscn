@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkqqq0bcq4gsk"]
 
-[ext_resource type="Texture2D" uid="uid://42y27di4shsq" path="res://scenes/ability/spear_ability/spear.png" id="1_v4ddd"]
 [ext_resource type="Script" uid="uid://62boyhp4r8ko" path="res://scenes/ability/spear_ability/spear_ability.gd" id="1_x17d7"]
+[ext_resource type="Texture2D" uid="uid://dx1hpd1nlju4x" path="res://assets/weapons/coffee_bean_b.png" id="2_gmr72"]
 [ext_resource type="PackedScene" uid="uid://clkxgjwrus2sy" path="res://scenes/component/hitbox_component/hitbox_component.tscn" id="2_x17d7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmr72"]
@@ -11,7 +11,7 @@ radius = 4.0
 script = ExtResource("1_x17d7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_v4ddd")
+texture = ExtResource("2_gmr72")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("2_x17d7")]
 

@@ -61,6 +61,8 @@ func on_timer_timeout():
 	var distance = spear_instance.global_position.distance_to(target_enemy.global_position)
 	var time = distance / speed
 	
+	SoundUtils.play_spear_sound()
+	
 	var tween = spear_instance.create_tween()
 	tween.tween_property(spear_instance, "global_position", target_enemy.global_position, time)\
 	.set_trans(Tween.TRANS_LINEAR)\

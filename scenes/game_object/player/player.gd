@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite = %PlayerSprite
+@onready var healing_sprite: AnimatedSprite2D = $Visuals/HealingSprite
 @onready var health_component = $HealthComponent
 @onready var damage_interval_timer = $DamageIntervalTimer
 @onready var health_bar = $HealthBar
@@ -30,12 +31,15 @@ var upgrade_speed_multiplier: float = 1.0
 func _ready():
 	base_speed = velocity_component.max_speed
 	
+	healing_sprite.visible = false
+	
 	$CollisionArea2D.body_entered.connect(on_body_entered)
 	$CollisionArea2D.body_exited.connect(on_body_exited)
 	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
 	health_component.health_changed.connect(on_health_changed)
 	$HealthRegenTimer.timeout.connect(on_health_regen_timeout)
 	
+	GameEvents.health_vial_collected.connect(on_health_vial_collected)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 	
 	BoosterEvents.waker_booster_applied.connect(on_waker_booster_applied)
@@ -77,6 +81,13 @@ func update_health_display():
 	health_bar.value = health_component.get_health_percent()
 
 
+func play_healing_animation():
+	healing_sprite.visible = true
+	healing_sprite.play("healing")
+	await healing_sprite.animation_finished
+	healing_sprite.visible = false
+
+
 func check_deal_damage(damage: int, damage_source: Node2D):
 	if number_colliding_bodies == 0 or not damage_interval_timer.is_stopped():
 		return
@@ -87,6 +98,8 @@ func check_deal_damage(damage: int, damage_source: Node2D):
 	var final_damage = max(1, damage - armor)
 	
 	health_component.damage(final_damage)
+	GameEvents.emit_player_damaged()
+	SoundUtils.play_player_sound("damage")
 	damage_interval_timer.start()
 
 
@@ -130,6 +143,13 @@ func on_health_regen_timeout():
 	
 	health_component.current_health += 1
 	update_health_display()
+
+
+func on_health_vial_collected():
+	var health_to_regenerate = 15
+	health_component.current_health = min(health_component.max_health, (health_component.current_health + health_to_regenerate))
+	update_health_display()
+	play_healing_animation()
 
 
 func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, current_upgrades: Dictionary):

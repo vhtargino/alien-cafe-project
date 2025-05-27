@@ -1,0 +1,72 @@
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://b7dkr5ejk66a2"]
+
+[ext_resource type="Texture2D" uid="uid://t7l57h5c8d7" path="res://assets/enemies/alien_0006/alien_0006a5.png" id="1_nurom"]
+[ext_resource type="Texture2D" uid="uid://c6qmyh1hv0641" path="res://assets/enemies/alien_0006/alien_0006a6.png" id="2_58umb"]
+[ext_resource type="Texture2D" uid="uid://bev00kvhqkk8e" path="res://assets/enemies/alien_0006/alien_0006a7.png" id="3_r3jqf"]
+[ext_resource type="Texture2D" uid="uid://ct1jcwpsfkh08" path="res://assets/enemies/alien_0006/alien_0006a8.png" id="4_g263l"]
+[ext_resource type="Texture2D" uid="uid://c1nruh33in8hu" path="res://assets/enemies/alien_0006/alien_0006a1.png" id="4_kc46y"]
+[ext_resource type="Texture2D" uid="uid://ctyinyy3881g3" path="res://assets/enemies/alien_0006/alien_0006a9.png" id="5_2w3i7"]
+[ext_resource type="Texture2D" uid="uid://bi682ex6ka2av" path="res://assets/enemies/alien_0006/alien_0006a2.png" id="5_tisx4"]
+[ext_resource type="Texture2D" uid="uid://bcn4lwgsr7p0g" path="res://assets/enemies/alien_0006/alien_0006a3.png" id="6_mxlmj"]
+[ext_resource type="Texture2D" uid="uid://cga4ltldnmjwl" path="res://assets/enemies/alien_0006/alien_0006a10.png" id="6_tj7of"]
+[ext_resource type="Texture2D" uid="uid://4w3gjs8ojhko" path="res://assets/enemies/alien_0006/alien_0006a4.png" id="7_g263l"]
+[ext_resource type="Texture2D" uid="uid://b2cx6lc73gov8" path="res://assets/enemies/alien_0006/alien_0006a11.png" id="7_ju2af"]
+[ext_resource type="Texture2D" uid="uid://bu52q0ufwsbxi" path="res://assets/enemies/alien_0006/alien_0006a12.png" id="8_xinna"]
+[ext_resource type="Texture2D" uid="uid://bgvlk8468f288" path="res://assets/enemies/alien_0006/alien_0006a13.png" id="9_i1ivs"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nurom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_58umb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r3jqf")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g263l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2w3i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tj7of")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ju2af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xinna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_i1ivs")
+}],
+"loop": false,
+"name": &"despawn",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kc46y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tisx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mxlmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g263l")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
