@@ -26,6 +26,8 @@ jobs:
           mkdir -p ~/.local/share/godot/export_templates/4.4.stable
           wget https://github.com/godotengine/godot/releases/download/4.4-stable/Godot_v4.4-stable_export_templates.tpz -O templates.tpz
           unzip -o templates.tpz -d ~/.local/share/godot/export_templates/4.4.stable
+          mv ~/.local/share/godot/export_templates/4.4.stable/templates/* ~/.local/share/godot/export_templates/4.4.stable/
+          rmdir ~/.local/share/godot/export_templates/4.4.stable/templates
 
       - name: Export project to HTML5
         run: |
