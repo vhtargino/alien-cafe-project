@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://kyn4547o4dgt"]
 
 [ext_resource type="Script" uid="uid://ckvbopl0sbcin" path="res://scenes/ability/force_field_ability/force_field_ability.gd" id="1_5ub3p"]
-[ext_resource type="Texture2D" uid="uid://b8m67f4tkcxb2" path="res://scenes/ability/force_field_ability/force_field.png" id="1_y1ybd"]
+[ext_resource type="Texture2D" uid="uid://b72blf2d0rsse" path="res://assets/weapons/force_field.png" id="2_5ub3p"]
 [ext_resource type="PackedScene" uid="uid://clkxgjwrus2sy" path="res://scenes/component/hitbox_component/hitbox_component.tscn" id="2_tngu5"]
 
 [sub_resource type="Animation" id="Animation_6ai3x"]
@@ -55,7 +55,7 @@ autoplay = "default"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -6)
-texture = ExtResource("1_y1ybd")
+texture = ExtResource("2_5ub3p")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("2_tngu5")]
 collision_mask = 4

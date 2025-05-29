@@ -19,9 +19,6 @@ func _ready():
 	options_button.pressed.connect(on_options_pressed)
 	quit_game_button.pressed.connect(on_quit_game_button_pressed)
 	
-	#if not MainMusicPlayer.playing:
-		#MainMusicPlayer.play()
-	
 	if not SoundUtils.music_player.playing:
 		SoundUtils.play_music_player("main_menu")
 	

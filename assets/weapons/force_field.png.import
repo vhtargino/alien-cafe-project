@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq8tux10aefsw"
-path="res://.godot/imported/magnet.png-6e4b25d57cc96fa040c3e5ccb91810f8.ctex"
+uid="uid://b72blf2d0rsse"
+path="res://.godot/imported/force_field.png-ad628f2fe0abe1481f5db9bb88b44e3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/abilities/magnet.png"
-dest_files=["res://.godot/imported/magnet.png-6e4b25d57cc96fa040c3e5ccb91810f8.ctex"]
+source_file="res://assets/weapons/force_field.png"
+dest_files=["res://.godot/imported/force_field.png-ad628f2fe0abe1481f5db9bb88b44e3c.ctex"]
 
 [params]
 
