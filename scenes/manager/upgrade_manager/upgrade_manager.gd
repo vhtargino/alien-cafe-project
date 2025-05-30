@@ -190,6 +190,7 @@ func on_level_up(_current_level: int):
 	upgrade_screen_instance.set_ability_upgrades(chosen_upgrades as Array[AbilityUpgrade])
 	upgrade_screen_instance.upgrade_selected.connect(on_upgrade_selected)
 
+	# Apenas para pegar o foco do primeiro card
 	var first_card = upgrade_screen_instance.card_container.get_child(0)
 	if first_card == null:
 		return

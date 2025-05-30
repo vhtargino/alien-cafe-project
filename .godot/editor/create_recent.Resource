@@ -1,4 +1,0 @@
-SpriteFrames
-TileSet
-Theme
-Resource
