@@ -1,3 +1,7 @@
 res://default_bus_layout.tres
 res://scenes/ui/main_menu/main_menu.tscn
 res://resources/theme/theme.tres
+res://scenes/component/hit_flash_component/hit_flash_component.tscn
+res://scenes/manager/upgrade_manager/upgrade_manager.tscn
+res://scenes/component/booster_timer_ui_component/booster_timer_ui_component.tscn
+res://scenes/ui/booster_canvas_ui/booster_canvas_ui.tscn
