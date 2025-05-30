@@ -14,8 +14,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p11xj"]
 shader = ExtResource("2_t03xh")
-shader_parameter/x_speed = 0.01
-shader_parameter/y_speed = 0.01
+shader_parameter/x_speed = 0.05
+shader_parameter/y_speed = 0.0
 
 [node name="StoreMenu" type="CanvasLayer"]
 script = ExtResource("1_oifsy")

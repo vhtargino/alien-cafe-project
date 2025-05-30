@@ -9,8 +9,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_re87o"]
 shader = ExtResource("2_5qe3y")
-shader_parameter/x_speed = 0.01
-shader_parameter/y_speed = 0.01
+shader_parameter/x_speed = 0.05
+shader_parameter/y_speed = 0.0
 
 [node name="LevelSelect" type="CanvasLayer"]
 script = ExtResource("1_kvtm6")
