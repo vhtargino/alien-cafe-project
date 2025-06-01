@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dc3ubxkagms0a" path="res://scenes/component/vial_drop_component/vial_drop_component.tscn" id="3_h4ano"]
 [ext_resource type="PackedScene" uid="uid://bg05buf3ev5eg" path="res://scenes/component/velocity_component/velocity_component.tscn" id="3_qct4f"]
 [ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="4_7kpoi"]
-[ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="5_uxq61"]
+[ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://resources/shaders/hit_flash_component.gdshader" id="5_uxq61"]
 [ext_resource type="PackedScene" uid="uid://cs1erg3kov16k" path="res://scenes/component/health_drop_component/health_drop_component.tscn" id="6_2k23j"]
 [ext_resource type="PackedScene" uid="uid://d5l8117qmu3d" path="res://scenes/component/hurtbox_component/hurtbox_component.tscn" id="7_mrvcy"]
 [ext_resource type="PackedScene" uid="uid://dhav55ogv83r5" path="res://scenes/component/animated_death_component/animated_death_component.tscn" id="8_4mg3i"]

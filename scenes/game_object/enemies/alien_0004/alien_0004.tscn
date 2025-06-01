@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dc3ubxkagms0a" path="res://scenes/component/vial_drop_component/vial_drop_component.tscn" id="5_e306n"]
 [ext_resource type="PackedScene" uid="uid://cs1erg3kov16k" path="res://scenes/component/health_drop_component/health_drop_component.tscn" id="6_8f4ko"]
 [ext_resource type="PackedScene" uid="uid://bukfjfrlab7av" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="6_hltgx"]
-[ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="7_u7jmv"]
+[ext_resource type="Shader" uid="uid://bwnxs0n8jaiha" path="res://resources/shaders/hit_flash_component.gdshader" id="7_u7jmv"]
 [ext_resource type="PackedScene" uid="uid://dhav55ogv83r5" path="res://scenes/component/animated_death_component/animated_death_component.tscn" id="9_ax1ci"]
 [ext_resource type="SpriteFrames" uid="uid://bikdmnbaw80h3" path="res://resources/sprite_sheets/alien_0004_sprites.tres" id="11_0gi6a"]
 [ext_resource type="PackedScene" uid="uid://d5l8117qmu3d" path="res://scenes/component/hurtbox_component/hurtbox_component.tscn" id="15_757jw"]
