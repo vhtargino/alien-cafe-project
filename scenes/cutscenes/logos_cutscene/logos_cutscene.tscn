@@ -1,0 +1,183 @@
+[gd_scene load_steps=11 format=3 uid="uid://cik8wu3fqhum1"]
+
+[ext_resource type="Script" uid="uid://giphlomd616f" path="res://scenes/cutscenes/logos_cutscene/logos_cutscene.gd" id="1_t2j7q"]
+[ext_resource type="Texture2D" uid="uid://t3s3sdunxp62" path="res://assets/logos/godot_original_light.png" id="2_mgjq7"]
+[ext_resource type="Texture2D" uid="uid://bftoj5texdwr4" path="res://assets/logos/lifters_a.png" id="3_yjmds"]
+[ext_resource type="Shader" uid="uid://bbab2riuh3e74" path="res://resources/shaders/scroll_shader.gdshader" id="4_yjmds"]
+[ext_resource type="Texture2D" uid="uid://dblhnqfqhnqqr" path="res://assets/main_menu/outer-space.png" id="5_7iib5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iwduf"]
+
+[sub_resource type="Animation" id="Animation_8464f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CompressedTexture2D_iwduf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D/Label:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1iurh"]
+resource_name = "default"
+length = 10.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5, 4.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_mgjq7"), null, ExtResource("3_yjmds")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.5, 4.75),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.25, 1.25, 3.25, 4.5, 5.25, 6.25, 8.5, 9.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D/Label:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5.25, 6.25, 8.5, 9.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iwduf"]
+_data = {
+&"RESET": SubResource("Animation_8464f"),
+&"default": SubResource("Animation_1iurh")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kha1d"]
+shader = ExtResource("4_yjmds")
+shader_parameter/x_speed = 0.05
+shader_parameter/y_speed = 0.0
+
+[node name="LogosCutscene" type="Node2D"]
+script = ExtResource("1_t2j7q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_iwduf")
+}
+
+[node name="OuterSpace" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_kha1d")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_7iib5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CompressedTexture2D_iwduf")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+visible = false
+custom_minimum_size = Vector2(90, 0)
+offset_left = -48.0
+offset_top = 30.0
+offset_right = 48.0
+offset_bottom = 40.0
+size_flags_vertical = 1
+text = "t e c n o l o g i a"

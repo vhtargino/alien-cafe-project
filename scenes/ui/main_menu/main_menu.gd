@@ -1,6 +1,10 @@
 extends CanvasLayer
 class_name MainMenu
 
+@onready var press_key_label: Label = $PressKeyLabel
+@onready var menu_container: PanelContainer = $MarginContainer/MenuContainer
+@onready var outer_space_2: TextureRect = $OuterSpace2
+
 @onready var play_button = %PlayButton
 @onready var store_button = %StoreButton
 @onready var options_button = %OptionsButton
@@ -19,11 +23,27 @@ func _ready():
 	options_button.pressed.connect(on_options_pressed)
 	quit_game_button.pressed.connect(on_quit_game_button_pressed)
 	
+	if GlobalStates.main_menu_loaded:
+		press_key_label.visible = false
+		menu_container.visible = true
+		outer_space_2.visible = false
+		SoundUtils.enable_and_disable_focus_sound(play_button)
+		
+	
 	if not SoundUtils.music_player.playing:
 		SoundUtils.play_music_player("main_menu")
-	
-	play_button.grab_focus()
-	SoundUtils.enable_focus_sound()
+
+
+func _unhandled_key_input(_event: InputEvent) -> void:
+	if InputEventKey and not menu_container.visible:
+		outer_space_2.visible = false
+		SoundUtils.play_ui_sound("button_pressed")
+		press_key_label.queue_free()
+		menu_container.visible = true
+		
+		SoundUtils.enable_and_disable_focus_sound(play_button)
+		
+		GlobalStates.main_menu_loaded = true
 
 
 func on_focus_entered():
@@ -35,7 +55,7 @@ func on_button_pressed():
 
 
 func on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/ui/level_select/level_select.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/stage_select/stage_select.tscn")
 
 
 func on_store_pressed():
@@ -58,7 +78,5 @@ func on_quit_game_button_pressed():
 
 
 func on_options_closed(options_instance: Node):
-	SoundUtils.disable_focus_sound()
 	options_instance.queue_free()
-	play_button.grab_focus()
-	SoundUtils.enable_focus_sound()
+	SoundUtils.enable_and_disable_focus_sound(play_button)

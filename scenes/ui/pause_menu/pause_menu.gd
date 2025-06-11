@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export var options_menu_scene: PackedScene
+@export var main_menu_scene: PackedScene
 
 @onready var resume_button: Button = %ResumeButton
 @onready var options_button: Button = %OptionsButton
@@ -21,9 +22,7 @@ func _ready():
 	quit_to_menu_button.pressed.connect(on_quit_to_menu_pressed)
 	
 	SoundUtils.enable_music_filter()
-	SoundUtils.disable_focus_sound()
-	resume_button.grab_focus()
-	SoundUtils.enable_focus_sound()
+	SoundUtils.enable_and_disable_focus_sound(resume_button)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -62,15 +61,14 @@ func on_options_pressed():
 
 
 func on_quit_to_menu_pressed():
+	GlobalStates.main_menu_loaded = false
 	get_tree().paused = false
 	SoundUtils.disable_music_filter()
 	SoundUtils.stop_players()
-	get_tree().change_scene_to_file("res://scenes/ui/main_menu/main_menu.tscn")
+	get_tree().change_scene_to_packed(main_menu_scene)
 
 
 func on_options_back_pressed(options_menu: Node):
-	SoundUtils.disable_focus_sound()
 	options_menu.queue_free()
-	resume_button.grab_focus()
-	SoundUtils.enable_focus_sound()
+	SoundUtils.enable_and_disable_focus_sound(resume_button)
 	

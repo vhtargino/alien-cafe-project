@@ -5,6 +5,7 @@ signal arena_difficulty_increased(arena_difficulty: int)
 const DIFFICULTY_INTERVAL = 5
 
 @export var end_screen_scene: PackedScene
+@export_range(1, 3) var current_level: int
 
 @onready var timer = $Timer
 
@@ -27,7 +28,10 @@ func get_time_elapsed():
 
 
 func on_timer_timeout():
-	GameEvents.level_1_finished = true
+	if current_level == 1:
+		GameEvents.stage_1_finished = true
+	elif current_level == 2:
+		GameEvents.stage_2_finished = true
 	
 	var end_screen_instance = end_screen_scene.instantiate()
 	SoundUtils.play_music_player("victory_music")

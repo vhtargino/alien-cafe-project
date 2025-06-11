@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Alien Cafe"
-run/main_scene="uid://bwcs47owte5ef"
+run/main_scene="uid://cik8wu3fqhum1"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
 config/icon="res://icon.svg"
@@ -22,6 +22,7 @@ GameEvents="*res://scenes/autoload/game_events/game_events.tscn"
 SoundUtils="*res://scenes/autoload/sound_utils/sound_utils.tscn"
 BoosterEvents="*res://scenes/autoload/booster_events/booster_events.tscn"
 StoreEvents="*res://scenes/autoload/store_events/store_events.tscn"
+GlobalStates="*res://scenes/autoload/global_states/global_states.tscn"
 
 [display]
 

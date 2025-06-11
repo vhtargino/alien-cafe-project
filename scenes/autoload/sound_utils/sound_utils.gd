@@ -148,6 +148,14 @@ func disable_focus_sound():
 	allow_focus_sound = false
 
 
+func enable_and_disable_focus_sound(node: Control):
+	if not node.focus_mode != Control.FOCUS_NONE:
+		return
+	disable_focus_sound()
+	node.grab_focus()
+	enable_focus_sound()
+
+
 func stop_players():
 	for audio_player: AudioStreamPlayer in get_tree().get_nodes_in_group("sound_players"):
 		if audio_player.playing:

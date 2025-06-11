@@ -30,9 +30,7 @@ func _ready():
 	language_options.item_focused.connect(on_item_focused)
 	language_options.item_selected.connect(on_item_selected)
 	
-	SoundUtils.disable_focus_sound()
-	music_slider.grab_focus()
-	SoundUtils.enable_focus_sound()
+	SoundUtils.enable_and_disable_focus_sound(music_slider)
 
 
 func _set_bus_volume(bus_name: String, value: float):

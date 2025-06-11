@@ -6,8 +6,8 @@ signal ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictiona
 signal enemy_died
 signal player_damaged
 
-var level_1_finished: bool = false
-var level_2_finished: bool = false
+var stage_1_finished: bool = false
+var stage_2_finished: bool = false
 
 
 func emit_experience_vial_collected(number: float):
