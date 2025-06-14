@@ -2,6 +2,7 @@ extends Node
 
 const MAIN_MENU_MUSIC = preload("res://assets/music/the-stakeout-anasta-music-288249.ogg")
 const STAGE_1_MUSIC = preload("res://assets/music/synthwave-music-for-creating-a-captivating-background-ambiance-311391.ogg")
+const STAGE_2_MUSIC = preload("res://assets/music/stage-2-music-chill-synthwave-background-music-for-youtube-shorts-and-videos-345551.mp3")
 const BOSS_MUSIC = preload("res://assets/music/dark-synthwave-obilivion-echo-251687.ogg")
 const VICTORY_MUSIC = preload("res://assets/music/neon-mirage-background-synthwave-music-for-video-vlog-24-second-340201.ogg")
 const GAME_OVER_MUSIC = preload("res://assets/music/sad-documentary-sorrowful-music-342263.ogg")
@@ -51,6 +52,7 @@ func play_music_player(sound_name: String):
 	match sound_name:
 		"main_menu": music_player.stream = MAIN_MENU_MUSIC
 		"stage_1": music_player.stream = STAGE_1_MUSIC
+		"stage_2": music_player.stream = STAGE_2_MUSIC
 		"boss_music": music_player.stream = BOSS_MUSIC
 		"victory_music": music_player.stream = VICTORY_MUSIC
 		"game_over_music": music_player.stream = GAME_OVER_MUSIC

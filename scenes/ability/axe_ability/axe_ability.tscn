@@ -45,6 +45,7 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_r58rl"]
 
 [node name="AxeAbility" type="Node2D"]
+z_index = 2
 script = ExtResource("1_m8265")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

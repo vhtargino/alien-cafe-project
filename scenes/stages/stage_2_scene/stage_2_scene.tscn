@@ -1,7 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://cixvkin3rlun0"]
+[gd_scene load_steps=28 format=3 uid="uid://cixvkin3rlun0"]
 
 [ext_resource type="Script" uid="uid://da1vfc6mb8ra3" path="res://scenes/stages/stage_2_scene/stage_2_scene.gd" id="1_wmde8"]
+[ext_resource type="PackedScene" uid="uid://da6rj72jqwqbt" path="res://scenes/ui/end_screen/end_screen.tscn" id="2_1qb73"]
 [ext_resource type="PackedScene" uid="uid://cfwxyritj2n7p" path="res://scenes/ui/vignette/vignette.tscn" id="2_e1gbc"]
+[ext_resource type="PackedScene" uid="uid://bpp3wnd02wd8n" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="3_00pul"]
 [ext_resource type="PackedScene" uid="uid://cgo6p22slx0sn" path="res://scenes/ui/arena_time_ui/arena_time_ui.tscn" id="3_1qb73"]
 [ext_resource type="PackedScene" uid="uid://1kuoy5l1c0be" path="res://scenes/ui/experience_bar/experience_bar.tscn" id="4_00pul"]
 [ext_resource type="PackedScene" uid="uid://dxyn1oj8e8a2v" path="res://scenes/ui/current_level_display/current_level_display.tscn" id="5_w2t8f"]
@@ -23,12 +25,14 @@
 [ext_resource type="PackedScene" uid="uid://bt3p1b8vremkc" path="res://scenes/game_object/boss_enemies/boss_0001/boss_0001.tscn" id="21_kr0wf"]
 [ext_resource type="PackedScene" uid="uid://dtlqrknqemekh" path="res://scenes/manager/experience_manager/experience_manager.tscn" id="22_ohr22"]
 [ext_resource type="PackedScene" uid="uid://cegr05gx1wvyo" path="res://scenes/manager/upgrade_manager/upgrade_manager.tscn" id="23_7loxh"]
-[ext_resource type="PackedScene" uid="uid://bf2xnkhk1x5ha" path="res://scenes/maps/stage_1_map/stage_1_map.tscn" id="24_okhp2"]
 [ext_resource type="PackedScene" uid="uid://duy34q0exwehe" path="res://scenes/game_object/player/player.tscn" id="25_gnnu5"]
+[ext_resource type="PackedScene" uid="uid://dcwlaqw0ryef7" path="res://scenes/maps/stage_2_map/stage_2_map.tscn" id="26_1qb73"]
 
 [node name="Stage2Scene" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_wmde8")
+end_screen_scene = ExtResource("2_1qb73")
+pause_menu_scene = ExtResource("3_00pul")
 
 [node name="UI" type="Node2D" parent="." groups=["ui_layer"]]
 
@@ -56,7 +60,7 @@ stage_label_text = "STAGE_2"
 title_label_text = "THE_ESPRESSO"
 
 [node name="ArenaTimeManager" parent="." instance=ExtResource("10_2dtyi")]
-current_level = 1
+current_level = 2
 
 [node name="EnemyManager" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("11_7uwbt")]
 enemy_0001_scene = ExtResource("12_x6tad")
@@ -76,7 +80,7 @@ arena_time_manager = NodePath("../ArenaTimeManager")
 [node name="UpgradeManager" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("23_7loxh")]
 experience_manager = NodePath("../ExperienceManager")
 
-[node name="Stage1Map" parent="." instance=ExtResource("24_okhp2")]
+[node name="Stage2Map" parent="." instance=ExtResource("26_1qb73")]
 
 [node name="Entities" type="Node2D" parent="." groups=["entities_layer"]]
 y_sort_enabled = true

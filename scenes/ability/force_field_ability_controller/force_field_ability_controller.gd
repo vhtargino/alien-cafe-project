@@ -67,10 +67,17 @@ func on_timer_timeout():
 
 func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary): 
 	if upgrade.id == "force_field_range":
-		var circle_shape = force_field_instance.hitbox_component.get_child(0).shape as CircleShape2D
-		circle_shape.radius += 15
-		var new_scale = circle_shape.radius / initial_radius
+		#var circle_shape = force_field_instance.hitbox_component.get_child(0).shape as CircleShape2D
+		#circle_shape.radius += 15
+		
+		force_field_instance.hitbox_component.get_child(0).shape.radius *= 1.4
+		
+		#var new_scale = circle_shape.radius / initial_radius
+		#force_field_instance.sprite.scale = Vector2(new_scale, new_scale)
+		
+		var new_scale = force_field_instance.sprite.scale.x * 1.4
 		force_field_instance.sprite.scale = Vector2(new_scale, new_scale)
+		
 	elif upgrade.id == "force_field_damage":
 		force_field_instance.hitbox_component.damage *= 1.2
 	elif upgrade.id == "force_field_rate":
@@ -87,7 +94,6 @@ func on_double_shot_booster_applied():
 	booster_rate_multiplier = 1.0 / player.attack_speed_multiplier
 	update_timer_wait_time()
 
-	#await get_tree().create_timer(duration).timeout
 	await player.double_shot_booster.timer.timeout
 	
 	booster_rate_multiplier = 1.0

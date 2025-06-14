@@ -32,13 +32,17 @@ func _ready():
 	GameEvents.enemy_died.connect(on_enemy_died)
 
 
-func get_spawn_position() -> Vector2:
+func get_spawn_position(enemy: CharacterBody2D) -> Vector2:
 	var player = get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
 		return Vector2.ZERO
 	
 	var spawn_position = Vector2.ZERO
 	var random_direction = Vector2.RIGHT.rotated(randf_range(0, TAU))
+	
+	if not enemy.get_collision_mask_value(1):
+		return player.global_position + (random_direction * SPAWN_RADIUS)
+	
 	for i in 32:
 		spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
 		var additional_check_offset = random_direction * 25
@@ -70,9 +74,9 @@ func spawn_enemy(enemy_scene: PackedScene, is_boss: bool = false):
 	if enemy_count >= 500 and not is_boss:
 		return
 	
-	var spawn_position = get_spawn_position()
+	var enemy = enemy_scene.instantiate() as CharacterBody2D
+	var spawn_position = get_spawn_position(enemy)
 	var entities_layer = get_tree().get_first_node_in_group("entities_layer")
-	var enemy = enemy_scene.instantiate() as Node2D
 	
 	entities_layer.add_child(enemy)
 	enemy.global_position = spawn_position

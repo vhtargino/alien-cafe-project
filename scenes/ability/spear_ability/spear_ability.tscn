@@ -8,6 +8,7 @@
 radius = 4.0
 
 [node name="SpearAbility" type="Node2D"]
+z_index = 2
 script = ExtResource("1_x17d7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -149,6 +149,7 @@ color_initial_ramp = SubResource("GradientTexture1D_m0lxl")
 radius = 48.0
 
 [node name="AnvilAbility" type="Node2D"]
+z_index = 2
 script = ExtResource("1_4tak5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
