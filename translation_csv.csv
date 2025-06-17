@@ -64,6 +64,7 @@ ESPRESSO_DESC,"Defend the farms at all costs! The Javanians want to steal the la
 BATTLE_DESC,"Let's invade the mothership! Send these aliens from whence they came and claim victory!","Vamos invadir a nave-mãe! Mandem esses aliens de volta de onde vieram e reivindiquem a vitória!"
 
 COMMANDER_MOKKA,Commander Mokka,Comandante Mokka
+CAPTAIN_LATTZ,Captain Lattz,Capitã Lattz
 
 FP_NAME,Frying Pan,Frigideira
 FP_MAIN,"I need something to defend myself... a frying pan!","Preciso de algo para me defender... uma frigideira!"
@@ -106,8 +107,16 @@ CROIS_UP,Max health is increased by 15%,Life máximo é aumentado em 15%
 
 REGEN_NAME,Healing Cappuccino,Cappuccino da Cura
 REGEN_MAIN,"Feeling better and better with each sip!","Me sentindo melhor a cada gole!"
-REGEN_UP,"Player heal's health 10% faster","Cura o life 10% mais rápido"
+REGEN_UP,"Player heal's 10% more health","Cura 10% a mais de life"
 
 SPEED_NAME,Future Sneakers,Tênis do Futuro
 SPEED_MAIN,"Wow, I can run a lot faster with these!","Uau, eu consigo correr muito mais rápido com isso!"
 SPEED_UP,"Increases player move speed by 15%","Aumenta a velocidade de movimento em 15%"
+
+MAXL_DMG,Damage,Dano
+MAXL_RATE,Attack rate,Velocidade de ataque
+MAXL_RANGE,Attack range,Alcance
+MAXL_MAG,Magnet,Ímã de itens
+MAXL_MAXH,Max health,Life máximo
+MAXL_ARMOR,Armor,Armadura
+MAXL_REGEN,Health regen,Regeneração

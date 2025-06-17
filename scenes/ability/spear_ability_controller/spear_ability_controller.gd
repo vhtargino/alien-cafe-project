@@ -1,8 +1,10 @@
 extends Node
 
-var max_range = 250
+var max_range = 260
 
 @export var spear_ability: PackedScene
+
+@onready var timer: Timer = $Timer
 
 var base_damage = 7
 var additional_damage_percent = 1
@@ -15,17 +17,18 @@ var booster_rate_multiplier = 1.0
 
 
 func _ready() -> void:
-	base_wait_time = $Timer.wait_time
-	$Timer.timeout.connect(on_timer_timeout)
+	base_wait_time = timer.wait_time
+	timer.timeout.connect(on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 	BoosterEvents.double_shot_booster_applied.connect(on_double_shot_booster_applied)
+	MaxLevelEvents.level_up_above_max.connect(on_level_up_above_max)
 
 
 func update_timer_wait_time():
-	var final_multiplier = upgrade_rate_multiplier * booster_rate_multiplier
+	var final_multiplier = upgrade_rate_multiplier * booster_rate_multiplier * MaxLevelEvents.attack_rate
 	var final_wait_time = base_wait_time * final_multiplier
-	$Timer.wait_time = final_wait_time
-	$Timer.start()
+	timer.wait_time = max(0.1, final_wait_time)
+	#timer.start()
 
 
 func on_timer_timeout():
@@ -50,7 +53,7 @@ func on_timer_timeout():
 	var spear_instance = spear_ability.instantiate() as SpearAbility
 	var foreground_layer = get_tree().get_first_node_in_group("foreground_layer")
 	foreground_layer.add_child(spear_instance)
-	spear_instance.hitbox_component.damage = base_damage * additional_damage_percent
+	spear_instance.hitbox_component.damage = base_damage * additional_damage_percent * MaxLevelEvents.damage
 	
 	spear_instance.global_position = player.global_position
 	
@@ -94,3 +97,8 @@ func on_double_shot_booster_applied():
 	
 	booster_rate_multiplier = 1.0
 	update_timer_wait_time()
+
+
+func on_level_up_above_max():
+	if MaxLevelEvents.random_attribute == "attack rate":
+		update_timer_wait_time()

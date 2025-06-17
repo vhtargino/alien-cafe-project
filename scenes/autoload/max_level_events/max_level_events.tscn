@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnh0ynyf6ok21"]
+
+[ext_resource type="Script" uid="uid://cnqjp8h47glem" path="res://scenes/autoload/max_level_events/max_level_events.gd" id="1_65voq"]
+[ext_resource type="PackedScene" uid="uid://dk7lex6rwe4m4" path="res://scenes/ui/floating_text/floating_text.tscn" id="2_4nelb"]
+
+[node name="MaxLevelEvents" type="Node"]
+script = ExtResource("1_65voq")
+floating_text_scene = ExtResource("2_4nelb")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1ghor281ult"]
+[gd_scene load_steps=12 format=3 uid="uid://b1ghor281ult"]
 
 [ext_resource type="Script" uid="uid://c8uh60161mg2a" path="res://scenes/ui/stage_select/stage_select.gd" id="1_6a62c"]
 [ext_resource type="Shader" uid="uid://bbab2riuh3e74" path="res://resources/shaders/scroll_shader.gdshader" id="2_c2l28"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cixvkin3rlun0" path="res://scenes/stages/stage_2_scene/stage_2_scene.tscn" id="3_ooj7y"]
 [ext_resource type="Texture2D" uid="uid://dblhnqfqhnqqr" path="res://assets/main_menu/outer-space.png" id="3_xobk2"]
 [ext_resource type="Texture2D" uid="uid://cwxpr25cqu2gy" path="res://assets/stages/stage-select1.png" id="4_ojni5"]
+[ext_resource type="PackedScene" uid="uid://bd28yo3tdua8u" path="res://scenes/stages/stage_3_scene/stage_3_scene.tscn" id="4_ooj7y"]
 [ext_resource type="Texture2D" uid="uid://needxibfqjq6" path="res://assets/stages/stage-select2.png" id="5_ooj7y"]
 [ext_resource type="Texture2D" uid="uid://daa01atijvd6i" path="res://assets/stages/stage-select3.png" id="6_vltav"]
 
@@ -19,6 +20,7 @@ shader_parameter/y_speed = 0.0
 script = ExtResource("1_6a62c")
 stage_1_scene = ExtResource("2_xobk2")
 stage_2_scene = ExtResource("3_ooj7y")
+stage_3_scene = ExtResource("4_ooj7y")
 main_menu_scene = ExtResource("3_ojni5")
 
 [node name="OuterSpace" type="TextureRect" parent="."]

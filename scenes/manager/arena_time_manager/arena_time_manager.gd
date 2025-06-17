@@ -28,6 +28,8 @@ func get_time_elapsed():
 
 
 func on_timer_timeout():
+	MaxLevelEvents.reset_attributes()
+
 	if current_level == 1:
 		GameEvents.stage_1_finished = true
 	elif current_level == 2:

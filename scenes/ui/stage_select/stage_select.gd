@@ -56,7 +56,7 @@ func on_stage_2_pressed():
 
 
 func on_stage_3_pressed():
-	pass
+	get_tree().change_scene_to_packed(stage_3_scene)
 
 
 func on_back_pressed():

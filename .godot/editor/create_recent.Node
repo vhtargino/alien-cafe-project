@@ -1,8 +1,10 @@
 TileMapLayer
+AnimationPlayer
+ResourcePreloader
+CanvasModulate
 Camera2D
 TextureRect
 Label
 Sprite2D
 ColorRect
-AnimationPlayer
 AnimationTree

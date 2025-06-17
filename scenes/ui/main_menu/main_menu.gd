@@ -34,8 +34,8 @@ func _ready():
 		SoundUtils.play_music_player("main_menu")
 
 
-func _unhandled_key_input(_event: InputEvent) -> void:
-	if InputEventKey and not menu_container.visible:
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event and not menu_container.visible:
 		outer_space_2.visible = false
 		SoundUtils.play_ui_sound("button_pressed")
 		press_key_label.queue_free()

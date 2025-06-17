@@ -73,7 +73,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_1iurh"]
 resource_name = "default"
-length = 10.5
+length = 10.25
 step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -85,7 +85,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 4.5, 4.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("2_mgjq7"), null, ExtResource("3_yjmds")]
+"values": [ExtResource("3_yjmds"), null, ExtResource("2_mgjq7")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -97,7 +97,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 4.5, 4.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.2), Vector2(1, 1)]
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.2, 0.2)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -109,7 +109,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 5.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -118,7 +118,7 @@ tracks/3/path = NodePath("Sprite2D:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.25, 1.25, 3.25, 4.5, 5.25, 6.25, 8.5, 9.75),
+"times": PackedFloat32Array(0.25, 1.25, 3.25, 4.5, 5.25, 6.25, 8.25, 9.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -130,7 +130,7 @@ tracks/4/path = NodePath("Sprite2D/Label:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(5.25, 6.25, 8.5, 9.75),
+"times": PackedFloat32Array(0.25, 1.25, 3.25, 4.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]

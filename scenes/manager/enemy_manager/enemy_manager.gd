@@ -15,7 +15,7 @@ const SPAWN_RADIUS = 340
 
 @export var arena_time_manager: Node
 
-@onready var timer = $Timer
+@onready var timer: Timer = $Timer
 
 var base_spawn_time
 

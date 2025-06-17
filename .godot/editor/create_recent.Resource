@@ -1,2 +1,3 @@
 TileSet
+SpriteFrames
 Shader

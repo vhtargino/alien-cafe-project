@@ -61,6 +61,7 @@ func on_options_pressed():
 
 
 func on_quit_to_menu_pressed():
+	MaxLevelEvents.reset_attributes()
 	GlobalStates.main_menu_loaded = false
 	get_tree().paused = false
 	SoundUtils.disable_music_filter()

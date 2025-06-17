@@ -22,6 +22,7 @@ func create_camera():
 
 
 func on_player_died():
+	MaxLevelEvents.reset_attributes()
 	create_camera()
 	SoundUtils.stop_players()
 	var end_screen_instance = end_screen_scene.instantiate()

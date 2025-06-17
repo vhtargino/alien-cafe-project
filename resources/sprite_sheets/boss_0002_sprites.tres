@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bc1pbxdg4pj2q"]
+
+[ext_resource type="Texture2D" uid="uid://dyt06pqtc8grw" path="res://assets/enemies/boss_0002/boss_0002a_death1.png" id="1_u6rvv"]
+[ext_resource type="Texture2D" uid="uid://d2hvvqjoqdikm" path="res://assets/enemies/boss_0002/boss_0002a_death2.png" id="2_lmivo"]
+[ext_resource type="Texture2D" uid="uid://cfyejo55s1u37" path="res://assets/enemies/boss_0002/boss_0002a_death3.png" id="3_ydd5l"]
+[ext_resource type="Texture2D" uid="uid://bfwe0fnkfs7cs" path="res://assets/enemies/boss_0002/boss_0002a_death4.png" id="4_dw6gi"]
+[ext_resource type="Texture2D" uid="uid://bjlf25vrklq5" path="res://assets/enemies/boss_0002/boss_0002a.png" id="5_be03n"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u6rvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lmivo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ydd5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dw6gi")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_be03n")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]

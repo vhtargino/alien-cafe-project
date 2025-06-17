@@ -4,9 +4,9 @@ class_name HurtboxComponent
 signal hit
 
 @export var health_component: Node
-#@export var floating_text_scene: PackedScene
+@export var floating_text_scene: PackedScene
 
-var floating_text_scene = preload("res://scenes/ui/floating_text/floating_text.tscn")
+#var floating_text_scene = preload("res://scenes/ui/floating_text/floating_text.tscn")
 
 
 func _ready():
@@ -28,7 +28,7 @@ func on_area_entered(other_area: Area2D):
 	get_tree().get_first_node_in_group("foreground_layer").add_child(floating_text_instance)
 	
 	floating_text_instance.global_position = global_position + (Vector2.UP * 8)
-	floating_text_instance.start(str(int(hitbox_component.damage * 10)))
+	floating_text_instance.start(str(int(hitbox_component.damage * 10)), .2, Color(1, 1, 1))
 	
 	SoundUtils.play_enemy_sound()
 	#hit.emit()

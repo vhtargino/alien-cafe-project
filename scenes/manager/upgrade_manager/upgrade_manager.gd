@@ -5,6 +5,7 @@ signal ability_level_up(current_abilities_level: Dictionary)
 @export var experience_manager: Node
 @export var upgrade_screen_scene: PackedScene
 
+
 var initial_sword = preload("res://resources/upgrades/sword_main.tres")
 var upgrade_sword_rate = preload("res://resources/upgrades/sword_rate.tres")
 var upgrade_sword_damage = preload("res://resources/upgrades/sword_damage.tres")
@@ -178,6 +179,8 @@ func on_level_up(_current_level: int):
 	var chosen_upgrades = pick_upgrades()
 	
 	if chosen_upgrades.is_empty():
+		MaxLevelEvents.increase_random_attribute()
+		MaxLevelEvents.emit_level_up_above_max()
 		return
 	
 	var ui_layer = get_tree().get_first_node_in_group("ui_layer")

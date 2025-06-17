@@ -22,8 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://bv1enkrc6rnat" path="res://scenes/game_object/enemies/alien_0007/alien_0007.tscn" id="18_bbarj"]
 [ext_resource type="PackedScene" uid="uid://dp2xffuso1t80" path="res://scenes/game_object/enemies/alien_0008/alien_0008.tscn" id="19_r2wyg"]
 [ext_resource type="PackedScene" uid="uid://bc4cuohsciyv2" path="res://scenes/game_object/enemies/alien_0009/alien_0009.tscn" id="20_a66r7"]
-[ext_resource type="PackedScene" uid="uid://bt3p1b8vremkc" path="res://scenes/game_object/boss_enemies/boss_0001/boss_0001.tscn" id="21_kr0wf"]
 [ext_resource type="PackedScene" uid="uid://dtlqrknqemekh" path="res://scenes/manager/experience_manager/experience_manager.tscn" id="22_ohr22"]
+[ext_resource type="PackedScene" uid="uid://0baltjg4ukoo" path="res://scenes/game_object/boss_enemies/boss_0002/boss_0002.tscn" id="23_1qb73"]
 [ext_resource type="PackedScene" uid="uid://cegr05gx1wvyo" path="res://scenes/manager/upgrade_manager/upgrade_manager.tscn" id="23_7loxh"]
 [ext_resource type="PackedScene" uid="uid://duy34q0exwehe" path="res://scenes/game_object/player/player.tscn" id="25_gnnu5"]
 [ext_resource type="PackedScene" uid="uid://dcwlaqw0ryef7" path="res://scenes/maps/stage_2_map/stage_2_map.tscn" id="26_1qb73"]
@@ -72,7 +72,7 @@ enemy_0006_scene = ExtResource("17_i3b7t")
 enemy_0007_scene = ExtResource("18_bbarj")
 enemy_0008_scene = ExtResource("19_r2wyg")
 enemy_0009_scene = ExtResource("20_a66r7")
-boss_scene = ExtResource("21_kr0wf")
+boss_scene = ExtResource("23_1qb73")
 arena_time_manager = NodePath("../ArenaTimeManager")
 
 [node name="ExperienceManager" parent="." instance=ExtResource("22_ohr22")]
