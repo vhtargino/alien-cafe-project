@@ -8,15 +8,21 @@ var max_range = 260
 
 var base_damage = 7
 var additional_damage_percent = 1
-var base_wait_time
 
 var speed = 300
 
+var base_wait_time
 var upgrade_rate_multiplier = 1.0
 var booster_rate_multiplier = 1.0
 
+var player: Node2D
+
 
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
+	if player == null:
+		return
+	
 	base_wait_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
@@ -32,10 +38,6 @@ func update_timer_wait_time():
 
 
 func on_timer_timeout():
-	var player = get_tree().get_first_node_in_group("player") as Node2D
-	if player == null:
-		return
-	
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	enemies = enemies.filter(func(enemy: Node2D): 
 		return enemy.global_position.distance_squared_to(player.global_position) < pow(max_range, 2)
@@ -53,7 +55,7 @@ func on_timer_timeout():
 	var spear_instance = spear_ability.instantiate() as SpearAbility
 	var foreground_layer = get_tree().get_first_node_in_group("foreground_layer")
 	foreground_layer.add_child(spear_instance)
-	spear_instance.hitbox_component.damage = base_damage * additional_damage_percent * MaxLevelEvents.damage
+	spear_instance.hitbox_component.damage = base_damage * additional_damage_percent * MaxLevelEvents.damage * player.overall_damage_multiplier
 	
 	spear_instance.global_position = player.global_position
 	
@@ -85,10 +87,6 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Diction
 
 
 func on_double_shot_booster_applied():
-	var player = get_tree().get_first_node_in_group("player")
-	if player == null:
-		return
-	
 	booster_rate_multiplier = 1.0 / player.attack_speed_multiplier
 	update_timer_wait_time()
 

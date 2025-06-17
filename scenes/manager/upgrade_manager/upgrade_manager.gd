@@ -43,6 +43,9 @@ var upgrade_player_armor = preload("res://resources/upgrades/player_armor.tres")
 var upgrade_player_regeneration_main = preload("res://resources/upgrades/player_regeneration_main.tres")
 var upgrade_player_regeneration = preload("res://resources/upgrades/player_regeneration.tres")
 
+var upgrade_overall_damage_main = preload("res://resources/upgrades/overall_damage_main.tres")
+var upgrade_overall_damage = preload("res://resources/upgrades/overall_damage.tres")
+
 var current_upgrades = {}
 var upgrade_pool: WeightedTable = WeightedTable.new()
 
@@ -68,6 +71,7 @@ func _ready():
 	upgrade_pool.add_item(upgrade_pickup_range_main, 7)
 	upgrade_pool.add_item(upgrade_player_armor_main, 4)
 	upgrade_pool.add_item(upgrade_player_regeneration_main, 7)
+	upgrade_pool.add_item(upgrade_overall_damage_main, 4)
 	
 	experience_manager.level_up.connect(on_level_up)
 	
@@ -131,6 +135,8 @@ func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
 		upgrade_pool.add_item(upgrade_player_regeneration, 7)
 	elif chosen_upgrade.id == upgrade_player_speed_main.id:
 		upgrade_pool.add_item(upgrade_player_speed, 7)
+	elif chosen_upgrade.id == upgrade_overall_damage_main.id:
+		upgrade_pool.add_item(upgrade_overall_damage, 7)
 
 
 func set_ability_level(upgrade: AbilityUpgrade):

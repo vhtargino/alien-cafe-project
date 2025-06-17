@@ -1,5 +1,6 @@
-res://resources/tilesets
+res://resources/upgrades
 res://resources/sprite_sheets
+res://resources/tilesets
 res://scenes/autoload/max_level_events
 res://scenes/autoload/global_states
 res://scenes/ui/stage_title

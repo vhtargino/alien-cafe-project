@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://yqfkvwr1gley"]
+
+[ext_resource type="Texture2D" uid="uid://dus8ei6auwqbl" path="res://assets/power-ups/protein_cookie_a.png" id="1_bnllh"]
+[ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_u2qql"]
+
+[resource]
+script = ExtResource("1_u2qql")
+image = ExtResource("1_bnllh")
+id = "overall_damage_main"
+max_quantity = 1
+name = "PROT_COOKIE"
+type = "power_up"
+sub_type = "power_up_main"
+description = "PROT_MAIN"
+metadata/_custom_type_script = "uid://dqduk38jdctil"

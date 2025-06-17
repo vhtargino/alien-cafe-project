@@ -65,6 +65,7 @@ BATTLE_DESC,"Let's invade the mothership! Send these aliens from whence they cam
 
 COMMANDER_MOKKA,Commander Mokka,Comandante Mokka
 CAPTAIN_LATTZ,Captain Lattz,Capitã Lattz
+GENERAL_BEAN,General Bean,General Bean
 
 FP_NAME,Frying Pan,Frigideira
 FP_MAIN,"I need something to defend myself... a frying pan!","Preciso de algo para me defender... uma frigideira!"
@@ -112,6 +113,10 @@ REGEN_UP,"Player heal's 10% more health","Cura 10% a mais de life"
 SPEED_NAME,Future Sneakers,Tênis do Futuro
 SPEED_MAIN,"Wow, I can run a lot faster with these!","Uau, eu consigo correr muito mais rápido com isso!"
 SPEED_UP,"Increases player move speed by 15%","Aumenta a velocidade de movimento em 15%"
+
+PROT_COOKIE,Protein Cookie, Cookie Proteico
+PROT_MAIN,A protein cookie! Já me sinto mais forte!,Um cookie de whey! Tá saindo da jaula o monstro!
+PROT_UP,All damage is increased by 15%,O dano geral é aumentado em 15%
 
 MAXL_DMG,Damage,Dano
 MAXL_RATE,Attack rate,Velocidade de ataque

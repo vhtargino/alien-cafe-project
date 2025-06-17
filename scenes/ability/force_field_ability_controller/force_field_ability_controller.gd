@@ -20,7 +20,14 @@ var force_field_instance: Node2D
 var enemies_inside_area: Array[CharacterBody2D] = []
 
 
+var player: Node2D
+
+
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
+	if player == null:
+		return
+	
 	base_wait_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
@@ -33,18 +40,14 @@ func _ready() -> void:
 
 
 func instantiate_force_field():
-	var player = get_tree().get_first_node_in_group("player") as Node2D
-	if player == null:
-		return
-	
 	force_field_instance = force_field_ability.instantiate() as ForceFieldAbility
 	player.add_child(force_field_instance)
 	
-	force_field_instance.hitbox_component.damage = base_damage
+	force_field_instance.hitbox_component.damage = base_damage * player.overall_damage_multiplier
 
 
 func update_damage():
-	var final_damage_multiplier = upgrade_damage_multiplier * MaxLevelEvents.damage
+	var final_damage_multiplier = upgrade_damage_multiplier * MaxLevelEvents.damage * player.overall_damage_multiplier
 	var final_damage = base_damage * final_damage_multiplier
 	force_field_instance.hitbox_component.damage = final_damage
 
@@ -94,13 +97,11 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Diction
 		var percent_reduction = current_upgrades["force_field_rate"]["quantity"] * .15
 		upgrade_rate_multiplier = 1.0 - percent_reduction
 		update_timer_wait_time()
+	elif upgrade.id == "overall_damage_main" or upgrade.id == "overall_damage":
+		update_damage()
 
 
 func on_double_shot_booster_applied():
-	var player = get_tree().get_first_node_in_group("player")
-	if player == null:
-		return
-	
 	booster_rate_multiplier = 1.0 / player.attack_speed_multiplier
 	update_timer_wait_time()
 

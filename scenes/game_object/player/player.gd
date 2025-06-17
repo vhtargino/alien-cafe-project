@@ -39,6 +39,9 @@ var booster_speed_multiplier: float = 1.0
 
 var attack_speed_multiplier: float = 1.0
 
+var overall_damage_multiplier: float = 1.0
+
+
 func _ready():
 	base_max_health = health_component.max_health
 	base_pickup_radius = pickup_area_collision.shape.radius
@@ -200,34 +203,36 @@ func on_health_vial_collected():
 	play_healing_animation()
 
 
-func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, _current_upgrades: Dictionary):
-	if ability_upgrade == null:
+func on_ability_upgrade_added(upgrade: AbilityUpgrade, _current_upgrades: Dictionary):
+	if upgrade == null:
 		return
 	
-	if ability_upgrade is Ability:
-		var _ability = ability_upgrade as Ability
-		abilities.add_child(ability_upgrade.ability_controller_scene.instantiate())
-	elif ability_upgrade.id == "player_speed_main" or ability_upgrade.id == "player_speed":
+	if upgrade is Ability:
+		var _ability = upgrade as Ability
+		abilities.add_child(upgrade.ability_controller_scene.instantiate())
+	elif upgrade.id == "player_speed_main" or upgrade.id == "player_speed":
 		upgrade_speed_multiplier += .15
 		update_speed()
-	elif ability_upgrade.id == "pickup_range_main" or ability_upgrade.id == "pickup_range":
+	elif upgrade.id == "pickup_range_main" or upgrade.id == "pickup_range":
 		upgrade_pickup_multiplier += .2
 		update_pickup_area()
-	elif ability_upgrade.id == "player_health_main" or ability_upgrade.id == "player_health":
+	elif upgrade.id == "player_health_main" or upgrade.id == "player_health":
 		upgrade_health_multiplier += .15
 		update_total_health()
-	elif ability_upgrade.id == "player_armor_main" or ability_upgrade.id == "player_armor":
-		if ability_upgrade.id == "player_armor_main":
+	elif upgrade.id == "player_armor_main" or upgrade.id == "player_armor":
+		if upgrade.id == "player_armor_main":
 			base_armor = 1
-		elif ability_upgrade.id == "player_armor":
+		elif upgrade.id == "player_armor":
 			upgrade_armor_multiplier += 1
 		update_armor()
-	elif ability_upgrade.id == "player_regeneration_main" or ability_upgrade.id == "player_regeneration":
-		if ability_upgrade.id == "player_regeneration_main":
+	elif upgrade.id == "player_regeneration_main" or upgrade.id == "player_regeneration":
+		if upgrade.id == "player_regeneration_main":
 			base_health_regen = 1
-		elif ability_upgrade.id == "player_regeneration":
+		elif upgrade.id == "player_regeneration":
 			upgrade_health_regen_multiplier += .1
 		update_health_regen()
+	elif upgrade.id == "overall_damage_main" or upgrade.id == "overall_damage":
+		overall_damage_multiplier += .15
 
 
 func on_waker_booster_applied():
