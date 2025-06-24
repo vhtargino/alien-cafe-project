@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://g7wocbt3btqh"]
+
+[ext_resource type="Texture2D" uid="uid://42hnfg6da4bp" path="res://assets/weapons/caramel_bomb_a.png" id="1_gfq33"]
+[ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_xy1re"]
+
+[resource]
+script = ExtResource("1_xy1re")
+image = ExtResource("1_gfq33")
+id = "caramel_damage"
+max_quantity = 5
+name = "CARAMEL_NAME"
+type = "weapon"
+sub_type = "weapon_upgrade"
+description = "CARAMEL_DAM"
+metadata/_custom_type_script = "uid://dqduk38jdctil"

@@ -19,7 +19,6 @@ var force_field_instance: Node2D
 
 var enemies_inside_area: Array[CharacterBody2D] = []
 
-
 var player: Node2D
 
 
@@ -42,12 +41,16 @@ func _ready() -> void:
 func instantiate_force_field():
 	force_field_instance = force_field_ability.instantiate() as ForceFieldAbility
 	player.add_child(force_field_instance)
-	
-	force_field_instance.hitbox_component.damage = base_damage * player.overall_damage_multiplier
+	update_damage()
 
 
 func update_damage():
-	var final_damage_multiplier = upgrade_damage_multiplier * MaxLevelEvents.damage * player.overall_damage_multiplier
+	var final_damage_multiplier = (
+		upgrade_damage_multiplier * 
+		MaxLevelEvents.damage * 
+		player.overall_damage_multiplier * 
+		player.apply_critical_multiplier()
+		)
 	var final_damage = base_damage * final_damage_multiplier
 	force_field_instance.hitbox_component.damage = final_damage
 
@@ -83,7 +86,12 @@ func on_timer_timeout():
 			return
 		
 		var hurtbox = enemy.get_node("HurtboxComponent")
-		hurtbox.on_area_entered(force_field_instance.hitbox_component)
+		for i in player.weapon_spawn_amount:
+			if hurtbox == null:
+				return
+			
+			hurtbox.on_area_entered(force_field_instance.hitbox_component)
+			await get_tree().create_timer(.033).timeout
 
 
 func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary): 
@@ -98,6 +106,8 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Diction
 		upgrade_rate_multiplier = 1.0 - percent_reduction
 		update_timer_wait_time()
 	elif upgrade.id == "overall_damage_main" or upgrade.id == "overall_damage":
+		update_damage()
+	elif upgrade.id == "critical_main" or upgrade.id == "critical":
 		update_damage()
 
 

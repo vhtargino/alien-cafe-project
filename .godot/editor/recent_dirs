@@ -1,3 +1,12 @@
+res://resources/upgrades/weapons_upgrades/coffee_cup_spinner_upgrade
+res://scenes/ability/coffee_cup_spinner_ability_controller
+res://resources/upgrades/weapons_upgrades/orient_espresso_upgrade
+res://scenes/ability/orient_espresso_ability_controller
+res://scenes/ability/orient_espresso_ability
+res://resources/upgrades/weapons_upgrades/caramel_bomb_upgrade
+res://scenes/ability/caramel_bomb_ability_controller
+res://resources/upgrades/power_ups_upgrades/critical_upgrade
+res://resources/upgrades/power_ups_upgrades/cloner_upgrade
 res://resources/upgrades
 res://resources/sprite_sheets
 res://resources/tilesets

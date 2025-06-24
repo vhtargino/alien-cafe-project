@@ -1,4 +1,5 @@
 AbilityUpgrade
+Ability
 SpriteFrames
 TileSet
 Shader

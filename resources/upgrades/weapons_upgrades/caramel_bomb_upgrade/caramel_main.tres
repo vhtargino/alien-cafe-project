@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://c03q6cu30avhk"]
+
+[ext_resource type="PackedScene" uid="uid://dfpjrluakhgsj" path="res://scenes/ability/caramel_bomb_ability_controller/caramel_bomb_ability_controller.tscn" id="1_0yv5x"]
+[ext_resource type="Script" uid="uid://dcbylr71isyxe" path="res://resources/upgrades/ability.gd" id="1_bmxmt"]
+[ext_resource type="Texture2D" uid="uid://42hnfg6da4bp" path="res://assets/weapons/caramel_bomb_a.png" id="2_rl1de"]
+
+[resource]
+script = ExtResource("1_bmxmt")
+ability_controller_scene = ExtResource("1_0yv5x")
+image = ExtResource("2_rl1de")
+id = "caramel_main"
+max_quantity = 1
+name = "CARAMEL_NAME"
+type = "weapon"
+sub_type = "weapon_main"
+description = "CARAMEL_MAIN"
+metadata/_custom_type_script = "uid://dcbylr71isyxe"

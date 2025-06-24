@@ -14,12 +14,18 @@ var upgrade_rate_multiplier = 1.0
 var booster_rate_multiplier = 1.0
 
 var player: Node2D
+var foreground: Node2D
 
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	if player == null:
 		return
+	
+	foreground = get_tree().get_first_node_in_group("foreground_layer")
+	if foreground == null:
+		return
+	
 	base_wait_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
@@ -34,19 +40,27 @@ func update_timer_wait_time():
 	#timer.start()
 
 
-func on_timer_timeout():
-	var foreground = get_tree().get_first_node_in_group("foreground_layer")
-	if foreground == null:
-		return
-	
+func spawn_weapon():
 	var direction = Vector2.RIGHT.rotated(randf_range(0,TAU))
 	var spawn_position = player.global_position + (direction * randf_range(0, BASE_RANGE))
 	
 	var anvil_instance = anvil_ability_scene.instantiate() as AnvilAbility
 	foreground.add_child(anvil_instance)
 	SoundUtils.play_anvil_sound()
-	anvil_instance.hitbox_component.damage = base_damage * additional_damage_percent * MaxLevelEvents.damage * player.overall_damage_multiplier
+	anvil_instance.hitbox_component.damage = (
+		base_damage * 
+		additional_damage_percent * 
+		MaxLevelEvents.damage * 
+		player.overall_damage_multiplier * 
+		player.apply_critical_multiplier()
+		)
 	anvil_instance.global_position = spawn_position
+
+
+func on_timer_timeout():
+	for i in player.weapon_spawn_amount:
+		spawn_weapon()
+		await get_tree().create_timer(.033).timeout
 
 
 func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://caubgpryqdhae"]
+
+[ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_577tp"]
+[ext_resource type="Texture2D" uid="uid://c3rae4lthwhvq" path="res://assets/weapons/coffee_cup_spinner_a.png" id="1_807kd"]
+
+[resource]
+script = ExtResource("1_577tp")
+image = ExtResource("1_807kd")
+id = "cup_damage"
+max_quantity = 2
+name = "CCUP_NAME"
+type = "weapon"
+sub_type = "weapon_upgrade"
+description = "CCUP_DAM"
+metadata/_custom_type_script = "uid://dqduk38jdctil"

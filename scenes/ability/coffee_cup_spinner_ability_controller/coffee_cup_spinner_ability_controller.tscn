@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4mqe4uut3v3j"]
+
+[ext_resource type="Script" uid="uid://r2idq4c2hjvg" path="res://scenes/ability/coffee_cup_spinner_ability_controller/coffee_cup_spinner_ability_controller.gd" id="1_o7t1j"]
+[ext_resource type="PackedScene" uid="uid://vywml44ohbkg" path="res://scenes/ability/coffee_cup_spinner_ability/coffee_cup_spinner_ability.tscn" id="2_xuuao"]
+
+[node name="CoffeeCupSpinnerAbilityController" type="Node"]
+script = ExtResource("1_o7t1j")
+coffee_cup_spinner_scene = ExtResource("2_xuuao")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

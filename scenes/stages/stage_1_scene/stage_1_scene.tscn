@@ -82,6 +82,8 @@ experience_manager = NodePath("../ExperienceManager")
 
 [node name="Stage1Map" parent="." instance=ExtResource("26_8vovn")]
 
+[node name="GroundLayer" type="Node2D" parent="." groups=["ground_layer"]]
+
 [node name="Entities" type="Node2D" parent="." groups=["entities_layer"]]
 y_sort_enabled = true
 

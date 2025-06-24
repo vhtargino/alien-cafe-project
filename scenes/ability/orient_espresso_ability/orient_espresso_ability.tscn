@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cns7efrmuopap"]
+
+[ext_resource type="Script" uid="uid://dlc00ba2glivk" path="res://scenes/ability/orient_espresso_ability/orient_espresso_ability.gd" id="1_2iu7l"]
+[ext_resource type="Texture2D" uid="uid://cj4yve843xj1y" path="res://assets/weapons/orient_espresso_a.png" id="1_3fg4c"]
+[ext_resource type="PackedScene" uid="uid://clkxgjwrus2sy" path="res://scenes/component/hitbox_component/hitbox_component.tscn" id="2_2iu7l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_blfop"]
+
+[node name="OrientEspressoAbility" type="Node2D"]
+script = ExtResource("1_2iu7l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3fg4c")
+offset = Vector2(16, -1)
+
+[node name="HitboxComponent" parent="." instance=ExtResource("2_2iu7l")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_blfop")

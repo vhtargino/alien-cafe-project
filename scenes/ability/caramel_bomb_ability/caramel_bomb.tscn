@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwuodet84tvax"]
+
+[ext_resource type="Script" uid="uid://7higcnf4qmmh" path="res://scenes/ability/caramel_bomb_ability/caramel_bomb.gd" id="1_ugvp1"]
+[ext_resource type="Texture2D" uid="uid://42hnfg6da4bp" path="res://assets/weapons/caramel_bomb_a.png" id="2_lsfrc"]
+[ext_resource type="PackedScene" uid="uid://clkxgjwrus2sy" path="res://scenes/component/hitbox_component/hitbox_component.tscn" id="3_uu5pi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2a0yc"]
+radius = 8.0
+
+[node name="CaramelBomb" type="Node2D"]
+script = ExtResource("1_ugvp1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("2_lsfrc")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_uu5pi")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_2a0yc")

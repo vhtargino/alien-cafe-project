@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://ctwwn7w8xs5w0"]
+
+[ext_resource type="Script" uid="uid://dcbylr71isyxe" path="res://resources/upgrades/ability.gd" id="1_6jams"]
+[ext_resource type="PackedScene" uid="uid://b4mqe4uut3v3j" path="res://scenes/ability/coffee_cup_spinner_ability_controller/coffee_cup_spinner_ability_controller.tscn" id="1_votu4"]
+[ext_resource type="Texture2D" uid="uid://c3rae4lthwhvq" path="res://assets/weapons/coffee_cup_spinner_a.png" id="2_0ni32"]
+
+[resource]
+script = ExtResource("1_6jams")
+ability_controller_scene = ExtResource("1_votu4")
+image = ExtResource("2_0ni32")
+id = "cup_main"
+max_quantity = 1
+name = "CCUP_NAME"
+type = "weapon"
+sub_type = "weapon_main"
+description = "CCUP_MAIN"
+metadata/_custom_type_script = "uid://dcbylr71isyxe"

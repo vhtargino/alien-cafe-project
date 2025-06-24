@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvuvtw7sc3btg"]
+
+[ext_resource type="Script" uid="uid://p7tlwn2g5l27" path="res://scenes/ability/orient_espresso_ability_controller/orient_espresso_ability_controller.gd" id="1_lfb41"]
+[ext_resource type="PackedScene" uid="uid://cns7efrmuopap" path="res://scenes/ability/orient_espresso_ability/orient_espresso_ability.tscn" id="2_2eumo"]
+
+[node name="OrientEspressoAbilityController" type="Node"]
+script = ExtResource("1_lfb41")
+orient_espresso_scene = ExtResource("2_2eumo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

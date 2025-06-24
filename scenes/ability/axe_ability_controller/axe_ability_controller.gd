@@ -17,11 +17,16 @@ var upgrade_rate_multiplier: float = 1.0
 var booster_rate_multiplier: float = 1.0
 
 var player: Node2D
+var foreground: Node2D
 
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	if player == null:
+		return
+	
+	foreground = get_tree().get_first_node_in_group("foreground_layer")
+	if foreground == null:
 		return
 	
 	base_wait_time = timer.wait_time
@@ -38,18 +43,26 @@ func update_timer_wait_time():
 	#timer.start()
 
 
-func on_timer_timeout():
-	var foreground_layer = get_tree().get_first_node_in_group("foreground_layer") as Node2D
-	if foreground_layer == null:
-		return
-	
+func spawn_weapon():
 	var axe_instance = axe_ability_scene.instantiate() as Node2D
 	axe_instance.tween_to = base_tween_to * additional_range_percent * MaxLevelEvents.attack_range
 	axe_instance.tween_duration = base_tween_duration * additional_range_percent * MaxLevelEvents.attack_range
-	foreground_layer.add_child(axe_instance)
+	foreground.add_child(axe_instance)
 	#axe_instance.global_position = player.global_position
-	axe_instance.hitbox_component.damage = base_damage * additional_damage_percent * MaxLevelEvents.damage * player.overall_damage_multiplier
+	axe_instance.hitbox_component.damage = (
+		base_damage * 
+		additional_damage_percent * 
+		MaxLevelEvents.damage * 
+		player.overall_damage_multiplier * 
+		player.apply_critical_multiplier()
+		)
 	SoundUtils.play_axe_sound()
+
+
+func on_timer_timeout():
+	for i in player.weapon_spawn_amount:
+		spawn_weapon()
+		await get_tree().create_timer(.033).timeout
 
 
 func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):
@@ -67,7 +80,6 @@ func on_double_shot_booster_applied():
 	booster_rate_multiplier = 1.0 / player.attack_speed_multiplier
 	update_timer_wait_time()
 
-	#await get_tree().create_timer(duration).timeout
 	await player.double_shot_booster.timer.timeout
 	
 	booster_rate_multiplier = 1.0

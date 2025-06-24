@@ -14,6 +14,9 @@ func _ready():
 
 
 func on_area_entered(other_area: Area2D):
+	if other_area == null:
+		return
+	
 	if not other_area is HitboxComponent:
 		return
 	

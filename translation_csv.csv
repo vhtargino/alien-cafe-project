@@ -94,6 +94,24 @@ EC_MAIN,"Hey, I can use this to throw coffee beans! Take this one too!","Ei, eu 
 EC_DAM,"Increases crossbow damage by 10%","Aumenta o dano da besta em 10%"
 EC_RATE,"Crossbow attack rate is increased by 15%","A velocidade de ataque da besta aumenta em 15%"
 
+CARAMEL_NAME,Caramel Bomb,Bomba de Caramelo
+CARAMEL_MAIN,Sticky caramel bombs thrown clockwise,Pegajosas bombas de caramelo jogadas em sentido horário
+CARAMEL_DAM,Caramel bombs deal 15% more damage,Aumenta o dano das bombas em 15%
+CARAMEL_RATE,Increases caramel bombs attack rate by 20%,Aumenta a velocidade de ataque das bombas em 20%
+
+ORIENT_NAME,Orient Espresso,Espresso Oriente
+ORIENT_MAIN,An espresso train from the east,Um trem espresso vindo do oriente
+ORIENT_DAM,Increases damage by 30%,Aumenta o dano em 30%
+ORIENT_RATE,Attack rate is increased by 20%,Intervalo entre ataques é diminuído em 20%
+ORIENT_SPEED,Train speed is increased by 15%,A velocidade do trem é aumentada em 15%
+
+CCUP_NAME,Spinning Cup,Xícara Giratória
+CCUP_MAIN,Coffee cups that orbit around the player,Xícaras de café que orbitam ao redor do jogador
+CCUP_DAM,Cup damage is increased by 20%,O dano da xícara é aumentado em 20%
+CCUP_RATE,Attack rate is increased by 15%,Intervalo entre ataques é diminuído em 15%
+CCUP_DUR,Duration of the orbit is increased by 15%,Duração da órbita aumenta em 15%
+CCUP_RAD,Cup orbit base radius and speed are increased by 50%,Raio base e velocidade da órbita da xícara aumenta 50%
+
 MAGNET_NAME,Item Magnet,Ímã de Itens
 MAGNET_MAIN,"I can use this to collect more things from a distance!","Posso usar isso coletar coisas mais de longe!"
 MAGNET_UP,"Increases item pickup range by 20%","Aumenta o alcance de coleta de itens em 20%"
@@ -117,6 +135,14 @@ SPEED_UP,"Increases player move speed by 15%","Aumenta a velocidade de movimento
 PROT_COOKIE,Protein Cookie, Cookie Proteico
 PROT_MAIN,A protein cookie! Já me sinto mais forte!,Um cookie de whey! Tá saindo da jaula o monstro!
 PROT_UP,All damage is increased by 15%,O dano geral é aumentado em 15%
+
+CLONER,Cloner,Clonador
+CLONER_MAIN,A cloner! I'm going to clone my weapons and double my attacks!,Um clonador! Vou clonar minhas armas e atacar em dobro!
+CLONER_UP,Another weapon attack is added,Mais uma arma é adicionada aos ataques
+
+CRITICAL,Chocofrosting,Brigadeiro Extra
+CRITICAL_MAIN,10% chance of dealing critical damage (+50% damage),10% de chance de causar dano crítico (+50% de dano)
+CRITICAL_UP,Increases critical hit chance by 10%,Aumenta a chance de dano crítico em 10%
 
 MAXL_DMG,Damage,Dano
 MAXL_RATE,Attack rate,Velocidade de ataque

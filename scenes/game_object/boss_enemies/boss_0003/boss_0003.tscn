@@ -43,7 +43,7 @@ max_speed = 120
 acceleration = 9.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_gwr8h")]
-max_health = 3500.0
+max_health = 6500.0
 
 [node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_1qi5j")]
 drop_percent = 0.9

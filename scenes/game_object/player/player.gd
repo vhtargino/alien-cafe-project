@@ -41,6 +41,11 @@ var attack_speed_multiplier: float = 1.0
 
 var overall_damage_multiplier: float = 1.0
 
+var weapon_spawn_amount: int = 1
+
+var critical_damage_multiplier: float = 1.5
+var critical_chance: int = 0
+
 
 func _ready():
 	base_max_health = health_component.max_health
@@ -93,21 +98,18 @@ func update_armor():
 	var final_armor_multiplier = upgrade_armor_multiplier * MaxLevelEvents.armor
 	var final_armor = base_armor * final_armor_multiplier
 	current_armor = final_armor
-	print("Armor: " + str(current_armor))
 
 
 func update_pickup_area():
 	var final_pickup_multiplier = upgrade_pickup_multiplier * MaxLevelEvents.magnet
 	var final_pickup_area = base_pickup_radius * final_pickup_multiplier
 	pickup_area_collision.shape.radius = final_pickup_area
-	print("Pickup area: " + str(pickup_area_collision.shape.radius))
 
 
 func update_speed():
 	var final_speed_multiplier = upgrade_speed_multiplier * booster_speed_multiplier * MaxLevelEvents.move_speed
 	var final_speed = base_speed * final_speed_multiplier
 	velocity_component.max_speed = final_speed
-	print("Speed: " + str(velocity_component.max_speed))
 
 
 func update_total_health():
@@ -116,8 +118,6 @@ func update_total_health():
 	var health_ratio = health_component.current_health / health_component.max_health
 	health_component.max_health = final_max_health
 	health_component.current_health = final_max_health * health_ratio
-	print("Max Health: " + str(health_component.max_health))
-	print("Current Health: " + str(health_component.current_health))
 	update_health_display()
 
 
@@ -125,7 +125,6 @@ func update_health_regen():
 	var final_health_regen_multiplier = upgrade_health_regen_multiplier * MaxLevelEvents.health_regen
 	var final_health_regen = base_health_regen * final_health_regen_multiplier
 	current_health_regen = final_health_regen
-	print("Health Regen: " + str(current_health_regen))
 
 
 func update_health_display():
@@ -156,6 +155,15 @@ func check_deal_damage(damage: int, damage_source: Node2D):
 
 func set_attack_speed_multiplier(multiplier: float):
 	attack_speed_multiplier = multiplier
+
+
+func apply_critical_multiplier() -> float:
+	var random_number = randi_range(1, 100)
+	
+	if random_number <= critical_chance:
+		return critical_damage_multiplier
+	
+	return 1.0
 
 
 func on_body_entered(other_body: Node2D):
@@ -233,22 +241,10 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade, _current_upgrades: Dictio
 		update_health_regen()
 	elif upgrade.id == "overall_damage_main" or upgrade.id == "overall_damage":
 		overall_damage_multiplier += .15
-
-
-func on_waker_booster_applied():
-	var health_to_regenerate = health_component.max_health / 2
-	health_component.current_health = min(health_component.max_health, (health_component.current_health + health_to_regenerate))
-	update_health_display()
-
-
-func on_turbo_expresso_booster_applied():
-	booster_speed_multiplier = 2.0
-	update_speed()
-	
-	await turbo_expresso_booster.timer.timeout
-	
-	booster_speed_multiplier = 1.0
-	update_speed()
+	elif upgrade.id == "cloner_main" or upgrade.id == "cloner":
+		weapon_spawn_amount += 1
+	elif upgrade.id == "critical_main" or upgrade.id == "critical":
+		critical_chance += 10
 
 
 func on_level_up_above_max():
@@ -266,3 +262,19 @@ func on_level_up_above_max():
 		update_health_regen()
 	elif MaxLevelEvents.random_attribute == "magnet":
 		update_pickup_area()
+
+
+func on_waker_booster_applied():
+	var health_to_regenerate = health_component.max_health / 2
+	health_component.current_health = min(health_component.max_health, (health_component.current_health + health_to_regenerate))
+	update_health_display()
+
+
+func on_turbo_expresso_booster_applied():
+	booster_speed_multiplier = 2.0
+	update_speed()
+	
+	await turbo_expresso_booster.timer.timeout
+	
+	booster_speed_multiplier = 1.0
+	update_speed()

@@ -50,7 +50,6 @@ func on_button_pressed():
 func on_stage_1_pressed():
 	get_tree().change_scene_to_packed(stage_1_scene)
 
-
 func on_stage_2_pressed():
 	get_tree().change_scene_to_packed(stage_2_scene)
 
