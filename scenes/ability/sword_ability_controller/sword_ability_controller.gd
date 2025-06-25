@@ -62,8 +62,7 @@ func spawn_weapon():
 		base_damage *
 		additional_damage_percent *
 		MaxLevelEvents.damage *
-		player.overall_damage_multiplier *
-		player.apply_critical_multiplier()
+		player.overall_damage_multiplier
 		)
 	
 	sword_instance.global_position = enemies[0].global_position
@@ -89,11 +88,6 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Diction
 		additional_damage_percent = 1 + (current_upgrades["sword_damage"]["quantity"] * .15)
 
 
-func on_level_up_above_max():
-	if MaxLevelEvents.random_attribute == "attack rate":
-		update_timer_wait_time()
-
-
 func on_double_shot_booster_applied():
 	booster_rate_multiplier = 1.0 / player.attack_speed_multiplier
 	update_timer_wait_time()
@@ -102,3 +96,8 @@ func on_double_shot_booster_applied():
 	
 	booster_rate_multiplier = 1.0
 	update_timer_wait_time()
+
+
+func on_level_up_above_max():
+	if MaxLevelEvents.random_attribute == "MAXL_RATE":
+		update_timer_wait_time()

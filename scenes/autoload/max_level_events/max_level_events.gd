@@ -14,21 +14,21 @@ var max_health: float = 1
 var health_regen: float = 1
 var magnet: float = 1
 
-var attributes: Array[String] = ["damage", "attack rate", "attack range", "move speed", "armor", "max health", "health regen", "magnet"]
+var attributes: Array[String] = ["MAXL_DMG", "MAXL_RATE", "MAXL_RANGE", "MAXL_SPEED", "MAXL_ARMOR", "MAXL_MAXH", "MAXL_REGEN", "MAXL_MAG"]
 var random_attribute: String
 
 
 func increase_random_attribute():
 	random_attribute = attributes.pick_random()
 	match(random_attribute):
-		"damage": damage += .05
-		"attack rate": attack_rate -= .05
-		"attack range": attack_range += .05
-		"move speed": move_speed += .05
-		"armor": armor += .05
-		"max health": max_health += .05
-		"health regen": health_regen += .05
-		"magnet": magnet += .05
+		"MAXL_DMG": damage += .05
+		"MAXL_RATE": attack_rate -= .05
+		"MAXL_RANGE": attack_range += .05
+		"MAXL_SPEED": move_speed += .05
+		"MAXL_ARMOR": armor += .05
+		"MAXL_MAXH": max_health += .05
+		"MAXL_REGEN": health_regen += .05
+		"MAXL_MAG": magnet += .05
 	
 	var player = get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
@@ -41,7 +41,7 @@ func increase_random_attribute():
 	var floating_text_instance = floating_text_scene.instantiate() as Node2D
 	floating_text_instance.global_position = player.global_position + (Vector2.UP * 8)
 	foreground_layer.add_child(floating_text_instance)
-	floating_text_instance.start(random_attribute + " + 5%", .6, Color(0, 223, 0), 20)
+	floating_text_instance.start(tr(random_attribute) + " + 5%", .6, Color(0, 223, 0, 1), 20)
 
 
 func reset_attributes():

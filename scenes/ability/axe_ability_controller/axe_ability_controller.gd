@@ -53,8 +53,7 @@ func spawn_weapon():
 		base_damage * 
 		additional_damage_percent * 
 		MaxLevelEvents.damage * 
-		player.overall_damage_multiplier * 
-		player.apply_critical_multiplier()
+		player.overall_damage_multiplier
 		)
 	SoundUtils.play_axe_sound()
 
@@ -87,5 +86,5 @@ func on_double_shot_booster_applied():
 
 
 func on_level_up_above_max():
-	if MaxLevelEvents.random_attribute == "attack rate":
+	if MaxLevelEvents.random_attribute == "MAXL_RATE":
 		update_timer_wait_time()

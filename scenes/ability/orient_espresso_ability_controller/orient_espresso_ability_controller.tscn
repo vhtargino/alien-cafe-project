@@ -8,5 +8,5 @@ script = ExtResource("1_lfb41")
 orient_espresso_scene = ExtResource("2_2eumo")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.5
 autostart = true

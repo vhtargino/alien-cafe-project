@@ -5,6 +5,7 @@ STORE_MENU,Store,Loja
 OPTIONS_MENU,Options,Opções
 QUIT_GAME,Quit Game,Sair do Jogo
 PRESS_ANY,Press any key to start,Pressione qualquer tecla para começar
+PRESS_TO_SKIP,Press any key to skip,Pressione qualquer tecla para pular
 
 BACK,Back,Voltar
 CANCEL,Cancel,Cancelar
@@ -151,3 +152,17 @@ MAXL_MAG,Magnet,Ímã de itens
 MAXL_MAXH,Max health,Life máximo
 MAXL_ARMOR,Armor,Armadura
 MAXL_REGEN,Health regen,Regeneração
+MAXL_SPEED,Speed,Velocidade
+
+INTRO_LINE_1,"Planet Javax, Earth year 2025.","Planeta Javax, ano Terrestre 2025."
+INTRO_LINE_2,"The Javanians lived empty lives, without joy or purpose.","Os javanenses viviam vidas vazias, sem brilho e sem propósito."
+INTRO_LINE_3,"Until a Javanian left disguised in search of a solution.","Até que um javanense partiu disfarçado em busca de uma solução universo afora."
+INTRO_LINE_4,"Throughout the journey, the Javanian arrived on planet Earth, home to the humans.","Em suas jornadas, o javanense acabou chegando no planeta Terra, lar dos humanos."
+INTRO_LINE_5,"On Earth, he visited a coffee shop named Alien Cafe. There, he tasted coffee for the first time, which made him completely crazy!","Na Terra, ele visitou um estabelecimento chamado Alien Cafe, onde provou café pela primeira vez. A bebida o deixou completamente alucinado!"
+INTRO_LINE_6,"The Javanian acquired as much coffee as he could, and brought it back home to present it to his leaders.","O javanense adquiriu tanto café quanto conseguiu, e levou de volta para apresentar aos seus líderes."
+INTRO_LINE_7,"The leaders of Javax went crazy from drinking that magic drink! They couldn't stop drinking it!","Os líderes javanenses quase enlouqueceram com aquela bebida mágica! Eles não conseguiam parar de beber café!"
+INTRO_LINE_8,"But they soon ran out of coffee, and all of a sudden life was miserable again...","Mas eles rapidamente acabaram com todo o estoque, e com o fim da euforia, a vida se tornou triste novamente..."
+INTRO_LINE_9,"Determined to obtain all the coffee in existence, they planned an invasion of planet Earth! Javax would not go without coffee!","Obstinados a conseguir todo o café existente, eles prepararam uma invasão ao planeta Terra! Javax não ficaria sem café!"
+INTRO_LINE_10,"Their first stop: the Alien Cafe, where it all began! After that, the rest of the world!","Sua primeira parada: o Alien Cafe, onde tudo começou! Depois, o resto do mundo!"
+INTRO_LINE_11,"What seemed like just another ordinary day turned upside down for Joe Ebaristo, a barista at the Alien Cafe! An alien invasion!","No que parecia ser apenas um dia normal, Joe Ebaristo, barista no Alien Cafe, viu seu dia virar de ponta-cabeça! Uma invasão alienígena!"
+INTRO_LINE_12,"But without hesitation, he grabbed whatever he had at hand and set off to fight — to save his planet and his coffee!","Mas sem hesitar, ele pegou o que tinha a sua disposição e partiu para a batalha para salvar seu planeta e seu café!"

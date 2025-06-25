@@ -82,8 +82,7 @@ func on_bomb_tween_finished(caramel_bomb_instance: Node2D) -> void:
 		base_damage *
 		additional_damage_percent *
 		MaxLevelEvents.damage *
-		player.overall_damage_multiplier *
-		player.apply_critical_multiplier()
+		player.overall_damage_multiplier
 	)
 
 
@@ -112,11 +111,6 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Diction
 		additional_damage_percent = 1 + (current_upgrades["caramel_damage"]["quantity"] * .15)
 
 
-func on_level_up_above_max():
-	if MaxLevelEvents.random_attribute == "attack rate":
-		update_timer_wait_time()
-
-
 func on_double_shot_booster_applied():
 	booster_rate_multiplier = 1.0 / player.attack_speed_multiplier
 	update_timer_wait_time()
@@ -125,3 +119,8 @@ func on_double_shot_booster_applied():
 	
 	booster_rate_multiplier = 1.0
 	update_timer_wait_time()
+
+
+func on_level_up_above_max():
+	if MaxLevelEvents.random_attribute == "MAXL_RATE":
+		update_timer_wait_time()

@@ -82,9 +82,9 @@ func _ready():
 	upgrade_pool.add_item(upgrade_spear, 15)
 	upgrade_pool.add_item(upgrade_force_field, 15)
 	upgrade_pool.add_item(upgrade_anvil, 15)
-	upgrade_pool.add_item(upgrade_caramel_bomb, 15)
+	upgrade_pool.add_item(upgrade_caramel_bomb, 10)
 	upgrade_pool.add_item(upgrade_orient, 15)
-	upgrade_pool.add_item(upgrade_coffee_cup_spinner, 150)
+	upgrade_pool.add_item(upgrade_coffee_cup_spinner, 15)
 
 	upgrade_pool.add_item(upgrade_sword_rate, 12)
 	upgrade_pool.add_item(upgrade_sword_damage, 11)

@@ -47,11 +47,15 @@ func update_revolutions():
 
 
 func update_radius():
-	current_radius = base_radius * upgrade_radius_multiplier
+	var final_multiplier = upgrade_radius_multiplier * MaxLevelEvents.attack_range
+	var final_radius = base_radius * final_multiplier
+	current_radius = final_radius
 
 
 func update_speed():
-	current_speed = base_orbit_speed * upgrade_speed_multiplier
+	var final_multiplier = upgrade_speed_multiplier * MaxLevelEvents.attack_range
+	var final_speed = base_orbit_speed * final_multiplier
+	current_speed = final_speed
 
 
 func update_timer_wait_time():
@@ -69,8 +73,7 @@ func spawn_weapon():
 		base_damage *
 		upgrade_damage_multiplier *
 		MaxLevelEvents.damage *
-		player.overall_damage_multiplier *
-		player.apply_critical_multiplier()
+		player.overall_damage_multiplier
 	)
 	
 	var start_angle = 0.0
@@ -118,8 +121,11 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Diction
 
 
 func on_level_up_above_max():
-	if MaxLevelEvents.random_attribute == "attack rate":
+	if MaxLevelEvents.random_attribute == "MAXL_RATE":
 		update_timer_wait_time()
+	elif MaxLevelEvents.random_attribute == "MAXL_RANGE":
+		update_radius()
+		update_speed()
 
 
 func on_double_shot_booster_applied():

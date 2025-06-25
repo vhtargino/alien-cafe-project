@@ -1,0 +1,299 @@
+[gd_scene load_steps=18 format=3 uid="uid://pjvjgu7e4bpe"]
+
+[ext_resource type="Script" uid="uid://wqmlcaixufd7" path="res://scenes/cutscenes/intro_cutscene/intro_cutscene.gd" id="1_m8pec"]
+[ext_resource type="Shader" uid="uid://bbab2riuh3e74" path="res://resources/shaders/scroll_shader.gdshader" id="2_ffqc4"]
+[ext_resource type="Texture2D" uid="uid://bav22bup0klsc" path="res://assets/cutscenes/intro_cutscene/1-javax.png" id="2_m8pec"]
+[ext_resource type="PackedScene" uid="uid://bwcs47owte5ef" path="res://scenes/ui/main_menu/main_menu.tscn" id="2_u5baw"]
+[ext_resource type="Texture2D" uid="uid://chtauahwnbvvw" path="res://assets/cutscenes/intro_cutscene/2-javanenses-tristes.png" id="3_354fo"]
+[ext_resource type="Texture2D" uid="uid://dblhnqfqhnqqr" path="res://assets/main_menu/outer-space.png" id="3_yn6ss"]
+[ext_resource type="Texture2D" uid="uid://d2bowoyvixilh" path="res://assets/cutscenes/intro_cutscene/3-javanense-curioso.png" id="6_yn6ss"]
+[ext_resource type="Texture2D" uid="uid://62e40ucl0f41" path="res://assets/cutscenes/intro_cutscene/4-chegando-na-terra.png" id="7_dg77a"]
+[ext_resource type="Texture2D" uid="uid://rxm65603o1pq" path="res://assets/cutscenes/intro_cutscene/5-javanense-maravilhado.png" id="8_l4bcu"]
+[ext_resource type="Texture2D" uid="uid://robr2llbplav" path="res://assets/cutscenes/intro_cutscene/6-revelacao-do-cafe.png" id="10_mfyeu"]
+[ext_resource type="Texture2D" uid="uid://dqujyuu812pg" path="res://assets/cutscenes/intro_cutscene/7-javanenses-euforicos.png" id="11_hkcxw"]
+[ext_resource type="Shader" uid="uid://rf5f8vn2xurf" path="res://resources/shaders/alpha_pulse_shader.gdshader" id="12_r4m0s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dg77a"]
+shader = ExtResource("2_ffqc4")
+shader_parameter/x_speed = 0.05
+shader_parameter/y_speed = 0.0
+
+[sub_resource type="Animation" id="Animation_354fo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer/MarginContainer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_m8pec")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OuterSpace2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PanelContainer:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PanelContainer/MarginContainer/Label:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_m8pec"]
+resource_name = "intro"
+length = 62.0
+step = 1.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 62),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": ["INTRO_LINE_2"],
+"method": &"change_text"
+}, {
+"args": ["INTRO_LINE_3"],
+"method": &"change_text"
+}, {
+"args": ["INTRO_LINE_4"],
+"method": &"change_text"
+}, {
+"args": ["INTRO_LINE_5"],
+"method": &"change_text"
+}, {
+"args": ["INTRO_LINE_6"],
+"method": &"change_text"
+}, {
+"args": ["INTRO_LINE_7"],
+"method": &"change_text"
+}, {
+"args": ["INTRO_LINE_8"],
+"method": &"change_text"
+}, {
+"args": ["INTRO_LINE_9"],
+"method": &"change_text"
+}, {
+"args": ["INTRO_LINE_10"],
+"method": &"change_text"
+}, {
+"args": ["INTRO_LINE_11"],
+"method": &"change_text"
+}, {
+"args": ["INTRO_LINE_12"],
+"method": &"change_text"
+}, {
+"args": [],
+"method": &"go_to_main_menu"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer/MarginContainer/Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2, 4.99, 5, 6.5, 9.99, 10, 12, 14.99, 15, 17, 19.99, 20, 22, 24.99, 25, 27, 29.99, 30, 32, 34.99, 35, 37, 39.99, 40, 42, 44.99, 45, 47, 49.99, 50, 52, 54.99, 55, 57, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_m8pec"), ExtResource("3_354fo"), ExtResource("6_yn6ss"), ExtResource("7_dg77a"), ExtResource("8_l4bcu"), ExtResource("10_mfyeu"), ExtResource("11_hkcxw"), ExtResource("7_dg77a"), ExtResource("7_dg77a"), ExtResource("7_dg77a"), ExtResource("7_dg77a"), ExtResource("7_dg77a")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OuterSpace2:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 4, 5, 6, 9, 10, 11, 14, 15, 16, 19, 20, 21, 24, 25, 26, 29, 30, 31, 34, 35, 36, 39, 40, 41, 44, 45, 46, 49, 50, 51, 54, 55, 56, 59, 62),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PanelContainer:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 59, 62),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PanelContainer/MarginContainer/Label:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(59, 62),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_354fo"]
+_data = {
+&"RESET": SubResource("Animation_354fo"),
+&"intro": SubResource("Animation_m8pec")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4a7u1"]
+resource_local_to_scene = true
+shader = ExtResource("12_r4m0s")
+shader_parameter/speed = 3.728
+shader_parameter/intensity = 0.5
+shader_parameter/base_alpha = 1.0
+
+[node name="IntroCutscene" type="Node2D"]
+script = ExtResource("1_m8pec")
+main_menu_scene = ExtResource("2_u5baw")
+
+[node name="OuterSpace" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_dg77a")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_yn6ss")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_354fo")
+}
+autoplay = "intro"
+speed_scale = 0.75
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 134)
+scale = Vector2(2, 2)
+texture = ExtResource("2_m8pec")
+
+[node name="OuterSpace2" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_dg77a")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_yn6ss")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(320, 80)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 263.0
+offset_right = 480.0
+offset_bottom = 343.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(296, 57)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_constants/line_spacing = 5
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(120, 25)
+offset_left = 12.0
+offset_top = 324.0
+offset_right = 132.0
+offset_bottom = 349.0
+theme_override_constants/line_spacing = 5
+text = "PRESS_TO_SKIP"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+material = SubResource("ShaderMaterial_4a7u1")
+custom_minimum_size = Vector2(120, 25)
+offset_left = 12.0
+offset_top = 324.0
+offset_right = 132.0
+offset_bottom = 349.0
+theme_override_constants/line_spacing = 5
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+text = "PRESS_TO_SKIP"
+autowrap_mode = 3

@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cik8wu3fqhum1"]
+[gd_scene load_steps=12 format=3 uid="uid://cik8wu3fqhum1"]
 
 [ext_resource type="Script" uid="uid://giphlomd616f" path="res://scenes/cutscenes/logos_cutscene/logos_cutscene.gd" id="1_t2j7q"]
+[ext_resource type="PackedScene" uid="uid://pjvjgu7e4bpe" path="res://scenes/cutscenes/intro_cutscene/intro_cutscene.tscn" id="2_7iib5"]
 [ext_resource type="Texture2D" uid="uid://t3s3sdunxp62" path="res://assets/logos/godot_original_light.png" id="2_mgjq7"]
 [ext_resource type="Texture2D" uid="uid://bftoj5texdwr4" path="res://assets/logos/lifters_a.png" id="3_yjmds"]
 [ext_resource type="Shader" uid="uid://bbab2riuh3e74" path="res://resources/shaders/scroll_shader.gdshader" id="4_yjmds"]
@@ -149,6 +150,7 @@ shader_parameter/y_speed = 0.0
 
 [node name="LogosCutscene" type="Node2D"]
 script = ExtResource("1_t2j7q")
+intro_cutscene_scene = ExtResource("2_7iib5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

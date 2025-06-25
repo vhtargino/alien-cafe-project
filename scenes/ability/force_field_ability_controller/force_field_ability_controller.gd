@@ -48,8 +48,7 @@ func update_damage():
 	var final_damage_multiplier = (
 		upgrade_damage_multiplier * 
 		MaxLevelEvents.damage * 
-		player.overall_damage_multiplier * 
-		player.apply_critical_multiplier()
+		player.overall_damage_multiplier
 		)
 	var final_damage = base_damage * final_damage_multiplier
 	force_field_instance.hitbox_component.damage = final_damage
@@ -122,9 +121,9 @@ func on_double_shot_booster_applied():
 
 
 func on_level_up_above_max():
-	if MaxLevelEvents.random_attribute == "damage":
+	if MaxLevelEvents.random_attribute == "MAXL_DMG":
 		update_damage()
-	elif MaxLevelEvents.random_attribute == "attack rate":
+	elif MaxLevelEvents.random_attribute == "MAXL_RATE":
 		update_timer_wait_time()
-	elif MaxLevelEvents.random_attribute == "attack range":
+	elif MaxLevelEvents.random_attribute == "MAXL_RANGE":
 		update_range()

@@ -3,7 +3,7 @@ extends Node2D
 @onready var label: Label = $Label
 
 
-func start(text: String, duration: float, color: Color, font_size: int = 10):
+func start(text: String, duration: float, color: Color = Color(1, 1, 1, 1), font_size: int = 10):
 	label.text = text
 	label.add_theme_color_override("font_color", color)
 	label.add_theme_font_size_override("font_size", font_size)

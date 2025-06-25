@@ -1,6 +1,11 @@
 res://default_bus_layout.tres
-res://scenes/stages/stage_3_scene/stage_3_scene.tscn
+res://scenes/cutscenes/intro_cutscene/intro_cutscene.tscn
+res://resources/theme/theme.tres
 res://resources/shaders/alpha_pulse_shader.gdshader
-res://resources/tilesets/outer_space_tileset.tres
-res://resources/tilesets/spaceship_tileset.tres
-res://resources/sprite_sheets/green_healing_fx.tres
+res://translation_csv.en.translation
+res://translation_csv.pt_BR.translation
+res://scenes/cutscenes/intro_cutscene/intro_cutscene.gd
+res://scenes/cutscenes/logos_cutscene/logos_cutscene.tscn
+res://scenes/cutscenes/logos_cutscene/logos_cutscene.gd
+res://scenes/ui/main_menu/main_menu.tscn
+res://scenes/ui/main_menu/main_menu.gd

@@ -44,7 +44,6 @@ max_health = 8.0
 [node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_pcrk2")]
 drop_percent = 0.9
 health_component = NodePath("../HealthComponent")
-experience_amount = 10000.0
 
 [node name="HealthDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("8_cqkyx")]
 drop_percent = 0.01
