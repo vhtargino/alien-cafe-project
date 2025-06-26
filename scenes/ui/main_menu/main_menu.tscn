@@ -98,6 +98,10 @@ shader_parameter/base_alpha = 1.0
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_1ch07")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
 [node name="FadeInAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_8ouhi")

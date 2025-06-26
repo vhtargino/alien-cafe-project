@@ -63,6 +63,8 @@ func spawn_weapon():
 		player.overall_damage_multiplier
 	)
 	
+	SoundUtils.play_orient_espresso_sound()
+	
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property(orient_espresso_instance, "global_position", end_position, current_speed)
 	tween.chain().tween_property(orient_espresso_instance, "scale", Vector2(0, 0), .1)

@@ -135,7 +135,7 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 		despawn_enemy(enemy_0006_scene)
 		enemy_table.add_item(enemy_0009_scene, 2560)
 	elif arena_difficulty == 108:
-		SoundUtils.play_music_player("boss_music")
+		#SoundUtils.play_music_player("boss_music")
 		spawn_enemy(boss_scene, true)
 	
 	#if (arena_difficulty % 60) == 0:

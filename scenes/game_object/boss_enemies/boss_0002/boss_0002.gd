@@ -16,6 +16,7 @@ extends CharacterBody2D
 
 
 func _ready():
+	SoundUtils.play_music_player("boss_02_music")
 	health_bar.max_value = health_component.max_health
 	health_bar.value = health_component.current_health
 	

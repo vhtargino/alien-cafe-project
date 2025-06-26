@@ -1,11 +1,15 @@
 extends Node
 
-const MAIN_MENU_MUSIC = preload("res://assets/music/the-stakeout-anasta-music-288249.ogg")
-const STAGE_1_MUSIC = preload("res://assets/music/synthwave-music-for-creating-a-captivating-background-ambiance-311391.ogg")
-const STAGE_2_MUSIC = preload("res://assets/music/stage-2-music-chill-synthwave-background-music-for-youtube-shorts-and-videos-345551.mp3")
-const BOSS_MUSIC = preload("res://assets/music/dark-synthwave-obilivion-echo-251687.ogg")
-const VICTORY_MUSIC = preload("res://assets/music/neon-mirage-background-synthwave-music-for-video-vlog-24-second-340201.ogg")
-const GAME_OVER_MUSIC = preload("res://assets/music/sad-documentary-sorrowful-music-342263.ogg")
+const INTRO_CUTSCENE_MUSIC = preload("res://assets/music/intro_cutscene_music.ogg")
+const MAIN_MENU_MUSIC = preload("res://assets/music/main_menu_music.ogg")
+const STAGE_1_MUSIC = preload("res://assets/music/stage_01_music.ogg")
+const STAGE_2_MUSIC = preload("res://assets/music/stage_02_music.ogg")
+const STAGE_3_MUSIC = preload("res://assets/music/stage_03_music.ogg")
+const BOSS_01_MUSIC = preload("res://assets/music/boss_01_music.ogg")
+const BOSS_02_MUSIC = preload("res://assets/music/boss_02_music.ogg")
+const BOSS_03_MUSIC = preload("res://assets/music/boss_03_music.ogg")
+const VICTORY_MUSIC = preload("res://assets/music/victory_music.ogg")
+const GAME_OVER_MUSIC = preload("res://assets/music/defeat_music.ogg")
 
 const FOCUS = preload("res://assets/audio/menu-button-focus.ogg")
 const BUTTON_PRESSED = preload("res://assets/audio/beep-confirm.ogg")
@@ -16,6 +20,7 @@ const HEALING = preload("res://assets/audio/health_up.ogg")
 
 @export var frying_pan_array: Array[AudioStream]
 @export var espresso_crossbow_array: Array[AudioStream]
+@export var coffee_cup_array: Array[AudioStream]
 
 @export var experience_pod_array: Array[AudioStream]
 
@@ -23,6 +28,7 @@ const HEALING = preload("res://assets/audio/health_up.ogg")
 
 @onready var music_player: AudioStreamPlayer = $MusicPlayer
 @onready var ui_player: AudioStreamPlayer = $UiPlayer
+@onready var text_sound_player: AudioStreamPlayer = $TextSoundPlayer
 
 @onready var player_player: AudioStreamPlayer = $PlayerPlayer
 
@@ -30,6 +36,10 @@ const HEALING = preload("res://assets/audio/health_up.ogg")
 @onready var axe_player: AudioStreamPlayer = $AxePlayer
 @onready var spear_player: AudioStreamPlayer = $SpearPlayer
 @onready var anvil_player: AudioStreamPlayer = $AnvilPlayer
+@onready var orient_espresso_player: AudioStreamPlayer = $OrientEspressoPlayer
+@onready var caramel_bomb_player_1: AudioStreamPlayer = $CaramelBombPlayer1
+@onready var caramel_bomb_player_2: AudioStreamPlayer = $CaramelBombPlayer2
+@onready var coffee_cup_player: AudioStreamPlayer = $CoffeeCupPlayer
 
 @onready var enemy_player: AudioStreamPlayer = $EnemyPlayer
 
@@ -50,10 +60,14 @@ var allow_focus_sound: bool = false
 # Music
 func play_music_player(sound_name: String):
 	match sound_name:
+		"intro_cutscene": music_player.stream = INTRO_CUTSCENE_MUSIC
 		"main_menu": music_player.stream = MAIN_MENU_MUSIC
 		"stage_1": music_player.stream = STAGE_1_MUSIC
 		"stage_2": music_player.stream = STAGE_2_MUSIC
-		"boss_music": music_player.stream = BOSS_MUSIC
+		"stage_3": music_player.stream = STAGE_3_MUSIC
+		"boss_01_music": music_player.stream = BOSS_01_MUSIC
+		"boss_02_music": music_player.stream = BOSS_02_MUSIC
+		"boss_03_music": music_player.stream = BOSS_03_MUSIC
 		"victory_music": music_player.stream = VICTORY_MUSIC
 		"game_over_music": music_player.stream = GAME_OVER_MUSIC
 	music_player.play()
@@ -69,6 +83,14 @@ func play_ui_sound(sound_name: String):
 		"button_pressed": ui_player.stream = BUTTON_PRESSED
 		"denied": ui_player.stream = DENIED
 	ui_player.play()
+
+
+func play_text_sound():
+	text_sound_player.play()
+
+
+func stop_text_sound():
+	text_sound_player.stop()
 
 
 # Player
@@ -96,6 +118,23 @@ func play_spear_sound():
 
 func play_anvil_sound():
 	anvil_player.play()
+
+
+func play_orient_espresso_sound():
+	orient_espresso_player.play()
+
+
+func play_caramel_bomb_sound_1():
+	caramel_bomb_player_1.play()
+
+
+func play_caramel_bomb_sound_2():
+	caramel_bomb_player_2.play()
+
+
+func play_coffee_cup_sound():
+	coffee_cup_player.stream = coffee_cup_array.pick_random()
+	coffee_cup_player.play()
 
 
 # Enemies

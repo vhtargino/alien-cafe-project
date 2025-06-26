@@ -4,6 +4,7 @@ class_name MainMenu
 @onready var press_key_label: Label = $PressKeyLabel
 @onready var menu_container: PanelContainer = $MarginContainer/MenuContainer
 @onready var outer_space_2: TextureRect = $OuterSpace2
+@onready var timer: Timer = $Timer
 
 @onready var play_button = %PlayButton
 @onready var store_button = %StoreButton
@@ -22,6 +23,7 @@ func _ready():
 	store_button.pressed.connect(on_store_pressed)
 	options_button.pressed.connect(on_options_pressed)
 	quit_game_button.pressed.connect(on_quit_game_button_pressed)
+	timer.timeout.connect(on_timer_timeout)
 	
 	if GlobalStates.main_menu_loaded:
 		press_key_label.visible = false
@@ -29,8 +31,10 @@ func _ready():
 		outer_space_2.visible = false
 		SoundUtils.enable_and_disable_focus_sound(play_button)
 		
-	if not SoundUtils.music_player.playing:
-		SoundUtils.play_music_player("main_menu")
+	#if not SoundUtils.music_player.playing:
+		#SoundUtils.play_music_player("main_menu")
+	
+	SoundUtils.play_music_player("main_menu")
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
@@ -79,3 +83,7 @@ func on_quit_game_button_pressed():
 func on_options_closed(options_instance: Node):
 	options_instance.queue_free()
 	SoundUtils.enable_and_disable_focus_sound(play_button)
+
+
+func on_timer_timeout():
+	get_tree().change_scene_to_file("res://scenes/cutscenes/intro_cutscene/intro_cutscene.tscn")

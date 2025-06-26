@@ -58,6 +58,8 @@ func spawn_weapon():
 	var start_pos = caramel_bomb_instance.global_position
 	var end_pos = start_pos + direction
 	
+	SoundUtils.play_caramel_bomb_sound_1()
+	
 	var tween = create_tween().set_parallel(true)
 
 	tween.tween_method(
@@ -75,6 +77,9 @@ func spawn_weapon():
 
 func on_bomb_tween_finished(caramel_bomb_instance: Node2D) -> void:
 	caramel_bomb_instance.change_sprite()
+	
+	SoundUtils.play_caramel_bomb_sound_2()
+	
 	foreground.remove_child(caramel_bomb_instance)
 	ground.add_child(caramel_bomb_instance)
 	

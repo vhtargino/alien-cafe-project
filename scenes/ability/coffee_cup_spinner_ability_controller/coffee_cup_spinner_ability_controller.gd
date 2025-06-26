@@ -80,9 +80,11 @@ func spawn_weapon():
 	var end_angle = TAU * current_revolutions
 	var path_length = TAU * current_radius * current_revolutions
 	var duration = path_length / current_speed
-
+	
+	SoundUtils.play_coffee_cup_sound()
+	
 	var tween = create_tween()
-
+	
 	tween.tween_method(
 		func(angle):
 			coffee_cup_spinner_instance.position = Vector2(cos(angle), sin(angle)) * current_radius,
