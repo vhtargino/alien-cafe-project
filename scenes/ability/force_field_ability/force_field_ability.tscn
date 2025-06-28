@@ -45,6 +45,7 @@ _data = {
 radius = 25.0
 
 [node name="ForceFieldAbility" type="Node2D"]
+z_index = 2
 script = ExtResource("1_5ub3p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

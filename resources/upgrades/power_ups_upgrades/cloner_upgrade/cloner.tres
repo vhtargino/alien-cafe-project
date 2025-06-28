@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://fsgn7an6c8fs"]
+
+[ext_resource type="Texture2D" uid="uid://bw11apr4xdyih" path="res://assets/power-ups/cloner_a.png" id="1_rhh5e"]
+[ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_uaqh7"]
+
+[resource]
+script = ExtResource("1_uaqh7")
+image = ExtResource("1_rhh5e")
+id = "cloner"
+max_quantity = 1
+name = "CLONER"
+type = "power_up"
+sub_type = "power_up_upgrade"
+description = "CLONER_UP"
+metadata/_custom_type_script = "uid://dqduk38jdctil"

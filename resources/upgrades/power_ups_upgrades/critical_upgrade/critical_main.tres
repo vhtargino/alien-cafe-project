@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://teq4450omfup"]
+
+[ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_8taao"]
+[ext_resource type="Texture2D" uid="uid://ddwe5w4vl5og6" path="res://assets/power-ups/critical_a.png" id="1_ejajb"]
+
+[resource]
+script = ExtResource("1_8taao")
+image = ExtResource("1_ejajb")
+id = "critical_main"
+max_quantity = 1
+name = "CRITICAL"
+type = "power_up"
+sub_type = "power_up_main"
+description = "CRITICAL_MAIN"
+metadata/_custom_type_script = "uid://dqduk38jdctil"

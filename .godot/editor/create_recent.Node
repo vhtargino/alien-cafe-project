@@ -1,0 +1,14 @@
+Sprite2D
+AudioStreamPlayer
+Timer
+ColorRect
+Label
+MarginContainer
+PanelContainer
+AnimationPlayer
+Node
+CollisionShape2D
+Node2D
+GPUParticles2D
+ProgressBar
+CanvasLayer

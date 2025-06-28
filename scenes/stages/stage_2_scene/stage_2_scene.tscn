@@ -1,0 +1,95 @@
+[gd_scene load_steps=28 format=3 uid="uid://cixvkin3rlun0"]
+
+[ext_resource type="Script" uid="uid://da1vfc6mb8ra3" path="res://scenes/stages/stage_2_scene/stage_2_scene.gd" id="1_wmde8"]
+[ext_resource type="PackedScene" uid="uid://da6rj72jqwqbt" path="res://scenes/ui/end_screen/end_screen.tscn" id="2_1qb73"]
+[ext_resource type="PackedScene" uid="uid://cfwxyritj2n7p" path="res://scenes/ui/vignette/vignette.tscn" id="2_e1gbc"]
+[ext_resource type="PackedScene" uid="uid://bpp3wnd02wd8n" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="3_00pul"]
+[ext_resource type="PackedScene" uid="uid://cgo6p22slx0sn" path="res://scenes/ui/arena_time_ui/arena_time_ui.tscn" id="3_1qb73"]
+[ext_resource type="PackedScene" uid="uid://1kuoy5l1c0be" path="res://scenes/ui/experience_bar/experience_bar.tscn" id="4_00pul"]
+[ext_resource type="PackedScene" uid="uid://dxyn1oj8e8a2v" path="res://scenes/ui/current_level_display/current_level_display.tscn" id="5_w2t8f"]
+[ext_resource type="PackedScene" uid="uid://bfum4iq3si2lf" path="res://scenes/ui/abilities_display/abilities_display.tscn" id="6_ft40v"]
+[ext_resource type="PackedScene" uid="uid://du85xj0benkrs" path="res://scenes/ui/booster_canvas_ui/booster_canvas_ui.tscn" id="7_usl2c"]
+[ext_resource type="PackedScene" uid="uid://b80776lexmyqq" path="res://scenes/ui/enemy_death_counter/enemy_death_counter.tscn" id="8_msyrg"]
+[ext_resource type="PackedScene" uid="uid://txmvvolu8xrx" path="res://scenes/ui/stage_title/stage_title.tscn" id="9_h43bx"]
+[ext_resource type="PackedScene" uid="uid://om3dwg1ecqln" path="res://scenes/manager/arena_time_manager/arena_time_manager.tscn" id="10_2dtyi"]
+[ext_resource type="PackedScene" uid="uid://e4jpc4yocvno" path="res://scenes/manager/enemy_manager/enemy_manager.tscn" id="11_7uwbt"]
+[ext_resource type="PackedScene" uid="uid://c2cxbvdjdb13f" path="res://scenes/game_object/enemies/alien_0001/alien_0001.tscn" id="12_x6tad"]
+[ext_resource type="PackedScene" uid="uid://ub0enf81lbab" path="res://scenes/game_object/enemies/alien_0002/alien_0002.tscn" id="13_5elcx"]
+[ext_resource type="PackedScene" uid="uid://cl8bqvl7sx7gg" path="res://scenes/game_object/enemies/alien_0003/alien_0003.tscn" id="14_lhxxj"]
+[ext_resource type="PackedScene" uid="uid://bm3yehgmo4tmy" path="res://scenes/game_object/enemies/alien_0004/alien_0004.tscn" id="15_0jytk"]
+[ext_resource type="PackedScene" uid="uid://b21wklosdfmwd" path="res://scenes/game_object/enemies/alien_0005/alien_0005.tscn" id="16_aotbw"]
+[ext_resource type="PackedScene" uid="uid://xicthuvts4gh" path="res://scenes/game_object/enemies/alien_0006/alien_0006.tscn" id="17_i3b7t"]
+[ext_resource type="PackedScene" uid="uid://bv1enkrc6rnat" path="res://scenes/game_object/enemies/alien_0007/alien_0007.tscn" id="18_bbarj"]
+[ext_resource type="PackedScene" uid="uid://dp2xffuso1t80" path="res://scenes/game_object/enemies/alien_0008/alien_0008.tscn" id="19_r2wyg"]
+[ext_resource type="PackedScene" uid="uid://bc4cuohsciyv2" path="res://scenes/game_object/enemies/alien_0009/alien_0009.tscn" id="20_a66r7"]
+[ext_resource type="PackedScene" uid="uid://dtlqrknqemekh" path="res://scenes/manager/experience_manager/experience_manager.tscn" id="22_ohr22"]
+[ext_resource type="PackedScene" uid="uid://0baltjg4ukoo" path="res://scenes/game_object/boss_enemies/boss_0002/boss_0002.tscn" id="23_1qb73"]
+[ext_resource type="PackedScene" uid="uid://cegr05gx1wvyo" path="res://scenes/manager/upgrade_manager/upgrade_manager.tscn" id="23_7loxh"]
+[ext_resource type="PackedScene" uid="uid://duy34q0exwehe" path="res://scenes/game_object/player/player.tscn" id="25_gnnu5"]
+[ext_resource type="PackedScene" uid="uid://dcwlaqw0ryef7" path="res://scenes/maps/stage_2_map/stage_2_map.tscn" id="26_1qb73"]
+
+[node name="Stage2Scene" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_wmde8")
+end_screen_scene = ExtResource("2_1qb73")
+pause_menu_scene = ExtResource("3_00pul")
+
+[node name="UI" type="Node2D" parent="." groups=["ui_layer"]]
+
+[node name="Vignette" parent="UI" instance=ExtResource("2_e1gbc")]
+
+[node name="ArenaTimeUI" parent="UI" node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("3_1qb73")]
+arena_time_manager = NodePath("../../ArenaTimeManager")
+
+[node name="ExperienceBar" parent="UI" node_paths=PackedStringArray("experience_manager") instance=ExtResource("4_00pul")]
+experience_manager = NodePath("../../ExperienceManager")
+
+[node name="CurrentLevelDisplay" parent="UI" node_paths=PackedStringArray("experience_manager") instance=ExtResource("5_w2t8f")]
+experience_manager = NodePath("../../ExperienceManager")
+
+[node name="AbilitiesDisplay" parent="UI" node_paths=PackedStringArray("upgrade_manager") instance=ExtResource("6_ft40v")]
+upgrade_manager = NodePath("../../UpgradeManager")
+
+[node name="BoosterCanvasUi" parent="UI" instance=ExtResource("7_usl2c")]
+
+[node name="EnemyDeathCounter" parent="UI" instance=ExtResource("8_msyrg")]
+
+[node name="StageTitle" parent="UI" instance=ExtResource("9_h43bx")]
+layer = 1
+stage_label_text = "STAGE_2"
+title_label_text = "THE_ESPRESSO"
+
+[node name="ArenaTimeManager" parent="." instance=ExtResource("10_2dtyi")]
+current_level = 2
+
+[node name="EnemyManager" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("11_7uwbt")]
+enemy_0001_scene = ExtResource("12_x6tad")
+enemy_0002_scene = ExtResource("13_5elcx")
+enemy_0003_scene = ExtResource("14_lhxxj")
+enemy_0004_scene = ExtResource("15_0jytk")
+enemy_0005_scene = ExtResource("16_aotbw")
+enemy_0006_scene = ExtResource("17_i3b7t")
+enemy_0007_scene = ExtResource("18_bbarj")
+enemy_0008_scene = ExtResource("19_r2wyg")
+enemy_0009_scene = ExtResource("20_a66r7")
+boss_scene = ExtResource("23_1qb73")
+arena_time_manager = NodePath("../ArenaTimeManager")
+
+[node name="ExperienceManager" parent="." instance=ExtResource("22_ohr22")]
+
+[node name="UpgradeManager" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("23_7loxh")]
+experience_manager = NodePath("../ExperienceManager")
+
+[node name="Stage2Map" parent="." instance=ExtResource("26_1qb73")]
+
+[node name="GroundLayer" type="Node2D" parent="." groups=["ground_layer"]]
+
+[node name="Entities" type="Node2D" parent="." groups=["entities_layer"]]
+y_sort_enabled = true
+
+[node name="Player" parent="Entities" instance=ExtResource("25_gnnu5")]
+unique_name_in_owner = true
+position = Vector2(800, 784)
+
+[node name="Foreground" type="Node2D" parent="." groups=["foreground_layer"]]
+z_index = 1

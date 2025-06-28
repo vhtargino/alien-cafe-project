@@ -108,6 +108,7 @@ _data = {
 size = Vector2(24, 39)
 
 [node name="SwordAbility" type="Node2D"]
+z_index = 2
 script = ExtResource("1_t8g1f")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

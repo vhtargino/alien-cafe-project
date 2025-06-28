@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://dbr0e7blib6il"]
+
+[ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_6gi27"]
+[ext_resource type="Texture2D" uid="uid://uxagcpngx85h" path="res://assets/weapons/orient_espresso_a_16x16.png" id="1_fpt85"]
+
+[resource]
+script = ExtResource("1_6gi27")
+image = ExtResource("1_fpt85")
+id = "orient_rate"
+max_quantity = 3
+name = "ORIENT_NAME"
+type = "weapon"
+sub_type = "weapon_upgrade"
+description = "ORIENT_RATE"
+metadata/_custom_type_script = "uid://dqduk38jdctil"

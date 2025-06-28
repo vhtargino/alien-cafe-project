@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://vywml44ohbkg"]
+
+[ext_resource type="Script" uid="uid://b6htsdaobbxr4" path="res://scenes/ability/coffee_cup_spinner_ability/coffee_cup_spinner_ability.gd" id="1_r2708"]
+[ext_resource type="Texture2D" uid="uid://c3rae4lthwhvq" path="res://assets/weapons/coffee_cup_spinner_a.png" id="2_nrfla"]
+[ext_resource type="PackedScene" uid="uid://clkxgjwrus2sy" path="res://scenes/component/hitbox_component/hitbox_component.tscn" id="3_qo84q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qfi56"]
+radius = 7.0
+
+[node name="CoffeeCupSpinnerAbility" type="Node2D"]
+script = ExtResource("1_r2708")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nrfla")
+offset = Vector2(0, 1)
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_qo84q")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_qfi56")

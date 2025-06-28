@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://c2roqfsnklgg4"]
+
+[ext_resource type="Script" uid="uid://dqduk38jdctil" path="res://resources/upgrades/ability_upgrade.gd" id="1_ufi57"]
+[ext_resource type="Texture2D" uid="uid://uxagcpngx85h" path="res://assets/weapons/orient_espresso_a_16x16.png" id="1_xvlpd"]
+
+[resource]
+script = ExtResource("1_ufi57")
+image = ExtResource("1_xvlpd")
+id = "orient_damage"
+max_quantity = 2
+name = "ORIENT_NAME"
+type = "weapon"
+sub_type = "weapon_upgrade"
+description = "ORIENT_DAM"
+metadata/_custom_type_script = "uid://dqduk38jdctil"

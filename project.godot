@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Alien Cafe"
-run/main_scene="uid://bwcs47owte5ef"
+run/main_scene="uid://cik8wu3fqhum1"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
 config/icon="res://icon.svg"
@@ -22,6 +22,8 @@ GameEvents="*res://scenes/autoload/game_events/game_events.tscn"
 SoundUtils="*res://scenes/autoload/sound_utils/sound_utils.tscn"
 BoosterEvents="*res://scenes/autoload/booster_events/booster_events.tscn"
 StoreEvents="*res://scenes/autoload/store_events/store_events.tscn"
+GlobalStates="*res://scenes/autoload/global_states/global_states.tscn"
+MaxLevelEvents="*res://scenes/autoload/max_level_events/max_level_events.tscn"
 
 [display]
 
@@ -132,6 +134,16 @@ use_booster_4={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":52,"key_label":0,"unicode":52,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194442,"key_label":0,"unicode":52,"location":0,"echo":false,"script":null)
+]
+}
+right_click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(147, 14),"global_position":Vector2(156, 62),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+middle_click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":4,"position":Vector2(153, 23),"global_position":Vector2(162, 71),"factor":1.0,"button_index":3,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 

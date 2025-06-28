@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://jo45cbaoinmf"]
+
+[ext_resource type="Script" uid="uid://dcbylr71isyxe" path="res://resources/upgrades/ability.gd" id="1_saoig"]
+[ext_resource type="PackedScene" uid="uid://bvuvtw7sc3btg" path="res://scenes/ability/orient_espresso_ability_controller/orient_espresso_ability_controller.tscn" id="1_uf87b"]
+[ext_resource type="Texture2D" uid="uid://uxagcpngx85h" path="res://assets/weapons/orient_espresso_a_16x16.png" id="2_kt46q"]
+
+[resource]
+script = ExtResource("1_saoig")
+ability_controller_scene = ExtResource("1_uf87b")
+image = ExtResource("2_kt46q")
+id = "orient_main"
+max_quantity = 1
+name = "ORIENT_NAME"
+type = "weapon"
+sub_type = "weapon_main"
+description = "ORIENT_MAIN"
+metadata/_custom_type_script = "uid://dcbylr71isyxe"

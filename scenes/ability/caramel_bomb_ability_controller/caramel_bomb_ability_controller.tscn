@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfpjrluakhgsj"]
+
+[ext_resource type="Script" uid="uid://2du2b4t7atpt" path="res://scenes/ability/caramel_bomb_ability_controller/caramel_bomb_ability_controller.gd" id="1_efih6"]
+[ext_resource type="PackedScene" uid="uid://cwuodet84tvax" path="res://scenes/ability/caramel_bomb_ability/caramel_bomb.tscn" id="2_56phj"]
+
+[node name="CaramelBombAbilityController" type="Node"]
+script = ExtResource("1_efih6")
+caramel_bomb_scene = ExtResource("2_56phj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
