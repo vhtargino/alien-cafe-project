@@ -55,6 +55,7 @@ const HEALING = preload("res://assets/audio/health_up.ogg")
 @onready var boss_death_player: AudioStreamPlayer = $BossDeathPlayer
 
 var allow_focus_sound: bool = false
+var main_theme_music_playing: bool = false
 
 
 # Music
@@ -71,6 +72,11 @@ func play_music_player(sound_name: String):
 		"victory_music": music_player.stream = VICTORY_MUSIC
 		"game_over_music": music_player.stream = GAME_OVER_MUSIC
 	music_player.play()
+	
+	if music_player.stream == MAIN_MENU_MUSIC:
+		main_theme_music_playing = true
+	else:
+		main_theme_music_playing = false
 
 
 # UI
