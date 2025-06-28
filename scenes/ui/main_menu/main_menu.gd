@@ -47,6 +47,9 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		SoundUtils.enable_and_disable_focus_sound(play_button)
 		
 		GlobalStates.main_menu_loaded = true
+	
+	if event:
+		timer.start()
 
 
 func on_focus_entered():

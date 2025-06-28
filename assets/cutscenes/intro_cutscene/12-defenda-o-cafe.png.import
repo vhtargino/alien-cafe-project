@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caipt8a4eeut2"
-path="res://.godot/imported/11-joe-ebaristo-original.png-630ff564e93b1aea9dcfdb0d9d6463ec.ctex"
+uid="uid://docpdosv5mwxn"
+path="res://.godot/imported/12-defenda-o-cafe.png-9c5a19e8870125d79cdf917491d5dee4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cutscenes/intro_cutscene/11-joe-ebaristo-original.png"
-dest_files=["res://.godot/imported/11-joe-ebaristo-original.png-630ff564e93b1aea9dcfdb0d9d6463ec.ctex"]
+source_file="res://assets/cutscenes/intro_cutscene/12-defenda-o-cafe.png"
+dest_files=["res://.godot/imported/12-defenda-o-cafe.png-9c5a19e8870125d79cdf917491d5dee4.ctex"]
 
 [params]
 

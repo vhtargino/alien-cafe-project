@@ -5,6 +5,9 @@ extends CanvasLayer
 @onready var stage_3_button: Button = %Stage3Button
 @onready var back_button: Button = %BackButton
 
+@onready var stage_2_description_label: Label = %Stage2DescriptionLabel
+@onready var stage_3_description_label: Label = %Stage3DescriptionLabel
+
 @export var stage_1_scene: PackedScene
 @export var stage_2_scene: PackedScene
 @export var stage_3_scene: PackedScene
@@ -23,6 +26,12 @@ func _ready():
 	
 	check_stage_finished()
 	
+	if not GameEvents.stage_1_finished:
+		stage_2_description_label.text = "\n?"
+	
+	if not GameEvents.stage_2_finished:
+		stage_3_description_label.text = "\n?"
+	
 	SoundUtils.enable_and_disable_focus_sound(stage_1_button)
 
 
@@ -32,10 +41,10 @@ func _unhandled_input(event: InputEvent):
 
 
 func check_stage_finished():
-	if GameEvents.stage_1_finished == true:
+	if GameEvents.stage_1_finished:
 		stage_2_button.disabled = false
 	
-	if GameEvents.stage_2_finished == true:
+	if GameEvents.stage_2_finished:
 		stage_3_button.disabled = false
 
 

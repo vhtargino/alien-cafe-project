@@ -13,10 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://d0lcgefiqqo3q" path="res://assets/cutscenes/intro_cutscene/8-acabou-o-cafe.png" id="10_ntv4w"]
 [ext_resource type="Texture2D" uid="uid://dqujyuu812pg" path="res://assets/cutscenes/intro_cutscene/7-javanenses-euforicos.png" id="11_hkcxw"]
 [ext_resource type="Texture2D" uid="uid://6al8668fiinn" path="res://assets/cutscenes/intro_cutscene/9-invadir-a-terra.png" id="11_i671a"]
-[ext_resource type="Texture2D" uid="uid://b55el1t1tpoe7" path="res://assets/cutscenes/intro_cutscene/10-invasao-alien-cafe-original.png" id="12_lxwid"]
+[ext_resource type="Texture2D" uid="uid://b1c12m0dmbm21" path="res://assets/cutscenes/intro_cutscene/10-invasao-alien-cafe.png" id="12_lxwid"]
 [ext_resource type="Texture2D" uid="uid://c86ggnx0kyviq" path="res://assets/ui/enter-return1.png" id="13_4a7u1"]
-[ext_resource type="Texture2D" uid="uid://caipt8a4eeut2" path="res://assets/cutscenes/intro_cutscene/11-joe-ebaristo-original.png" id="13_jqh7l"]
-[ext_resource type="Texture2D" uid="uid://jjyof84t55im" path="res://assets/cutscenes/intro_cutscene/12-defenda-o-cafe-original.png" id="14_mupyl"]
+[ext_resource type="Texture2D" uid="uid://qogoevaxw4c1" path="res://assets/cutscenes/intro_cutscene/11-joe-ebaristo.png" id="13_jqh7l"]
+[ext_resource type="Texture2D" uid="uid://docpdosv5mwxn" path="res://assets/cutscenes/intro_cutscene/12-defenda-o-cafe.png" id="14_mupyl"]
 
 [sub_resource type="Animation" id="Animation_354fo"]
 length = 0.001
@@ -247,8 +247,8 @@ tracks/8/path = NodePath(".")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(2, 3, 6, 7.5, 11, 13, 16, 18, 21, 26, 28, 31, 33, 36, 38, 41, 43, 46, 48, 51, 53, 56, 58),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(2, 3, 6, 7.5, 11, 13, 16, 18, 21, 23.5, 26, 28, 31, 33, 36, 38, 41, 43, 46, 48, 51, 53, 56, 58),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [],
 "method": &"play_text_sound"
@@ -276,6 +276,9 @@ tracks/8/keys = {
 }, {
 "args": [],
 "method": &"play_text_sound"
+}, {
+"args": [],
+"method": &"stop_text_sound"
 }, {
 "args": [],
 "method": &"play_text_sound"
@@ -385,9 +388,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 160.0
-offset_top = 263.0
+offset_top = 266.0
 offset_right = 480.0
-offset_bottom = 343.0
+offset_bottom = 346.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"AlternativePanelContainer"

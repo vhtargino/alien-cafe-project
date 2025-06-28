@@ -53,7 +53,7 @@ bus = &"SFX"
 
 [node name="TextSoundPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
 stream = ExtResource("25_b2b21")
-volume_db = -14.0
+volume_db = -17.0
 bus = &"SFX"
 
 [node name="PlayerPlayer" type="AudioStreamPlayer" parent="." groups=["sound_players"]]
