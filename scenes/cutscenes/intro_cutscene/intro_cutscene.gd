@@ -17,6 +17,7 @@ func change_text(text: String):
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("ui_accept"):
+		stop_text_sound()
 		go_to_main_menu()
 
 

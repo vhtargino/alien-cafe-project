@@ -31,10 +31,8 @@ func _ready():
 		outer_space_2.visible = false
 		SoundUtils.enable_and_disable_focus_sound(play_button)
 		
-	#if not SoundUtils.music_player.playing:
-		#SoundUtils.play_music_player("main_menu")
-	
-	SoundUtils.play_music_player("main_menu")
+	if not SoundUtils.music_player.playing or not SoundUtils.main_theme_music_playing:
+		SoundUtils.play_music_player("main_menu")
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
@@ -90,3 +88,4 @@ func on_options_closed(options_instance: Node):
 
 func on_timer_timeout():
 	get_tree().change_scene_to_file("res://scenes/cutscenes/intro_cutscene/intro_cutscene.tscn")
+	GlobalStates.main_menu_loaded = false
