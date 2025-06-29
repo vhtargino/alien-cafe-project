@@ -1,11 +1,4 @@
 res://default_bus_layout.tres
-res://scenes/autoload/sound_utils/sound_utils.tscn
+res://scenes/ui/main_menu/main_menu.tscn
 res://resources/theme/theme.tres
 res://resources/shaders/alpha_pulse_shader.gdshader
-res://scenes/autoload/sound_utils/sound_utils.gd
-res://scenes/ui/main_menu/main_menu.gd
-res://scenes/ui/main_menu/main_menu.tscn
-res://scenes/cutscenes/intro_cutscene/intro_cutscene.tscn
-res://scenes/cutscenes/intro_cutscene/intro_cutscene.gd
-res://translation_csv.en.translation
-res://translation_csv.pt_BR.translation

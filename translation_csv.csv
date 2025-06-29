@@ -50,7 +50,7 @@ CREDITS_3,Adds 500 credits to the wallet,Adiciona 500 créditos à carteira
 CREDITS_4,Adds 1500 credits to the wallet,Adiciona 1500 créditos à carteira
 
 BUY_CREDIT_CONFIRMATION,Do you wish to spend R$%d to buy %d¢?,Deseja gastar R$%d para comprar %d¢?
-BUY_BOOSTER_CONFIRMATION,Do you wish to spend ¢%d to buy ¢d '%s'?,Deseja gastar ¢%d para comprar %d '%s'?
+BUY_BOOSTER_CONFIRMATION,Do you wish to spend ¢%d to buy %d '%s'?,Deseja gastar ¢%d para comprar %d '%s'?
 
 STAGE_1,Stage 1,1ª Fase
 STAGE_2,Stage 2,2ª Fase
@@ -134,7 +134,7 @@ SPEED_MAIN,"Wow, I can run a lot faster with these!","Uau, eu consigo correr mui
 SPEED_UP,"Increases player move speed by 15%","Aumenta a velocidade de movimento em 15%"
 
 PROT_COOKIE,Protein Cookie, Cookie Proteico
-PROT_MAIN,A protein cookie! Já me sinto mais forte!,Um cookie de whey! Tá saindo da jaula o monstro!
+PROT_MAIN,A protein cookie! I feel stronger already!,Um cookie de whey! Tá saindo da jaula o monstro!
 PROT_UP,All damage is increased by 15%,O dano geral é aumentado em 15%
 
 CLONER,Cloner,Clonador
