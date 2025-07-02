@@ -34,6 +34,27 @@ script = ExtResource("1_40p6g")
 end_screen_scene = ExtResource("2_53k8n")
 pause_menu_scene = ExtResource("3_6456p")
 
+[node name="ArenaTimeManager" parent="." instance=ExtResource("12_uvs25")]
+current_level = 3
+
+[node name="EnemyManager" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("13_hun3q")]
+enemy_0001_scene = ExtResource("14_hca1g")
+enemy_0002_scene = ExtResource("15_k0ain")
+enemy_0003_scene = ExtResource("16_1wl7c")
+enemy_0004_scene = ExtResource("17_v0w6k")
+enemy_0005_scene = ExtResource("18_wtq1l")
+enemy_0006_scene = ExtResource("19_gg61u")
+enemy_0007_scene = ExtResource("20_0e0u8")
+enemy_0008_scene = ExtResource("21_acllv")
+enemy_0009_scene = ExtResource("22_yikev")
+boss_scene = ExtResource("23_2meva")
+arena_time_manager = NodePath("../ArenaTimeManager")
+
+[node name="ExperienceManager" parent="." instance=ExtResource("24_733ja")]
+
+[node name="UpgradeManager" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("25_ra63g")]
+experience_manager = NodePath("../ExperienceManager")
+
 [node name="UI" type="Node2D" parent="." groups=["ui_layer"]]
 
 [node name="Vignette" parent="UI" instance=ExtResource("4_byq1h")]
@@ -60,27 +81,6 @@ stage_label_text = "STAGE_3"
 title_label_text = "BATTLESTAR"
 stage_y = 180.0
 title_y = 90.0
-
-[node name="ArenaTimeManager" parent="." instance=ExtResource("12_uvs25")]
-current_level = 3
-
-[node name="EnemyManager" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("13_hun3q")]
-enemy_0001_scene = ExtResource("14_hca1g")
-enemy_0002_scene = ExtResource("15_k0ain")
-enemy_0003_scene = ExtResource("16_1wl7c")
-enemy_0004_scene = ExtResource("17_v0w6k")
-enemy_0005_scene = ExtResource("18_wtq1l")
-enemy_0006_scene = ExtResource("19_gg61u")
-enemy_0007_scene = ExtResource("20_0e0u8")
-enemy_0008_scene = ExtResource("21_acllv")
-enemy_0009_scene = ExtResource("22_yikev")
-boss_scene = ExtResource("23_2meva")
-arena_time_manager = NodePath("../ArenaTimeManager")
-
-[node name="ExperienceManager" parent="." instance=ExtResource("24_733ja")]
-
-[node name="UpgradeManager" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("25_ra63g")]
-experience_manager = NodePath("../ExperienceManager")
 
 [node name="Stage3Map" parent="." instance=ExtResource("24_40p6g")]
 

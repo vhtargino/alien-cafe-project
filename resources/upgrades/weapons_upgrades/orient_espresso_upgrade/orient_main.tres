@@ -13,5 +13,6 @@ max_quantity = 1
 name = "ORIENT_NAME"
 type = "weapon"
 sub_type = "weapon_main"
+weight = 15
 description = "ORIENT_MAIN"
 metadata/_custom_type_script = "uid://dcbylr71isyxe"

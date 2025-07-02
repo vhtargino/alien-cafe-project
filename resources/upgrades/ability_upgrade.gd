@@ -7,4 +7,5 @@ class_name AbilityUpgrade
 @export var name: String
 @export var type: String
 @export var sub_type: String
+@export var weight: int
 @export_multiline var description: String

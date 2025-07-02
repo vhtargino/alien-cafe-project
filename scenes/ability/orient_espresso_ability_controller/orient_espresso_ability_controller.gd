@@ -86,7 +86,7 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Diction
 	if upgrade.id == "orient_damage":
 		upgrade_damage_multiplier += .3
 	elif upgrade.id == "orient_rate":
-		upgrade_rate_multiplier += .2
+		upgrade_rate_multiplier -= .2
 		update_timer_wait_time()
 	elif upgrade.id == "orient_speed":
 		upgrade_speed_multiplier -= .15

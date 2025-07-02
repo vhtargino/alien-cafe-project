@@ -11,5 +11,6 @@ max_quantity = 2
 name = "ORIENT_NAME"
 type = "weapon"
 sub_type = "weapon_upgrade"
+weight = 12
 description = "ORIENT_DAM"
 metadata/_custom_type_script = "uid://dqduk38jdctil"

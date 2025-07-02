@@ -11,5 +11,6 @@ max_quantity = 1
 name = "CLONER"
 type = "power_up"
 sub_type = "power_up_main"
+weight = 1
 description = "CLONER_MAIN"
 metadata/_custom_type_script = "uid://dqduk38jdctil"

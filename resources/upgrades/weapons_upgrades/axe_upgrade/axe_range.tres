@@ -11,4 +11,5 @@ max_quantity = 2
 name = "CPOT_NAME"
 type = "weapon"
 sub_type = "weapon_upgrade"
+weight = 12
 description = "CPOT_RANGE"
