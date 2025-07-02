@@ -11,5 +11,6 @@ max_quantity = 4
 name = "CARAMEL_NAME"
 type = "weapon"
 sub_type = "weapon_upgrade"
+weight = 10
 description = "CARAMEL_RATE"
 metadata/_custom_type_script = "uid://dqduk38jdctil"

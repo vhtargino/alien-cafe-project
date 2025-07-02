@@ -13,4 +13,5 @@ max_quantity = 1
 name = "FFIELD_NAME"
 type = "weapon"
 sub_type = "weapon_main"
+weight = 15
 description = "FFIELD_MAIN"

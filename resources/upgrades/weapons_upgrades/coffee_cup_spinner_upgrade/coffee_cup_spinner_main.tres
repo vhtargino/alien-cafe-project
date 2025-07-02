@@ -13,5 +13,6 @@ max_quantity = 1
 name = "CCUP_NAME"
 type = "weapon"
 sub_type = "weapon_main"
+weight = 15
 description = "CCUP_MAIN"
 metadata/_custom_type_script = "uid://dcbylr71isyxe"

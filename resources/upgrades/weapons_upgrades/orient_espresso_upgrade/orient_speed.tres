@@ -11,5 +11,6 @@ max_quantity = 4
 name = "ORIENT_NAME"
 type = "weapon"
 sub_type = "weapon_upgrade"
+weight = 12
 description = "ORIENT_SPEED"
 metadata/_custom_type_script = "uid://dqduk38jdctil"

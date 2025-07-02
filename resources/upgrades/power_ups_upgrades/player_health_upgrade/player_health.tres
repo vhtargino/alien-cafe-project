@@ -11,4 +11,5 @@ max_quantity = 7
 name = "CROIS_NAME"
 type = "power_up"
 sub_type = "power_up_upgrade"
+weight = 12
 description = "CROIS_UP"

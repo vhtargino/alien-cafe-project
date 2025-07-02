@@ -11,4 +11,5 @@ max_quantity = 1
 name = "SPEED_NAME"
 type = "power_up"
 sub_type = "power_up_main"
+weight = 12
 description = "SPEED_MAIN"
