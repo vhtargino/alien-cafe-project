@@ -3,11 +3,14 @@ class_name OptionsMenu
 
 signal back_pressed
 
-@onready var back_button = %BackButton
+@export var controls_screen_scene: PackedScene
+
+@onready var back_button: Button = %BackButton
 @onready var music_slider = %MusicSlider
 @onready var sfx_slider = %SFXSlider
 @onready var language_v_box_container: VBoxContainer = %LanguageVBoxContainer
 @onready var language_options: OptionButton = %LanguageOptions
+@onready var controls_button: Button = %ControlsButton
 
 
 func _ready():
@@ -18,6 +21,9 @@ func _ready():
 	
 	back_button.pressed.connect(on_back_pressed)
 	back_button.focus_entered.connect(on_focus_entered)
+	
+	controls_button.pressed.connect(on_controls_pressed)
+	controls_button.focus_entered.connect(on_focus_entered)
 	
 	music_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
 	sfx_slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
@@ -86,6 +92,18 @@ func on_item_focused(_index: int):
 
 func on_item_selected(_index: int):
 	SoundUtils.play_ui_sound("button_pressed")
+
+
+func on_controls_pressed():
+	SoundUtils.play_ui_sound("button_pressed")
+	var controls_screen_instance = controls_screen_scene.instantiate()
+	add_child(controls_screen_instance)
+	controls_screen_instance.controls_back_pressed.connect(on_controls_screen_closed.bind(controls_screen_instance))
+
+
+func on_controls_screen_closed(controls_screen_instance: Node):
+	controls_screen_instance.queue_free()
+	SoundUtils.enable_and_disable_focus_sound(music_slider)
 
 
 func on_back_pressed():
