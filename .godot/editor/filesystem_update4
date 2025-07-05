@@ -2,15 +2,3 @@ res://default_bus_layout.tres
 res://scenes/ui/main_menu/main_menu.tscn
 res://resources/theme/theme.tres
 res://resources/shaders/alpha_pulse_shader.gdshader
-res://resources/tilesets/outer_space_tileset.tres
-res://resources/tilesets/spaceship_tileset.tres
-res://resources/sprite_sheets/green_healing_fx.tres
-res://scenes/stages/stage_3_scene/stage_3_scene.tscn
-res://scenes/manager/upgrade_manager/upgrade_manager.tscn
-res://scenes/manager/upgrade_manager/upgrade_manager.gd
-res://resources/tilesets/city_tileset.tres
-res://scenes/stages/stage_1_scene/stage_1_scene.tscn
-res://scenes/stages/stage_2_scene/stage_2_scene.tscn
-res://resources/tilesets/farm_tileset.tres
-res://scenes/ability/orient_espresso_ability_controller/orient_espresso_ability_controller.gd
-res://scenes/game_object/boss_enemies/boss_0003/boss_0003.tscn

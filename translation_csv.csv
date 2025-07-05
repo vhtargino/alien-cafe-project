@@ -17,6 +17,16 @@ MUSIC_VOL,Music Volume,Volume Música
 SFX_VOL,Sound FX Volume,Volume Efeitos
 LANG,Language,Idioma
 
+CONTROLS,Controls,Controles
+CONFIRM_KEYS,"Confirm/Select","Confirmar/Selecionar"
+MOVE_KEYS,"Move/Navigate","Mover/Navegar"
+ESC_KEY,"Pause/Back/Cancel","Pausar/Voltar/Cancelar"
+ONE_KEY,Use Double Shot booster,Usar booster Dose Dupla
+TWO_KEY,Use Waker booster,Usar booster Acordador
+THREE_KEY,Use Iced Coffee booster,Usar booster Café Gelado
+FOUR_KEY,Use Turbo Expresso booster,Usar booster Turbo Expresso
+OR_LABEL,or,ou
+
 PAUSED,Paused,Pausado
 RESUME,Resume,Continuar
 QUIT_MENU,Quit to Menu,Sair da Partida
